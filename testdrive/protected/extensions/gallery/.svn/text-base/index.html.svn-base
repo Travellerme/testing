@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script src="./skins/jquery-1.9.1.min.js"></script>
+		<script src="./gallery.js"></script>
+		<link rel="stylesheet" type="text/css" href="./skins/style.css">
+			
+		
+	</head>
+<body onload="scanImage();">
+	qwerty
+	<div id="img">
+	</div>
+	<div id="view">
+	</div>
+	
+	
+	
+</body>
+</html>
+<div id="TB_overlay" onclick="closeImg();" hidden></div>

@@ -1,0 +1,30 @@
+<?php
+/* @var $this RepertoireController */
+/* @var $dataProvider CActiveDataProvider */
+
+$this->breadcrumbs=array(
+	'Repertoires',
+);
+
+if (Yii::app()->user->name != 'admin')
+{
+	$this->layout = '//layouts/column1';
+}
+else
+{
+	$this->menu=array(
+		array('label'=>'Create Repertoire', 'url'=>array('create')),
+		array('label'=>'Manage Repertoire', 'url'=>array('admin')),
+	);
+}
+
+?>
+
+<h1>Repertoires</h1>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+	'sorterHeader'=>'Sort by : ',
+	'sortableAttributes'=>array('title','timeStart'),
+)); ?>
