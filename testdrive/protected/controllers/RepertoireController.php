@@ -142,13 +142,15 @@ class RepertoireController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Repertoire');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+		$dataProvider=new CActiveDataProvider('Repertoire',array(
 			'pagination'=>array(
 				'pageSize'=>11,
-			),
+			)
 		));
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+		
 	}
 
 	/**

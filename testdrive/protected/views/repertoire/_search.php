@@ -15,10 +15,25 @@
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'imgUrl'); ?>
+		<?php echo $form->textField($model,'imgUrl'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'title'); ?>
+		<?php echo $form->textField($model,'title'); ?>
+	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_time'); ?>
-		<?php echo $form->textField($model,'id_time'); ?>
+		<?php echo $form->label($model,'timeStart'); ?>
+		<?php echo $form->textField($model,'timeStart'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'timeEnd'); ?>
+		<?php echo $form->textField($model,'timeEnd'); ?>
 	</div>
 
 	<div class="row">
