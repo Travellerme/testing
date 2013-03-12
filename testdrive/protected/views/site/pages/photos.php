@@ -10,12 +10,13 @@ $cs=Yii::app()->clientScript;
 $cs->registerCssFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'css/gallery.css');
 $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/jquery-1.9.1.min.js');
 $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/gallery.js');
-
 ?>
 
 
 <h1>Photos</h1>
-<div id="imgDiv">
+<iframe id="mainImg" onload="scanImage(photos);"  width="1" height="1" style="border: 0;">
+</iframe>
+<div id="container">
 </div>
 <div id="view">
 </div>

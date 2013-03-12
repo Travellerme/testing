@@ -1,7 +1,6 @@
-$(document).ready(scanImage());
-function scanImage()
+function scanImage(functionName)
 {
-	
+
 	$.ajax
 	({
 		 type: 'POST',
@@ -10,46 +9,87 @@ function scanImage()
 		 dataType: "json",
 		 success: function(data)
 		 {
-			var reg = /(\/var\/www)/;
-			var str = '';
-			var nextImg = '';
-			var prevImg = '';
-			var cnt = data['href'].length;
-			for(var i=0; i < data['href'].length; i++) 
-			{	
-				
-				if(i == data['href'].length-1)
-				{
-					nextImg = 0;
-				}
-				else
-				{
-					nextImg = i+1;
-				}
-				if(i == 0)
-				{
-					prevImg = data['href'].length-1;
-				}
-				else
-				{
-					prevImg = i-1;
-				}
-					
-				if(i%5 == 0) 
-				{
-					str += '<br />';
-				}
-				 str += '<img src="' + data['href'][i].replace(reg,'') +
-				 '" class="imgGallery" onclick="viewImg('+i+','+cnt+');" id=\'img'
-				 +i+'\'> ';
-			}
-			
-			$('#imgDiv').html(str);
-			
+			 functionName(data);
 		 }
 	 });
 }
 
+function scrollPhotos(data)
+{
+	photos(data,'scroll')
+	/*var reg = /(\/var\/www)/;
+	var cnt = data['href'].length;
+	var firstImg = 3;
+	var str ='';
+	for(var i=0; i < 3; i++) 
+	{
+		str += '<img src="' + data['href'][i].replace(reg,'') +
+		'" class="imgGallery" onclick="viewImg('+i+','+cnt+');" id=\'img'
+		+i+'\'> ';
+		
+	}
+	var img = 0;
+	$('#scrollImages').html(str);*/
+	/*setInterval(function() 
+	{
+		str = ''; 
+		for(var i=0; i < 3; i++) 
+		{alert(firstImg);
+						
+			if (firstImg >= cnt)
+			{
+				firstImg = firstImg - cnt;
+			}
+			str += '<img src="' + data['href'][firstImg].replace(reg,'') +
+			 '" class="imgGallery" onclick="viewImg('+firstImg+','+cnt+');" id=\'img'
+			 +firstImg+'\'> ';
+			/*if(firstImg < 2)
+			{
+				firstImg += cnt-3; 
+			}
+			 
+			str += '<img src="' + data['href'][(firstImg-2)].replace(reg,'') +
+			 '" class="imgGallery" onclick="viewImg('+(firstImg-2)+','+cnt+');" id=\'img'
+			 +(firstImg-2)+'\'> ';*/
+			/*firstImg++;
+			
+		}
+		
+		$('#scrollImages').html(str);
+		
+		
+	}, 1000)*/
+	
+}
+
+function photos(data,action=null)
+{
+	var reg = /(\/var\/www)/;
+	var str = '';
+	var cnt = data['href'].length;
+	for(var i=0; i < data['href'].length; i++) 
+	{	
+		
+		
+		if(action == 'scroll')
+		{
+			str += '<img src="' + data['href'][i].replace(reg,'') +'"\'> ';
+		}
+		else
+		{
+			if(i%5 == 0) 
+			{
+				str += '<br />';
+			}
+			 str += '<img src="' + data['href'][i].replace(reg,'') +
+			 '" class="imgGallery" onclick="viewImg('+i+','+cnt+');" id=\'img'
+			 +i+'\'> ';
+		}
+	}
+	
+	$('#container').html(str);
+	
+ }
 function viewImg(id,cnt)
 {
 	

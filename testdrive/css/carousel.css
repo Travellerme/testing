@@ -1,0 +1,32 @@
+#container{
+position: absolute;
+top: 10px;
+left: 60px;
+height: 150px;
+width: 470px; /* 3 images of 150px showing with a 10px margin = 3*(150) + 2*(10) = 470 */
+overflow: hidden;
+}
+ 
+ 
+#container img{
+position: absolute;
+top: 0px;
+height: 150px;
+width: 150px;
+cursor: pointer;
+overflow: hidden;
+}
+ 
+#carouselLeft{
+position: absolute;
+top: 60px;
+left: 0px;
+cursor: pointer;
+}
+
+#carouselRight{
+position: absolute;
+top: 60px;
+left: 540px;
+cursor: pointer;
+}

@@ -2,13 +2,38 @@
 /* @var $this SiteController */
 
 $this->pageTitle=Yii::app()->name;
-
+$cs=Yii::app()->clientScript;
+$cs->registerCssFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'css/carousel.css');
+$cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/jquery-1.9.1.min.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/gallery.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/click-carousel.js');
 
 ?>
 
+<script type="text/javascript">
+$(function(){
+	$("#container").clickCarousel({margin: 10});	
+});
+</script>  
 <h1>Добро пожаловать в молодежный <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 <p>bla-bla-bla</p>
+<!--<iframe id="mainImg" onload="scanImage(scrollPhotos);"  width="1" height="1" style="border: 0;">
+</iframe>-->
+<div id="wrapper"> 
+	<div id="container">   	
+		<?php 
+			foreach ($listImg['href'] as $key=>$val)
+			{
+				$src = preg_replace('/(preview)/i','big',$val);
+				echo "<img src='$src'/>";
+			}
+		 ?>
+		
+    </div><!-- container -->
+	<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/leftArr.jpg'?>" alt="Left Arrow" />
+	<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/rightArr.jpg'?>" alt="Right Arrow" />
+</div>
 
 <p>You may change the content of this page by modifying the following two files:</p>
 <ul>
