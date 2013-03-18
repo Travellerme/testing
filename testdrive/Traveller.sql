@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 28 2013 г., 22:25
+-- Время создания: Мар 18 2013 г., 17:46
 -- Версия сервера: 5.5.29
--- Версия PHP: 5.3.10-1ubuntu3.5
+-- Версия PHP: 5.3.10-1ubuntu3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS `tbl_event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `imgUrl` varchar(100) NOT NULL,
-  `timeStart` datetime NOT NULL,
-  `timeEnd` datetime NOT NULL,
+  `timeStart` int(11) NOT NULL,
+  `timeEnd` int(11) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS `tbl_event` (
 --
 
 INSERT INTO `tbl_event` (`id`, `title`, `imgUrl`, `timeStart`, `timeEnd`, `description`) VALUES
-(1, 'title_1', 'image.png', '2013-07-03 11:00:00', '2013-07-03 13:16:00', 'desc_1'),
-(2, 'title_2', 'Image2.png', '2013-07-05 12:05:00', '2013-07-05 13:20:00', 'desc_2'),
-(3, 'title_3', 'image3.png', '2013-07-07 12:07:00', '2013-07-07 15:21:00', 'desc_3');
+(1, 'title_1', 'image.png', 1372850100, 1372865400, 'desc_1'),
+(2, 'title_2', 'Image2.png', 1373045700, 1373053020, 'desc_2'),
+(3, 'title_3', 'image3.png', 1373199000, 1373209200, 'desc_3');
 
 -- --------------------------------------------------------
 

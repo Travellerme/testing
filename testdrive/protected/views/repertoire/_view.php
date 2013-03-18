@@ -13,11 +13,11 @@
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('timeStart')); ?>:</b>
-	<?php echo CHtml::encode($data->timeStart); ?>
+	<?php echo CHtml::encode(date('d.m.Y - H:i',$data->timeStart)); ?>
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('timeEnd')); ?>:</b>
-	<?php echo CHtml::encode($data->timeEnd); ?>
+	<?php echo CHtml::encode(date('d.m.Y - H:i',$data->timeEnd)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
