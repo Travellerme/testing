@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Мар 18 2013 г., 17:46
+-- Время создания: Мар 18 2013 г., 23:47
 -- Версия сервера: 5.5.29
 -- Версия PHP: 5.3.10-1ubuntu3.6
 
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tbl_event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `imgUrl` varchar(100) NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `imgUrl` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `timeStart` int(11) NOT NULL,
   `timeEnd` int(11) NOT NULL,
-  `description` text NOT NULL,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -44,6 +44,28 @@ INSERT INTO `tbl_event` (`id`, `title`, `imgUrl`, `timeStart`, `timeEnd`, `descr
 (1, 'title_1', 'image.png', 1372850100, 1372865400, 'desc_1'),
 (2, 'title_2', 'Image2.png', 1373045700, 1373053020, 'desc_2'),
 (3, 'title_3', 'image3.png', 1373199000, 1373209200, 'desc_3');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tbl_news`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `partDescription` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `fullDescription` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `tbl_news`
+--
+
+INSERT INTO `tbl_news` (`id`, `title`, `partDescription`, `fullDescription`, `date`) VALUES
+(1, 'Новость_1', 'Это тестовое описание. Проверяется кодировка. Данное описание является частью', 'Это тестовое описание. Проверяется кодировка. Данное описание является частью.\r\n\r\nА данное является полным. Дополняет частичное', 1373903700);
 
 -- --------------------------------------------------------
 
