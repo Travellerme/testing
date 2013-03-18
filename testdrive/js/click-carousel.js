@@ -396,7 +396,14 @@ jQuery.fn.clickCarousel = function(options)
 						scroller.scroll();			
 					}
 				});				
-			}			
+			}	
+			setInterval(function() 
+			{
+				scroller.getIndexes("right");	
+				scroller.scroll();
+
+			}, 7000)
+					
 			
 };
 

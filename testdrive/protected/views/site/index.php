@@ -11,15 +11,14 @@ $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/click-carous
 ?>
 
 <script type="text/javascript">
+	
 $(function(){
 	$("#container").clickCarousel({margin: 10});	
 });
-</script>  
-<h1>Добро пожаловать в молодежный <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>bla-bla-bla</p>
-<!--<iframe id="mainImg" onload="scanImage(scrollPhotos);"  width="1" height="1" style="border: 0;">
-</iframe>-->
+</script>  
+<h1>Добро пожаловать в молодежный "Театр Остров"</h1>
+
 <div id="wrapper"> 
 	<div id="container">   	
 		<?php 

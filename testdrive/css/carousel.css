@@ -19,14 +19,14 @@ overflow: hidden;
  
 #carouselLeft{
 position: absolute;
-top: 305px;
+top: 275px;
 left: 185px;
 cursor: pointer;
 }
 
 #carouselRight{
 position: absolute;
-top: 305px;
+top: 275px;
 left: 870px;
 cursor: pointer;
 }

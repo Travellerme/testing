@@ -32,32 +32,8 @@ function scrollPhotos(data)
 	$('#scrollImages').html(str);*/
 	/*setInterval(function() 
 	{
-		str = ''; 
-		for(var i=0; i < 3; i++) 
-		{alert(firstImg);
-						
-			if (firstImg >= cnt)
-			{
-				firstImg = firstImg - cnt;
-			}
-			str += '<img src="' + data['href'][firstImg].replace(reg,'') +
-			 '" class="imgGallery" onclick="viewImg('+firstImg+','+cnt+');" id=\'img'
-			 +firstImg+'\'> ';
-			/*if(firstImg < 2)
-			{
-				firstImg += cnt-3; 
-			}
-			 
-			str += '<img src="' + data['href'][(firstImg-2)].replace(reg,'') +
-			 '" class="imgGallery" onclick="viewImg('+(firstImg-2)+','+cnt+');" id=\'img'
-			 +(firstImg-2)+'\'> ';*/
-			/*firstImg++;
 			
-		}
-		
-		$('#scrollImages').html(str);
-		
-		
+			
 	}, 1000)*/
 	
 }
