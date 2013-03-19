@@ -5,21 +5,16 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
-	<?php echo CHtml::encode($data->date); ?>
-	<?php echo CHtml::encode($data->title); ?>
+	[<?php echo date('d.m.Y] [H:i',$data->date); ?>]&nbsp;
+	<b><?php echo CHtml::encode($data->title); ?></b>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('partDescription')); ?>:</b>
-	<?php echo CHtml::encode($data->partDescription); ?>
-	<br />
-
-	<b><?php //echo CHtml::encode($data->getAttributeLabel('fullDescription')); ?>:</b>
-	<?php //echo CHtml::encode($data->fullDescription); ?>
-	<br />
-
+	<?php echo CHtml::encode($data->partDescription); 
+		if(iconv_strlen($data->partDescription,'UTF-8') < iconv_strlen($data->fullDescription))
+			echo '...';
+	?>
+	<br /><br />
 	
-
 	<?php echo CHtml::link('read more', array('view', 'id'=>$data->id)); ?>
 	<br />
 

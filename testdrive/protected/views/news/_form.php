@@ -21,12 +21,7 @@
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'partDescription'); ?>
-		<?php echo $form->textField($model,'partDescription',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'partDescription'); ?>
-	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'fullDescription'); ?>
 		<?php echo $form->textArea($model,'fullDescription',array('rows'=>6, 'cols'=>50)); ?>

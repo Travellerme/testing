@@ -37,9 +37,9 @@ class News extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('partDescription, fullDescription, date, title', 'required'),
-			array('date', 'numerical', 'integerOnly'=>true),
-			array('partDescription', 'length', 'max'=>255),
+			array('fullDescription, date, title', 'required'),
+			array('date', 'date', 'format'=>'dd/MM/yyyy H/m', 'message'=>'Incorrect format Date row. It must be dd/MM/yyyy H/m'),
+			//array('partDescription', 'length', 'max'=>255),
 			array('partDescription', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -56,6 +56,21 @@ class News extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 		);
+	}
+	
+	public function beforeSave()
+	{
+		if($this->date)
+				$this->date = $this->transformDate();
+		if($this->fullDescription)
+					$this->partDescription = $this->fullDescription;
+		return parent::beforeSave();
+	}
+	
+	private function transformDate()
+	{
+		$timestamp=CDateTimeParser::parse($this->date,'dd/MM/yyyy H/m');
+		return $timestamp;
 	}
 
 	/**
@@ -87,7 +102,7 @@ class News extends CActiveRecord
 		$criteria->compare('partDescription',$this->partDescription,true);
 		$criteria->compare('fullDescription',$this->fullDescription,true);
 		$criteria->compare('date',$this->date);
-		//$criteria->compare('title',$this->title,true);
+		$criteria->compare('title',$this->title,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

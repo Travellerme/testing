@@ -49,7 +49,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'title',
 		'partDescription',
 		'fullDescription',
-		'date',
+		array(
+			'name'=>'date',
+			'value'=>'date("d/m/Y H/i",$data->date)',
+		),
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'News'=>array('index'),
-	$model->id,
+	$model->title,
 );
 
 $this->menu=array(
@@ -16,9 +16,12 @@ $this->menu=array(
 );
 ?>
 
-<h1>View News #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->title; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+[<?php echo date('d.m.Y] [H:i',$model->date); ?>] <br />
+<?php echo CHtml::encode($model->fullDescription); ?> <br /><br />
+<?php 
+	/*$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
@@ -27,4 +30,5 @@ $this->menu=array(
 		'fullDescription',
 		'date',
 	),
-)); ?>
+));*/ ?>
+<?php echo CHtml::link('back', array('index')); ?>
