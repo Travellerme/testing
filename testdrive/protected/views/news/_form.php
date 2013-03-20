@@ -20,10 +20,9 @@
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
-
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'fullDescription'); ?>
+		<?php echo $form->labelEx($model,'Description'); ?>
 		<?php echo $form->textArea($model,'fullDescription',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'fullDescription'); ?>
 	</div>

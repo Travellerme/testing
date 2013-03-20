@@ -16,9 +16,9 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo $model->title; ?></h1>
+<h1><?php  $model->title; ?></h1>
 
-[<?php echo date('d.m.Y] [H:i',$model->date); ?>] <br />
+[<?php echo $model->date; ?>] <br />
 <?php echo CHtml::encode($model->fullDescription); ?> <br /><br />
 <?php 
 	/*$this->widget('zii.widgets.CDetailView', array(

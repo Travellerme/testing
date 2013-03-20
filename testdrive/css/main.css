@@ -229,36 +229,46 @@ body
 	  border-right:1px solid #E8E8E8;
 	}
 	 
-	.nav > li:hover{background-color:#E8E8E8;}
+.nav > li:hover{background-color:#E8E8E8;}
 	 
-	.nav > li > a{
+.nav > li > a{
 	  font:14px "Geargia";
 	  color:#000000;
 	  text-decoration:none;
 	  text-transform:uppercase;
-	}
+}
 .nav li ul{
 	  margin-top:10px;
 	  background-color:#ffffff;
 	  border:1px solid #E8E8E8;
-	}
+}
 	 
-	.nav li ul li{
+.nav li ul li{
 	  text-align:left;
 	  padding:5px 5px 5px 15px;
-	}
+}
 	 
-	.nav li ul li a{
+.nav li ul li a{
 	  font:14px "Geargia";
 	  color:#000000;
 	  text-decoration:none;
-	}
+}
 	 
-	.nav li ul li a:hover{
+.nav li ul li a:hover{
 	  font:14px "Geargia";
 	  color:#553CCF;
 	  text-decoration:none;
-	}
+}
+.imageEvent
+{
+	position:relative;
+	width: 500px;
+	left: 190px;
+}
+.noImage
+{
+	width: 30%;
+}
 div.flash-error, div.flash-notice, div.flash-success
 {
 	padding:.8em;

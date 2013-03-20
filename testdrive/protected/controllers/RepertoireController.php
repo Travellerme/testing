@@ -103,22 +103,20 @@ class RepertoireController extends Controller
 		));
 	}
 	
-	public function titleImage($name, $width='90%', $class='image')
+	public function titleImage($name, $class='imageEvent')
 	{
 			if (file_exists(Yii::getPathOfAlias('webroot') . '/images/' . $name) && (bool)$name)
 			{
 				return Chtml::image(Yii::app()->baseUrl . '/images/' . $name,$name,
 					array(
-					'width'=>$width,
-			 		'class'=>$class,
+						'class'=>$class,
 				));
 			}
 			else
 			{
 				return CHtml::image(Yii::app()->baseUrl . '/images/no_photo.gif','No photo',
 					array(
-					'width'=>'30%',
-					'class'=>$class
+						'class'=>'noImage'
 				));
 			}
 	}

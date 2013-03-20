@@ -10,13 +10,12 @@ if (Yii::app()->user->name != 'admin')
 {
 	$this->layout = '//layouts/column1';
 }
-else
-{
-	$this->menu=array(
-		array('label'=>'Create Repertoire', 'url'=>array('create')),
-		array('label'=>'Manage Repertoire', 'url'=>array('admin')),
-	);
-}
+
+$this->menu=array(
+	array('label'=>'Create Repertoire', 'url'=>array('create')),
+	array('label'=>'Manage Repertoire', 'url'=>array('admin')),
+);
+
 
 ?>
 

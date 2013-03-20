@@ -5,11 +5,11 @@
 
 <div class="view">
 		
-	<?php echo $this->titleImage($data->imgUrl); ?> <br />
+
+	<h3 align="center"><?php echo CHtml::encode($data->title); ?></h3><br />
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
-	<?php echo CHtml::encode($data->title); ?>
+	<?php echo $this->titleImage($data->imgUrl); ?> <br />
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('timeStart')); ?>:</b>

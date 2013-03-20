@@ -5,7 +5,10 @@
 $this->breadcrumbs=array(
 	'News',
 );
-
+if (Yii::app()->user->name != 'admin')
+{
+	$this->layout = '//layouts/column1';
+}
 $this->menu=array(
 	array('label'=>'Create News', 'url'=>array('create')),
 	array('label'=>'Manage News', 'url'=>array('admin')),
@@ -17,4 +20,6 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'sorterHeader'=>'Sort by : ',
+	'sortableAttributes'=>array('title','date'),
 )); ?>

@@ -5,7 +5,7 @@
 
 <div class="view">
 
-	[<?php echo date('d.m.Y] [H:i',$data->date); ?>]&nbsp;
+	[<?php echo $data->date; ?>]&nbsp;
 	<b><?php echo CHtml::encode($data->title); ?></b>
 	<br />
 	

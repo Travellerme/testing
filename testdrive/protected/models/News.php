@@ -39,8 +39,6 @@ class News extends CActiveRecord
 		return array(
 			array('fullDescription, date, title', 'required'),
 			array('date', 'date', 'format'=>'dd/MM/yyyy H/m', 'message'=>'Incorrect format Date row. It must be dd/MM/yyyy H/m'),
-			//array('partDescription', 'length', 'max'=>255),
-			array('partDescription', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, partDescription, fullDescription, title, date', 'safe', 'on'=>'search'),
@@ -65,6 +63,13 @@ class News extends CActiveRecord
 		if($this->fullDescription)
 					$this->partDescription = $this->fullDescription;
 		return parent::beforeSave();
+	}
+	
+	public function afterFind()
+	{
+		if($this->date)
+				$this->date = date("d/m/Y H/i",$this->date);
+		return parent::afterFind();
 	}
 	
 	private function transformDate()
@@ -106,6 +111,9 @@ class News extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+				'pageSize'=>11,
+			)
 		));
 	}
 }

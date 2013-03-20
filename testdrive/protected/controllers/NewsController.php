@@ -123,6 +123,12 @@ class NewsController extends Controller
 	 */
 	public function actionIndex()
 	{
+		/* testing cdbcommand
+		$connection = Yii::app()->db;
+		$sql = 'select * from tbl_news n, tbl_test t where n.id=t.id';
+		$command = $connection->createCommand($sql);
+		$result = $command->queryAll();
+		*/
 		$dataProvider=new CActiveDataProvider('News');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

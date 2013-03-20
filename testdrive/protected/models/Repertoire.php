@@ -66,8 +66,8 @@ class Repertoire extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'imgUrl' => 'Image url',
-			'timeStart' => 'Start time',
-			'timeEnd' => 'End time',
+			'timeStart' => 'Event beginning',
+			'timeEnd' => 'Ending event',
 			'description' => 'Description',
 		);
 	}
