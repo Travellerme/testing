@@ -103,7 +103,7 @@ class RepertoireController extends Controller
 		));
 	}
 	
-	public function titleImage($name, $class='imageEvent')
+	/*public function titleImage($name, $class='imageEvent')
 	{
 			if (file_exists(Yii::getPathOfAlias('webroot') . '/images/' . $name) && (bool)$name)
 			{
@@ -119,7 +119,7 @@ class RepertoireController extends Controller
 						'class'=>'noImage'
 				));
 			}
-	}
+	}*/
 
 	/**
 	 * Deletes a particular model.

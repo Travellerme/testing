@@ -17,11 +17,6 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->label($model,'imgUrl'); ?>
-		<?php echo $form->textField($model,'imgUrl'); ?>
-	</div>
-	
-	<div class="row">
 		<?php echo $form->label($model,'title'); ?>
 		<?php echo $form->textField($model,'title'); ?>
 	</div>
@@ -34,11 +29,6 @@
 	<div class="row">
 		<?php echo $form->label($model,'timeEnd'); ?>
 		<?php echo $form->textField($model,'timeEnd'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row buttons">

@@ -39,10 +39,11 @@ class Repertoire extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('timeStart, timeEnd, description', 'required'),
+			array('timeStart, timeEnd, description, title, status, category_id', 'required'),
+			array('timeStart, timeEnd,', 'date', 'format'=>'d.m.Y H:i', 'message'=>'Incorrect format Date row. It must be d.m.Y H:i'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, imgUrl, timeStart, timeEnd, description', 'safe', 'on'=>'search'),
+			array('id, title, imgUrl, timeStart, timeEnd, created, status, category_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +55,7 @@ class Repertoire extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'category' => array(self::BELONGS_TO,'Category','category_id'),
 		);
 	}
 	
@@ -69,9 +71,44 @@ class Repertoire extends CActiveRecord
 			'timeStart' => 'Event beginning',
 			'timeEnd' => 'Ending event',
 			'description' => 'Description',
+			'category_id' => 'Category',
 		);
 	}
-
+	
+	public function afterFind()
+	{
+		$dateFormat = "d.m.Y H:i";
+		if($this->timeStart)
+			$this->timeStart = date($dateFormat,$this->timeStart);
+			
+		if($this->timeEnd)
+			$this->timeEnd = date($dateFormat,$this->timeEnd);
+			
+		if($this->created)
+			$this->created = date($dateFormat,$this->created);
+			echo 123;
+		return parent::afterFind();
+	}
+	
+	private function transformDate($date)
+	{
+		$timestamp=CDateTimeParser::parse($date,'d.m.Y H:i');
+		return $timestamp;
+	}
+	
+	public function beforeSave()
+	{
+		if($this->isNewRecord)
+			$this->created = time();
+			
+		if($this->timeStart)
+			$this->timeStart = $this->transformDate($this->timeStart);
+			
+		if($this->timeEnd)
+			$this->timeEnd = $this->transformDate($this->timeEnd);
+			
+		return parent::beforeSave();
+	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -86,7 +123,7 @@ class Repertoire extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('timeStart',$this->timeStart);
 		$criteria->compare('title',$this->title);
-		$criteria->compare('imgUrl',$this->imgUrl);
+		$criteria->compare('status',$this->status);
 		$criteria->compare('timeEnd',$this->timeEnd);
 		$criteria->compare('description',$this->description,true);
 

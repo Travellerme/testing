@@ -57,8 +57,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'title',
 		'timeStart',
 		'timeEnd',
-		'imgUrl',
-		'description',
 		array(
 			'class'=>'CButtonColumn',
 		),

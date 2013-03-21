@@ -38,7 +38,7 @@ class News extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('fullDescription, date, title', 'required'),
-			array('date', 'date', 'format'=>'dd/MM/yyyy H/m', 'message'=>'Incorrect format Date row. It must be dd/MM/yyyy H/m'),
+			array('date', 'date', 'format'=>'d.m.Y H:i', 'message'=>'Incorrect format Date row. It must be d.m.Y H:i'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, partDescription, fullDescription, title, date', 'safe', 'on'=>'search'),
@@ -68,13 +68,13 @@ class News extends CActiveRecord
 	public function afterFind()
 	{
 		if($this->date)
-				$this->date = date("d/m/Y H/i",$this->date);
+				$this->date = date("d.m.Y H:i",$this->date);
 		return parent::afterFind();
 	}
 	
 	private function transformDate()
 	{
-		$timestamp=CDateTimeParser::parse($this->date,'dd/MM/yyyy H/m');
+		$timestamp=CDateTimeParser::parse($this->date,'d.m.Y H:i');
 		return $timestamp;
 	}
 
