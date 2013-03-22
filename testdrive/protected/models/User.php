@@ -80,11 +80,19 @@ class User extends CActiveRecord
 			'new_password' => 'New password',
 			'new_confirm' => 'Confirm password',
 			'email' => 'Email',
+			'ban' => 'Ban',
+			'role' => 'Role',
 		);
 	}
 	
 	protected function beforeSave() 
 	{ 
+		if($this->isNewRecord)
+		{
+			$this->created = time();
+			$this->ban = 0;
+		}
+			
 		if ($this->new_password) 
 			$this->password = $this->hashPassword($this->new_password);
 		return parent::beforeSave();
@@ -143,7 +151,17 @@ class User extends CActiveRecord
 		$this->salt = $salt;
 		return $salt;
 	}
+	
+	public function afterFind()
+	{
+		$dateFormat = "d.m.Y H:i";
+				
+		if($this->created)
+			$this->created = date($dateFormat,$this->created);
 
+		return parent::afterFind();
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -158,6 +176,8 @@ class User extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('ban',$this->ban);
+		$criteria->compare('role',$this->role);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

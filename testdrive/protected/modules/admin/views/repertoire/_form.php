@@ -22,12 +22,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'imgUrl'); ?>
-		<?php echo $form->textField($model,'imgUrl',array('size'=>30,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'imgUrl'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'timeStart'); ?>
 		<?php echo $form->textField($model,'timeStart'); ?>
 		<?php echo $form->error($model,'timeStart'); ?>

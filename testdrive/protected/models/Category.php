@@ -53,6 +53,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'repertoire'   => array(self::HAS_MANY,   'Repertoire',    'category_id'),
 		);
 	}
 
@@ -63,20 +64,14 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'titleCategory' => 'Title',
 			'position' => 'Position',
 		);
 	}
 	
 	public static function allCategories()
 	{
-		$category = self::model()->findAll();
-		$result = array();
-		foreach ($category as $key)
-		{
-			$result[$key->id] = $key->title;
-		}
-		return $result;
+		return Chtml::listData(self::model()->findAll(),'id','titleCategory');
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -90,7 +85,7 @@ class Category extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('titleCategory',$this->titleCategory,true);
 		$criteria->compare('position',$this->position,true);
 
 		return new CActiveDataProvider($this, array(

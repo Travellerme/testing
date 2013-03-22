@@ -52,7 +52,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		array(
 			'name' => 'id',
-			'headerHtmlOptions' => array('width' => 30),
+			'headerHtmlOptions' => array('width' => 20),
 		),
 		'title',
 		'timeStart',

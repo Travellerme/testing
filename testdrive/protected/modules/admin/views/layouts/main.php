@@ -40,7 +40,7 @@
 						array('label'=>Yii::t("main", "News"), 'url'=>array('/news/index')),
 						array('label'=>Yii::t("main", "Repertoire"), 'url'=>array('/admin/repertoire'))
 					)),
-				array('label'=>Yii::t("main", "Users"), 'url'=>array('/user/index'), 'visible'=>Yii::app()->user->name == 'admin'),
+				array('label'=>Yii::t("main", "Users"), 'url'=>array('/admin/user')),
 				array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 				
 				

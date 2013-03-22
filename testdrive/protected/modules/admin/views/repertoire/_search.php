@@ -18,32 +18,17 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'timeStart'); ?>
-		<?php echo $form->textField($model,'timeStart'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'timeEnd'); ?>
-		<?php echo $form->textField($model,'timeEnd'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'created'); ?>
-		<?php echo $form->textField($model,'created'); ?>
+		<?php echo $form->textField($model,'title',array('size'=>30,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>'hide',1=>'show')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'category_id'); ?>
-		<?php echo $form->textField($model,'category_id'); ?>
+		<?php echo $form->dropDownList($model,'category_id', Category::allCategories(), array('empty'=>'')); ?>
 	</div>
 
 	<div class="row buttons">

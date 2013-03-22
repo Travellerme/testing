@@ -55,10 +55,25 @@ class Repertoire extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'category' => array(self::BELONGS_TO,'Category','category_id'),
+			'category'=>array(self::BELONGS_TO,'Category','category_id'),
 		);
 	}
 	
+	/*public function findCaregory()
+	{
+		$connection = Yii::app()->db;
+		$sql = 'select c.id, c.title 
+			from tbl_event e, tbl_category c where e.category_id=c.id';
+		$command = $connection->createCommand($sql);
+		$query = $command->queryAll();
+		$result = array();
+		foreach ($query as $key)
+		{
+			$result[$key['id']] = $key['title'];
+		}
+		return $result;
+		
+	}*/
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -86,7 +101,7 @@ class Repertoire extends CActiveRecord
 			
 		if($this->created)
 			$this->created = date($dateFormat,$this->created);
-			echo 123;
+
 		return parent::afterFind();
 	}
 	
@@ -125,6 +140,7 @@ class Repertoire extends CActiveRecord
 		$criteria->compare('title',$this->title);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('timeEnd',$this->timeEnd);
+		$criteria->compare('category_id',$this->category_id);
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(

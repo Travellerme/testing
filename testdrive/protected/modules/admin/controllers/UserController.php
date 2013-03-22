@@ -1,6 +1,6 @@
 <?php
 
-class RepertoireController extends Controller
+class UserController extends Controller
 {
 	
 	/**
@@ -23,15 +23,15 @@ class RepertoireController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('create'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
 				'users'=>array('@'),
-			),
+			),*/
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('index','view','admin','delete','update','password'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -44,12 +44,12 @@ class RepertoireController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	/*public function actionView($id)
+	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}*/
+	}
 
 	/**
 	 * Creates a new model.
@@ -57,16 +57,16 @@ class RepertoireController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Repertoire;
+		$model=new User;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Repertoire']))
+		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['Repertoire'];
+			$model->attributes=$_POST['User'];
 			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -86,18 +86,33 @@ class RepertoireController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Repertoire']))
+		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['Repertoire'];
+			$model->attributes=$_POST['User'];
 			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
 		));
 	}
-
+	
+	public function actionPassword($id)
+	{
+		$model = $this->loadModel($id);
+		
+		if(isset($_POST['User']))
+		{
+			$model->attributes = $_POST['User'];
+			if($model->save())
+				$this->redirect(array('password','id'=>$model->id));
+		}
+		$this->render('password',array(
+			'model'=>$model,
+		));
+	}
+	
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -109,22 +124,20 @@ class RepertoireController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	
-
 	/**
 	 * Manages all models.
 	 */
 	public function actionIndex()
 	{
-		$model=new Repertoire('search');
-		
+		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Repertoire']))
-			$model->attributes=$_GET['Repertoire'];
-		
+		if(isset($_GET['User']))
+			$model->attributes=$_GET['User'];
+
 		$this->render('index',array(
 			'model'=>$model,
 		));
@@ -134,12 +147,12 @@ class RepertoireController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Repertoire the loaded model
+	 * @return User the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Repertoire::model()->findByPk($id);
+		$model=User::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -147,11 +160,11 @@ class RepertoireController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Repertoire $model the model to be validated
+	 * @param User $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='repertoire-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

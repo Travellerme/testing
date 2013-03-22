@@ -44,10 +44,19 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		'id'=>array(
+			'name'=>'id',
+			'headerHtmlOptions'=>array('width' => 20),
+		),
 		'title',
-		'timeStart',
-		'timeEnd',
+		'timeStart'=>array(
+			'name'=>'timeStart',
+			'filter'=>false,
+		),
+		'timeEnd'=>array(
+			'name'=>'timeEnd',
+			'filter'=>false,
+		),
 		'created'=>array(
 			'name'=>'created',
 			'filter'=>false,
@@ -59,7 +68,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'category_id'=>array(
 			'name'=>'category_id',
-			'value'=>'$data->category->title',
+			//'value'=>'$data->category->titleCategory',
+			'filter'=>Category::allCategories(),
 		),
 		array(
 			'class'=>'CButtonColumn',
