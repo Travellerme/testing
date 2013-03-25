@@ -68,7 +68,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'category_id'=>array(
 			'name'=>'category_id',
-			//'value'=>'$data->category->titleCategory',
+			//'value'=>'$data->categoryName->titleCategory',
 			'filter'=>Category::allCategories(),
 		),
 		array(

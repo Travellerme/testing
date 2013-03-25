@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Categories'=>array('index'),
-	$model->title=>array('index','id'=>$model->id),
+	$model->titleCategory=>array('index','id'=>$model->id),
 	'Update',
 );
 

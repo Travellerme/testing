@@ -36,12 +36,12 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, position', 'required'),
-			array('title', 'length', 'max'=>255),
+			array('titleCategory, position', 'required'),
+			array('titleCategory', 'length', 'max'=>255),
 			array('position', 'length', 'max'=>8),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, position', 'safe', 'on'=>'search'),
+			array('id, titleCategory, position', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +73,18 @@ class Category extends CActiveRecord
 	{
 		return Chtml::listData(self::model()->findAll(),'id','titleCategory');
 	}
+	
+	public static function menu($position)
+	{
+		$models = self::model()->findAllByAttributes(array('position'=>$position));
+		$result = array();
+		foreach($models as $key)
+		{
+			$result[] = array('label' => $key->titleCategory, 'url' => array('/'));
+		}
+		return $result;
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

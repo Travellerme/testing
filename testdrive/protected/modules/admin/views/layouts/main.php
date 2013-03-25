@@ -37,10 +37,12 @@
 					)),
 				array('label'=>Yii::t("main", "Category"), 'url'=>array('/admin/category'),
 					'items'=>array(
-						array('label'=>Yii::t("main", "News"), 'url'=>array('/news/index')),
+						array('label'=>Yii::t("main", "News"), 'url'=>array('/admin/news')),
 						array('label'=>Yii::t("main", "Repertoire"), 'url'=>array('/admin/repertoire'))
 					)),
 				array('label'=>Yii::t("main", "Users"), 'url'=>array('/admin/user')),
+				array('label'=>Yii::t("main", "Comments"), 'url'=>array('/admin/comment')),
+				array('label'=>Yii::t("main", "Settings"), 'url'=>array('/admin/setting')),
 				array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 				
 				

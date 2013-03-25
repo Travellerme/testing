@@ -55,7 +55,7 @@ class Repertoire extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'category'=>array(self::BELONGS_TO,'Category','category_id'),
+			'categoryName' => array(self::BELONGS_TO,'Category','category_id'),
 		);
 	}
 	
@@ -114,8 +114,10 @@ class Repertoire extends CActiveRecord
 	public function beforeSave()
 	{
 		if($this->isNewRecord)
+		{
 			$this->created = time();
-			
+			$this->status = 0;
+		}
 		if($this->timeStart)
 			$this->timeStart = $this->transformDate($this->timeStart);
 			
@@ -123,6 +125,11 @@ class Repertoire extends CActiveRecord
 			$this->timeEnd = $this->transformDate($this->timeEnd);
 			
 		return parent::beforeSave();
+	}
+	
+	public static function allEvents()
+	{
+		return Chtml::listData(self::model()->findAll(),'id','title');
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

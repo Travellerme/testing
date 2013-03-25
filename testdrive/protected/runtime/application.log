@@ -7030,3 +7030,413 @@ in /var/www/testdrive/index.php (14)
 2013/03/22 22:04:43 [warning] [application] Не удалось присвоить небезопасный атрибут "role" класса "User".
 in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (139)
 in /var/www/testdrive/index.php (14)
+2013/03/25 16:21:37 [error] [php] Trying to get property of non-object (/var/www/YiiRoot/framework/base/CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 /var/www/YiiRoot/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#2 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#3 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#4 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#7 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#8 /var/www/YiiRoot/framework/web/CBaseController.php(173): CGridView->run()
+#9 /var/www/testdrive/protected/modules/admin/views/repertoire/index.php(79): RepertoireController->widget()
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#11 /var/www/YiiRoot/framework/web/CBaseController.php(95): RepertoireController->renderInternal()
+#12 /var/www/YiiRoot/framework/web/CController.php(869): RepertoireController->renderFile()
+#13 /var/www/YiiRoot/framework/web/CController.php(782): RepertoireController->renderPartial()
+#14 /var/www/testdrive/protected/modules/admin/controllers/RepertoireController.php(130): RepertoireController->render()
+#15 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): RepertoireController->actionIndex()
+#16 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): RepertoireController->runAction()
+#18 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): RepertoireController->filterAccessControl()
+#21 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/YiiRoot/framework/web/CController.php(265): RepertoireController->runActionWithFilters()
+#24 /var/www/YiiRoot/framework/web/CWebApplication.php(282): RepertoireController->run()
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/repertoire
+in /var/www/testdrive/protected/modules/admin/views/repertoire/index.php (79)
+in /var/www/testdrive/protected/modules/admin/controllers/RepertoireController.php (130)
+in /var/www/testdrive/index.php (14)
+2013/03/25 16:30:30 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'Traveller.comment' doesn't exist. Выполнявшийся SQL-запрос: SHOW FULL COLUMNS FROM `comment`.
+in /var/www/testdrive/index.php (14)
+2013/03/25 16:44:09 [error] [php] include(USER.php): failed to open stream: No such file or directory (/var/www/YiiRoot/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(386): spl_autoload_call()
+#1 /var/www/YiiRoot/framework/db/ar/CActiveFinder.php(215): model()
+#2 /var/www/YiiRoot/framework/db/ar/CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(271): CActiveFinder->__construct()
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(141): Comment->getRelated()
+#5 /var/www/YiiRoot/framework/base/CComponent.php(606) : eval()'d code(1): Comment->__get()
+#6 /var/www/YiiRoot/framework/base/CComponent.php(606): eval()
+#7 /var/www/YiiRoot/framework/zii/widgets/grid/CDataColumn.php(131): CDataColumn->evaluateExpression()
+#8 /var/www/YiiRoot/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#9 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#10 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#11 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#12 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#13 unknown(0): CGridView->renderSection()
+#14 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#15 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#16 /var/www/YiiRoot/framework/web/CBaseController.php(173): CGridView->run()
+#17 /var/www/testdrive/protected/modules/admin/views/comment/index.php(57): CommentController->widget()
+#18 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#19 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#20 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#21 /var/www/YiiRoot/framework/web/CController.php(782): CommentController->renderPartial()
+#22 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(128): CommentController->render()
+#23 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#24 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#25 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#26 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#27 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#28 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#29 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#30 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#31 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#32 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#33 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#34 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#35 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/index
+in /var/www/testdrive/protected/modules/admin/views/comment/index.php (57)
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (128)
+in /var/www/testdrive/index.php (14)
+2013/03/25 16:48:13 [error] [php] Trying to get property of non-object (/var/www/YiiRoot/framework/base/CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 /var/www/YiiRoot/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#2 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#3 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#4 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#7 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#8 /var/www/YiiRoot/framework/web/CBaseController.php(173): CGridView->run()
+#9 /var/www/testdrive/protected/modules/admin/views/repertoire/index.php(79): RepertoireController->widget()
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#11 /var/www/YiiRoot/framework/web/CBaseController.php(95): RepertoireController->renderInternal()
+#12 /var/www/YiiRoot/framework/web/CController.php(869): RepertoireController->renderFile()
+#13 /var/www/YiiRoot/framework/web/CController.php(782): RepertoireController->renderPartial()
+#14 /var/www/testdrive/protected/modules/admin/controllers/RepertoireController.php(130): RepertoireController->render()
+#15 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): RepertoireController->actionIndex()
+#16 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): RepertoireController->runAction()
+#18 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): RepertoireController->filterAccessControl()
+#21 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/YiiRoot/framework/web/CController.php(265): RepertoireController->runActionWithFilters()
+#24 /var/www/YiiRoot/framework/web/CWebApplication.php(282): RepertoireController->run()
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/repertoire/index
+in /var/www/testdrive/protected/modules/admin/views/repertoire/index.php (79)
+in /var/www/testdrive/protected/modules/admin/controllers/RepertoireController.php (130)
+in /var/www/testdrive/index.php (14)
+2013/03/25 16:51:50 [error] [php] Trying to get property of non-object (/var/www/YiiRoot/framework/base/CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 /var/www/YiiRoot/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#2 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#3 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#4 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#7 /var/www/YiiRoot/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#8 /var/www/YiiRoot/framework/web/CBaseController.php(173): CGridView->run()
+#9 /var/www/testdrive/protected/modules/admin/views/repertoire/index.php(79): RepertoireController->widget()
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#11 /var/www/YiiRoot/framework/web/CBaseController.php(95): RepertoireController->renderInternal()
+#12 /var/www/YiiRoot/framework/web/CController.php(869): RepertoireController->renderFile()
+#13 /var/www/YiiRoot/framework/web/CController.php(782): RepertoireController->renderPartial()
+#14 /var/www/testdrive/protected/modules/admin/controllers/RepertoireController.php(130): RepertoireController->render()
+#15 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): RepertoireController->actionIndex()
+#16 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): RepertoireController->runAction()
+#18 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): RepertoireController->filterAccessControl()
+#21 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/YiiRoot/framework/web/CController.php(265): RepertoireController->runActionWithFilters()
+#24 /var/www/YiiRoot/framework/web/CWebApplication.php(282): RepertoireController->run()
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/repertoire
+in /var/www/testdrive/protected/modules/admin/views/repertoire/index.php (79)
+in /var/www/testdrive/protected/modules/admin/controllers/RepertoireController.php (130)
+in /var/www/testdrive/index.php (14)
+2013/03/25 17:03:48 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CButtonColumn.uodateButtonOptions".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/YiiRoot/framework/YiiBase.php(220): CComponent->__set('uodateButtonOpt...', 'display:none')
+#1 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(334): CGridView->initColumns()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(147): CGridView->init()
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /var/www/testdrive/protected/modules/admin/views/comment/index.php(63): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#7 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#9 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#10 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(128): CController->render('index', Array)
+#11 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#12 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/comment/i...')
+#22 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/testdrive/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/testdrive/admin/comment/index
+---
+2013/03/25 17:04:36 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CButtonColumn.uodateButtonOptions".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/YiiRoot/framework/YiiBase.php(220): CComponent->__set('uodateButtonOpt...', Array)
+#1 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(334): CGridView->initColumns()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(147): CGridView->init()
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /var/www/testdrive/protected/modules/admin/views/comment/index.php(63): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#7 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#9 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#10 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(128): CController->render('index', Array)
+#11 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#12 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/comment/i...')
+#22 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/testdrive/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/testdrive/admin/comment/index
+---
+2013/03/25 17:04:43 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CButtonColumn.uopateButtonOptions".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/YiiRoot/framework/YiiBase.php(220): CComponent->__set('uopateButtonOpt...', Array)
+#1 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 /var/www/YiiRoot/framework/zii/widgets/grid/CGridView.php(334): CGridView->initColumns()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(147): CGridView->init()
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /var/www/testdrive/protected/modules/admin/views/comment/index.php(63): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#7 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#9 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#10 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(128): CController->render('index', Array)
+#11 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#12 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/comment/i...')
+#22 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/testdrive/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/testdrive/admin/comment/index
+---
+2013/03/25 20:22:29 [error] [php] Use of undefined constant Settings - assumed 'Settings' (/var/www/testdrive/protected/modules/admin/views/setting/index.php:8)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SettingController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SettingController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SettingController.php(22): SettingController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SettingController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SettingController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SettingController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SettingController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/setting
+in /var/www/testdrive/protected/modules/admin/views/setting/index.php (8)
+in /var/www/testdrive/protected/modules/admin/controllers/SettingController.php (22)
+in /var/www/testdrive/index.php (14)
+2013/03/25 20:33:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/setting/v...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/setting/view/id/1
+HTTP_REFERER=http://localhost/testdrive/admin/setting
+---
+2013/03/25 20:33:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/setting/v...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/setting/view/id/1
+HTTP_REFERER=http://localhost/testdrive/admin/setting
+---
+2013/03/25 21:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "admin".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('admin')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('admin')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/news/admi...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/news/admin
+HTTP_REFERER=http://localhost/testdrive/admin/news/create
+---
+2013/03/25 21:02:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "admin".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('admin')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('admin')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/news/admi...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/news/admin
+HTTP_REFERER=http://localhost/testdrive/admin/news/create
+---
+2013/03/25 22:17:52 [warning] [application] Не удалось присвоить небезопасный атрибут "titleCategory" класса "Category".
+in /var/www/testdrive/protected/modules/admin/controllers/CategoryController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/03/25 22:17:52 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Category.title".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('title')
+#1 /var/www/YiiRoot/framework/validators/CRequiredValidator.php(51): CActiveRecord->__get('title')
+#2 /var/www/YiiRoot/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Category), 'title')
+#3 /var/www/YiiRoot/framework/base/CModel.php(159): CValidator->validate(Object(Category), NULL)
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(794): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/modules/admin/controllers/CategoryController.php(57): CActiveRecord->save()
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/category/...')
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/admin/category/create
+HTTP_REFERER=http://localhost/testdrive/admin/category/create
+---
+2013/03/25 22:21:56 [warning] [application] Не удалось присвоить небезопасный атрибут "titleCategory" класса "Category".
+in /var/www/testdrive/protected/modules/admin/controllers/CategoryController.php (48)
+in /var/www/testdrive/index.php (14)
+2013/03/25 22:21:56 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Category.title".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('title')
+#1 /var/www/YiiRoot/framework/validators/CRequiredValidator.php(51): CActiveRecord->__get('title')
+#2 /var/www/YiiRoot/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Category), 'title')
+#3 /var/www/YiiRoot/framework/base/CModel.php(159): CValidator->validate(Object(Category), NULL)
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(794): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/modules/admin/controllers/CategoryController.php(49): CActiveRecord->save()
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/category/...')
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/admin/category/create
+HTTP_REFERER=http://localhost/testdrive/admin/category/create
+---
+2013/03/25 22:22:01 [warning] [application] Не удалось присвоить небезопасный атрибут "titleCategory" класса "Category".
+in /var/www/testdrive/protected/modules/admin/controllers/CategoryController.php (48)
+in /var/www/testdrive/index.php (14)
+2013/03/25 22:22:01 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Category.title".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('title')
+#1 /var/www/YiiRoot/framework/validators/CRequiredValidator.php(51): CActiveRecord->__get('title')
+#2 /var/www/YiiRoot/framework/validators/CValidator.php(213): CRequiredValidator->validateAttribute(Object(Category), 'title')
+#3 /var/www/YiiRoot/framework/base/CModel.php(159): CValidator->validate(Object(Category), NULL)
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(794): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/modules/admin/controllers/CategoryController.php(49): CActiveRecord->save()
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/category/...')
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/admin/category/create
+HTTP_REFERER=http://localhost/testdrive/admin/category/create
+---
+2013/03/25 22:43:28 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Category.title".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('title')
+#1 /var/www/testdrive/protected/models/Category.php(83): CActiveRecord->__get('title')
+#2 /var/www/testdrive/protected/views/layouts/column2.php(9): Category::menu('left')
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#5 /var/www/YiiRoot/framework/web/CController.php(784): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#6 /var/www/testdrive/protected/controllers/SiteController.php(45): CController->render('index', Array)
+#7 [internal function]: SiteController->actionIndex('images')
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#15 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#16 /var/www/testdrive/index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/testdrive/site/index
+HTTP_REFERER=http://localhost/testdrive/admin/category/index/id/4
+---
+2013/03/25 23:08:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "css/dot.gif".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('css/dot.gif')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/css/dot.gif
+HTTP_REFERER=http://localhost/testdrive/css/main.css
+---
