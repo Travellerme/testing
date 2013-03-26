@@ -14,9 +14,11 @@ $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/gallery.js')
 
 
 <h1>Photos</h1>
-<iframe id="mainImg" onload="scanImage(photos);"  width="1" height="1" style="border: 0;">
-</iframe>
+
 <div id="container">
+	<?php 
+			echo About::gallery($listImg);
+	 ?>
 </div>
 <div id="view">
 </div>

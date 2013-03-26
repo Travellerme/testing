@@ -59,5 +59,6 @@ img
 }
 .imgGallery
 {
-	width: 15%;
+	width: 150px;
+	margin:3px 0 0 3px;
 }

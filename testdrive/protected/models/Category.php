@@ -53,7 +53,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'repertoire'   => array(self::HAS_MANY,   'Repertoire',    'category_id'),
+			//'repertoire'   => array(self::HAS_MANY,   'Repertoire',    'category_id'),
 		);
 	}
 
@@ -80,7 +80,14 @@ class Category extends CActiveRecord
 		$result = array();
 		foreach($models as $key)
 		{
-			$result[] = array('label' => $key->titleCategory, 'url' => array('/'));
+			$result[] = array('label' => $key->titleCategory, 'url' => array('/page/index/id/'.$key->id));
+		}
+		if($position == 'top')
+		{
+			$result[] = array('label' =>Yii::t("main", "AdminControl"), 'url' => array('/admin'),'visible'=>Yii::app()->user->name == 'admin');
+			$result[] = array('label'=>Yii::t("main", "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
+			$result[] = array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
+			$result[] = array('label'=>Yii::t("main", "Registration"), 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest);
 		}
 		return $result;
 	}

@@ -1,6 +1,29 @@
 <?php
 class About extends CFormModel
 {
+	
+	public static function gallery($listImg)
+	{
+		$str = '';
+		$class = "imgGallery";
+		$cnt = count($listImg['href']);
+		for ($i=0; $i<$cnt; $i++)
+		{
+			if($i%4 == 0) 
+			{
+				$str .= '<br />';
+			}
+			//$src = preg_replace('/(preview)/i','big',$listImg['href'][$i]);
+			$src = $listImg['href'][$i];
+			$event = "viewImg($i,$cnt);";
+			$id='img'.$i;
+			$str .= "<img src=\"$src\" class=\"imgGallery\" onclick=\"$event\"
+				id=\"$id\" />";
+			
+		}
+		return $str;
+	}
+	
     public function searchImg($childDir)
     {
 		$dirSmall = Yii::app()->baseUrl . DIRECTORY_SEPARATOR

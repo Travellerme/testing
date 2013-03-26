@@ -27,28 +27,41 @@
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
+		<?php /*$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>Yii::t("main", "Home"), 'url'=>array('/site/index')),
+				array('label'=>Yii::t("main", "Page"), 'url'=>array('/page/index')),
 				array('label'=>Yii::t("main", "About"), 'url'=>array('/site/page', 'view'=>'about'),
 					'items'=>array(
-						array('label'=>'Photos', 'url'=>array('site/page', 'view'=>'photos')),
+						array('label'=>'Photos', 'url'=>array('site/photos', 'view'=>'photos')),
 						array('label'=>'Videos', 'url'=>array('site/page', 'view'=>'videos'))
 					)),
-				array('label'=>Yii::t("main", "Category"), 'url'=>array('/admin/category'),
-					'items'=>array(
-						array('label'=>Yii::t("main", "News"), 'url'=>array('/admin/news')),
-						array('label'=>Yii::t("main", "Repertoire"), 'url'=>array('/admin/repertoire'))
-					)),
-				array('label'=>Yii::t("main", "Users"), 'url'=>array('/admin/user')),
-				array('label'=>Yii::t("main", "Comments"), 'url'=>array('/admin/comment')),
-				array('label'=>Yii::t("main", "Settings"), 'url'=>array('/admin/setting')),
+				//array('label'=>Yii::t("main", "Contacts"), 'url'=>array('/site/contact')),
+				array('label'=>Yii::t("main", "News"), 'url'=>array('/news/index')),
+				array('label'=>Yii::t("main", "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>Yii::t("main", "Users"), 'url'=>array('/user/index'), 'visible'=>Yii::app()->user->name == 'admin'),
 				array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				
+				array('label'=>Yii::t("main", "Registration"), 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest),
 				
 			),
 			'htmlOptions'=>array('class'=>'nav'),
-		)); ?>
+		)); */
+		$this->widget('zii.widgets.CMenu',array(
+			//'items'=>Category::menu('top'),
+			'items'=>array(
+				array('label'=>Yii::t("main", "Home"), 'url'=>array('/site/index')),
+				array('label'=>Yii::t("main", "Page"), 'url'=>array('/admin/page')),
+				//array('label'=>Yii::t("main", "About"), 'url'=>array('admin/site/page', 'view'=>'about')),
+				array('label'=>'Photos', 'url'=>array('/admin/site/photos')),
+				array('label'=>'Videos', 'url'=>array('/admin/site/page', 'view'=>'videos')),
+				array('label'=>Yii::t("main", "Category"), 'url'=>array('/admin/category/index')),
+				array('label'=>Yii::t("main", "News"), 'url'=>array('/admin/news/index')),
+				array('label'=>Yii::t("main", "Users"), 'url'=>array('/admin/user/index')),
+				array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),		
+			),
+		));
+		
+		?>
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(

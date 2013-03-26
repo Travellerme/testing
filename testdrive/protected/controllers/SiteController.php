@@ -45,6 +45,17 @@ class SiteController extends Controller
 		$this->render('index', array('listImg'=>$result));
 	}
 	
+	public function actionPhotos($childDir = 'images')
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$model = new About;
+		$result = $model->searchImg($childDir);
+		$this->render('pages/photos', array('listImg'=>$result));
+	}
+	
+	
+	
 	/**
 	 * This is the action to handle external exceptions.
 	 */
