@@ -71,21 +71,31 @@ class PageController extends Controller
 	 */
 	public function actionIndex($id)
 	{
-		$models = Page::model()->findAllByAttributes(array('category_id' => $id));
-		/*$dataProvider=new CActiveDataProvider('Page',array(
-			'pagination'=>array(
-				'pageSize'=>11,
-			)
-		));
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));*/
-		$this->render('index',array(
-			'models'=>$models,
-		));
+		$model = Page::model()->findAllByAttributes(array('category_id' => $id));
+		$category = Category::model()->findByPk($id);
 		
+		
+		$this->render('index',array(
+			'model' => $model,
+			'category' => $category,
+		));
 	}
+	
 
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$model = Page::model()->findByPk($id);
+		$this->render('view',array(
+			'model'=>$model,
+		));
+	}
+	
+	
+	
 	/**
 	 * Performs the AJAX validation.
 	 * @param Page $model the model to be validated

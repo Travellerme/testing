@@ -53,7 +53,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			//'repertoire'   => array(self::HAS_MANY,   'Repertoire',    'category_id'),
+			//'category'   => array(self::HAS_MANY,   'Page',    'category_id'),
 		);
 	}
 
@@ -72,6 +72,12 @@ class Category extends CActiveRecord
 	public static function allCategories()
 	{
 		return Chtml::listData(self::model()->findAll(),'id','titleCategory');
+	}
+	
+	public static function findCategory($id)
+	{
+		
+		return $category;
 	}
 	
 	public static function menu($position)

@@ -94,6 +94,8 @@ class Page extends CActiveRecord
 	public function afterFind()
 	{
 		$dateFormat = "d.m.Y H:i";
+		//$pattern = '/(<img.* \/>)/i';
+		//$replacement = ' ';
 		if($this->timeStart)
 			$this->timeStart = date($dateFormat,$this->timeStart);
 			
@@ -102,7 +104,7 @@ class Page extends CActiveRecord
 			
 		if($this->created)
 			$this->created = date($dateFormat,$this->created);
-
+			
 		return parent::afterFind();
 	}
 	

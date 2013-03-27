@@ -11,6 +11,10 @@
  */
 class User extends CActiveRecord
 {
+	const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+    const ROLE_BANNED = 'banned';
+    
 	public $salt;
 	public $new_password;
 	public $new_confirm;
