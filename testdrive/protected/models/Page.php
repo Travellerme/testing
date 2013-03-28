@@ -83,7 +83,6 @@ class Page extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'title' => 'Title',
-			'imgUrl' => 'Image url',
 			'timeStart' => 'Event beginning',
 			'timeEnd' => 'Ending event',
 			'description' => 'Description',
@@ -121,6 +120,9 @@ class Page extends CActiveRecord
 			$this->created = time();
 			$this->status = 0;
 		}
+		if($this->title)
+			$this->title = trim($this->title);
+			
 		if($this->timeStart)
 			$this->timeStart = $this->transformDate($this->timeStart);
 			

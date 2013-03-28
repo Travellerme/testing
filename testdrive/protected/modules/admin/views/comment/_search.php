@@ -28,7 +28,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'event_id'); ?>
-		<?php echo $form->dropDownList($model,'event_id', Repertoire::allEvents(), array('empty'=>'')); ?>
+		<?php echo $form->dropDownList($model,'event_id', Page::allEvents(), array('empty'=>'')); ?>
 	</div>
 
 	<div class="row">

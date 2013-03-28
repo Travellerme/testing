@@ -9817,3 +9817,314 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/testdrive/admin/category
 ---
+2013/03/28 16:47:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/site/page/view/videos".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/page...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/site/page/view/videos
+HTTP_REFERER=http://localhost/testdrive/admin/category
+---
+2013/03/28 16:47:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/site/photos".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/phot...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/site/photos
+HTTP_REFERER=http://localhost/testdrive/admin/user/index
+---
+2013/03/28 17:54:14 [error] [exception.CException] exception 'CException' with message 'Действие CCaptchaValidator.action "captcha" задано неверно: действия не найдено в текущем контроллере.' in /var/www/YiiRoot/framework/validators/CCaptchaValidator.php:75
+Stack trace:
+#0 /var/www/YiiRoot/framework/validators/CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 /var/www/YiiRoot/framework/validators/CValidator.php(213): CCaptchaValidator->validateAttribute(Object(User), 'verifyCode')
+#2 /var/www/YiiRoot/framework/base/CModel.php(159): CValidator->validate(Object(User), NULL)
+#3 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(794): CModel->validate(NULL)
+#4 /var/www/testdrive/protected/controllers/UserController.php(73): CActiveRecord->save()
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionCreate()
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/create')
+#16 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /var/www/testdrive/index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/testdrive/user/create
+HTTP_REFERER=http://localhost/testdrive/user/create
+---
+2013/03/28 20:13:39 [error] [php] include(Repertoire.php): failed to open stream: No such file or directory (/var/www/YiiRoot/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/testdrive/protected/modules/admin/views/comment/_search.php(31): spl_autoload_call()
+#1 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#4 /var/www/testdrive/protected/modules/admin/views/comment/index.php(36): CommentController->renderPartial()
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#8 /var/www/YiiRoot/framework/web/CController.php(782): CommentController->renderPartial()
+#9 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(120): CommentController->render()
+#10 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#11 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#13 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#16 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/
+in /var/www/testdrive/protected/modules/admin/views/comment/_search.php (31)
+in /var/www/testdrive/protected/modules/admin/views/comment/index.php (36)
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (120)
+2013/03/28 20:14:57 [error] [php] include(Repertoire.php): failed to open stream: No such file or directory (/var/www/YiiRoot/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/testdrive/protected/modules/admin/views/comment/_search.php(31): spl_autoload_call()
+#1 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#4 /var/www/testdrive/protected/modules/admin/views/comment/index.php(36): CommentController->renderPartial()
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#8 /var/www/YiiRoot/framework/web/CController.php(782): CommentController->renderPartial()
+#9 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(120): CommentController->render()
+#10 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#11 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#13 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#16 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/
+in /var/www/testdrive/protected/modules/admin/views/comment/_search.php (31)
+in /var/www/testdrive/protected/modules/admin/views/comment/index.php (36)
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (120)
+2013/03/28 20:15:00 [error] [php] include(Repertoire.php): failed to open stream: No such file or directory (/var/www/YiiRoot/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/testdrive/protected/modules/admin/views/comment/_search.php(31): spl_autoload_call()
+#1 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#4 /var/www/testdrive/protected/modules/admin/views/comment/index.php(36): CommentController->renderPartial()
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#8 /var/www/YiiRoot/framework/web/CController.php(782): CommentController->renderPartial()
+#9 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(120): CommentController->render()
+#10 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#11 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#13 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#16 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/
+in /var/www/testdrive/protected/modules/admin/views/comment/_search.php (31)
+in /var/www/testdrive/protected/modules/admin/views/comment/index.php (36)
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (120)
+2013/03/28 20:15:36 [error] [php] include(Repertoire.php): failed to open stream: No such file or directory (/var/www/YiiRoot/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/testdrive/protected/modules/admin/views/comment/_search.php(31): spl_autoload_call()
+#1 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#4 /var/www/testdrive/protected/modules/admin/views/comment/index.php(36): CommentController->renderPartial()
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CommentController->renderInternal()
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CommentController->renderFile()
+#8 /var/www/YiiRoot/framework/web/CController.php(782): CommentController->renderPartial()
+#9 /var/www/testdrive/protected/modules/admin/controllers/CommentController.php(120): CommentController->render()
+#10 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): CommentController->actionIndex()
+#11 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#13 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#16 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/
+in /var/www/testdrive/protected/modules/admin/views/comment/_search.php (31)
+in /var/www/testdrive/protected/modules/admin/views/comment/index.php (36)
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (120)
+2013/03/28 20:17:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/admin/comment/index".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/com...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/admin/comment/index
+HTTP_REFERER=http://localhost/testdrive/admin/comment/
+---
+2013/03/28 20:18:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/admin/comment/index".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/com...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/admin/comment/index
+HTTP_REFERER=http://localhost/testdrive/admin
+---
+2013/03/28 20:18:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/admin/comment/index".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/com...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/admin/comment/index
+HTTP_REFERER=http://localhost/testdrive/admin
+---
+2013/03/28 20:18:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/admin/comment".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/com...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/admin/comment
+HTTP_REFERER=http://localhost/testdrive/admin
+---
+2013/03/28 20:18:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/admin/comment".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/com...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/admin/comment
+HTTP_REFERER=http://localhost/testdrive/admin
+---
+2013/03/28 20:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/03/28 22:14:52 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CGridView.selectTableRows".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWidgetFactory.php(161): CComponent->__set('selectTableRows', 2)
+#1 /var/www/YiiRoot/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UserController), 'zii.widgets.gri...', Array)
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/testdrive/protected/modules/admin/views/user/index.php(72): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#6 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#8 /var/www/testdrive/protected/modules/admin/controllers/UserController.php(113): CController->render('index', Array)
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionIndex()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/user/inde...')
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/testdrive/index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/testdrive/admin/user/index
+HTTP_REFERER=http://localhost/testdrive/admin/setting/index
+---
+2013/03/28 22:29:41 [error] [php] Undefined index: userId (/var/www/testdrive/protected/modules/admin/controllers/UserController.php:112)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/user/index
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (112)
+in /var/www/testdrive/index.php (14)
+2013/03/28 22:30:04 [error] [php] Undefined index: userId (/var/www/testdrive/protected/modules/admin/controllers/UserController.php:112)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/user/index
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (112)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:00:41 [error] [php] Undefined index: userId (/var/www/testdrive/protected/modules/admin/controllers/UserController.php:120)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/user/index
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (120)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:10 [warning] [application] Не удалось присвоить небезопасный атрибут "ban" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:10 [warning] [application] Не удалось присвоить небезопасный атрибут "role" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:13 [warning] [application] Не удалось присвоить небезопасный атрибут "ban" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:13 [warning] [application] Не удалось присвоить небезопасный атрибут "role" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:15 [warning] [application] Не удалось присвоить небезопасный атрибут "ban" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:15 [warning] [application] Не удалось присвоить небезопасный атрибут "role" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:17 [warning] [application] Не удалось присвоить небезопасный атрибут "ban" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)
+2013/03/28 23:01:17 [warning] [application] Не удалось присвоить небезопасный атрибут "role" класса "User".
+in /var/www/testdrive/protected/modules/admin/controllers/UserController.php (125)
+in /var/www/testdrive/index.php (14)

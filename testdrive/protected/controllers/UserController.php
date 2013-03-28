@@ -8,6 +8,21 @@ class UserController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+	public function actions()
+	{
+		return array(
+			// captcha action renders the CAPTCHA image displayed on the contact page
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+			
+			'user'=>array(
+				'class'=>'CViewAction',
+			),
+		);
+	}
+
 	/**
 	 * @return array action filters
 	 */
@@ -28,7 +43,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create'),
+				'actions'=>array('create','captcha'),
 				'users'=>array('*'),
 			),
 			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -63,15 +78,38 @@ class UserController extends Controller
 	public function actionCreate()
 	{
 		$model=new User;
-
+		$model->scenario = 'register';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			
+			$settings = Setting::model()->findByPk(1);
+			var_dump($settings->defaultStatusUser);
+			if($settings->defaultStatusUser == 0)
+			{
+				$model->ban = 0;
+			}
+			else
+			{
+				$model->ban = 1;
+			}
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				if($settings->defaultStatusUser == 0)
+				{
+					Yii::app()->user->setFlash('register','You was registered successfully. You can login');
+				}
+				else
+				{
+					Yii::app()->user->setFlash('register','You was registered successfully. Please wait while administrator approve you');
+				}
+				
+			}
+				
+				
 		}
 
 		$this->render('create',array(

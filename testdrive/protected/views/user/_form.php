@@ -3,6 +3,13 @@
 /* @var $model User */
 /* @var $form CActiveForm */
 ?>
+<?php if(Yii::app()->user->hasFlash('register')): ?>
+
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('register'); ?>
+</div>
+
+<?php endif; ?>
 
 <div class="form">
 
@@ -38,11 +45,26 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
+	
+	<?php if(CCaptcha::checkRequirements()): ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'verifyCode'); ?>
+		<div>
+		<?php $this->widget('CCaptcha'); ?>
+		<?php echo $form->textField($model,'verifyCode'); ?>
+		</div>
+		<div class="hint">Please enter the letters as they are shown in the image above.
+		<br/>Letters are not case-sensitive.</div>
+		<?php echo $form->error($model,'verifyCode'); ?>
+	</div>
+	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton('Create'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+

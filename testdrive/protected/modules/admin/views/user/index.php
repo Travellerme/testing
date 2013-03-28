@@ -38,12 +38,24 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
+<?php
+	echo Chtml::form();
+	echo Chtml::submitButton('Unban', array('name'=>'noban'));
+	echo Chtml::submitButton('Ban', array('name'=>'ban'));
+	echo '<br />';
+	echo Chtml::submitButton('Admin', array('name'=>'admin'));
+	echo Chtml::submitButton('User', array('name'=>'user'));
+?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
+	'selectableRows'=>2,
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		array(
+			'class'=>'CCheckBoxColumn',
+			'id'=>'userId',
+		),
 		'id'=>array(
 			'name'=>'id',
 			'headerHtmlOptions'=>array('width' => 20),
@@ -69,3 +81,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+<?php
+	echo Chtml::endForm();
+?>

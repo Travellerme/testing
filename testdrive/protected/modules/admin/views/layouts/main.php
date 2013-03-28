@@ -51,11 +51,11 @@
 			'items'=>array(
 				array('label'=>Yii::t("main", "Home"), 'url'=>array('/site/index')),
 				array('label'=>Yii::t("main", "Page"), 'url'=>array('/admin/page')),
-				//array('label'=>Yii::t("main", "About"), 'url'=>array('admin/site/page', 'view'=>'about')),
+				array('label'=>Yii::t("main", "Comment"), 'url'=>array('/admin/comment/index')),
 				array('label'=>'Photos', 'url'=>array('/admin/site/photos')),
 				array('label'=>'Videos', 'url'=>array('/admin/site/page', 'view'=>'videos')),
 				array('label'=>Yii::t("main", "Category"), 'url'=>array('/admin/category/index')),
-				array('label'=>Yii::t("main", "News"), 'url'=>array('/admin/news/index')),
+				array('label'=>Yii::t("main", "Settings"), 'url'=>array('/admin/setting/index')),
 				array('label'=>Yii::t("main", "Users"), 'url'=>array('/admin/user/index')),
 				array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),		
 			),

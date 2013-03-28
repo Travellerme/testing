@@ -13,7 +13,7 @@ class UserController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
-
+	
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -22,17 +22,9 @@ class UserController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create'),
-				'users'=>array('*'),
-			),
-			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),*/
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','admin','delete','update','password'),
-				'users'=>array('admin'),
+				'actions'=>array('index','delete','update','password','view'),
+				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -51,28 +43,6 @@ class UserController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new User;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Updates a particular model.
@@ -133,6 +103,22 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if(isset($_POST['noban']))
+		{
+			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>0));
+		}
+		else if(isset($_POST['ban']))
+		{
+			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>1),array('condition'=>'id<>'.Yii::app()->user->id));
+		}
+		if(isset($_POST['admin']))
+		{
+			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
+		}
+		else if(isset($_POST['user']))
+		{
+			$model = User::model()->updateByPk($_POST['userId'],array('role'=>0),array('condition'=>'id<>'.Yii::app()->user->id));
+		}
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['User']))

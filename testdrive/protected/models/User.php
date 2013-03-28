@@ -18,6 +18,7 @@ class User extends CActiveRecord
 	public $salt;
 	public $new_password;
 	public $new_confirm;
+	public $verifyCode;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -45,20 +46,19 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, email, new_password', 'required'),
+			array('username, email, new_password','required'),
 			array('username', 'match', 'pattern'=>'#^[a-zA-Z0-9_\.-]+$#', 'message'=>'Incorrect login'),
 			array('email', 'email', 'message'=>'Incorrect e-mail'),
 			array('username, email', 'unique', 'caseSensitive'=>false),
 			array('email, username', 'unique'), 
 			array('new_password', 'length', 'min'=>5, 'allowEmpty'=>true),
 			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>'Passwords does not match'),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'register'),
 			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password, email', 'safe', 'on'=>'search'),
+			array('id, username, password, email, ban, role', 'safe', 'on'=>'search'),
 			
-			// Register
-			array('new_password', 'required', 'on'=>'register'),
 		);
 	}
 
@@ -86,6 +86,7 @@ class User extends CActiveRecord
 			'email' => 'Email',
 			'ban' => 'Ban',
 			'role' => 'Role',
+			'verifyCode'=>'Verification Code',
 		);
 	}
 	
@@ -94,11 +95,18 @@ class User extends CActiveRecord
 		if($this->isNewRecord)
 		{
 			$this->created = time();
-			$this->ban = 0;
+			$this->role = 0;
 		}
+		
+		if($this->email)
+			$this->email = trim($this->email);
+			
+		if($this->username)
+			$this->username = trim($this->username);
 			
 		if ($this->new_password) 
-			$this->password = $this->hashPassword($this->new_password);
+			$this->password = $this->hashPassword(trim($this->new_password));
+			
 		return parent::beforeSave();
 	}
 	

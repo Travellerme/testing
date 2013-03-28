@@ -68,6 +68,11 @@ class Category extends CActiveRecord
 			'position' => 'Position',
 		);
 	}
+	public function beforeSave()
+	{
+		if($this->titleCategory)
+			$this->titleCategory = trim($this->titleCategory);
+	}
 	
 	public static function allCategories()
 	{
@@ -84,13 +89,20 @@ class Category extends CActiveRecord
 	{
 		$models = self::model()->findAllByAttributes(array('position'=>$position));
 		$result = array();
+		if($position == 'top')
+		{
+			$result[] = array('label' =>Yii::t("main", "Home"), 'url' => array('/site/index'));
+		}
 		foreach($models as $key)
 		{
 			$result[] = array('label' => $key->titleCategory, 'url' => array('/page/index/id/'.$key->id));
 		}
 		if($position == 'top')
 		{
-			$result[] = array('label' =>Yii::t("main", "AdminControl"), 'url' => array('/admin'),'visible'=>Yii::app()->user->name == 'admin');
+			if(Yii::app()->user->checkAccess('1'))
+			{
+				$result[] = array('label' =>Yii::t("main", "AdminControl"), 'url' => array('/admin'));
+			}
 			$result[] = array('label'=>Yii::t("main", "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Registration"), 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest);

@@ -23,8 +23,8 @@ class PageController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','delete','update','create'),
-				'users'=>array('admin'),
+				'actions'=>array('index','delete','create','update'),
+				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),

@@ -24,7 +24,7 @@ class NewsController extends Controller
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('index','delete','create','update'),
-				'users'=>array('admin'),
+				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),

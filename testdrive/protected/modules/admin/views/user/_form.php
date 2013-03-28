@@ -22,18 +22,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'new_password'); ?>
-		<?php echo $form->passwordField($model,'new_password',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'new_password'); ?>
-	</div>
-
-	<div class="row"> 
-		<?php echo $form->label($model,'new_confirm'); ?> 
-		<?php echo $form->passwordField($model,'new_confirm',array('size'=>60,'maxlength'=>128)); ?> 
-		<?php echo $form->error($model,'new_confirm'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'email'); ?>
