@@ -29,7 +29,7 @@ $(function(){
 			}
 		 ?>
 		
-    </div><!-- container -->
+    </div>
 	<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/leftArr.jpg'?>" alt="Left Arrow" />
 	<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/rightArr.jpg'?>" alt="Right Arrow" />
 </div>

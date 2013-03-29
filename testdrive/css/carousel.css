@@ -1,9 +1,9 @@
 #container{
 position: relative;
 top: 10px;
-left: 140px;
-height: 200px;
-width: 620px; /* 3 images of 150px showing with a 10px margin = 3*(150) + 2*(10) = 470 */
+left: 30px;
+height: 150px;
+width: 470px; /* 3 images of 150px showing with a 10px margin = 3*(150) + 2*(10) = 470 */
 overflow: hidden;
 }
  
@@ -11,22 +11,22 @@ overflow: hidden;
 #container img{
 position: absolute;
 top: 0px;
-height: 200px;
-width: 200px;
+height: 150px;
+width: 150px;
 cursor: pointer;
 overflow: hidden;
 }
  
 #carouselLeft{
 position: absolute;
-top: 275px;
-left: 185px;
+top: 475px;
+left: 400px;
 cursor: pointer;
 }
 
 #carouselRight{
 position: absolute;
-top: 275px;
+top: 475px;
 left: 870px;
 cursor: pointer;
 }

@@ -35,20 +35,28 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
+<?php
+	echo Chtml::form();
+	echo Chtml::submitButton('Show', array('name'=>'approve'));
+	echo Chtml::submitButton('Hide', array('name'=>'disapprove'));
+?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'comment-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		array(
+			'class'=>'CCheckBoxColumn',
+			'id'=>'commentId',
+		),
 		'id'=>array(
 			'name'=>'id',
 			'headerHtmlOptions'=>array('width' => 20),
 		),
 		'status'=>array(
 			'name'=>'status',
-			'value'=>'($data->status==1)?"show":"hide"',
-			'filter'=>array(0=>'hide',1=>'show'),
+			'value'=>'($data->status==0)?"show":"hide"',
+			'filter'=>array(1=>'hide',0=>'show'),
 		),
 		'content',
 		'event_id'=>array(
@@ -59,7 +67,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'created',
 		'user_id'=>array(
 			'name'=>'user_id',
-			'value'=>'$data->user->username',
+			'value'=>'($data->user_id)?$data->user->username:""',
 			'filter'=>User::allUsers(),
 		),
 		'guest',
@@ -69,3 +77,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+<?php
+	echo Chtml::endForm();
+?>

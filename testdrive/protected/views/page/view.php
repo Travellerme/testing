@@ -21,3 +21,31 @@ Created [<?php echo $model->created; ?>]
 
 <br />
 
+<hr />
+
+
+
+<?php if(Yii::app()->user->hasFlash('comment')): ?>
+
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('comment'); ?>
+</div>
+
+<?php endif; ?>
+
+<?php echo $this->renderPartial('_form', array('model'=>$comment)); ?>
+
+<?php echo '<b>'.Yii::t("main", "Comments").'</b>';  ?>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>Comment::allComments($model->id),
+	'itemView'=>'_viewComment',
+	'sorterHeader'=>'Sort by : ',
+	'sortableAttributes'=>array('created'),
+)); ?>
+
+
+
+
+
+

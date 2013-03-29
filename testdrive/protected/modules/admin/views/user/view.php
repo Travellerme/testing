@@ -21,10 +21,16 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'username',
-		'password',
-		'salt',
+		'created',
 		'email',
-		'role',
-		'ban',
+		'ban'=>array(
+			'name'=>'ban',
+			'value'=>($model->ban==1)?"ban":"working",
+		),
+		'role'=>array(
+			'name'=>'role',
+			'value'=>($model->role==0)?"user":"admin",
+			'filter'=>array(0=>'user',1=>'admin'),
+		),
 	),
 )); ?>

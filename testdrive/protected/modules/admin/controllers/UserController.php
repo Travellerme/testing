@@ -52,7 +52,7 @@ class UserController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$model->scenario = 'update';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -103,22 +103,15 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(isset($_POST['noban']))
-		{
+		if(isset($_POST['noban']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>0));
-		}
-		else if(isset($_POST['ban']))
-		{
+		else if(isset($_POST['ban']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>1),array('condition'=>'id<>'.Yii::app()->user->id));
-		}
-		if(isset($_POST['admin']))
-		{
+			
+		if(isset($_POST['admin']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
-		}
-		else if(isset($_POST['user']))
-		{
+		else if(isset($_POST['user']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>0),array('condition'=>'id<>'.Yii::app()->user->id));
-		}
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['User']))

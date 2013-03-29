@@ -19,11 +19,24 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'status',
+		'status'=>array(
+			'name'=>'status',
+			'value'=>($model->status==0)?"show":"hide",
+			'filter'=>array(1=>'hide',0=>'show'),
+		),
 		'content',
-		'event_id',
+		'event_id'=>array(
+			'name'=>'event_id',
+			'value'=>$model->event->title,
+		),
 		'created',
-		'user_id',
-		'guest',
+		'user_id'=>array(
+			'name'=>'user_id',
+			'value'=>($model->user_id)?$model->user->username:"",
+		),
+		'guest'=>array(
+			'name'=>'guest',
+			'value'=>($model->guest)?$model->guest:"",
+		),
 	),
 )); ?>

@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Manage Page', 'url'=>array('index')),
 	array('label'=>'Create Page', 'url'=>array('create')),
-	array('label'=>'View Page', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'View Page', 'url'=>array('/page/view', 'id'=>$model->id)),
 );
 ?>
 

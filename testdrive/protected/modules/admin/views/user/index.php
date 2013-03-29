@@ -62,10 +62,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'username',
 		'email',
-		'created'=>array(
-			'name'=>'created',
-			'filter'=>false,
-		),
+		'created',
 		'ban'=>array(
 			'name'=>'ban',
 			'value'=>'($data->ban==1)?"ban":"working"',

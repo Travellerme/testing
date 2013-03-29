@@ -11,7 +11,6 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Manage Category', 'url'=>array('index')),
 	array('label'=>'Create Category', 'url'=>array('create')),
-	array('label'=>'View Category', 'url'=>array('view', 'id'=>$model->id)),
 );
 ?>
 

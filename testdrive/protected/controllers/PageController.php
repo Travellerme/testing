@@ -8,6 +8,17 @@ class PageController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+	public function actions()
+	{
+		return array(
+			// captcha action renders the CAPTCHA image displayed on the contact page
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+		);
+	}
+	
 	/**
 	 * @return array action filters
 	 */
@@ -28,7 +39,7 @@ class PageController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','captcha'),
 				'users'=>array('*'),
 			),
 			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -89,8 +100,46 @@ class PageController extends Controller
 	public function actionView($id)
 	{
 		$model = Page::model()->findByPk($id);
+		$comment = new Comment;
+		
+		if(Yii::app()->user->isGuest)
+			$comment->scenario = 'guest';
+		
+		if(isset($_POST['Comment']))
+		{
+			$settings = Setting::model()->findByPk(1);
+			$comment->attributes=$_POST['Comment'];
+			$comment->event_id = $model->id;
+			if($settings->defaultStatusComment == 0)
+			{
+				$comment->status = 0;
+			}
+			else
+			{
+				$comment->status = 1;
+			}
+			
+			if($comment->save())
+			{
+				
+				if($settings->defaultStatusComment == 0)
+				{
+					Yii::app()->user->setFlash('comment','Your comment was published');
+				}
+				else
+				{
+					Yii::app()->user->setFlash('comment','Please wait while administrator approve your comment');
+				}
+				$this->refresh();
+				
+			}
+		}
+		
+		
+		
 		$this->render('view',array(
 			'model'=>$model,
+			'comment'=>$comment,
 		));
 	}
 	

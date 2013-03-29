@@ -16,11 +16,6 @@ class UserController extends Controller
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
 			),
-			
-			'user'=>array(
-				'class'=>'CViewAction',
-			),
-		);
 	}
 
 	/**
@@ -87,7 +82,7 @@ class UserController extends Controller
 			$model->attributes=$_POST['User'];
 			
 			$settings = Setting::model()->findByPk(1);
-			var_dump($settings->defaultStatusUser);
+			
 			if($settings->defaultStatusUser == 0)
 			{
 				$model->ban = 0;

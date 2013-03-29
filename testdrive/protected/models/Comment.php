@@ -13,6 +13,7 @@
  */
 class Comment extends CActiveRecord
 {
+	public $verifyCode;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -39,11 +40,15 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content, event_id, created, user_id, guest', 'required'),
+			array('content, guest', 'required', 'on'=>'guest'),
+			array('content', 'required'),
+			//array('event_id, created, user_id, status','safe', 'on'=>'guest'),
 			array('event_id, created, user_id', 'numerical', 'integerOnly'=>true),
 			array('guest', 'length', 'max'=>255),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'guest'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
+			
 			array('id, status, content, event_id, created, user_id, guest', 'safe', 'on'=>'search'),
 		);
 	}
@@ -82,8 +87,10 @@ class Comment extends CActiveRecord
 		if($this->isNewRecord)
 		{
 			$this->created = time();
-			$this->status = 0;
+			$this->guest = trim($this->guest);
 		}
+		if(!Yii::app()->user->isGuest)
+			$this->user_id = Yii::app()->user->id;
 		
 		return parent::beforeSave();
 	}
@@ -125,6 +132,23 @@ class Comment extends CActiveRecord
 		$criteria->compare('guest',$this->guest,true);
 
 		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+	
+	public static function allComments($pageId)
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('event_id',$pageId);
+		$criteria->compare('status',0);
+		$criteria->order = 'created DESC';
+		
+
+		return new CActiveDataProvider('Comment', array(
 			'criteria'=>$criteria,
 		));
 	}

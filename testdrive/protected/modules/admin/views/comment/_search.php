@@ -18,12 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>'hide',1=>'show')); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>'show',1=>'hide')); ?>
 	</div>
 
 	<div class="row">

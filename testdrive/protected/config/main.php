@@ -10,6 +10,7 @@ return array(
 	'name'=>'Theater "Island"',
 	'sourceLanguage' => 'en',
     'language' => 'ru',
+    'theme'=>'manuscript',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
