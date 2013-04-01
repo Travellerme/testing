@@ -24,7 +24,7 @@
 	<?php if(Yii::app()->user->isGuest): ?>
 
 		<div class="row">
-			<?php echo $form->labelEx($model,'guest'); ?>
+			<b>Please Introduce </b><span style="color:red">*</span><br />
 			<?php echo $form->textField($model,'guest',array('size'=>15,'maxlength'=>15)); ?>
 			<?php echo $form->error($model,'guest'); ?>
 		</div>

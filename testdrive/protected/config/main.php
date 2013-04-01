@@ -10,7 +10,7 @@ return array(
 	'name'=>'Theater "Island"',
 	'sourceLanguage' => 'en',
     'language' => 'ru',
-    'theme'=>'manuscript',
+    //'theme'=>'manuscript',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -40,6 +40,10 @@ return array(
 			'class'=>'WebUser',
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+		),
+		'imagemod' => array(
+               //alias to dir, where you unpacked extension
+			'class' => 'application.extensions.imagemodifier.CImageModifier',
 		),
 		// uncomment the following to enable URLs in path-format
 		

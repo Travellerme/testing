@@ -39,18 +39,34 @@ class LoginForm extends CFormModel
 			'rememberMe'=>'Remember me next time',
 		);
 	}
-
+	public function checkBan()
+	{
+		if(!Yii::app()->user->isGuest)
+		{
+			$user=User::model()->find('id=?',array(trim(strtolower(Yii::app()->user->id))));
+			if($user->ban ==1)
+			{
+				$this->addError('ban','Your account was banned. If you just registered, please wait, while your account will be approved');
+				Yii::app()->user->logout();
+				return true;
+			}
+		}
+		return false;
+	}
 	/**
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
 	 */
 	public function authenticate($attribute,$params)
 	{
+		$user=User::model()->find('LOWER(username)=?',array(trim(strtolower($this->username))));
 		if(!$this->hasErrors())
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
 				$this->addError('password','Incorrect username or password.');
+			if($user->ban==1)
+				$this->addError('ban','Your account was banned. If you just registered, please wait, while your account will be approved');
 		}
 	}
 

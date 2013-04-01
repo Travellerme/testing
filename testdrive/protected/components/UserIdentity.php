@@ -19,15 +19,11 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$user=User::model()->find('LOWER(username)=?',array(strtolower($this->username)));
-		if($user->ban==1)
-		{
-			die('Your account was banned. If you just registered, please wait, while your account will be approved');
-		}
-
+		$user=User::model()->find('LOWER(username)=?',array(trim(strtolower($this->username))));
+		
 		if($user===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if(!$user->validatePassword($this->password))
+		else if(!$user->validatePassword(trim($this->password)))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 		{

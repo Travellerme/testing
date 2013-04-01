@@ -23,7 +23,7 @@ class SiteController extends Controller
 	
 	public function actionImages($childDir = 'images')
 	{
-		$model = new About;
+		$model = new Photo;
 		
 		if(isset($_POST['scanImg']))
 		{
@@ -38,9 +38,13 @@ class SiteController extends Controller
 	 */
 	public function actionIndex($childDir = 'images')
 	{
+		/*$login = new LoginForm;
+		if($login->checkBan())var_dump($login);
+				$this->redirect(Yii::app()->user->returnUrl.'site/login',array('model'=>$login));
+		*/
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$model = new About;
+		$model = new Photo;
 		$result = $model->searchImg($childDir);
 		$this->render('index', array('listImg'=>$result));
 	}
@@ -49,7 +53,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$model = new About;
+		$model = new Photo;
 		$result = $model->searchImg($childDir);
 		$this->render('pages/photos', array('listImg'=>$result));
 	}
@@ -95,14 +99,15 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
-
+	
+	
 	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
 		$model=new LoginForm;
-
+		
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{

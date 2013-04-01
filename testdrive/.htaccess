@@ -1,5 +1,8 @@
 AddDefaultCharset UTF-8
 
+php_flag display_errors on
+
+
 RewriteEngine on
 
 # if a directory or a file exist, use it directory
