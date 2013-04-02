@@ -52,7 +52,7 @@
 				array('label'=>Yii::t("main", "Home"), 'url'=>array('/site/index')),
 				array('label'=>Yii::t("main", "Page"), 'url'=>array('/admin/page')),
 				array('label'=>Yii::t("main", "Comment"), 'url'=>array('/admin/comment/index')),
-				array('label'=>'Photos', 'url'=>array('/admin/site/photos')),
+				array('label'=>'Photos', 'url'=>array('/admin/photo')),
 				array('label'=>'Videos', 'url'=>array('/admin/site/page', 'view'=>'videos')),
 				array('label'=>Yii::t("main", "Category"), 'url'=>array('/admin/category/index')),
 				array('label'=>Yii::t("main", "Settings"), 'url'=>array('/admin/setting/index')),

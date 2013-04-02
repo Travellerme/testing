@@ -17,7 +17,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/gallery.js')
 
 <div id="container">
 	<?php 
-			echo About::gallery($listImg);
+			echo Photo::gallery($listImg);
 	 ?>
 </div>
 <div id="view">

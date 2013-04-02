@@ -21,7 +21,7 @@ class SiteController extends Controller
 		);
 	}
 	
-	public function actionImages($childDir = 'images')
+	public function actionImages($childDir = 'images/gallery')
 	{
 		$model = new Photo;
 		
@@ -36,7 +36,7 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	public function actionIndex($childDir = 'images')
+	public function actionIndex($childDir = 'images/gallery')
 	{
 		/*$login = new LoginForm;
 		if($login->checkBan())var_dump($login);
@@ -46,13 +46,13 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$model = new Photo;
 		$result = $model->searchImg($childDir);
+		
 		$this->render('index', array('listImg'=>$result));
 	}
 	
-	public function actionPhotos($childDir = 'images')
+	public function actionPhotos($childDir = 'images/gallery')
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
+		
 		$model = new Photo;
 		$result = $model->searchImg($childDir);
 		$this->render('pages/photos', array('listImg'=>$result));

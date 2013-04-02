@@ -26,31 +26,30 @@ class PhotoController extends Controller
 		);
 	}
 	
-	public function actionIndex($id=FALSE)
+	public function actionIndex()
 	{
 		
-		if(!$id)
-		{
-			$id=Yii::app()->user->id;
-		}
-
 		$model = new Photo();
-
-		if(isset($_POST['ajax']) && $_POST['ajax']==='designer-photo-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
+		if(isset($_POST['Photo']))
+		{	
+			$model->attributes=$_POST['Photo'];
+			
+			
+			if($model->valid($_POST['Photo']['name'], $_FILES['image']['name']))
+			{
+				if($model->savePhoto($_FILES['image'],'full_img'))
+				{
+					$model->savePhoto($_FILES['image'],'small_img');
+					Yii::app()->user->setFlash('upload','Image was uploaded');
+					$this->refresh();
+				}
+							
+			}
+			
 		}
+				
 
-		//сохраняет новые фотографии
-		if(isset ($_FILES['image']) && $_POST['PhotoForm'] )
-		{
-			$model->savePhoto($_FILES['image'],'full_img');
-			$model->savePhoto($_FILES['image'],'small_img');
-		}
-
-		//обратный url
-		YII::app()->user->setReturnUrl(YII::app()->request->getUrl());
+		//YII::app()->user->setReturnUrl(YII::app()->request->getUrl());
 
 		$this->render('index',array('model'=>$model));
 	}
@@ -116,7 +115,7 @@ class PhotoController extends Controller
 			$photos = Photo::model()->findAll("key_photo=:key",array(':key'=>$key));
 			foreach ($photos as $photo)
 			{
-			   if( is_file(yii::app()->getBasePath()."/../images/".$photo->url.".jpg"))
+			   if(is_file(yii::app()->getBasePath()."/../images/".$photo->url.".jpg"))
 			   {
 				   unlink(yii::app()->getBasePath()."/../images/".$photo->url.".jpg");
 			   }

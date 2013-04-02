@@ -24,7 +24,7 @@ $(function(){
 		<?php 
 			foreach ($listImg['href'] as $key=>$val)
 			{
-				$src = preg_replace('/(preview)/i','big',$val);
+				$src = preg_replace('/(small_)/i','full_',$val);
 				echo "<img src='$src'/>";
 			}
 		 ?>

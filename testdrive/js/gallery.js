@@ -15,8 +15,8 @@ function viewImg(id,cnt)
 			nextImg = 0;
 		}
 		var link = $('#'+curImg).attr('src');
-		var reg = /(preview)/;
-		var rep = 'big';
+		var reg = /(small_)/;
+		var rep = 'full_';
 		var bigImg = '<img src="'+link.replace(reg,rep)+'" width="75%" '
 		+'onclick="viewImg('+nextImg+','+cnt+');" id="bigImg" hidden />';
 		var buttons = '<img src="/testdrive/images/skins/prev.png" id="buttonPrev" onclick="viewImg('

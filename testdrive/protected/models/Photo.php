@@ -2,11 +2,9 @@
 class Photo extends CFormModel
 {
 	public $image;
-    public $user_id;
     public $width;
     public $height;
-    public $alt;
-    public $url;
+    public $name;
 	public $type;
      
 	public static function gallery($listImg)
@@ -31,37 +29,39 @@ class Photo extends CFormModel
 		return $str;
 	}
 	
-    public function searchImg($childDir)
+    public function searchImg($childDir, $compareImg = null)
     {
-		$dirSmall = Yii::app()->baseUrl . DIRECTORY_SEPARATOR
-		. $childDir . DIRECTORY_SEPARATOR . 'preview';
-		$dirBig = Yii::app()->baseUrl . DIRECTORY_SEPARATOR
-		. $childDir . DIRECTORY_SEPARATOR . 'big';
+		$dir = Yii::app()->baseUrl . '/' . $childDir;
 		$main = '/var/www/';
-		$imgSmall = scandir($main . $dirSmall);
-		$imgBig = scandir($main . $dirBig);
+		$img = scandir($main . $dir);
 		$result = array();
-		foreach ($imgSmall as $key => $valSmall)
+		foreach ($img as $key => $val)
 		{
-			if($valSmall=="." || $valSmall=="..")
+			if($val=="." || $val=="..")
 			{
 				continue;
 			}
-			foreach ($imgBig as $key=>$valBig)
-			{
-				if($valSmall == $valBig)
-				{
-					$result['href'][]=$dirSmall . DIRECTORY_SEPARATOR . $valSmall;
-					$result['img'][]= DIRECTORY_SEPARATOR . $valSmall;
-				}
-			}
 			
+			if(preg_match('/^(small_)(.*)/i',$val,$out))
+			{
+				$result['href'][]=$dir . '/' . $val;
+				$result['img'][]= '/full_' . $out[2];
+			}
+			if($compareImg)
+			{
+				if(preg_match('/^[small_|full_].*(\..*)/i',$val,$out))
+				{
+					if($compareImg . $out[1] == $val )
+						return false;
+				}
+			}	
+		
 		}
-		$result['bigImg'] = $dirBig;
+		$result['bigImg'] = $dir;
 		return $result;
 	}
 	
-	public static function infIMG($type=FALSE,$param=FALSE)
+	public function infIMG($type=FALSE,$param=FALSE)
     {
 		$img =array(
 				 "logo"=>array(
@@ -71,7 +71,7 @@ class Photo extends CFormModel
 					),
 				 "small_img"=>array(
 					  0=>200,
-					  1=>200,
+					  1=>150,
 					  'prif'=>'small_'
 					),
 				 "big_img"=>array(
@@ -105,28 +105,22 @@ class Photo extends CFormModel
 			else            return FALSE;
 		}
     }
-    
+   
     public function rules()
     {
        return array(
-		array('width, height, alt, url', 'required'),
-		array('width, height', 'numerical', 'integerOnly'=>true),
-		array('alt', 'length', 'max'=>250),
-		array('url', 'length', 'max'=>150),
-	//	array('url', 'filter', 'filter'=>array("TranslitFilter", "translitUrl")),
-		array('url', 'unique','attributeName'=>'url','className'=>'Photo',
-					'message'=>'такой url уже занят'),
-           //устанавливаем правила для файла, позволяющие загружать
-           // только картинки!
-          // array('image', 'file', 'types'=>'jpg'),
+		array('name', 'required'),
+		array('name', 'safe'),
+		array('name', 'length', 'max'=>150),
+		
        );
 	}
-
+	
+	
      public function  attributeLabels() {
             return array(
-               'url'=>"Уникальный Url фотографии",
-               'alt'=>"Описание фотографии",
-               "image"=>"Изображение",
+               'name'=>'Unique name',
+               'image'=>'Image',
             );
      }
      /**
@@ -143,30 +137,47 @@ class Photo extends CFormModel
      * @return bool сохраенена или нет
      */
      public function savePhoto($image,$type='full_img')
-     {
+     {	
+		
          $img = Yii::app()->imagemod->load($image);
          //определение конечно высоты и ширины
-         $img->image_resize =TRUE;
-         $img->image_ratio_y         = true;
-         $this->width = $img->image_x               = Photo::infIMG($type, 0);
+         $img->image_resize          = true;
+		 $img->image_ratio_x         = true;
+		 $img->image_y               = $this->infIMG($type, 1);
+		 
+		 
+         
+         /*$img->image_resize =true;
+         $img->image_ratio_y = true;
+         $this->width = $img->image_x = $this->infIMG($type, 0);
          $this->height = round(($img->image_src_y * $img->image_x) / $img->image_src_x);
-         $this->type = $type;
-         if($this->validate())
-         {
-        //сохраняется и на жеский
-                 
-                
-			$img->file_new_name_body = Photo::infIMG($this->type, 'prif').$this->url;;
-            if( $img->process(yii::app()->getBasePath()."/../images"))
-				return TRUE;
-            else
-                return FALSE;
-         }
-         else
-         {
-			return FALSE;
-         }
-
+        */ $this->type = $type;
+         $img->file_new_name_body = $this->infIMG($this->type, 'prif').$this->name;
+         if(!$this->searchImg('images/gallery',$img->file_new_name_body))
+		 {
+			 $this->addError('image','This image already exist');
+			 return false;
+		 }
+		 $img->process(yii::app()->getBasePath()."/../images/gallery");
+		 return true;
+		
+	}
+	
+	public function valid($name, $image)
+	{
+		$flag = true;
+		if(!$image)
+		{
+			$this->addError('image','You must enter image');
+			$flag = false;
+		}
+		if(!preg_match('/^([a-zA-Z_0-9]+)?$/i',$name) || !$name)
+		{
+			$this->addError('name','Incorrect format');
+			$flag = false;
+		}
+		return $flag;
+		
 	}
 }
 
