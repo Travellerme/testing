@@ -80,8 +80,8 @@ class Photo extends CFormModel
 					  'prif'=>'big_'
 					),
 				 "full_img"=>array(
-					  0=>1024,
-					  1=>786,
+					  0=>786,
+					  1=>1024,
 					  'prif'=>'full_'
 					),
 				);
@@ -141,10 +141,14 @@ class Photo extends CFormModel
 		
          $img = Yii::app()->imagemod->load($image);
          //определение конечно высоты и ширины
-         $img->image_resize          = true;
+         /*$img->image_resize          = true;
 		 $img->image_ratio_x         = true;
+		 $img->image_y               = $this->infIMG($type, 1);*/
+		 		 
+		 $img->image_resize          = true;
+		 $img->image_ratio_crop      = true;
 		 $img->image_y               = $this->infIMG($type, 1);
-		 
+		 $img->image_x 				 = $this->infIMG($type, 1);
 		 
          
          /*$img->image_resize =true;
