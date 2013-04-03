@@ -97,3 +97,714 @@ REQUEST_URI=/testdrive/site/photos
 in /var/www/testdrive/protected/models/Photo.php (14)
 in /var/www/testdrive/protected/views/site/pages/photos.php (20)
 in /var/www/testdrive/protected/controllers/SiteController.php (58)
+2013/04/03 16:44:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "videos".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('videos')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('videos')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/videos')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/videos
+---
+2013/04/03 16:44:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "pages".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('pages')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('pages')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/pages/vide...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/pages/videos
+---
+2013/04/03 16:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "pages".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('pages')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('pages')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/pages/vide...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/pages/videos
+---
+2013/04/03 17:11:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "admin/site/page/view/videos".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site/page...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/admin/site/page/view/videos
+HTTP_REFERER=http://localhost/testdrive/admin
+---
+2013/04/03 17:11:42 [error] [exception.CException] exception 'CException' with message 'Контроллер VideoController не может найти представление "index".' in /var/www/YiiRoot/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#1 /var/www/testdrive/protected/modules/admin/controllers/VideoController.php(128): CController->render('index', Array)
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): VideoController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/video')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/testdrive/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/testdrive/admin/video
+HTTP_REFERER=http://localhost/testdrive/admin
+---
+2013/04/03 17:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 17:46:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('video/view')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/video/1
+HTTP_REFERER=http://localhost/testdrive/admin/video/index/id/1
+---
+2013/04/03 18:56:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 18:56:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 18:56:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 18:58:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:00:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:00:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:01:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:01:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:01:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:04:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:04:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:05:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('video/view')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/video/1
+HTTP_REFERER=http://localhost/testdrive/admin/video/index/id/1
+---
+2013/04/03 19:05:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/03 19:18:26 [error] [php] Undefined variable: id (/var/www/testdrive/protected/controllers/UserController.php:70)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/changePassword
+in /var/www/testdrive/protected/controllers/UserController.php (70)
+in /var/www/testdrive/index.php (14)
+2013/04/03 19:18:39 [error] [php] Undefined variable: model (/var/www/testdrive/protected/controllers/UserController.php:79)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/changePassword
+in /var/www/testdrive/protected/controllers/UserController.php (79)
+in /var/www/testdrive/index.php (14)
+2013/04/03 19:20:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "password".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('password')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('password')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/password')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/password/22
+HTTP_REFERER=http://localhost/testdrive/user/changePassword
+---
+2013/04/03 19:34:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "create".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/create')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/create
+HTTP_REFERER=http://localhost/testdrive/admin/user/index
+---
+2013/04/03 19:43:29 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "User.old_password".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('old_password')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('old_password')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(User), 'old_password')
+#3 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1391): CHtml::activeInputField('password', Object(User), 'old_password', Array)
+#4 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(687): CHtml::activePasswordField(Object(User), 'old_password', Array)
+#5 /var/www/testdrive/protected/views/user/_formPassword.php(20): CActiveForm->passwordField(Object(User), 'old_password', Array)
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#7 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#9 /var/www/testdrive/protected/views/user/password.php(22): CController->renderPartial('_formPassword', Array)
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#11 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#13 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('password', Array, true)
+#14 /var/www/testdrive/protected/controllers/UserController.php(72): CController->render('password', Array)
+#15 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionChangePassword()
+#16 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('changePassword')
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/changePass...')
+#26 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /var/www/testdrive/index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/testdrive/user/changePassword
+HTTP_REFERER=http://localhost/testdrive/user/changePassword
+---
+2013/04/03 20:02:31 [error] [php] Array to string conversion (/var/www/testdrive/protected/models/User.php:72)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(159): CInlineValidator->validate()
+#1 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(794): User->validate()
+#2 /var/www/testdrive/protected/controllers/UserController.php(65): User->save()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionChangePassword()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/changePassword
+in /var/www/testdrive/protected/models/User.php (72)
+in /var/www/testdrive/protected/controllers/UserController.php (65)
+in /var/www/testdrive/index.php (14)
+2013/04/03 20:03:09 [error] [php] Array to string conversion (/var/www/testdrive/protected/models/User.php:72)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(159): CInlineValidator->validate()
+#1 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(794): User->validate()
+#2 /var/www/testdrive/protected/controllers/UserController.php(65): User->save()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionChangePassword()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/changePassword
+in /var/www/testdrive/protected/models/User.php (72)
+in /var/www/testdrive/protected/controllers/UserController.php (65)
+in /var/www/testdrive/index.php (14)
+2013/04/03 20:08:05 [error] [exception.CException] exception 'CException' with message 'Контроллер UserController не может найти представление "create".' in /var/www/YiiRoot/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#1 /var/www/testdrive/protected/controllers/UserController.php(129): CController->render('create', Array)
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionCreate()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/create')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/testdrive/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/testdrive/user/create
+HTTP_REFERER=http://localhost/testdrive/
+---
+2013/04/03 20:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "password".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('password')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('password')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/password')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/password
+HTTP_REFERER=http://localhost/testdrive/site/index
+---
+2013/04/03 20:20:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "password".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('password')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('password')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/password')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/password
+HTTP_REFERER=http://localhost/testdrive/site/index
+---
+2013/04/03 20:25:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "forgotPass".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('forgotPass')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/changePassword
+---
+2013/04/03 22:04:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "forgotPass".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('forgotPass')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/changePassword
+---
+2013/04/03 22:05:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "forgotPass".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('forgotPass')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:05:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "forgotPass".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('forgotPass')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:06:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "forgotPass".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('forgotPass')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:06:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "forgotPass".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('forgotPass')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:06:46 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (/var/www/YiiRoot/framework/web/helpers/CHtml.php:98)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/helpers/CHtml.php(153): renderAttributes()
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1175): tag()
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(580): inputField()
+#3 /var/www/testdrive/protected/views/user/forgotPass.php(15): textField()
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(95): UserController->renderInternal()
+#6 /var/www/YiiRoot/framework/web/CController.php(869): UserController->renderFile()
+#7 /var/www/YiiRoot/framework/web/CController.php(782): UserController->renderPartial()
+#8 /var/www/testdrive/protected/controllers/UserController.php(79): UserController->render()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/forgotPass
+in /var/www/testdrive/protected/views/user/forgotPass.php (15)
+in /var/www/testdrive/protected/controllers/UserController.php (79)
+in /var/www/testdrive/index.php (14)
+2013/04/03 22:09:56 [error] [php] Object of class User could not be converted to string (/var/www/YiiRoot/framework/web/helpers/CHtml.php:1918)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/helpers/CHtml.php(580): inputField()
+#1 /var/www/testdrive/protected/views/user/forgotPass.php(15): textField()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): UserController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): UserController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): UserController->renderPartial()
+#6 /var/www/testdrive/protected/controllers/UserController.php(81): UserController->render()
+#7 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#8 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#10 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#17 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/forgotPass
+in /var/www/testdrive/protected/views/user/forgotPass.php (15)
+in /var/www/testdrive/protected/controllers/UserController.php (81)
+in /var/www/testdrive/index.php (14)
+2013/04/03 22:20:33 [error] [exception.CException] exception 'CException' with message 'User содержит неверное правило проверки. Правило должно иметь имя и включать элементы для проверки.' in /var/www/YiiRoot/framework/base/CModel.php:288
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/YiiRoot/framework/base/CModel.php(546): CModel->getValidators()
+#2 /var/www/YiiRoot/framework/base/CModel.php(467): CModel->getSafeAttributeNames()
+#3 /var/www/YiiRoot/framework/base/CComponent.php(152): CModel->setAttributes(Array)
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(159): CComponent->__set('attributes', Array)
+#5 /var/www/testdrive/protected/controllers/UserController.php(82): CActiveRecord->__set('attributes', Array)
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:22:20 [error] [php] Object of class User could not be converted to string (/var/www/YiiRoot/framework/web/helpers/CHtml.php:1918)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/helpers/CHtml.php(580): inputField()
+#1 /var/www/testdrive/protected/views/user/forgotPass.php(21): textField()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): UserController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): UserController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): UserController->renderPartial()
+#6 /var/www/testdrive/protected/controllers/UserController.php(92): UserController->render()
+#7 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#8 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#10 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#17 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/forgotPass
+in /var/www/testdrive/protected/views/user/forgotPass.php (21)
+in /var/www/testdrive/protected/controllers/UserController.php (92)
+in /var/www/testdrive/index.php (14)
+2013/04/03 22:40:32 [error] [exception.CException] exception 'CException' with message 'User содержит неверное правило проверки. Правило должно иметь имя и включать элементы для проверки.' in /var/www/YiiRoot/framework/base/CModel.php:288
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/YiiRoot/framework/base/CModel.php(546): CModel->getValidators()
+#2 /var/www/YiiRoot/framework/base/CModel.php(467): CModel->getSafeAttributeNames()
+#3 /var/www/YiiRoot/framework/base/CComponent.php(152): CModel->setAttributes(Array)
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(159): CComponent->__set('attributes', Array)
+#5 /var/www/testdrive/protected/controllers/UserController.php(82): CActiveRecord->__set('attributes', Array)
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:41:58 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CRequiredValidator.caseSensitive".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/YiiRoot/framework/validators/CValidator.php(189): CComponent->__set('caseSensitive', false)
+#1 /var/www/YiiRoot/framework/base/CModel.php(286): CValidator::createValidator('required', Object(User), 'email', Array)
+#2 /var/www/YiiRoot/framework/base/CModel.php(260): CModel->createValidators()
+#3 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1964): CModel->getValidators('email')
+#4 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(User), 'email', Array)
+#5 /var/www/testdrive/protected/views/user/forgotPass.php(21): CHtml::activeTextField(Object(User), 'email')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#7 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#9 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('forgotPass', Array, true)
+#10 /var/www/testdrive/protected/controllers/UserController.php(94): CController->render('forgotPass', Array)
+#11 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#12 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#22 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/testdrive/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:42:32 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CRequiredValidator.caseSensitive".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/YiiRoot/framework/validators/CValidator.php(189): CComponent->__set('caseSensitive', false)
+#1 /var/www/YiiRoot/framework/base/CModel.php(286): CValidator::createValidator('required', Object(User), 'email', Array)
+#2 /var/www/YiiRoot/framework/base/CModel.php(260): CModel->createValidators()
+#3 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1964): CModel->getValidators('email')
+#4 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(User), 'email', Array)
+#5 /var/www/testdrive/protected/views/user/forgotPass.php(21): CHtml::activeTextField(Object(User), 'email')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#7 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#9 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('forgotPass', Array, true)
+#10 /var/www/testdrive/protected/controllers/UserController.php(94): CController->render('forgotPass', Array)
+#11 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#12 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#22 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/testdrive/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 22:42:43 [error] [exception.CException] exception 'CException' with message 'User содержит неверное правило проверки. Правило должно иметь имя и включать элементы для проверки.' in /var/www/YiiRoot/framework/base/CModel.php:288
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(260): CModel->createValidators()
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1964): CModel->getValidators('email')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(User), 'email', Array)
+#3 /var/www/testdrive/protected/views/user/forgotPass.php(21): CHtml::activeTextField(Object(User), 'email')
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#6 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('forgotPass', Array, true)
+#8 /var/www/testdrive/protected/controllers/UserController.php(94): CController->render('forgotPass', Array)
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/testdrive/index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 23:14:33 [error] [php] Undefined variable: email (/var/www/testdrive/protected/controllers/UserController.php:85)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/user/forgotPass
+in /var/www/testdrive/protected/controllers/UserController.php (85)
+in /var/www/testdrive/index.php (14)
+2013/04/03 23:18:27 [error] [exception.CException] exception 'CException' with message 'В классе UserController и его поведениях не найден метод или замыкание с именем "addError".' in /var/www/YiiRoot/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/testdrive/protected/controllers/UserController.php(101): CComponent->__call('addError', Array)
+#1 /var/www/testdrive/protected/controllers/UserController.php(101): UserController->addError('email', 'This email addr...')
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/testdrive/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---
+2013/04/03 23:18:39 [error] [exception.CException] exception 'CException' with message 'В классе UserController и его поведениях не найден метод или замыкание с именем "addError".' in /var/www/YiiRoot/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/testdrive/protected/controllers/UserController.php(101): CComponent->__call('addError', Array)
+#1 /var/www/testdrive/protected/controllers/UserController.php(101): UserController->addError('email', 'This email addr...')
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): UserController->actionForgotPass()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('forgotPass')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('user/forgotPass')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/testdrive/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/testdrive/user/forgotPass
+HTTP_REFERER=http://localhost/testdrive/user/forgotPass
+---

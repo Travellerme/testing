@@ -43,7 +43,7 @@ class Page extends CActiveRecord
 			array('timeStart, timeEnd,', 'date', 'format'=>'d.m.Y H:i', 'message'=>'Incorrect format Date row. It must be d.m.Y H:i'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, imgUrl, timeStart, timeEnd, created, status, category_id', 'safe', 'on'=>'search'),
+			array('id, title, status, category_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,8 +93,6 @@ class Page extends CActiveRecord
 	public function afterFind()
 	{
 		$dateFormat = "d.m.Y H:i";
-		//$pattern = '/(<img.* \/>)/i';
-		//$replacement = ' ';
 		if($this->timeStart)
 			$this->timeStart = date($dateFormat,$this->timeStart);
 			
@@ -148,10 +146,8 @@ class Page extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('timeStart',$this->timeStart);
 		$criteria->compare('title',$this->title);
 		$criteria->compare('status',$this->status);
-		$criteria->compare('timeEnd',$this->timeEnd);
 		$criteria->compare('category_id',$this->category_id);
 
 		return new CActiveDataProvider($this, array(

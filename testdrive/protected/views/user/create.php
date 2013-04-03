@@ -3,8 +3,8 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Create',
+'Users'=>array('index'),
+'Create',
 );
 ?>
 <h1>Create User</h1>

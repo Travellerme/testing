@@ -144,7 +144,7 @@ class Photo extends CFormModel
          /*$img->image_resize          = true;
 		 $img->image_ratio_x         = true;
 		 $img->image_y               = $this->infIMG($type, 1);*/
-		 		 
+		 	 
 		 $img->image_resize          = true;
 		 $img->image_ratio_crop      = true;
 		 $img->image_y               = $this->infIMG($type, 1);

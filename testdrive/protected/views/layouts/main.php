@@ -24,6 +24,7 @@
 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		<div id="forgotPass"><?php echo (Yii::app()->user->isGuest)?CHtml::link('Forgot password?',array('/user/forgotPass')):''; ?></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">

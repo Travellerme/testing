@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends Controller
+class VideoController extends Controller
 {
 	
 	/**
@@ -13,7 +13,7 @@ class UserController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
-	
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -23,7 +23,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','delete','update','password','view'),
+				'actions'=>array('index','delete','create','update'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -32,17 +32,29 @@ class UserController extends Controller
 		);
 	}
 
+	
 	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionView($id)
+	public function actionCreate()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		$model=new Video;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Video']))
+		{
+			$model->attributes=$_POST['Video'];
+			if($model->save())
+				$this->redirect(array('index','id'=>$model->id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
 		));
 	}
-
 
 	/**
 	 * Updates a particular model.
@@ -52,38 +64,22 @@ class UserController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$model->scenario = 'update';
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['Video']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['Video'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index','id'=>$model->id));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
 		));
 	}
-	
-	
-	public function actionPassword($id)
-	{
-		$model = $this->loadModel($id);
-		
-		if(isset($_POST['User']))
-		{
-			$model->attributes = $_POST['User'];
-			if($model->save())
-				$this->redirect(array('password','id'=>$model->id));
-		}
-		$this->render('password',array(
-			'model'=>$model,
-		));
-	}
-	
+
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -95,28 +91,18 @@ class UserController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}
 
-	
 	/**
 	 * Manages all models.
 	 */
 	public function actionIndex()
 	{
-		if(isset($_POST['noban']) && isset($_POST['userId']))
-			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>0));
-		else if(isset($_POST['ban']) && isset($_POST['userId']))
-			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>1),array('condition'=>'id<>'.Yii::app()->user->id));
-			
-		if(isset($_POST['admin']) && isset($_POST['userId']))
-			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
-		else if(isset($_POST['user']) && isset($_POST['userId']))
-			$model = User::model()->updateByPk($_POST['userId'],array('role'=>0),array('condition'=>'id<>'.Yii::app()->user->id));
-		$model=new User('search');
+		$model=new Video('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
+		if(isset($_GET['Video']))
+			$model->attributes=$_GET['Video'];
 
 		$this->render('index',array(
 			'model'=>$model,
@@ -127,12 +113,12 @@ class UserController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return User the loaded model
+	 * @return Video the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model=Video::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -140,11 +126,11 @@ class UserController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param User $model the model to be validated
+	 * @param Video $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='video-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

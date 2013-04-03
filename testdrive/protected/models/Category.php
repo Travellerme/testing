@@ -105,6 +105,9 @@ class Category extends CActiveRecord
 			}
 			$result[] = array('label'=>Yii::t("main", "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
+			$result[] = array('label'=>'Photo', 'url'=>array('site/photos'));
+			$result[] = array('label'=>'Video', 'url'=>array('video/index'));
+			$result[] = array('label'=>'My profile', 'url'=>array('user/changePassword'), 'visible'=>!Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Registration"), 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest);
 		}
 		return $result;

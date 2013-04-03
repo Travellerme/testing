@@ -18,6 +18,7 @@ class User extends CActiveRecord
 	public $salt;
 	public $new_password;
 	public $new_confirm;
+	public $old_password;
 	public $verifyCode;
 	
 	/**
@@ -49,19 +50,60 @@ class User extends CActiveRecord
 		
 			array('username, email, new_password','required', 'on'=>'insert'),
 			array('username, email, ban, role','required', 'on'=>'update'),
+			array('new_password, old_password', 'required', 'on'=>'changePass'),
+			array('email','required','on'=>'forgotPass'),
+			array('old_password', 'validateOldPass', 'on'=>'changePass'),
 			array('username', 'match', 'pattern'=>'#^[a-zA-Z0-9_\.-]+$#', 'message'=>'Incorrect login'),
 			array('email', 'email', 'message'=>'Incorrect e-mail'),
-			array('username, email', 'unique', 'caseSensitive'=>false),
-			array('email, username', 'unique'), 
+			array('username, email', 'unique', 'caseSensitive'=>false, 'on'=>'insert,update'),
 			array('new_password', 'length', 'min'=>5, 'allowEmpty'=>true),
 			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>'Passwords does not match'),
 			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'register'),
 			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password, email, ban, role', 'safe', 'on'=>'search'),
+			array('id, username, email, ban, role', 'safe', 'on'=>'search'),
 			
 		);
+	}
+	
+	
+	public function recoverPassword()
+	{
+		return $this->new_password = $this->generatePassword(11);		
+	}
+	
+	private  function generatePassword($number)
+	{
+		$arr = array('a','b','c','d','e','f',
+					 'g','h','i','j','k','l',
+					 'm','n','o','p','r','s',
+					 't','u','v','x','y','z',
+					 'A','B','C','D','E','F',
+					 'G','H','I','J','K','L',
+					 'M','N','O','P','R','S',
+					 'T','U','V','X','Y','Z',
+					 '1','2','3','4','5','6',
+					 '7','8','9','0','.',',',
+					 '(',')','[',']','!','?',
+					 '&','^','%','@','*','$',
+					 '<','>','/','|','+','-',
+					 '{','}','`','~');
+   
+		$pass = "";
+		for($i = 0; $i < $number; $i++)
+		{
+		  // Вычисляем случайный индекс массива
+		  $index = rand(0, count($arr) - 1);
+		  $pass .= $arr[$index];
+		}
+		return $pass;
+    }
+  
+	public function validateOldPass($attributes, $params)
+	{
+		if(!$this->validatePassword($this->$attributes))
+			$this->addError('old_password','Your wrote incorrect old password');
 	}
 
 	/**
@@ -93,7 +135,7 @@ class User extends CActiveRecord
 	}
 	
 	protected function beforeSave() 
-	{ 
+	{
 		if($this->isNewRecord)
 		{
 			$this->created = time();
@@ -106,7 +148,7 @@ class User extends CActiveRecord
 		if($this->username)
 			$this->username = trim($this->username);
 			
-		if ($this->new_password) 
+		if($this->new_password) 
 			$this->password = $this->hashPassword(trim($this->new_password));
 			
 		return parent::beforeSave();
@@ -119,6 +161,7 @@ class User extends CActiveRecord
 	 */
 	public function validatePassword($password)
 	{
+		$password = trim($password);
 		return md5($this->salt.$password)===$this->password;
 	}
 
