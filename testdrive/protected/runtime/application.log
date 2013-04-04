@@ -808,3 +808,21 @@ Stack trace:
 REQUEST_URI=/testdrive/user/forgotPass
 HTTP_REFERER=http://localhost/testdrive/user/forgotPass
 ---
+2013/04/04 16:49:26 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/controllers/PageController.php:98)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): PageController->runAction()
+#3 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PageController->filterAccessControl()
+#6 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/YiiRoot/framework/web/CController.php(265): PageController->runActionWithFilters()
+#9 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PageController->run()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/page/4
+in /var/www/testdrive/protected/controllers/PageController.php (98)
+in /var/www/testdrive/index.php (14)

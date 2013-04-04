@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Мар 20 2013 г., 23:38
+-- Время создания: Апр 04 2013 г., 21:36
 -- Версия сервера: 5.5.29
 -- Версия PHP: 5.3.10-1ubuntu3.6
 
@@ -28,10 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tbl_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `position` varchar(8) NOT NULL,
+  `titleCategory` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `position` varchar(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `tbl_category`
+--
+
+INSERT INTO `tbl_category` (`id`, `titleCategory`, `position`) VALUES
+(1, 'Новости', 'left'),
+(2, 'Репертуар', 'top'),
+(3, 'События', 'left'),
+(4, 'Планы', 'left');
 
 -- --------------------------------------------------------
 
@@ -46,8 +56,24 @@ CREATE TABLE IF NOT EXISTS `tbl_comment` (
   `created` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `guest` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Дамп данных таблицы `tbl_comment`
+--
+
+INSERT INTO `tbl_comment` (`id`, `content`, `event_id`, `created`, `user_id`, `guest`, `status`) VALUES
+(7, 'sdf', 2, 1364577098, 0, 'sadasdas', 0),
+(8, 'qqqqqqqqq', 2, 1364577162, 0, 'qqqqqqqq', 0),
+(9, 'aaaaaaaa', 2, 1364577787, 0, 'qaq', 0),
+(11, 'qweeeeeeeee', 2, 1364578373, 22, '', 0),
+(12, 'fffffffff', 2, 1364578401, 22, '', 0),
+(13, 'zxcz', 4, 1364589742, 22, '', 0),
+(14, 'a', 4, 1364589748, 22, '', 0),
+(15, 'asdada', 4, 1364589800, 22, '', 0),
+(16, 'asdasdad', 4, 1364823567, 0, 'name', 0);
 
 -- --------------------------------------------------------
 
@@ -58,7 +84,6 @@ CREATE TABLE IF NOT EXISTS `tbl_comment` (
 CREATE TABLE IF NOT EXISTS `tbl_event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `imgUrl` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `timeStart` int(11) NOT NULL,
   `timeEnd` int(11) NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -66,41 +91,37 @@ CREATE TABLE IF NOT EXISTS `tbl_event` (
   `status` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `tbl_event`
 --
 
-INSERT INTO `tbl_event` (`id`, `title`, `imgUrl`, `timeStart`, `timeEnd`, `description`, `created`, `status`, `category_id`) VALUES
-(1, 'title_1', 'events/image.jpg', 1372850100, 1372865400, 'desc_1', 0, 0, 0),
-(2, 'title_2', 'Image2.png', 1373045700, 1373053020, 'desc_2', 0, 0, 0),
-(3, 'title_3', 'image3.png', 1373199000, 1373209200, 'desc_3', 0, 0, 0);
+INSERT INTO `tbl_event` (`id`, `title`, `timeStart`, `timeEnd`, `description`, `created`, `status`, `category_id`) VALUES
+(1, 'title_1', 1372850100, 1372865400, 'desc_1', 1363893892, 0, 1),
+(2, 'title_2', 1373045700, 1373053020, 'desc_2', 1363893892, 0, 2),
+(3, 'title_3', 1373199000, 1373209200, 'desc_3', 1363893892, 0, 1),
+(4, 'Событие_4', 1364217052, 1364224672, '<p>\r\n	asdasdasd</p>\r\n<p>\r\n	asdasdas<img align="middle" alt="" height="68" src="/upload/userfiles/images/screen.png" width="100" /></p>\r\n', 1363893892, 0, 2);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `tbl_news`
+-- Структура таблицы `tbl_setting`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_news` (
+CREATE TABLE IF NOT EXISTS `tbl_setting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `partDescription` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `fullDescription` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `date` int(11) NOT NULL,
+  `defaultStatusComment` int(11) NOT NULL,
+  `defaultStatusUser` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `tbl_news`
+-- Дамп данных таблицы `tbl_setting`
 --
 
-INSERT INTO `tbl_news` (`id`, `title`, `partDescription`, `fullDescription`, `date`) VALUES
-(1, 'Новость_1', 'Это тестовое описание. Проверяется кодировка. Данное описание является частью.\r\n\r\nА данное является полным. Дополняет частичное.\r\nЧто делает частичное описание, не частичным, а полным.\r\nВот так-то.', 'Это тестовое описание. Проверяется кодировка. Данное описание является частью.\r\n\r\nА данное является полным. Дополняет частичное.\r\nЧто делает частичное описание, не частичным, а полным.\r\nВот так-то.', 1373903739),
-(2, 'Новость_2', 'Частичное описание второй новости, которое будет продолжено далее...', 'Частичное описание второй новости, которое будет продолжено далее...\r\nВот и продолжение сего текста, что означает, что это уже является полным описанием', 1376738100),
-(3, 'Новость_3', 'ываытадыватждолыатфыволдажптэыв\r\nываыважтв\r\nапывпжлыв\r\nыважывтаыдлвтаыватываыв\r\nываыьвэаы\r\nываыв', 'ываытадыватждолыатфыволдажптэыв\r\nываыважтв\r\nапывпжлыв\r\nыважывтаыдлвтаыватываыв\r\nываыьвэаы\r\nываыв', 1379246743),
-(4, 'Название_4', 'Проверка записи описания в базу. Это описание должно частично попасть в частичное описание, и полностью записаться в полное описание. Еще немного букв и я смогу проверить, как это нынче работает.\r\nНе хватило символов. Ну ладно, я проверю та экранирование ', 'Проверка записи описания в базу. Это описание должно частично попасть в частичное описание, и полностью записаться в полное описание. Еще немного букв и я смогу проверить, как это нынче работает.\r\nНе хватило символов. Ну ладно, я проверю та экранирование спец. тегов. Таких как <b>блаблабла</b>\r\n<script>\r\nalert(123);\r\n<script>', 1378910152);
+INSERT INTO `tbl_setting` (`id`, `defaultStatusComment`, `defaultStatusUser`) VALUES
+(1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -110,44 +131,52 @@ INSERT INTO `tbl_news` (`id`, `title`, `partDescription`, `fullDescription`, `da
 
 CREATE TABLE IF NOT EXISTS `tbl_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL,
-  `salt` varchar(128) NOT NULL,
-  `email` varchar(128) NOT NULL,
+  `username` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `salt` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `created` int(11) NOT NULL,
   `ban` int(11) NOT NULL,
   `role` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Дамп данных таблицы `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`id`, `username`, `password`, `salt`, `email`, `created`, `ban`, `role`) VALUES
-(1, 'test1', 'pass1', '', 'test1@example.com', 0, 0, 0),
-(2, 'test2', 'pass2', '', 'test2@example.com', 0, 0, 0),
-(3, 'test3', 'pass3', '', 'test3@example.com', 0, 0, 0),
-(4, 'test4', 'pass4', '', 'test4@example.com', 0, 0, 0),
-(5, 'test5', 'pass5', '', 'test5@example.com', 0, 0, 0),
-(6, 'test6', 'pass6', '', 'test6@example.com', 0, 0, 0),
-(7, 'test7', 'pass7', '', 'test7@example.com', 0, 0, 0),
-(8, 'test8', 'pass8', '', 'test8@example.com', 0, 0, 0),
-(9, 'test9', 'pass9', '', 'test9@example.com', 0, 0, 0),
-(10, 'test10', 'pass10', '', 'test10@example.com', 0, 0, 0),
-(11, 'test11', 'pass11', '', 'test11@example.com', 0, 0, 0),
-(12, 'test12', 'pass12', '', 'test12@example.com', 0, 0, 0),
-(13, 'test13', 'pass13', '', 'test13@example.com', 0, 0, 0),
-(14, 'test14', 'pass14', '', 'test14@example.com', 0, 0, 0),
-(15, 'test15', 'pass15', '', 'test15@example.com', 0, 0, 0),
-(16, 'test16', 'pass16', '', 'test16@example.com', 0, 0, 0),
-(17, 'test17', 'pass17', '', 'test17@example.com', 0, 0, 0),
-(18, 'test18', 'pass18', '', 'test18@example.com', 0, 0, 0),
-(19, 'test19', 'pass19', '', 'test19@example.com', 0, 0, 0),
-(20, 'test20', 'pass20', '', 'test20@example.com', 0, 0, 0),
-(21, 'test21', 'pass21', '', 'test21@example.com', 0, 0, 0),
-(22, 'admin', 'e5ef8a9e5cf1749daeba305fb0e91412', '$2a$10$.b/3Ti/nYwCVGDx.v597YJ', 'admin@gmail.com', 0, 0, 0),
-(24, 'qwerty', '532251fdbcf91939fbcfe941a98c695c', '$2a$10$UzlVhGu2sncknZg0eFmZxA', 'qwerty@gmail.com', 0, 0, 0);
+(22, 'admin', 'a88ab20dfb86f3ba5985e757185db6a8', '$2a$10$Bia6t436WGgYPU5SyEtJkE', 'admin@gmail.com', 0, 0, 1),
+(24, 'qwerty', '9d528e96251e1dec9fb12ab24d8c2183', '$2a$10$wUO2Zk7cvPpjaZRUbIsm65', 'qwerty@gmail.com', 0, 0, 0),
+(25, 'username', '67857496f622e324f889d957717f6483', '$2a$10$7ke1LXo7X/I1jCqV7SrShg', 'username@user.com', 0, 0, 0),
+(26, 'user123', '623098f378bb4a08ea7f788f675f3edf', '$2a$10$I8aNFKuychIGQv1N2j/K2i', 'user@user.ru', 1363978898, 0, 0),
+(27, 'qwertyw', 'd43904df1ba71b07e647ed2136af3528', '$2a$10$NwZ2fVNE/DO5CRONhKM5d7', 'qwerty@asda.sa', 1364495959, 0, 0),
+(28, 'qwertyw2', 'd64fe804b7fdc7151c1ebd2410a659c9', '$2a$10$NXrUWDR8KJj4Lieh0E/uMO', 'qwerty@asda.sa2', 1364496038, 0, 0),
+(29, 'qwertyw2a', 'dd6513cd83fdca67ced5749d7a18f97c', '$2a$10$9cLO2GuxyG2uojUmbT2DT5', 'qwerty@asda.sa2a', 1364496078, 0, 0),
+(30, 'qwertyw2asw', '9fa7103bf0b3a613656ec2521314f7fe', '$2a$10$tphMhTCrG1w/KFpocVyX7t', 'qwerty@asda.sa2a1', 1364496238, 0, 0),
+(31, 'asdas', 'a6e1fd958ed830151e691d35139cc62c', '$2a$10$qawiuf/ZY/Xig5jaW4QBJb', 'qweq@adda.aq', 1364496295, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tbl_video`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `link` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `created` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `tbl_video`
+--
+
+INSERT INTO `tbl_video` (`id`, `title`, `description`, `link`, `created`) VALUES
+(1, 'Clutch - Ghost', '<p>\r\n	Описание тратата, классная песня</p>\r\n<ul>\r\n	<li>\r\n		фвф</li>\r\n	<li>\r\n		фв</li>\r\n	<li>\r\n		ввв</li>\r\n</ul>\r\n', '<iframe width="560" height="315" src="http://www.youtube.com/embed/42yUeYKNYck" frameborder="0" allowfullscreen></iframe>\r\n', 1365004736);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

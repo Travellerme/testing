@@ -14,7 +14,7 @@
 }
 </style>
 <![endif]-->
-
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 <link rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css' type='text/css' />
 </head>
@@ -28,20 +28,19 @@
             
             <div id="navigation">
 				<?php $this->widget('zii.widgets.CMenu',array(
-					'items'=>array(
-						array('label'=>'Home', 'url'=>array('/site/index')),
-						array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-						array('label'=>'Contact', 'url'=>array('/site/contact')),
-						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-					),
+					'items'=>Category::menu('top'),
 				)); ?>
             </div>
-
+			
+			<?php if(isset($this->breadcrumbs)):?>
+				<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+					'links'=>$this->breadcrumbs,
+				)); ?><!-- breadcrumbs -->
+			<?php endif?>
             
             <div id="contenttop">
                 <div id="contentbtm">
-                    <div id="content">
+                    <div id="contentMain">
                 <div id='wsite-content' class='wsite-not-footer'>
 					<?php echo $content; ?>
 				</div>
@@ -50,9 +49,13 @@
                     </div>
                 </div>        
             </div>
-                <div id="footer">
-                    <a href='#' target='_blank'><?php echo Yii::app()->name; ?></a> by you
-                </div>
+           
+            <div id="footer">
+				<?php echo CHtml::link(Yii::t("main", "Contacts"), array('/site/contact')); ?><br />
+				Copyright &copy; <?php echo date('Y'); ?> by Vyacheslav Shevchenko.<br/>
+				All Rights Reserved.<br/>
+				<?php echo Yii::powered(); ?>
+			</div><!-- footer -->
 			<div class="clear"></div>        
         </div>            
     </div> 

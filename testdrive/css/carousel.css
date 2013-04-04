@@ -1,20 +1,20 @@
-#container{
+#images{
 position: relative;
 top: 10px;
 left: 30px;
-height: 150px;
-width: 470px; /* 3 images of 150px showing with a 10px margin = 3*(150) + 2*(10) = 470 */
+height: 154px;
+width: 477px; /* 3 images of 150px showing with a 10px margin = 3*(150) + 2*(10) = 470 */
 overflow: hidden;
 }
  
  
-#container img{
+#images img{
 position: absolute;
 top: 0px;
 height: 150px;
 width: 150px;
 cursor: pointer;
-overflow: hidden;
+overflow: hidden;border: 2px solid #421107;
 }
  
 #carouselLeft{

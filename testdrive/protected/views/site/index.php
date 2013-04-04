@@ -13,14 +13,13 @@ $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/click-carous
 <script type="text/javascript">
 	
 $(function(){
-	$("#container").clickCarousel({margin: 10});	
+	$("#images").clickCarousel({margin: 10});	
 });
 
 </script>  
 <h1>Добро пожаловать в молодежный "Театр Остров"</h1>
 
-<div id="wrapper"> 
-	<div id="container">   	
+<div id="images">   	
 		<?php 
 			foreach ($listImg['href'] as $key=>$val)
 			{
@@ -28,8 +27,9 @@ $(function(){
 				echo "<img src='$src'/>";
 			}
 		 ?>
+	</div>
 		
-    </div>
+ 
 	<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/leftArr.jpg'?>" alt="Left Arrow" />
 	<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/rightArr.jpg'?>" alt="Right Arrow" />
 </div>

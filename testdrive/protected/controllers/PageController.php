@@ -95,9 +95,8 @@ class PageController extends Controller
 		$user=User::model()->find('id=?',array(trim(strtolower(Yii::app()->user->id))));
 		$comment = new Comment;
 	
-		if($user->ban ==1)
+		if(isset($user) && $user->ban ==1)
 		{
-			
 			$user->addError('ban','Your account was banned. If you just registered, please wait, while your account will be approved');
 			Yii::app()->user->logout();
 			$this->redirect('/site/index');
