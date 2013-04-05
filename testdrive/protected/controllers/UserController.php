@@ -64,7 +64,7 @@ class UserController extends Controller
 			$model->attributes = $_POST['User'];
 			if($model->save())
 			{
-				Yii::app()->user->setFlash('password','Your password was succesfully changed');
+				Yii::app()->user->setFlash('password','Your password was successfully changed and sent to your email');
 				$this->refresh();
 			}
 		}
@@ -89,7 +89,7 @@ class UserController extends Controller
 						$password = $searchModel->recoverPassword();
 						$content = 'Your new password '.$password;
 						$searchModel->save(false);
-						$name='=?UTF-8?B?'.base64_encode('Theater Island greeting you').'?=';
+						$name='=?UTF-8?B?'.base64_encode('Theater "Island" greeting you').'?=';
 						$subject='=?UTF-8?B?'.base64_encode('recover password').'?=';
 						$headers="From: $name <{$model->email}>\r\n".
 							"Reply-To: {$model->email}\r\n".

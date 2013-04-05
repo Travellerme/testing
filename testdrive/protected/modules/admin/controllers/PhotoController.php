@@ -54,57 +54,7 @@ class PhotoController extends Controller
 		$this->render('index',array('model'=>$model));
 	}
 	
-	/*public function actionDesignPhoto($id=FALSE)
-	{
-			
-		//$this->usermenu();
-
-		if(!$id)
-		{
-			$id=Yii::app()->user->id;
-		}
-
-		$model = new PhotoForm();
-
-		if(isset($_POST['ajax']) && $_POST['ajax']==='designer-photo-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		//сохраняет новые фотографии
-		if(isset ($_FILES['image']) && $_POST['PhotoForm'] )
-		{
-
-		  //настройки для БД
-		  $model->user_id=$id;
-		  $model->alt=$_POST['PhotoForm']['alt'];
-		  $model->url=$_POST['PhotoForm']['url'];
-
-
-
-		  $model->savePhoto($_FILES['image'],'full_img');
-		  $model->savePhoto($_FILES['image'],'small_img');
-
-		}
-
-		 //загружает ранее загруженные фотографии
-		$criteria = new CDbCriteria();
-
-		
-		$criteria->condition="user_id=:id AND type=:type ";
-		$criteria->params=array("id"=>$id,"type"=>'small_img');
-		$criteria->order="`create` DESC";
-
-		$photos = Photo::model()->findAll($criteria);
-
-
-		//обратный url
-		YII::app()->user->setReturnUrl(YII::app()->request->getUrl());
-
-		$this->render('photo/index',array('model'=>$model,'photos'=>$photos));
-	}
-*/
+	
 
 	public function actionDelPhoto($key=FALSE)
 	{

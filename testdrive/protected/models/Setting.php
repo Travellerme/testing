@@ -62,7 +62,7 @@ class Setting extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'defaultStatusComment' => 'Confirmation comments by default ',
+			'defaultStatusComment' => 'Confirmation comments by default',
 			'defaultStatusUser' => 'Members are banned by default',
 		);
 	}
