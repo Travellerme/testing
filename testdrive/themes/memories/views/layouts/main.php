@@ -32,6 +32,14 @@
 				)); ?>
             </div>
 			
+			<?php if(Yii::app()->user->isGuest):?>
+				<div id="forgotPass">
+					<?php echo CHtml::link('Forgot password?',array('/user/forgotPass')); ?>
+				</div>
+			<?php else:?>
+				<br />
+			<?php endif?>
+			
 			<?php if(isset($this->breadcrumbs)):?>
 				<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 					'links'=>$this->breadcrumbs,

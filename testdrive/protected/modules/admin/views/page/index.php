@@ -63,7 +63,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'status'=>array(
 			'name'=>'status',
-			'value'=>'($data->status==1)?"show":"hide"',
+			'value'=>'($data->status==1)?"hide":"show"',
 			'filter'=>array(0=>'hide',1=>'show'),
 		),
 		'categoryId'=>array(

@@ -36,6 +36,23 @@
  #footer, #footer p{ color: #dba963; }
  #footer a{ color: #f4cf9f; text-decoration: underline; }
 
+#forgotPass a
+{ 
+	position: relative; 
+	display: block; 
+	left: 800px;
+	color: #dba963; 
+	font-size: 14px; 
+	z-index: 2; 
+	text-decoration: none; 
+}
+#forgotPass a:hover, div.breadcrumbs a:hover
+{ 
+	color: #f4cf9f; 
+	text-decoration: 
+	underline; 
+}
+ 
 div.flash-error, div.flash-notice, div.flash-success
 {
 	padding:.8em;
@@ -93,10 +110,17 @@ div.view
 
 div.breadcrumbs
 {
+	font-family: Georgia;
+	color: #dba963;
 	font-size: 0.9em;
 	padding: 5px 20px;
+	
 }
-
+div.breadcrumbs a
+{
+	color: #dba963;
+	position: relative; 
+}
 div.breadcrumbs span
 {
 	font-weight: bold;
@@ -109,7 +133,8 @@ div.breadcrumbs span
 .portlet-content
 {
 	border: solid 3px #dba963;
-	width: 150px; padding: 0px 0px 145px 0px;
+	width: 150px; 
+	padding: 0px 0px 145px 0px;
 	border-radius: 12px;
 	-moz-border-radius: 12px;
 	-webkit-border-radius: 12px;

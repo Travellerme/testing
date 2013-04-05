@@ -1,12 +1,8 @@
 html, body 
 {
-	/*height:100%;*/
 	margin:0;
 }
-img
-{
-	border: 2px solid #000;
-}
+
 #bigImg 
 {
 	
@@ -59,6 +55,6 @@ img
 }
 .imgGallery
 {
-	/*width: 150px;*/
+	/*width: 150px;*/border: 2px solid #421107;
 	margin:3px 0 0 3px;
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Апр 04 2013 г., 21:36
+-- Время создания: Апр 05 2013 г., 20:36
 -- Версия сервера: 5.5.29
 -- Версия PHP: 5.3.10-1ubuntu3.6
 
@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 
 INSERT INTO `tbl_category` (`id`, `titleCategory`, `position`) VALUES
 (1, 'Новости', 'left'),
-(2, 'Репертуар', 'top'),
-(3, 'События', 'left'),
+(2, 'Репертуар', 'left'),
+(3, 'О нас', 'left'),
 (4, 'Планы', 'left');
 
 -- --------------------------------------------------------
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `tbl_event` (
   `status` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `tbl_event`
@@ -101,7 +101,8 @@ INSERT INTO `tbl_event` (`id`, `title`, `timeStart`, `timeEnd`, `description`, `
 (1, 'title_1', 1372850100, 1372865400, 'desc_1', 1363893892, 0, 1),
 (2, 'title_2', 1373045700, 1373053020, 'desc_2', 1363893892, 0, 2),
 (3, 'title_3', 1373199000, 1373209200, 'desc_3', 1363893892, 0, 1),
-(4, 'Событие_4', 1364217052, 1364224672, '<p>\r\n	asdasdasd</p>\r\n<p>\r\n	asdasdas<img align="middle" alt="" height="68" src="/upload/userfiles/images/screen.png" width="100" /></p>\r\n', 1363893892, 0, 2);
+(4, 'Событие_4', 1364217052, 1364224672, '<p>\r\n	asdasdasd</p>\r\n<p>\r\n	asdasdas<img align="middle" alt="" height="68" src="/upload/userfiles/images/screen.png" width="100" /></p>\r\n', 1363893892, 0, 2),
+(5, 'sdfsfs', 1373631265, 1373638465, '<p>\r\n	asdadad</p>\r\n', 1365166045, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `username`, `password`, `salt`, `email`, `created`, `ban`, `role`) VALUES
 (22, 'admin', 'a88ab20dfb86f3ba5985e757185db6a8', '$2a$10$Bia6t436WGgYPU5SyEtJkE', 'admin@gmail.com', 0, 0, 1),
-(24, 'qwerty', '9d528e96251e1dec9fb12ab24d8c2183', '$2a$10$wUO2Zk7cvPpjaZRUbIsm65', 'qwerty@gmail.com', 0, 0, 0),
+(24, 'qwerty', 'dfa3e847d1352e422f015f0082956c66', '$2a$10$jG2rK/Gi3Pd8Z65OVGCVmu', 'qwerty@gmail.com', 0, 0, 0),
 (25, 'username', '67857496f622e324f889d957717f6483', '$2a$10$7ke1LXo7X/I1jCqV7SrShg', 'username@user.com', 0, 0, 0),
 (26, 'user123', '623098f378bb4a08ea7f788f675f3edf', '$2a$10$I8aNFKuychIGQv1N2j/K2i', 'user@user.ru', 1363978898, 0, 0),
 (27, 'qwertyw', 'd43904df1ba71b07e647ed2136af3528', '$2a$10$NwZ2fVNE/DO5CRONhKM5d7', 'qwerty@asda.sa', 1364495959, 0, 0),

@@ -826,3 +826,79 @@ Stack trace:
 REQUEST_URI=/testdrive/page/4
 in /var/www/testdrive/protected/controllers/PageController.php (98)
 in /var/www/testdrive/index.php (14)
+2013/04/05 15:43:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/05 15:50:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/05 15:50:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/05 15:51:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/05 15:53:24 [error] [php] Undefined variable: category (/var/www/testdrive/protected/views/site/index.php:4)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(50): SiteController->render()
+#3 unknown(0): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#8 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#9 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (4)
+in /var/www/testdrive/protected/controllers/SiteController.php (50)
+in /var/www/testdrive/index.php (14)
+2013/04/05 20:15:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "themes/memories/images/containerbg1.jpg".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/memories...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/themes/memories/images/containerbg1.jpg
+HTTP_REFERER=http://localhost/testdrive/themes/memories/css/style.css
+---
+2013/04/05 20:28:14 [error] [php] scandir(/var/www/testdrive/protected/../childDir): failed to open dir: No such file or directory (/var/www/testdrive/protected/models/Photo.php:38)
+Stack trace:
+#0 unknown(0): SiteController->actionPhotos()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#5 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#9 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/photos
+in /var/www/testdrive/protected/models/Photo.php (38)
+in /var/www/testdrive/protected/controllers/SiteController.php (57)
+in /var/www/testdrive/index.php (14)

@@ -14,7 +14,7 @@ class Photo extends CFormModel
 		$cnt = count($listImg['href']);
 		for ($i=0; $i<$cnt; $i++)
 		{
-			if($i%4 == 0) 
+			if($i%3 == 0) 
 			{
 				$str .= '<br />';
 			}
@@ -31,9 +31,10 @@ class Photo extends CFormModel
 	
     public function searchImg($childDir, $compareImg = null)
     {
-		$dir = Yii::app()->baseUrl . '/' . $childDir;
-		$main = '/var/www/';
-		$img = scandir($main . $dir);
+		$url = Yii::app()->baseUrl . '/' . $childDir;
+		$dir = Yii::app()->getBasePath()."/../".$childDir;
+		$img = scandir($dir);
+		
 		$result = array();
 		foreach ($img as $key => $val)
 		{
@@ -44,7 +45,7 @@ class Photo extends CFormModel
 			
 			if(preg_match('/^(small_)(.*)/i',$val,$out))
 			{
-				$result['href'][]=$dir . '/' . $val;
+				$result['href'][]=$url . '/' . $val;
 				$result['img'][]= '/full_' . $out[2];
 			}
 			if($compareImg)
@@ -57,7 +58,7 @@ class Photo extends CFormModel
 			}	
 		
 		}
-		$result['bigImg'] = $dir;
+		$result['bigImg'] = $url;
 		return $result;
 	}
 	

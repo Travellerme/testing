@@ -2,10 +2,6 @@
 /* @var $this UserController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Forgot password',
-);
-
 ?>
 
 <h3>Password recovery</h3>

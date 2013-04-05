@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>'hide',1=>'show')); ?>
+		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>'show',1=>'hide')); ?>
 	</div>
 
 	<div class="row">

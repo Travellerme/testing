@@ -40,7 +40,7 @@ class Page extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('timeStart, timeEnd, description, title, status, category_id', 'required'),
-			array('timeStart, timeEnd,', 'date', 'format'=>'d.m.Y H:i', 'message'=>'Incorrect format Date row. It must be d.m.Y H:i'),
+			array('timeStart, timeEnd', 'date', 'format'=>'dd.MM.yyyy hh:mm', 'message'=>'Incorrect format Date row. It must be dd.MM.yyyy hh:mm'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, status, category_id', 'safe', 'on'=>'search'),
@@ -107,7 +107,7 @@ class Page extends CActiveRecord
 	
 	private function transformDate($date)
 	{
-		$timestamp=CDateTimeParser::parse($date,'d.m.Y H:i');
+		$timestamp=CDateTimeParser::parse($date,'dd.MM.yyyy hh:mm');
 		return $timestamp;
 	}
 	

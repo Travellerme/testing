@@ -19,7 +19,7 @@ $(function(){
 </script>  
 <h1>Добро пожаловать в молодежный "Театр Остров"</h1>
 
-<div id="images">   	
+	<div id="images">   	
 		<?php 
 			foreach ($listImg['href'] as $key=>$val)
 			{
@@ -30,6 +30,6 @@ $(function(){
 	</div>
 		
  
-	<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/leftArr.jpg'?>" alt="Left Arrow" />
-	<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/rightArr.jpg'?>" alt="Right Arrow" />
-</div>
+	<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/prev-my.png'?>" alt="Left Arrow" />
+	<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/next-my.png'?>" alt="Right Arrow" />
+

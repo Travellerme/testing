@@ -12,7 +12,7 @@
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-	<p class="note">Date must be as d.m.Y H:i</p>
+	<p class="note">Date must be as dd.MM.yyyy hh:mm</p>
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
