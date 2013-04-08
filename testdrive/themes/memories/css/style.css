@@ -38,9 +38,9 @@
 
 #forgotPass, #lang
 { 
-	position: relative; 
+	 
 	display: block; 
-	left: 800px;
+	padding-left: 800px;
 	z-index: 2; 
 	
 }

@@ -1,7 +1,7 @@
 <?php
 /* @var $this PageController */
 /* @var $dataProvider CActiveDataProvider */
-
+$this->pageTitle=Yii::t("main", Yii::app()->name);
 $this->breadcrumbs=array(
 	'Category: '.$category->titleCategory,
 );

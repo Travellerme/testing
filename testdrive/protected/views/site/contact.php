@@ -3,7 +3,7 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle=Yii::app()->name . ' - ' . Yii::t("main", "Contact Us");
+$this->pageTitle=Yii::t("main",Yii::app()->name) . ' - ' . Yii::t("main", "Contact Us");
 $this->breadcrumbs=array(
 	Yii::t("main", "Contacts"),
 );

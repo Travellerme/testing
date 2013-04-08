@@ -118,6 +118,7 @@ or <b>=</b>) в начале полей поиска',
 		'Manage Video' => 'Управления Видео',
 		'Create Video' => 'Создать Видео',
 		'View Video' => 'Просмотреть Видео',
+		'Password' => 'Пароль',
         'Please Introduce' => 'Пожалуйста представтесь',
         'Please enter the letters as they are shown in the image above.' 
 			=> 'Пожалуйста введите код, который отображен на картинке',

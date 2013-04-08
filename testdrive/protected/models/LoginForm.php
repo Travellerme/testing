@@ -37,6 +37,8 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			'rememberMe'=>Yii::t("main", "Remember me next time"),
+			'username'=> Yii::t("main", "Username"),
+			'password'=> Yii::t("main", "Password"),
 		);
 	}
 	public function checkBan()

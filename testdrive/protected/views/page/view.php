@@ -1,7 +1,7 @@
 <?php
 /* @var $this NewsController */
 /* @var $model News */
-
+$this->pageTitle=Yii::t("main", Yii::app()->name);
 $this->breadcrumbs=array(
 	Yii::t("main", "Category") . ' : '.$model->categoryName->titleCategory=>array('/page/index','id'=>$model->category_id),
 	$model->title,
@@ -9,7 +9,8 @@ $this->breadcrumbs=array(
 ?>
 
 <h1><?php echo $model->title; ?></h1>
-<?php echo Yii::t("main", "Created") . '[' . $model->created . ']'; ?>
+
+<?php echo Yii::t("main", "Created") . ' [' . $model->created . ']'; ?>
 <hr />
 <?php echo '['.CHtml::encode($model->timeStart).']'; ?>
 	
