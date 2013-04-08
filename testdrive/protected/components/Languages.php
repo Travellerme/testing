@@ -1,25 +1,14 @@
 <?php
-/**
- * Controller is the customized base controller class.
- * All controller classes for this application should extend from this base class.
- */
-class Controller extends CController
+class Languages extends CApplicationComponent
 {
 	/**
-	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
-	 * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
+	 * @var boolean enable language component.
 	 */
-	public $layout='//layouts/column2';
+	public $useLanguage=false;
 	/**
-	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+	 * @var boolean auto detect language if not set.
 	 */
-	public $menu=array();
-	/**
-	 * @var array the breadcrumbs of the current page. The value of this property will
-	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
-	 * for more details on how to specify this property.
-	 */
-	public $breadcrumbs=array();
+	public $autoDetect=false;
 	/**
 	 * @var array allowed languages.
 	 */
@@ -35,14 +24,22 @@ class Controller extends CController
 	/**
 	 * @var string hidden input id.
 	 */
+	public $id='siteLang';
+	/**
+	 * @return void
+	 */
 	public function init()
 	{
-		$this->initLanguage();
+		if($this->useLanguage)
+			$this->initLanguage();
 	}
+	/**
+	 * @return void
+	 */
 	private function initLanguage()
 	{
 		$language=Yii::app()->session->itemAt('language');
-		
+
 		if($language===null && $this->defaultLanguage)
 			$language=$this->defaultLanguage;
 
@@ -57,4 +54,5 @@ class Controller extends CController
 		Yii::app()->session['language']=$language;
 		Yii::app()->setLanguage($language);
 	}
-}
+} 
+?>

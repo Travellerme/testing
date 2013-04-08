@@ -3,7 +3,7 @@
 /* @var $model Comment */
 /* @var $form CActiveForm */
 ?>
-<h3>Create comment</h3>
+<h3><?php echo Yii::t("main", "Create comment"); ?></h3>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -11,7 +11,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note"><?php echo Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -36,8 +36,8 @@
 			<?php $this->widget('CCaptcha'); ?>
 			<?php echo $form->textField($model,'verifyCode'); ?>
 			</div>
-			<div class="hint">Please enter the letters as they are shown in the image above.
-			<br/>Letters are not case-sensitive.</div>
+			<div class="hint"><?php echo Yii::t("main", "Please enter the letters as they are shown in the image above."); ?>
+			<br/><?php echo Yii::t("main", "Letters are not case-sensitive."); ?></div>
 			<?php echo $form->error($model,'verifyCode'); ?>
 		</div>
 		<?php endif; ?>
@@ -45,7 +45,7 @@
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Send'); ?>
+		<?php echo CHtml::submitButton(Yii::t("main", "Send")); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

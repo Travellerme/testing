@@ -36,7 +36,7 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>'Remember me next time',
+			'rememberMe'=>Yii::t("main", "Remember me next time"),
 		);
 	}
 	public function checkBan()
@@ -46,7 +46,7 @@ class LoginForm extends CFormModel
 			$user=User::model()->find('id=?',array(trim(strtolower(Yii::app()->user->id))));
 			if($user->ban ==1)
 			{
-				$this->addError('ban','Your account was banned. If you just registered, please wait, while your account will be approved');
+				$this->addError('ban',Yii::t("main", "Your account was banned. If you just registered, please wait, while your account will be approved"));
 				Yii::app()->user->logout();
 				return true;
 			}
@@ -64,9 +64,9 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+				$this->addError('password',Yii::t("main", "Incorrect username or password."));
 			if($user->ban==1)
-				$this->addError('ban','Your account was banned. If you just registered, please wait, while your account will be approved');
+				$this->addError('ban',Yii::t("main", "Your account was banned. If you just registered, please wait, while your account will be approved"));
 		}
 	}
 

@@ -13,7 +13,7 @@
     <?php echo $data->description; ?>
     <br />
 
-    Last updated [<?php echo CHtml::encode($data->created); ?>]
+    <?php echo Yii::t("main", "Last update") . ' [' . CHtml::encode($data->created) . ']'; ?>
     <br />
 
 </div> 

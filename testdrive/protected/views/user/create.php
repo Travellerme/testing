@@ -3,10 +3,10 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-'Users'=>array('index'),
-'Create',
+	Yii::t("main", "Users")=>array('index'),
+	Yii::t("main", "Registration"),
 );
 ?>
-<h1>Create User</h1>
+<h1><?php echo Yii::t("main", "Registration"); ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 */
 ?>
-<h1>Change password </h1>
+<h1><?php echo Yii::t("main", "Change password"); ?> </h1>
 
 <?php if(Yii::app()->user->hasFlash('password')): ?>
 

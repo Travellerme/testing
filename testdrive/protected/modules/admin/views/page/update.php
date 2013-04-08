@@ -3,18 +3,18 @@
 /* @var $model Page */
 
 $this->breadcrumbs=array(
-	'Pages'=>array('index'),
+	Yii::t("main", "Pages")=>array('index'),
 	$model->title=>array('view','id'=>$model->id),
-	'Update',
+	Yii::t("main", "Update"),
 );
 
 $this->menu=array(
-	array('label'=>'Manage Page', 'url'=>array('index')),
-	array('label'=>'Create Page', 'url'=>array('create')),
-	array('label'=>'View Page', 'url'=>array('/page/view', 'id'=>$model->id)),
+	array('label'=>Yii::t("main", "Manage Page"), 'url'=>array('index')),
+	array('label'=>Yii::t("main", "Create Page"), 'url'=>array('create')),
+	array('label'=>Yii::t("main", "View Page"), 'url'=>array('/page/view', 'id'=>$model->id)),
 );
 ?>
 
-<h1>Update Page <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t("main", "Update Page") . $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

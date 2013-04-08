@@ -62,8 +62,8 @@ class Setting extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'defaultStatusComment' => 'Confirmation comments by default',
-			'defaultStatusUser' => 'Members are banned by default',
+			'defaultStatusComment' => Yii::t("main", "Confirmation comments by default"),
+			'defaultStatusUser' => Yii::t("main", "Members are banned by default"),
 		);
 	}
 

@@ -19,7 +19,7 @@
  #navigation ul{ list-style:none; }
  #navigation{ font-family: Georgia; position: relative; width: 915px; height: 52px; z-index: 2; clear: both; padding: 30px 0px 0px 45px; }
  #navigation li{ float: left; z-index: 2; padding: 0px 45px 0px 0px; }
- #navigation li a{ position: relative; display: block; color: #dba963; font-size: 18px; z-index: 2; font-variant: small-caps; text-decoration: none; }
+ #navigation li a{ position: relative; display: block; color: #dba963; font-size: 20px; z-index: 2; font-variant: small-caps; text-decoration: none; }
  #navigation li.active a{ color:#f4cf9f; }
  #navigation li a:hover{ color: #f4cf9f; text-decoration: underline; }
  #navigation li#active a{ color: #f4cf9f; text-decoration: underline; }
@@ -36,17 +36,21 @@
  #footer, #footer p{ color: #dba963; }
  #footer a{ color: #f4cf9f; text-decoration: underline; }
 
-#forgotPass a
+#forgotPass, #lang
 { 
 	position: relative; 
 	display: block; 
 	left: 800px;
-	color: #dba963; 
-	font-size: 14px; 
 	z-index: 2; 
+	
+}
+#forgotPass a, #lang a
+{
+	color: #dba963;	
+	font-size: 14px;
 	text-decoration: none; 
 }
-#forgotPass a:hover, div.breadcrumbs a:hover
+#forgotPass a:hover, div.breadcrumbs a:hover, #lang a:hover
 { 
 	color: #f4cf9f; 
 	text-decoration: 

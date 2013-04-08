@@ -101,12 +101,12 @@ class Comment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'content' => 'Content',
-			'event_id' => 'Event',
-			'created' => 'Created',
-			'user_id' => 'User',
-			'guest' => 'Guest',
-			'status' => 'Status',
+			'content' => Yii::t("main", "Content"),
+			'event_id' => Yii::t("main", "Event"),
+			'created' => Yii::t("main", "Created"),
+			'user_id' => Yii::t("main", "User"),
+			'guest' => Yii::t("main", "Guest"),
+			'status' => Yii::t("main", "Status"),
 		);
 	}
 

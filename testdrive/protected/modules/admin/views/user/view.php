@@ -3,14 +3,14 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
+	Yii::t("main", "Users")=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'Update User', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete User', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage User', 'url'=>array('index')),
+	array('label'=>Yii::t("main", "Update User"), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t("main", "Delete User"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t("main", "Are you sure you want to delete this item?"))),
+	array('label'=>Yii::t("main", "Manage User"), 'url'=>array('index')),
 );
 ?>
 
@@ -25,11 +25,11 @@ $this->menu=array(
 		'email',
 		'ban'=>array(
 			'name'=>'ban',
-			'value'=>($model->ban==1)?"ban":"working",
+			'value'=>($model->ban==1)?Yii::t("main", "Ban"):Yii::t("main", "Working"),
 		),
 		'role'=>array(
 			'name'=>'role',
-			'value'=>($model->role==0)?"user":"admin",
+			'value'=>($model->role==0)?Yii::t("main", "User"):Yii::t("main", "Admin"),
 			'filter'=>array(0=>'user',1=>'admin'),
 		),
 	),

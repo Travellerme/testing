@@ -3,12 +3,12 @@
 /* @var $model Page */
 
 $this->breadcrumbs=array(
-	'Pages'=>array('index'),
-	'Create',
+	Yii::t("main", "Pages")=>array('index'),
+	Yii::t("main", "Create"),
 );
 
 $this->menu=array(
-	array('label'=>'Manage Page', 'url'=>array('index')),
+	array('label'=>Yii::t("main", "Manage Page"), 'url'=>array('index')),
 );
 ?>
 

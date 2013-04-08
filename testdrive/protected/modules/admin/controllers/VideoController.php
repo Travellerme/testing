@@ -120,7 +120,7 @@ class VideoController extends Controller
 	{
 		$model=Video::model()->findByPk($id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+			throw new CHttpException(404,Yii::t("main", "The requested page does not exist."));
 		return $model;
 	}
 

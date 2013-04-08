@@ -4,7 +4,7 @@
 
 ?>
 
-<h3>Password recovery</h3>
+<h3><?php echo Yii::t("main", "Password recovery"); ?></h3>
 
 <?php if(Yii::app()->user->hasFlash('recoverPassword')): ?>
 
@@ -19,16 +19,16 @@
  
 <?php echo CHtml::errorSummary($model); ?>
 
-<p class="note">Fields with <span class="required">*</span> are required.</p> 
+<p class="note"><?php echo Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
  
 <div class="row">
-<b>Please enter your Email </b><span style="color:red">*</span><br />
+<b><?php echo Yii::t("main", "Please enter your Email"); ?> </b><span style="color:red">*</span><br />
 <?php echo CHtml::activeTextField($model,'email'); ?>
 <?php echo CHtml::error($model,'email'); ?>
 </div>
  
 <div class="row submit">
-<?php echo CHtml::submitButton('Recover'); ?>
+<?php echo CHtml::submitButton(Yii::t("main", "Recover")); ?>
 </div>
  
 <?php echo CHtml::endForm(); ?>

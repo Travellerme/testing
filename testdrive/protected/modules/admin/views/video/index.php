@@ -3,13 +3,13 @@
 /* @var $model Video */
 
 $this->breadcrumbs=array(
-	'Videos'=>array('index'),
-	'Manage',
+	Yii::t("main", "Video")=>array('index'),
+	Yii::t("main", "Manage"),
 );
 
 $this->menu=array(
-	array('label'=>'Create Video', 'url'=>array('create')),
-	array('label'=>'View Video', 'url'=>array('/video/index')),
+	array('label'=>Yii::t("main", "Create Video") 'url'=>array('create')),
+	array('label'=>Yii::t("main", "View Video"), 'url'=>array('/video/index')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,11 +26,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Videos</h1>
+<h1><?php echo Yii::t("main", "Manage Video"); ?></h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+<?php
+echo Yii::t("main", "You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.");
+?>
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>

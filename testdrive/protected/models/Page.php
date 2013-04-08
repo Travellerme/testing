@@ -40,7 +40,7 @@ class Page extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('timeStart, timeEnd, description, title, status, category_id', 'required'),
-			array('timeStart, timeEnd', 'date', 'format'=>'dd.MM.yyyy hh:mm', 'message'=>'Incorrect format Date row. It must be dd.MM.yyyy hh:mm'),
+			array('timeStart, timeEnd', 'date', 'format'=>'dd.MM.yyyy hh:mm', 'message'=>Yii::t("main", "Incorrect format Date row. It must be")." dd.MM.yyyy hh:mm",
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, status, category_id', 'safe', 'on'=>'search'),
@@ -82,11 +82,11 @@ class Page extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'timeStart' => 'Event beginning',
-			'timeEnd' => 'Ending event',
-			'description' => 'Description',
-			'category_id' => 'Category',
+			'title' => Yii::t("main", "Title"),
+			'timeStart' => Yii::t("main", "Event beginning"),
+			'timeEnd' => Yii::t("main", "Ending event"),
+			'description' => Yii::t("main", "Description"),
+			'category_id' => Yii::t("main", "Category"),
 		);
 	}
 	

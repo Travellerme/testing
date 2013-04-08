@@ -2,13 +2,11 @@
 /* @var $this SettingController */
 
 $this->breadcrumbs=array(
-	'Setting',
+	Yii::t("main", "Settings"),
 );
 ?>
-<h1> Settings </h1>
+<h1> <?php echo Yii::t("main", "Settings"); ?> </h1>
 
-
-<?php echo '<h1>'.Yii::t("main", "Contact Us").'</h1>';  ?>
 
 <?php if(Yii::app()->user->hasFlash('setting')): ?>
 

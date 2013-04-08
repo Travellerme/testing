@@ -3,12 +3,12 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Manage',
+	Yii::t("main", "Users")=>array('index'),
+	Yii::t("main", "Manage"),
 );
 
 $this->menu=array(
-	array('label'=>'Create User', 'url'=>array('/user/create')),
+	array('label'=>Yii::t("main", "Create User"), 'url'=>array('/user/create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -25,14 +25,16 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Users</h1>
+<h1><?php echo Yii::t("main", "Manage User"); ?></h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+<?php
+echo Yii::t("main", "You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.");
+?>
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link(Yii::t("main", "Advanced Search"),'#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -65,12 +67,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'created',
 		'ban'=>array(
 			'name'=>'ban',
-			'value'=>'($data->ban==1)?"ban":"working"',
+			'value'=>'($data->ban==1)?"Ban":"Working"',
 			'filter'=>array(0=>'working',1=>'ban'),
 		),
 		'role'=>array(
 			'name'=>'role',
-			'value'=>'($data->role==0)?"user":"admin"',
+			'value'=>'($data->role==0)?"User":"Admin"',
 			'filter'=>array(0=>'user',1=>'admin'),
 		),
 		array(

@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="span-5">
 		<p>
-			<h2>Navigation</h2>
+			<h2><?php echo Yii::t("main", "Menu"); ?></h2>
 			
 			<?php $this->beginWidget('zii.widgets.CPortlet', array(
 				'title'=>'',

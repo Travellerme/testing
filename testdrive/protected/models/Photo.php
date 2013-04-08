@@ -107,21 +107,10 @@ class Photo extends CFormModel
 		}
     }
    
-    public function rules()
-    {
-       return array(
-		array('name', 'required'),
-		array('name', 'safe'),
-		array('name', 'length', 'max'=>150),
-		
-       );
-	}
-	
-	
+   
      public function  attributeLabels() {
             return array(
-               'name'=>'Unique name',
-               'image'=>'Image',
+				'image'=>'Image',
             );
      }
      /**
@@ -157,10 +146,10 @@ class Photo extends CFormModel
          $this->width = $img->image_x = $this->infIMG($type, 0);
          $this->height = round(($img->image_src_y * $img->image_x) / $img->image_src_x);
         */ $this->type = $type;
-         $img->file_new_name_body = $this->infIMG($this->type, 'prif').$this->name;
+         $img->file_new_name_body = $this->infIMG($this->type, 'prif').$image->name;
          if(!$this->searchImg('images/gallery',$img->file_new_name_body))
 		 {
-			 $this->addError('image','This image already exist');
+			 $this->addError('image',Yii::t("main", "This image already exist"));
 			 return false;
 		 }
 		 $img->process(yii::app()->getBasePath()."/../images/gallery");
@@ -170,18 +159,12 @@ class Photo extends CFormModel
 	
 	public function valid($name, $image)
 	{
-		$flag = true;
 		if(!$image)
 		{
-			$this->addError('image','You must enter image');
-			$flag = false;
+			$this->addError('image',Yii::t("main", "You must enter image"));
+			return false;
 		}
-		if(!preg_match('/^([a-zA-Z_0-9]+)?$/i',$name) || !$name)
-		{
-			$this->addError('name','Incorrect format');
-			$flag = false;
-		}
-		return $flag;
+		return true;
 		
 	}
 }

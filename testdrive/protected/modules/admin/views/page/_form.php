@@ -11,8 +11,8 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-	<p class="note">Date must be as dd.MM.yyyy hh:mm</p>
+	<p class="note"><?php Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
+	<p class="note"><?php echo Yii::t("main", "Date must be as"); ?> dd.MM.yyyy hh:mm</p>
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
@@ -58,7 +58,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t("main", "Create") : Yii::t("main", "Save")); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

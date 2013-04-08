@@ -3,15 +3,15 @@
 /* @var $model Video */
 
 $this->breadcrumbs=array(
-	'Videos'=>array('index'),
-	'Create',
+	Yii::t("main", "Video")=>array('index'),
+	Yii::t("main", "Create"),
 );
 
 $this->menu=array(
-	array('label'=>'Manage Video', 'url'=>array('index')),
+	array('label'=>Yii::t("main", "Manage Video"), 'url'=>array('index')),
 );
 ?>
 
-<h1>Create Video</h1>
+<h1><?php echo Yii::t("main", "Create Video"); ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

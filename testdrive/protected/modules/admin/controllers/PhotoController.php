@@ -40,7 +40,7 @@ class PhotoController extends Controller
 				if($model->savePhoto($_FILES['image'],'full_img'))
 				{
 					$model->savePhoto($_FILES['image'],'small_img');
-					Yii::app()->user->setFlash('upload','Image was uploaded');
+					Yii::app()->user->setFlash('upload',Yii::t("main", "Image was uploaded"));
 					$this->refresh();
 				}
 							

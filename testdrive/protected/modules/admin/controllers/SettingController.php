@@ -42,7 +42,7 @@ class SettingController extends Controller
 			$model->attributes=$_POST['Setting'];
 			if($model->save())
 			{
-				Yii::app()->user->setFlash('setting', 'Your settings were saved');
+				Yii::app()->user->setFlash('setting', Yii::t("main", "Your settings were saved"));
 			}
 				
 		}

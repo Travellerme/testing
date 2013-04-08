@@ -32,12 +32,20 @@ class SiteController extends Controller
 		}
 		
 	}
+	
+	public function actionLanguage($lang)
+	{
+		Yii::app()->setLanguage($lang);//var_dump(Yii::app()->language);
+		Yii::app()->session['language'] = $lang;
+		$this->redirect(Yii::app()->user->returnUrl);
+	}
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	public function actionIndex($childDir = 'images/gallery')
+	public function actionIndex()
 	{
+		$childDir = 'images/gallery';
 		/*$login = new LoginForm;
 		if($login->checkBan())var_dump($login);
 				$this->redirect(Yii::app()->user->returnUrl.'site/login',array('model'=>$login));

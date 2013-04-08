@@ -1,9 +1,9 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - Photo';
+$this->pageTitle=Yii::app()->name . ' - ' .Yii::t("main", "Photo");
 $this->breadcrumbs=array(
-	'Photo',
+	Yii::t("main", "Photo"),
 );
 $cs=Yii::app()->clientScript;
 $cs->registerCssFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'css/gallery.css');
@@ -12,7 +12,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/gallery.js')
 ?>
 
 
-<h1>Photo</h1>
+<h1><?php echo Yii::t("main", "Photo"); ?></h1>
 
 
 <?php echo Photo::gallery($listImg); ?>

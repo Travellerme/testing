@@ -1,7 +1,7 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name;
+$this->pageTitle=Yii::t("main", Yii::app()->name);
 $cs=Yii::app()->clientScript;
 $cs->registerCssFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'css/carousel.css');
 $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/jquery-1.9.1.min.js');
@@ -17,7 +17,7 @@ $(function(){
 });
 
 </script>  
-<h1>Добро пожаловать в молодежный "Театр Остров"</h1>
+<h1><?php echo Yii::t("main", 'Welcome to the Youth "Theater Island"'); ?></h1>
 
 	<div id="images">   	
 		<?php 

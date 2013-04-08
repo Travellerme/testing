@@ -63,10 +63,10 @@ class Video extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'description' => 'Description',
-			'link' => 'Link',
-			'created' => 'Created',
+			'title' => Yii::t("main", "Title"),
+			'description' => Yii::t("main", "Description"),
+			'link' => Yii::t("main", "Link"),
+			'created' => Yii::t("main", "Created"),
 		);
 	}
 	

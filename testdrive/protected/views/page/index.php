@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1>Pages</h1>
+
 <div class="items">
 	
 	<?php
@@ -21,12 +21,12 @@ $this->breadcrumbs=array(
 			echo ($key->timeEnd)?' - ['.CHtml::encode($key->timeEnd).']<br />':'<br />';
 			//echo substr(preg_replace('/(<img.* \/>)/i', ' ', $key->description),0,255).'...';
 			echo substr($key->description,0,255).'...<br />';
-			echo 'Created : ['.$key->created.']<br /><br />';
+			echo Yii::t("main", "Last update") . ' : ['.$key->created.']<br /><br />';
 			echo CHtml::link('read more',array('/page/view/','id'=>$key->id)).'<br />';
 			echo "</div>";
 		}
 		if (!$model)
-			echo 'Current category is empty';
+			echo Yii::t("main", "Current category is empty");
 	?>
 	
 </div>

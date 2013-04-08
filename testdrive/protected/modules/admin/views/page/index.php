@@ -3,12 +3,12 @@
 /* @var $model Page */
 
 $this->breadcrumbs=array(
-	'Pages'=>array('index'),
-	'Manage',
+	Yii::t("main", "Pages")=>array('index'),
+	Yii::t("main", "Manage"),
 );
 
 $this->menu=array(
-	array('label'=>'Create Page', 'url'=>array('create')),
+	array('label'=>Yii::t("main", "Create Page"), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -25,11 +25,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Pages</h1>
+<h1><?php echo Yii::t("main", "Manage Page"); ?></h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+<?php
+echo Yii::t("main", "You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.");
+?>
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
@@ -63,7 +65,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'status'=>array(
 			'name'=>'status',
-			'value'=>'($data->status==1)?"hide":"show"',
+			'value'=>'($data->status==1)?Yii::t("main", "Hide"):Yii::t("main", "Show")',
 			'filter'=>array(0=>'hide',1=>'show'),
 		),
 		'categoryId'=>array(

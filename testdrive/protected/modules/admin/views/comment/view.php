@@ -3,13 +3,13 @@
 /* @var $model Comment */
 
 $this->breadcrumbs=array(
-	'Comments'=>array('index'),
+	Yii::t("main", "Comments")=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'Manage Comment', 'url'=>array('index')),
-	array('label'=>'Delete Comment', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t("main", "Manage Comment"), 'url'=>array('index')),
+	array('label'=>Yii::t("main", "Delete Comment"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t("main", "Are you sure you want to delete this item?"))),
 );
 ?>
 
@@ -21,7 +21,7 @@ $this->menu=array(
 		'id',
 		'status'=>array(
 			'name'=>'status',
-			'value'=>($model->status==0)?"show":"hide",
+			'value'=>($model->status==0)?Yii::t("main", "Show"):Yii::t("main", "Hide"),
 			'filter'=>array(1=>'hide',0=>'show'),
 		),
 		'content',

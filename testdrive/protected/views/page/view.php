@@ -3,13 +3,13 @@
 /* @var $model News */
 
 $this->breadcrumbs=array(
-	'Category: '.$model->categoryName->titleCategory=>array('/page/index','id'=>$model->category_id),
+	Yii::t("main", "Category") . ' : '.$model->categoryName->titleCategory=>array('/page/index','id'=>$model->category_id),
 	$model->title,
 );
 ?>
 
 <h1><?php echo $model->title; ?></h1>
-Created [<?php echo $model->created; ?>]
+<?php echo Yii::t("main", "Created") . '[' . $model->created . ']'; ?>
 <hr />
 <?php echo '['.CHtml::encode($model->timeStart).']'; ?>
 	

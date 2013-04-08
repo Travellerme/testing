@@ -64,8 +64,8 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'titleCategory' => 'Title',
-			'position' => 'Position',
+			'titleCategory' => Yii::t("main", "Title"),
+			'position' => Yii::t("main", "Position"),
 		);
 	}
 	public function beforeSave()
@@ -103,9 +103,9 @@ class Category extends CActiveRecord
 			{
 				$result[] = array('label' =>Yii::t("main", "AdminControl"), 'url' => array('/admin'));
 			}
-			$result[] = array('label'=>'Photo', 'url'=>array('site/photos'));
-			$result[] = array('label'=>'Video', 'url'=>array('video/index'));
-			$result[] = array('label'=>'My profile', 'url'=>array('user/changePassword'), 'visible'=>!Yii::app()->user->isGuest);
+			$result[] = array('label'=>Yii::t("main", "Photo"), 'url'=>array('site/photos'));
+			$result[] = array('label'=>Yii::t("main", "Video"), 'url'=>array('video/index'));
+			$result[] = array('label'=>Yii::t("main", "My profile"), 'url'=>array('user/changePassword'), 'visible'=>!Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Registration"), 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
 			$result[] = array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);

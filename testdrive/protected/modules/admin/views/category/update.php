@@ -3,17 +3,17 @@
 /* @var $model Category */
 
 $this->breadcrumbs=array(
-	'Categories'=>array('index'),
+	Yii::t("main", "Categories")=>array('index'),
 	$model->titleCategory=>array('index','id'=>$model->id),
-	'Update',
+	Yii::t("main", "Update"),
 );
 
 $this->menu=array(
-	array('label'=>'Manage Category', 'url'=>array('index')),
-	array('label'=>'Create Category', 'url'=>array('create')),
+	array('label'=>Yii::t("main", "Manage Category"), 'url'=>array('index')),
+	array('label'=>Yii::t("main", "Create Category"), 'url'=>array('create')),
 );
 ?>
 
-<h1>Update Category <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t("main", "Update Category") . $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

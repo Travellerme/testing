@@ -902,3 +902,91 @@ REQUEST_URI=/testdrive/site/photos
 in /var/www/testdrive/protected/models/Photo.php (38)
 in /var/www/testdrive/protected/controllers/SiteController.php (57)
 in /var/www/testdrive/index.php (14)
+2013/04/08 20:26:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "lang".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('lang')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('lang')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lang')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/lang
+---
+2013/04/08 20:35:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "lang".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('lang')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('lang')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lang')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/lang?lang=eng
+HTTP_REFERER=http://localhost/testdrive/site/index
+---
+2013/04/08 20:36:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "lang".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('lang')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('lang')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lang')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/lang?lang=eng
+HTTP_REFERER=http://localhost/testdrive/site/index
+---
+2013/04/08 20:36:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "language".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('language')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('language')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/language')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/language?lang=eng
+HTTP_REFERER=http://localhost/testdrive/site/lang?lang=eng
+---
+2013/04/08 20:36:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "language".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('language')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('language')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/language')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/site/language?lang=eng
+HTTP_REFERER=http://localhost/testdrive/site/language?lang=eng
+---
+2013/04/08 20:46:15 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CWebApplication.setLanguage".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/testdrive/protected/controllers/SiteController.php(38): CComponent->__set('setLanguage', 'eng')
+#1 [internal function]: SiteController->actionLanguage('eng')
+#2 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('language')
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/language')
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/site/language?lang=eng
+HTTP_REFERER=http://localhost/testdrive/site/language?lang=eng
+---
+2013/04/08 20:54:40 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CWebApplication.setLanguage".' in /var/www/YiiRoot/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/testdrive/protected/controllers/SiteController.php(38): CComponent->__set('setLanguage', 'en')
+#1 [internal function]: SiteController->actionLanguage('en')
+#2 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('language')
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/language')
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/site/language?lang=en
+HTTP_REFERER=http://localhost/testdrive/
+---

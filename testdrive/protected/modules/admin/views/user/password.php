@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 */
 $this->menu=array(
-	array('label'=>'Manage User', 'url'=>array('index')),
-	array('label'=>'View User', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Update User', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t("main", "Manage User"), 'url'=>array('index')),
+	array('label'=>Yii::t("main", "View User"), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t("main", "Update User"), 'url'=>array('update', 'id'=>$model->id)),
 );
 ?>
 
-<h1>Update user password #<?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t("main", "Update Password") . $model->id; ?></h1>
 
 <?php 
 	/*echo Chtml::form();
