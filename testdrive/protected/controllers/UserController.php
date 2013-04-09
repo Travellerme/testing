@@ -64,7 +64,7 @@ class UserController extends Controller
 			$model->attributes = $_POST['User'];
 			if($model->save())
 			{
-				Yii::app()->user->setFlash('password','Your password was successfully changed and sent to your email');
+				Yii::app()->user->setFlash('password',Yii::t("main", "Your password was successfully changed and sent to your email"));
 				$this->refresh();
 			}
 		}
@@ -89,18 +89,18 @@ class UserController extends Controller
 						$password = $searchModel->recoverPassword();
 						$content = 'Your new password '.$password;
 						$searchModel->save(false);
-						$name='=?UTF-8?B?'.base64_encode('Theater "Island" greeting you').'?=';
-						$subject='=?UTF-8?B?'.base64_encode('recover password').'?=';
+						$name='=?UTF-8?B?'.base64_encode(Yii::t("main", 'Theater "Island" greeting you')).'?=';
+						$subject='=?UTF-8?B?'.base64_encode(Yii::t("main", "recover password")).'?=';
 						$headers="From: $name <{$model->email}>\r\n".
 							"Reply-To: {$model->email}\r\n".
 							"MIME-Version: 1.0\r\n".
 							"Content-type: text/plain; charset=UTF-8";
 						mail($searchModel->email,$subject,$content,$headers);
-						Yii::app()->user->setFlash('recoverPassword','Your new password was sent to your email');
+						Yii::app()->user->setFlash('recoverPassword',Yii::t("main", "Your new password was sent to your email"));
 						$this->refresh();
 					}
 					else
-						$model->addError('email','This email address does not registered');
+						$model->addError('email',Yii::t("main", "This email address does not registered"));
 					
 				}
 			}
@@ -150,11 +150,11 @@ class UserController extends Controller
 			{
 				if($settings->defaultStatusUser == 0)
 				{
-					Yii::app()->user->setFlash('register','You was registered successfully. You can login');
+					Yii::app()->user->setFlash('register',Yii::t("main", "You was registered successfully. You can login"));
 				}
 				else
 				{
-					Yii::app()->user->setFlash('register','You was registered successfully. Please wait while administrator approve you');
+					Yii::app()->user->setFlash('register',Yii::t("main", "You was registered successfully. Please wait while administrator approve you"));
 				}
 				
 			}
@@ -192,7 +192,7 @@ class UserController extends Controller
 	{
 		$model=User::model()->findByPk($id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+			throw new CHttpException(404,Yii::t("main", "The requested page does not exist."));
 		return $model;
 	}
 

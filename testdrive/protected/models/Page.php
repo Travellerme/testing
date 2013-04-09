@@ -13,6 +13,7 @@
  */
 class Page extends CActiveRecord
 {
+	public $image;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -39,14 +40,32 @@ class Page extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('timeStart, timeEnd, description, title, status, category_id', 'required'),
+			array('timeStart, description, title, status, category_id', 'required'),
 			array('timeStart, timeEnd', 'date', 'format'=>'dd.MM.yyyy hh:mm', 'message'=>Yii::t("main", "Incorrect format Date row. It must be")." dd.MM.yyyy hh:mm"),
+			//array('image', 'file', 'types'=>'jpg, gif, png', 'allowEmpty'=>true, 'message'=>Yii::t("main", "File must be as image")),
+
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, status, category_id', 'safe', 'on'=>'search'),
 		);
 	}
-
+	
+	public function validateImgName($name)
+	{
+		if(preg_match('/(.*)\..*$/i',$name,$compare))
+		{ 
+			$photo = new Photo();
+			if(!$photo->searchImg('images/event','full_'.$compare[1]))
+			{
+				$this->addError('image',Yii::t("main", "This image already exist"));
+				return false;
+			}
+			return true;
+		}
+		$this->addError('image',Yii::t("main", "Incorrect format"));
+		return false;
+		
+	}
 	/**
 	 * @return array relational rules.
 	 */
@@ -87,6 +106,10 @@ class Page extends CActiveRecord
 			'timeEnd' => Yii::t("main", "Ending event"),
 			'description' => Yii::t("main", "Description"),
 			'category_id' => Yii::t("main", "Category"),
+			'status' => Yii::t("main", "Status"),
+			'created' => Yii::t("main", "Created"),
+			'image' => Yii::t("main", "Image"),
+			'imgUrl' => Yii::t("main", "Image url"),
 		);
 	}
 	
@@ -117,6 +140,15 @@ class Page extends CActiveRecord
 		{
 			$this->created = time();
 			$this->status = 0;
+			if(isset($_FILES['image']))
+			{
+				$photo = new Photo();
+				if($photo->savePhoto($_FILES['image'],'full_img','images/event'))
+					$this->imgUrl = 'images/event/full_' . $_FILES['image']['name'];
+				else
+					return false;
+				
+			}
 		}
 		if($this->title)
 			$this->title = trim($this->title);

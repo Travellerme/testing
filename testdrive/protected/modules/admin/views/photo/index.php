@@ -19,14 +19,14 @@ $this->breadcrumbs=array(
 <?php endif; ?>
 
 <div  class="form">
-<?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
-<p class="note"><?php Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
-<?=  CHtml::errorSummary($model)?>
-<div class="row">
-<?= CHtml::activeLabel($model, "image")?>
-<?php echo CHtml::FileField( 'image'); ?>
-<?= CHtml::error($model, "image")?>
-</div>
-<?= CHtml::submitButton(Yii::t("main", "Upload"))?>
-<?php echo CHtml::endForm(); ?>
+	<?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
+	<p class="note"><?php echo Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
+	<?=  CHtml::errorSummary($model)?>
+	<div class="row">
+		<?= CHtml::activeLabel($model, "image")?>
+		<?php echo CHtml::FileField('image'); ?>
+		<?= CHtml::error($model, "image")?>
+	</div>
+	<?= CHtml::submitButton(Yii::t("main", "Upload"))?>
+	<?php echo CHtml::endForm(); ?>
 </div>

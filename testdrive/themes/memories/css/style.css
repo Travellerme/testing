@@ -11,7 +11,7 @@
  h1 { font-size:30px; font-weight:bold; color:#2d1300; line-height:1.5; padding: 5px 0px 5px 0px; }
  h2 { font-size:30px; color:#2d1300; font-family: Georgia, arial, sans-serif; line-height:1.5; font-weight: normal; padding: 5px 0px 5px 0px; }
  #wrapper { background: url(../images/wrapperbg.jpg) top center no-repeat; }
- #container{ width: 960px; margin: 0 auto; background: url(../images/containerbg.jpg) top no-repeat; }
+ #container{ width: 960px; margin: 0 auto; background: url(../images/containerbg1.jpg) top no-repeat; }
  .title{ width: 507px; height: 131px; float: left; padding: 0px 0px 46px 153px; font-size: 36px; }
  .title, .title a { color: #2d1300; }
  #header{ width: 240px; height: 160px; float: left; z-index: 1; }
@@ -142,7 +142,6 @@ div.breadcrumbs span
 	border-radius: 12px;
 	-moz-border-radius: 12px;
 	-webkit-border-radius: 12px;
-	/*background: url(../images/sidebar1.jpg) no-repeat; */
 	background: url(../images/sidebar-background.jpg) repeat-x;
 }
 .portlet-content ul

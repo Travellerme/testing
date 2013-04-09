@@ -42,11 +42,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 <?php
 	echo Chtml::form();
-	echo Chtml::submitButton('Unban', array('name'=>'noban'));
-	echo Chtml::submitButton('Ban', array('name'=>'ban'));
+	echo Chtml::submitButton(Yii::t("main", "Unban"), array('name'=>'noban'));
+	echo Chtml::submitButton(Yii::t("main", "Ban"), array('name'=>'ban'));
 	echo '<br />';
-	echo Chtml::submitButton('Admin', array('name'=>'admin'));
-	echo Chtml::submitButton('User', array('name'=>'user'));
+	echo Chtml::submitButton(Yii::t("main", "Admin"), array('name'=>'admin'));
+	echo Chtml::submitButton(Yii::t("main", "User"), array('name'=>'user'));
 ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
@@ -67,13 +67,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'created',
 		'ban'=>array(
 			'name'=>'ban',
-			'value'=>'($data->ban==1)?"Ban":"Working"',
-			'filter'=>array(0=>'working',1=>'ban'),
+			'value'=>'($data->ban==1)?Yii::t("main", "Ban"):Yii::t("main", "Working")',
+			'filter'=>array(0=>Yii::t("main", "Working"),1=>Yii::t("main", "Ban")),
 		),
 		'role'=>array(
 			'name'=>'role',
-			'value'=>'($data->role==0)?"User":"Admin"',
-			'filter'=>array(0=>'user',1=>'admin'),
+			'value'=>'($data->role==0)?Yii::t("main", "User"):Yii::t("main", "Admin")',
+			'filter'=>array(0=>Yii::t("main", "User"),1=>Yii::t("main", "Admin")),
 		),
 		array(
 			'class'=>'CButtonColumn',

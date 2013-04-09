@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'position'); ?>
-		<?php echo $form->dropDownList($model,'position',array(''=>'','top'=>Yii::t("main", "Top menu",'left'=>Yii::t("main", "Left menu"))); ?>
+		<?php echo $form->dropDownList($model,'position',array(''=>'','top'=>Yii::t("main", "Top menu"),'left'=>Yii::t("main", "Left menu"))); ?>
 	</div>
 
 	<div class="row buttons">

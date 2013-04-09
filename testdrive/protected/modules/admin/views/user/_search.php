@@ -28,12 +28,12 @@
 	
 	<div class="row">
 		<?php echo $form->label($model,'role'); ?>
-		<?php echo $form->dropDownList($model,'role',array(''=>'',0=>'user',1=>'admin')); ?>
+		<?php echo $form->dropDownList($model,'role',array(''=>'',0=>Yii::t("main", "User"),1=>Yii::t("main", "Admin"))); ?>
 	</div>
 	
 	<div class="row">
 		<?php echo $form->label($model,'ban'); ?>
-		<?php echo $form->dropDownList($model,'ban',array(''=>'',0=>'working',1=>'ban')); ?>
+		<?php echo $form->dropDownList($model,'ban',array(''=>'',0=>Yii::t("main", "Working"),1=>Yii::t("main", "Ban"))); ?>
 	</div>
 
 	<div class="row buttons">

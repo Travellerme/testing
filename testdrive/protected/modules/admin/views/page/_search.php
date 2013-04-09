@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>'show',1=>'hide')); ?>
+		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>Yii::t("main", "available"),1=>Yii::t("main", "hidden"))); ?>
 	</div>
 
 	<div class="row">

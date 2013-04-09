@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 	$this->module->id,
 );
 ?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
+<h1><?php echo Yii::t("main", "Admin Control") ?></h1>
 
 <p>
-	<?php echo Yii::t("main", "Hello") . Yii::app()->user->name; ?>
+	<?php echo Yii::t("main", "Hello") . ' <b>' . Yii::app()->user->name . '</b>'; ?>
 </p>

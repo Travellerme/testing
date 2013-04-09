@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t("main", "Create Video") 'url'=>array('create')),
+	array('label'=>Yii::t("main", "Create Video"), 'url'=>array('create')),
 	array('label'=>Yii::t("main", "View Video"), 'url'=>array('/video/index')),
 );
 

@@ -990,3 +990,671 @@ Stack trace:
 REQUEST_URI=/testdrive/site/language?lang=en
 HTTP_REFERER=http://localhost/testdrive/
 ---
+2013/04/09 16:39:49 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/models/Photo.php:149)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): PhotoController->runAction()
+#2 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PhotoController->filterAccessControl()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PhotoController->run()
+#9 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/photo
+in /var/www/testdrive/protected/models/Photo.php (149)
+in /var/www/testdrive/protected/modules/admin/controllers/PhotoController.php (37)
+in /var/www/testdrive/index.php (14)
+2013/04/09 16:42:15 [error] [php] Undefined index: image (/var/www/testdrive/protected/modules/admin/controllers/PhotoController.php:31)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): PhotoController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PhotoController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PhotoController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/photo
+in /var/www/testdrive/protected/modules/admin/controllers/PhotoController.php (31)
+in /var/www/testdrive/index.php (14)
+2013/04/09 16:43:38 [error] [php] Undefined index: image (/var/www/testdrive/protected/modules/admin/controllers/PhotoController.php:31)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): PhotoController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PhotoController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PhotoController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/photo
+in /var/www/testdrive/protected/modules/admin/controllers/PhotoController.php (31)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:38:42 [error] [php] Undefined variable: data (/var/www/testdrive/protected/views/site/index.php:39)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(58): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (39)
+in /var/www/testdrive/protected/controllers/SiteController.php (58)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:41:33 [error] [php] Undefined variable: data (/var/www/testdrive/protected/views/site/index.php:39)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (39)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:41:36 [error] [php] Undefined variable: data (/var/www/testdrive/protected/views/site/index.php:39)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (39)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:42:22 [error] [php] Undefined variable: data (/var/www/testdrive/protected/views/site/index.php:39)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (39)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:42:24 [error] [php] Undefined variable: data (/var/www/testdrive/protected/views/site/index.php:39)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (39)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:49:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 19:50:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 19:50:23 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Site.0".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('0')
+#1 /var/www/YiiRoot/framework/base/CModel.php(595): CActiveRecord->__get('0')
+#2 /var/www/testdrive/protected/views/site/index.php(39): CModel->offsetGet(0)
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/testdr...')
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#5 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#6 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#7 /var/www/testdrive/protected/controllers/SiteController.php(56): CController->render('index', Array)
+#8 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#9 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/site/index
+HTTP_REFERER=http://localhost/testdrive/admin/site/create
+---
+2013/04/09 19:51:26 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/views/site/index.php:42)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (42)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:52:47 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/views/site/index.php:41)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (41)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:53:03 [error] [php] Invalid argument supplied for foreach() (/var/www/testdrive/protected/views/site/index.php:40)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (40)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:53:21 [error] [php] Invalid argument supplied for foreach() (/var/www/testdrive/protected/views/site/index.php:40)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (40)
+in /var/www/testdrive/protected/controllers/SiteController.php (56)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:54:06 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/views/site/index.php:42)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(57): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/protected/views/site/index.php (42)
+in /var/www/testdrive/protected/controllers/SiteController.php (57)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:56:38 [error] [php] Undefined variable: data (/var/www/testdrive/protected/modules/admin/views/site/index.php:22)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (22)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 19:56:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 19:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:03:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:03:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:03:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:04:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:04:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+HTTP_REFERER=http://localhost/testdrive/admin/site/update/id/1
+---
+2013/04/09 20:11:09 [error] [php] Undefined variable: item (/var/www/testdrive/protected/modules/admin/views/site/index.php:14)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (14)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:12:29 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/modules/admin/views/site/index.php:10)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (10)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:12:41 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/modules/admin/views/site/index.php:14)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (14)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:13:34 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/modules/admin/views/site/index.php:14)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (14)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:13:55 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/modules/admin/views/site/index.php:14)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (14)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:14:05 [error] [php] Trying to get property of non-object (/var/www/testdrive/protected/modules/admin/views/site/index.php:14)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (14)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:15:49 [error] [php] Undefined variable: item (/var/www/testdrive/protected/modules/admin/views/site/index.php:13)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/modules/admin/controllers/SiteController.php(105): SiteController->render()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): SiteController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): SiteController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/site/index/id/1
+in /var/www/testdrive/protected/modules/admin/views/site/index.php (13)
+in /var/www/testdrive/protected/modules/admin/controllers/SiteController.php (105)
+in /var/www/testdrive/index.php (14)
+2013/04/09 20:15:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:16:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+HTTP_REFERER=http://localhost/testdrive/admin/site/update/id/1
+---
+2013/04/09 20:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:22:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:28:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:40:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:48:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:48:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 20:48:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 23:26:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 23:26:39 [error] [php] scandir(/var/www/testdrive/protected/../full_no_photo): failed to open dir: No such file or directory (/var/www/testdrive/protected/models/Photo.php:36)
+Stack trace:
+#0 /var/www/testdrive/protected/modules/admin/controllers/PageController.php(52): Page->validateImgName()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): PageController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PageController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): PageController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PageController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/page/create
+in /var/www/testdrive/protected/models/Photo.php (36)
+in /var/www/testdrive/protected/models/Page.php (58)
+in /var/www/testdrive/protected/modules/admin/controllers/PageController.php (52)
+2013/04/09 23:29:32 [error] [php] scandir(/var/www/testdrive/protected/../image/event): failed to open dir: No such file or directory (/var/www/testdrive/protected/models/Photo.php:36)
+Stack trace:
+#0 /var/www/testdrive/protected/modules/admin/controllers/PageController.php(52): Page->validateImgName()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): PageController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PageController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): PageController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PageController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/page/create
+in /var/www/testdrive/protected/models/Photo.php (36)
+in /var/www/testdrive/protected/models/Page.php (58)
+in /var/www/testdrive/protected/modules/admin/controllers/PageController.php (52)
+2013/04/09 23:32:20 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Photo.file_new_name_body".' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/testdrive/protected/models/Photo.php(166): CComponent->__get('file_new_name_b...')
+#1 /var/www/testdrive/protected/models/Page.php(146): Photo->savePhoto(Array, 'full_img', 'images/event')
+#2 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(1017): Page->beforeSave()
+#3 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#4 /var/www/testdrive/protected/modules/admin/controllers/PageController.php(54): CActiveRecord->save()
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('create')
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/page/crea...')
+#16 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /var/www/testdrive/index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/testdrive/admin/page/create
+HTTP_REFERER=http://localhost/testdrive/admin/page/create
+---
+2013/04/09 23:32:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 23:33:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 23:34:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/09 23:36:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---

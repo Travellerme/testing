@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Event</h1>
+<h1><?php echo Yii::t("main", "Create Page"); ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

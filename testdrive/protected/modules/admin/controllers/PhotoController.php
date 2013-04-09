@@ -17,7 +17,7 @@ class PhotoController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index','DesignPhoto','DelPhoto'),
+				'actions'=>array('index','DelPhoto'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -28,14 +28,11 @@ class PhotoController extends Controller
 	
 	public function actionIndex()
 	{
-		
+
 		$model = new Photo();
-		if(isset($_POST['Photo']))
+		if(isset($_FILES['image']))
 		{	
-			$model->attributes=$_POST['Photo'];
-			
-			
-			if($model->valid($_POST['Photo']['name'], $_FILES['image']['name']))
+			if($model->valid($_FILES['image']['name']))
 			{
 				if($model->savePhoto($_FILES['image'],'full_img'))
 				{

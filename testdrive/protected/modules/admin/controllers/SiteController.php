@@ -1,6 +1,6 @@
 <?php
 
-class PageController extends Controller
+class SiteController extends Controller
 {
 	
 	/**
@@ -39,25 +39,15 @@ class PageController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Page;
+		$model=new Site;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Page']))
+		if(isset($_POST['Site']))
 		{
-			$model->attributes=$_POST['Page'];
-			if(isset($_FILES['image']))
-			{
-				if($model->validateImgName($_FILES['image']['name']))
-				{
-					if($model->save())
-						$this->redirect(array('index','id'=>$model->id));
-				}
-				
-				
-			}
-			else if($model->save())
+			$model->attributes=$_POST['Site'];
+			if($model->save())
 				$this->redirect(array('index','id'=>$model->id));
 		}
 
@@ -78,9 +68,9 @@ class PageController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Page']))
+		if(isset($_POST['Site']))
 		{
-			$model->attributes=$_POST['Page'];
+			$model->attributes=$_POST['Site'];
 			if($model->save())
 				$this->redirect(array('index','id'=>$model->id));
 		}
@@ -104,33 +94,27 @@ class PageController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}
 
-	
-
 	/**
 	 * Manages all models.
 	 */
 	public function actionIndex()
 	{
-		$model=new Page('search');
-		
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Page']))
-			$model->attributes=$_GET['Page'];
-		$this->render('index',array(
-			'model'=>$model,
-		));
+		$description = Site::model()->findByPk(1);
+        $this->render('index',array(
+            'model'=>$description,
+        ));
 	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Page the loaded model
+	 * @return Site the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Page::model()->findByPk($id);
+		$model=Site::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,Yii::t("main", "The requested page does not exist."));
 		return $model;
@@ -138,11 +122,11 @@ class PageController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Page $model the model to be validated
+	 * @param Site $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='page-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='site-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

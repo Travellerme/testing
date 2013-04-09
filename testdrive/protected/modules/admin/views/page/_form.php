@@ -9,6 +9,10 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'Page-form',
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array(
+        'enctype' => 'multipart/form-data',
+    ),
+
 )); ?>
 
 	<p class="note"><?php Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
@@ -20,7 +24,13 @@
 		<?php echo $form->textField($model,'title',array('size'=>30,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
-
+	
+	<div class="row">
+		<?= CHtml::activeLabel($model, "image")?>
+		<?php echo CHtml::FileField('image'); ?>
+		<?= CHtml::error($model, "image")?>
+	</div>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'timeStart'); ?>
 		<?php echo $form->textField($model,'timeStart'); ?>
@@ -47,7 +57,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(0=>'hide',1=>'show')); ?>
+		<?php echo $form->dropDownList($model,'status',array(0=>Yii::t("main", "Show"),1=>Yii::t("main", "Hide"))); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 

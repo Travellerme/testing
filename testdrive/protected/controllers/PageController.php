@@ -97,7 +97,7 @@ class PageController extends Controller
 	
 		if(isset($user) && $user->ban ==1)
 		{
-			$user->addError('ban','Your account was banned. If you just registered, please wait, while your account will be approved');
+			$user->addError('ban',Yii::t("main", "Your account was banned. If you just registered, please wait, while your account will be approved"));
 			Yii::app()->user->logout();
 			$this->redirect('/site/index');
 		}
@@ -124,11 +124,11 @@ class PageController extends Controller
 				
 				if($settings->defaultStatusComment == 0)
 				{
-					Yii::app()->user->setFlash('comment','Your comment was published');
+					Yii::app()->user->setFlash('comment',Yii::t("main", "Your comment was published"));
 				}
 				else
 				{
-					Yii::app()->user->setFlash('comment','Please wait while administrator approve your comment');
+					Yii::app()->user->setFlash('comment',Yii::t("main", "Please wait while administrator approve your comment"));
 				}
 				$this->refresh();
 				

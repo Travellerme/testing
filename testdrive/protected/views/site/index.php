@@ -19,17 +19,24 @@ $(function(){
 </script>  
 <h1><?php echo Yii::t("main", 'Welcome to the Youth "Theater Island"'); ?></h1>
 
-	<div id="images">   	
-		<?php 
-			foreach ($listImg['href'] as $key=>$val)
-			{
-				$src = preg_replace('/(small_)/i','full_',$val);
-				echo "<img src='$src'/>";
-			}
-		 ?>
-	</div>
-		
- 
-	<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/prev-my.png'?>" alt="Left Arrow" />
-	<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/next-my.png'?>" alt="Right Arrow" />
+<div id="images">   	
+	<?php 
+		foreach ($listImg['href'] as $key=>$val)
+		{
+			$src = preg_replace('/(small_)/i','full_',$val);
+			echo "<img src='$src'/>";
+		}
+	 ?>
+</div>
+	
+
+<img id="carouselLeft" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/prev-my.png'?>" alt="Left Arrow" />
+<img id="carouselRight" src="<?php echo Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'images/skins/next-my.png'?>" alt="Right Arrow" />
+
+
+<br /><br /><br />
+<?php 	echo $model->description;	?>
+
+
+
 

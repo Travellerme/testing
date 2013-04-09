@@ -40,8 +40,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 <?php
 	echo Chtml::form();
-	echo Chtml::submitButton('Show', array('name'=>'approve'));
-	echo Chtml::submitButton('Hide', array('name'=>'disapprove'));
+	echo Chtml::submitButton(Yii::t("main", "Show"), array('name'=>'approve'));
+	echo Chtml::submitButton(Yii::t("main", "Hide"), array('name'=>'disapprove'));
 ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'comment-grid',
@@ -58,8 +58,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'status'=>array(
 			'name'=>'status',
-			'value'=>'($data->status==0)?Yii::t("main", "Show"):Yii::t("main", "Hide")',
-			'filter'=>array(1=>'hide',0=>'show'),
+			'value'=>'($data->status==0)?Yii::t("main", "visible"):Yii::t("main", "blocked")',
+			'filter'=>array(1=>Yii::t("main", "blocked"),0=>Yii::t("main", "visible")),
 		),
 		'content',
 		'event_id'=>array(

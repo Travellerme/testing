@@ -35,7 +35,7 @@ class SiteController extends Controller
 	
 	public function actionLanguage($lang)
 	{
-		Yii::app()->setLanguage($lang);//var_dump(Yii::app()->language);
+		Yii::app()->setLanguage($lang);
 		Yii::app()->session['language'] = $lang;
 		$this->redirect(Yii::app()->user->returnUrl);
 	}
@@ -46,16 +46,15 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$childDir = 'images/gallery';
-		/*$login = new LoginForm;
-		if($login->checkBan())var_dump($login);
-				$this->redirect(Yii::app()->user->returnUrl.'site/login',array('model'=>$login));
-		*/
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
 		$model = new Photo;
 		$result = $model->searchImg($childDir);
 		
-		$this->render('index', array('listImg'=>$result));
+		$description = Site::model()->findByPk(1);
+		
+        $this->render('index',array(
+			'listImg'=>$result,
+            'model'=>$description,
+        ));
 	}
 	
 	public function actionPhotos($childDir = 'images/gallery')
@@ -101,7 +100,7 @@ class SiteController extends Controller
 					"Content-type: text/plain; charset=UTF-8";
 				echo (Yii::app()->params['adminEmail']);
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				Yii::app()->user->setFlash('contact',Yii::t("main", "Thank you for contacting us. We will respond to you as soon as possible."));
 				$this->refresh();
 			}
 		}

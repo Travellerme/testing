@@ -126,7 +126,7 @@ class Photo extends CFormModel
      * @param string $type тип картинки, доступные типы картинки можно определить Photo::infIMG
      * @return bool сохраенена или нет
      */
-     public function savePhoto($image,$type='full_img')
+     public function savePhoto($image,$type='full_img',$path = 'images/gallery')
      {	
 		
          $img = Yii::app()->imagemod->load($image);
@@ -140,24 +140,34 @@ class Photo extends CFormModel
 		 $img->image_y               = $this->infIMG($type, 1);
 		 $img->image_x 				 = $this->infIMG($type, 1);
 		 
-         
          /*$img->image_resize =true;
          $img->image_ratio_y = true;
          $this->width = $img->image_x = $this->infIMG($type, 0);
          $this->height = round(($img->image_src_y * $img->image_x) / $img->image_src_x);
         */ $this->type = $type;
-         $img->file_new_name_body = $this->infIMG($this->type, 'prif').$image->name;
-         if(!$this->searchImg('images/gallery',$img->file_new_name_body))
-		 {
-			 $this->addError('image',Yii::t("main", "This image already exist"));
-			 return false;
-		 }
-		 $img->process(yii::app()->getBasePath()."/../images/gallery");
-		 return true;
+        
+        if (preg_match('/(.*)\..*$/i',$image['name'],$compare))
+		{ 
+			$this->name = $compare[1];
+		}
+		else
+		{
+			$this->addError('image',Yii::t("main", "Incorrect format"));
+			return false;
+		}
+        $img->file_new_name_body = $this->infIMG($this->type, 'prif') . $this->name;
+		
+        if(!$this->searchImg($path,$img->file_new_name_body))
+		{
+			$this->addError('image',Yii::t("main", "This image already exist"));
+			return false;
+		}
+		$img->process(yii::app()->getBasePath() . "/../" . $path);
+		return true;
 		
 	}
 	
-	public function valid($name, $image)
+	public function valid($image)
 	{
 		if(!$image)
 		{

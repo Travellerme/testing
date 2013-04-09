@@ -65,8 +65,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'status'=>array(
 			'name'=>'status',
-			'value'=>'($data->status==1)?Yii::t("main", "Hide"):Yii::t("main", "Show")',
-			'filter'=>array(0=>'hide',1=>'show'),
+			'value'=>'($data->status==1)?Yii::t("main", "hidden"):Yii::t("main", "available")',
+			'filter'=>array(1=>Yii::t("main", "hidden"),0=>Yii::t("main", "available")),
 		),
 		'categoryId'=>array(
 			'name'=>'category_id',
