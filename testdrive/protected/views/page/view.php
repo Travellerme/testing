@@ -12,6 +12,14 @@ $this->breadcrumbs=array(
 
 <?php echo Yii::t("main", "Created") . ' [' . $model->created . ']'; ?>
 <hr />
+<?php if($model->imgUrl):?>
+	<?php 
+		echo CHtml::image(Yii::app()->baseUrl . '/' . $model->imgUrl,'no_photo',
+			array(                                            
+				'class'=>'pageImg',
+				));
+	?> 
+<?php endif; ?>
 <?php echo '['.CHtml::encode($model->timeStart).']'; ?>
 	
 <?php echo ($model->timeEnd)?'- ['.CHtml::encode($model->timeEnd).']':''; ?>

@@ -24,12 +24,21 @@
 		<?php echo $form->textField($model,'title',array('size'=>30,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
+	<?php if($model->scenario == 'insert'): ?>
+		<div class="row">
+			<?= CHtml::activeLabel($model, "image")?>
+			<?php echo CHtml::FileField('image'); ?>
+			<?= CHtml::error($model, "image")?>
+		</div>
+	<?php endif;?>
 	
-	<div class="row">
-		<?= CHtml::activeLabel($model, "image")?>
-		<?php echo CHtml::FileField('image'); ?>
-		<?= CHtml::error($model, "image")?>
-	</div>
+	<?php if($model->scenario == 'update'): ?>
+		<div class="row">
+			<?php echo $form->labelEx($model,'imgUrl'); ?>
+			<?php //echo $form->dropDownList($model,'imgUrl'); ?>
+			<?php echo $form->error($model,'imgUrl'); ?>
+		</div><? Photo::allImg('images/events'); ?>
+	<?php endif;?>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'timeStart'); ?>

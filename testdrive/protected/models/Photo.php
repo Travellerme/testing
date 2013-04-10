@@ -167,6 +167,13 @@ class Photo extends CFormModel
 		
 	}
 	
+	public static function allImg($path)
+	{
+		$images = self::searchImg($path);
+		var_dump($images['href']);
+		//return Chtml::listData();
+	}
+	
 	public function valid($image)
 	{
 		if(!$image)

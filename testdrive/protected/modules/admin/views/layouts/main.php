@@ -31,6 +31,7 @@
 			$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>Yii::t("main", "Home"), 'url'=>array('/site/index')),
+					array('label'=>Yii::t("main", "Main page"), 'url'=>array('/admin/site/index')),
 					array('label'=>Yii::t("main", "Pages"), 'url'=>array('/admin/page')),
 					array('label'=>Yii::t("main", "Comments"), 'url'=>array('/admin/comment/index')),
 					array('label'=>Yii::t("main", "Photo"), 'url'=>array('/admin/photo')),

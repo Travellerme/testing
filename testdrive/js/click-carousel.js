@@ -226,7 +226,7 @@ jQuery.fn.clickCarousel = function(options)
 	var shiftingIsClicker = jQuery(settings.clicker).equalTo(settings.shifting);
 	
 	//If the carousel is being used for shifting AND retraction effect
-	if(settings.shiftOnly === false)
+	/*if(settings.shiftOnly === false)
 	{
 		jQuery(settings.clicker).click(function()
 		{		
@@ -261,7 +261,7 @@ jQuery.fn.clickCarousel = function(options)
 				{		
 					//Take the clicked element's target and add it to the end of the array
 					//Also shift the clicker in order to keep settings.shifting and settings.clicker consistent. 
-					settings.shifting = settings.shifting.arrayShift(index, "last");
+					 settings.shifting = settings.shifting.arrayShift(index, "last");
 					 settings.clicker = settings.clicker.arrayShift(index, "last");
 					
 					//Move and Align the Elements
@@ -276,7 +276,7 @@ jQuery.fn.clickCarousel = function(options)
 				});			
 			}
 		});	
-	}
+	}*/
 		
 		//Create new scroller object that will hold variables throughout this section.
 		var scroller = {};
@@ -361,7 +361,7 @@ jQuery.fn.clickCarousel = function(options)
 		/*********************************************************/
 		/** End scroll method definitions, begin code execution **/
 		/*********************************************************/
-		
+		var interval;
 			//If the left property is defined
 			if(isset(settings.left))
 			{
@@ -375,7 +375,14 @@ jQuery.fn.clickCarousel = function(options)
 						scroller.getIndexes("left");
 						
 						//Execute the scrolling animation
-						scroller.scroll();			
+						scroller.scroll();	
+						clearInterval(interval);	
+						interval = setInterval(function() 
+						{
+							scroller.getIndexes("right");	
+							scroller.scroll();
+
+						}, 7000);		
 					}
 				});				
 			}	
@@ -393,17 +400,26 @@ jQuery.fn.clickCarousel = function(options)
 						scroller.getIndexes("right");
 						
 						//Execute the scrolling animation
-						scroller.scroll();			
+						scroller.scroll();	
+						clearInterval(interval);	
+						interval = setInterval(function() 
+						{
+							scroller.getIndexes("right");	
+							scroller.scroll();
+
+						}, 7000);		
 					}
-				});				
+				});		
+					
 			}	
-			setInterval(function() 
+			
+			interval = setInterval(function() 
 			{
 				scroller.getIndexes("right");	
 				scroller.scroll();
 
-			}, 7000)
-					
+			}, 7000);
+				
 			
 };
 

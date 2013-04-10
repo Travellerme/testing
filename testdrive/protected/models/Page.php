@@ -110,6 +110,7 @@ class Page extends CActiveRecord
 			'created' => Yii::t("main", "Created"),
 			'image' => Yii::t("main", "Image"),
 			'imgUrl' => Yii::t("main", "Image url"),
+			'date' => Yii::t("main", "Date"),
 		);
 	}
 	

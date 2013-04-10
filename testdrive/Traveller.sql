@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Апр 05 2013 г., 20:36
+-- Время создания: Апр 10 2013 г., 19:28
 -- Версия сервера: 5.5.29
 -- Версия PHP: 5.3.10-1ubuntu3.6
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `tbl_comment` (
   `guest` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Дамп данных таблицы `tbl_comment`
@@ -73,7 +73,9 @@ INSERT INTO `tbl_comment` (`id`, `content`, `event_id`, `created`, `user_id`, `g
 (13, 'zxcz', 4, 1364589742, 22, '', 0),
 (14, 'a', 4, 1364589748, 22, '', 0),
 (15, 'asdada', 4, 1364589800, 22, '', 0),
-(16, 'asdasdad', 4, 1364823567, 0, 'name', 0);
+(16, 'asdasdad', 4, 1364823567, 0, 'name', 0),
+(17, 'asdasdasd', 1, 1365517735, 22, '', 1),
+(18, 'asda', 6, 1365600205, 22, '', 0);
 
 -- --------------------------------------------------------
 
@@ -87,22 +89,24 @@ CREATE TABLE IF NOT EXISTS `tbl_event` (
   `timeStart` int(11) NOT NULL,
   `timeEnd` int(11) NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `imgUrl` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `created` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `tbl_event`
 --
 
-INSERT INTO `tbl_event` (`id`, `title`, `timeStart`, `timeEnd`, `description`, `created`, `status`, `category_id`) VALUES
-(1, 'title_1', 1372850100, 1372865400, 'desc_1', 1363893892, 0, 1),
-(2, 'title_2', 1373045700, 1373053020, 'desc_2', 1363893892, 0, 2),
-(3, 'title_3', 1373199000, 1373209200, 'desc_3', 1363893892, 0, 1),
-(4, 'Событие_4', 1364217052, 1364224672, '<p>\r\n	asdasdasd</p>\r\n<p>\r\n	asdasdas<img align="middle" alt="" height="68" src="/upload/userfiles/images/screen.png" width="100" /></p>\r\n', 1363893892, 0, 2),
-(5, 'sdfsfs', 1373631265, 1373638465, '<p>\r\n	asdadad</p>\r\n', 1365166045, 0, 1);
+INSERT INTO `tbl_event` (`id`, `title`, `timeStart`, `timeEnd`, `description`, `imgUrl`, `created`, `status`, `category_id`) VALUES
+(1, 'title_1', 1372850100, 1372865400, 'desc_1', '', 1363893892, 0, 1),
+(2, 'title_2', 1373045700, 1373053020, 'desc_2', '', 1363893892, 0, 2),
+(3, 'title_3', 1373199000, 1373209200, 'desc_3', '', 1363893892, 0, 1),
+(4, 'Событие_4', 1364217052, 1364224672, '<p>\r\n	asdasdasd</p>\r\n<p>\r\n	asdasdas<img align="middle" alt="" height="68" src="/upload/userfiles/images/screen.png" width="100" /></p>\r\n', '', 1363893892, 0, 2),
+(5, 'sdfsfs', 1373631265, 1373638465, '<p>\r\n	asdadad</p>\r\n', '', 1365166045, 0, 1),
+(6, 'qdsadwad', 1378988058, 1378995078, '<p>\r\n	asdasdasd</p>\r\n', 'images/event/full_no_photo.gif', 1365539894, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -127,6 +131,25 @@ INSERT INTO `tbl_setting` (`id`, `defaultStatusComment`, `defaultStatusUser`) VA
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `tbl_site`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_site` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `tbl_site`
+--
+
+INSERT INTO `tbl_site` (`id`, `description`) VALUES
+(1, '<p>\r\n	asdasdaf</p>\r\n<ul>\r\n	<li>\r\n		asfas</li>\r\n	<li>\r\n		asf</li>\r\n	<li>\r\n		as</li>\r\n	<li>\r\n		fasf</li>\r\n</ul>\r\n<p>\r\n	as<br />\r\n	asdGFASFASFASf</p>\r\n');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `tbl_user`
 --
 
@@ -140,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `ban` int(11) NOT NULL,
   `role` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Дамп данных таблицы `tbl_user`
@@ -155,7 +178,11 @@ INSERT INTO `tbl_user` (`id`, `username`, `password`, `salt`, `email`, `created`
 (28, 'qwertyw2', 'd64fe804b7fdc7151c1ebd2410a659c9', '$2a$10$NXrUWDR8KJj4Lieh0E/uMO', 'qwerty@asda.sa2', 1364496038, 0, 0),
 (29, 'qwertyw2a', 'dd6513cd83fdca67ced5749d7a18f97c', '$2a$10$9cLO2GuxyG2uojUmbT2DT5', 'qwerty@asda.sa2a', 1364496078, 0, 0),
 (30, 'qwertyw2asw', '9fa7103bf0b3a613656ec2521314f7fe', '$2a$10$tphMhTCrG1w/KFpocVyX7t', 'qwerty@asda.sa2a1', 1364496238, 0, 0),
-(31, 'asdas', 'a6e1fd958ed830151e691d35139cc62c', '$2a$10$qawiuf/ZY/Xig5jaW4QBJb', 'qweq@adda.aq', 1364496295, 0, 0);
+(31, 'asdas', 'a6e1fd958ed830151e691d35139cc62c', '$2a$10$qawiuf/ZY/Xig5jaW4QBJb', 'qweq@adda.aq', 1364496295, 0, 0),
+(32, 'Traveller', '90c14cedea6fd3160a75ffc04f5eaace', '$2a$10$S0qc.RowBVjQtxA/RXvlHC', 'pololome@gmail.com', 8, 0, 0),
+(33, 'asedasdad', '2b512c92b8e0c718a87eec0fad74708a', '$2a$10$f98Ke/ODN/G5TPBDzkA1ks', 'xzczxcx@sadas.re', 1365517937, 0, 0),
+(34, 'asedasdadsdas', '3972674821f3771ae5539c7d07427cd8', '$2a$10$pcjxQGSDrMkb6zhurUiDVt', 'xzczxcx@sadas.rea', 1365518327, 0, 0),
+(35, 'asedasdadsdass', '97d12dd670283cb551220b0bdfc0cfb6', '$2a$10$JrhGy.y8Nu6yCmdxmFq5ZQ', 'xzczxcx@sadas.reae', 1365518362, 0, 0);
 
 -- --------------------------------------------------------
 

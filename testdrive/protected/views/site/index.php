@@ -18,15 +18,16 @@ $(function(){
 
 </script>  
 <h1><?php echo Yii::t("main", 'Welcome to the Youth "Theater Island"'); ?></h1>
-
-<div id="images">   	
-	<?php 
-		foreach ($listImg['href'] as $key=>$val)
-		{
-			$src = preg_replace('/(small_)/i','full_',$val);
-			echo "<img src='$src'/>";
-		}
-	 ?>
+<div id="galleryBackround">
+	<div id="images">   	
+		<?php 
+			foreach ($listImg['href'] as $key=>$val)
+			{
+				$src = preg_replace('/(small_)/i','full_',$val);
+				echo "<img src='$src'/>";
+			}
+		 ?>
+	</div>
 </div>
 	
 
