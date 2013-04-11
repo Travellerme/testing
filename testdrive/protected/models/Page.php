@@ -43,7 +43,7 @@ class Page extends CActiveRecord
 			array('timeStart, description, title, status, category_id', 'required'),
 			array('timeStart, timeEnd', 'date', 'format'=>'dd.MM.yyyy hh:mm', 'message'=>Yii::t("main", "Incorrect format Date row. It must be")." dd.MM.yyyy hh:mm"),
 			//array('image', 'file', 'types'=>'jpg, gif, png', 'allowEmpty'=>true, 'message'=>Yii::t("main", "File must be as image")),
-
+			array('imgUrl','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, status, category_id', 'safe', 'on'=>'search'),
@@ -151,6 +151,8 @@ class Page extends CActiveRecord
 				
 			}
 		}
+		if($this->imgUrl)
+			$this->imgUrl = 'images/event/' . $this->imgUrl;
 		if($this->title)
 			$this->title = trim($this->title);
 			

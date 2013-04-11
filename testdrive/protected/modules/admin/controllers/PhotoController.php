@@ -34,12 +34,16 @@ class PhotoController extends Controller
 		{	
 			if($model->valid($_FILES['image']['name']))
 			{
-				if($model->savePhoto($_FILES['image'],'full_img'))
+				$model->attributes=$_POST['Photo'];
+				if($model->savePhoto($_FILES['image'],'full_img','images/' . $model->dir) 
+					&& $model->savePhoto($_FILES['image'],'small_img','images/' . $model->dir))
 				{
-					$model->savePhoto($_FILES['image'],'small_img');
 					Yii::app()->user->setFlash('upload',Yii::t("main", "Image was uploaded"));
 					$this->refresh();
 				}
+				
+				
+				
 							
 			}
 			
@@ -55,8 +59,6 @@ class PhotoController extends Controller
 
 	public function actionDelPhoto($key=FALSE)
 	{
-
-
 		if($key)
 		{
 			$photos = Photo::model()->findAll("key_photo=:key",array(':key'=>$key));

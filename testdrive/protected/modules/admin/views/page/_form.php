@@ -35,9 +35,9 @@
 	<?php if($model->scenario == 'update'): ?>
 		<div class="row">
 			<?php echo $form->labelEx($model,'imgUrl'); ?>
-			<?php //echo $form->dropDownList($model,'imgUrl'); ?>
+			<?php echo $form->dropDownList($model,'imgUrl',Photo::allImg('images/event',array(''=>''))); ?>
 			<?php echo $form->error($model,'imgUrl'); ?>
-		</div><? Photo::allImg('images/events'); ?>
+		</div>
 	<?php endif;?>
 	
 	<div class="row">

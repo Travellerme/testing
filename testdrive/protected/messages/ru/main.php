@@ -34,7 +34,9 @@ return array(
         'You was registered successfully. Please wait while administrator approve you' => 'Ваш аккаунт успешно зарегистрирован. Пожалуйста 
         подождите пока администратор проверит Ваши данные',
         'The requested page does not exist.' => 'Запрашиваемая страница не существует',
+		'Error occurred, maybe incorrect image format' => 'Произошла ошибка. Возможно изображение неверного типа',
         'Photo' => 'Фото',
+        'Directory for saving image' => 'Директория для сохранения изображения',
         'Date' => 'Дата',
         'Video' => 'Видео',
         'My profile' => 'Мой профиль',
@@ -54,7 +56,7 @@ return array(
         'Description' => 'Описание',
         'Category' => 'Категория',
         'Unique name' => 'Уникальное имя',
-        'Image' => 'Картинка',
+        'Image' => 'Изображение',
         'This image already exist' => 'Такая картинка уже существует',
         'You must enter image' => 'Вы должны вставить картинку',
         'Incorrect format' => 'Неверный формат',

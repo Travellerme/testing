@@ -6,6 +6,7 @@ class Photo extends CFormModel
     public $height;
     public $name;
 	public $type;
+	public $dir;
      
 	public static function gallery($listImg)
 	{
@@ -29,6 +30,15 @@ class Photo extends CFormModel
 		return $str;
 	}
 	
+	public function rules()
+	{
+		return array(
+			array('dir', 'required'),
+			array('dir', 'safe'),
+			
+		);
+	}
+	
     public function searchImg($childDir, $compareImg = null)
     {
 		$url = Yii::app()->baseUrl . '/' . $childDir;
@@ -48,6 +58,7 @@ class Photo extends CFormModel
 				$result['href'][]=$url . '/' . $val;
 				$result['img'][]= '/full_' . $out[2];
 			}
+			$result['hrefFull'][]=$val;
 			if($compareImg)
 			{
 				if(preg_match('/^[small_|full_].*(\..*)/i',$val,$out))
@@ -110,7 +121,8 @@ class Photo extends CFormModel
    
      public function  attributeLabels() {
             return array(
-				'image'=>'Image',
+				'image'=>Yii::t("main", "Image"),
+				'dir'=>Yii::t("main", "Directory for saving image"),
             );
      }
      /**
@@ -163,15 +175,24 @@ class Photo extends CFormModel
 			return false;
 		}
 		$img->process(yii::app()->getBasePath() . "/../" . $path);
+		if(!file_exists(yii::app()->getBasePath() . "/../" . $path . '/' . $image['name']))
+		{
+			$this->addError('image',Yii::t("main", "Error occurred, maybe incorrect image format"));
+			return false;
+		}
 		return true;
 		
 	}
 	
-	public static function allImg($path)
+	public static function allImg($path,$item = array())
 	{
 		$images = self::searchImg($path);
-		var_dump($images['href']);
-		//return Chtml::listData();
+		$result = $item;
+		foreach ($images['hrefFull'] as $key)
+		{
+			$result[$key] = $key;
+		}
+		return $result;
 	}
 	
 	public function valid($image)

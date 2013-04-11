@@ -21,12 +21,17 @@ $this->breadcrumbs=array(
 <div  class="form">
 	<?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
 	<p class="note"><?php echo Yii::t("main", 'Fields with <span class="required">*</span> are required.'); ?></p>
-	<?=  CHtml::errorSummary($model)?>
+	<?php echo  CHtml::errorSummary($model); ?>
 	<div class="row">
-		<?= CHtml::activeLabel($model, "image")?>
+		<b><?php echo Yii::t("main", "Image"); ?></b> <span class="required">*</span><br />
 		<?php echo CHtml::FileField('image'); ?>
-		<?= CHtml::error($model, "image")?>
+		<?php echo CHtml::error($model, "image"); ?>
 	</div>
-	<?= CHtml::submitButton(Yii::t("main", "Upload"))?>
+	<div class="row">
+		<b><?php echo Yii::t("main", "Directory for saving image"); ?></b> <span class="required">*</span><br />
+		<?php echo CHtml::activeDropDownList($model,'dir',Photo::allImg('images')); ?>
+		<?php echo CHtml::error($model,'dir'); ?>
+	</div>
+	<?php echo CHtml::submitButton(Yii::t("main", "Upload")); ?>
 	<?php echo CHtml::endForm(); ?>
 </div>

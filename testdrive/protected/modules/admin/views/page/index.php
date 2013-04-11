@@ -73,6 +73,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'value'=>'$data->categoryName->titleCategory',
 			'filter'=>Category::allCategories(),
 		),
+		'imgUrl'=>array(
+			'name'=>'imgUrl',
+			'filter'=>false,
+		),
 		array(
 			'class'=>'CButtonColumn',
 			'viewButtonUrl'=> 'Chtml::normalizeUrl(array("/page/view","id"=>$data->id))',
