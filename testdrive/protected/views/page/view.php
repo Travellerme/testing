@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 				));
 	?> 
 <?php endif; ?>
-<?php echo '['.CHtml::encode($model->timeStart).']'; ?>
+<?php echo ($model->timeStart)?'['.CHtml::encode($model->timeStart).']':''; ?>
 	
 <?php echo ($model->timeEnd)?'- ['.CHtml::encode($model->timeEnd).']':''; ?>
 <br />

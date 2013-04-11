@@ -36,6 +36,14 @@
  #footer, #footer p{ color: #dba963; }
  #footer a{ color: #f4cf9f; text-decoration: underline; }
 
+hr 
+{
+     border: none; /* Убираем границу для браузера Firefox */
+     color: #421107; /* Цвет линии для браузера Internet Explorer */
+     background-color: #421107; /* Цвет линии для браузера Firefox и Opera */
+     height: 1.5px; /* Толщина линии */
+}
+
 .pageImg
 {
 	position: relative;

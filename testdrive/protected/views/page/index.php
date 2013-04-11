@@ -35,7 +35,7 @@ $this->breadcrumbs=array(
 			echo substr(preg_replace('/(<img.* \/>)/i', ' ', $key->description),0,255).'...<br />';
 			//echo substr($key->description,0,255).'...<br />';
 			echo Yii::t("main", "Last update") . ' : ['.$key->created.']<br /><br />';
-			echo CHtml::link('read more',array('/page/view/','id'=>$key->id)).'<br />';
+			echo CHtml::link(Yii::t("main", "read more"),array('/page/view/','id'=>$key->id)).'<br />';
 			echo "</div>";
 		}
 		if (!$model)

@@ -40,10 +40,10 @@ class Page extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('timeStart, description, title, status, category_id', 'required'),
+			array('description, title, status, category_id', 'required'),
 			array('timeStart, timeEnd', 'date', 'format'=>'dd.MM.yyyy hh:mm', 'message'=>Yii::t("main", "Incorrect format Date row. It must be")." dd.MM.yyyy hh:mm"),
 			//array('image', 'file', 'types'=>'jpg, gif, png', 'allowEmpty'=>true, 'message'=>Yii::t("main", "File must be as image")),
-			array('imgUrl','safe'),
+			array('imgUrl, timeStart, timeEnd','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, status, category_id', 'safe', 'on'=>'search'),
@@ -119,9 +119,13 @@ class Page extends CActiveRecord
 		$dateFormat = "d.m.Y H:i";
 		if($this->timeStart)
 			$this->timeStart = date($dateFormat,$this->timeStart);
+		else
+			$this->timeStart = '';
 			
 		if($this->timeEnd)
 			$this->timeEnd = date($dateFormat,$this->timeEnd);
+		else
+			$this->timeEnd = '';
 			
 		if($this->created)
 			$this->created = date($dateFormat,$this->created);
@@ -139,7 +143,6 @@ class Page extends CActiveRecord
 	{
 		if($this->isNewRecord)
 		{
-			$this->created = time();
 			$this->status = 0;
 			if(isset($_FILES['image']))
 			{
@@ -151,6 +154,7 @@ class Page extends CActiveRecord
 				
 			}
 		}
+		$this->created = time();
 		if($this->imgUrl)
 			$this->imgUrl = 'images/event/' . $this->imgUrl;
 		if($this->title)

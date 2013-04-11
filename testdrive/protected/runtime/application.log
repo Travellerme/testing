@@ -2433,3 +2433,118 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/testdrive/assets/855ed86e/contents.css
 ---
+2013/04/11 19:07:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:09:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:13:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:13:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:14:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:15:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:15:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "view".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/page/view...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/page/view/id/1
+HTTP_REFERER=http://localhost/testdrive/admin/page/update/id/1
+---
+2013/04/11 19:15:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:15:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:19:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:20:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---
+2013/04/11 19:21:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "assets/855ed86e/contents.css".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/855ed86e...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/assets/855ed86e/contents.css
+---

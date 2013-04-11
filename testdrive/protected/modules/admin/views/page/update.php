@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	Yii::t("main", "Pages")=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
+	$model->title,
 	Yii::t("main", "Update"),
 );
 
@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t("main", "Update Page") . $model->id; ?></h1>
+<h1><?php echo Yii::t("main", "Update Page") . ' ' . $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

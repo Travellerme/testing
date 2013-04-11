@@ -40,10 +40,7 @@ class PhotoController extends Controller
 				{
 					Yii::app()->user->setFlash('upload',Yii::t("main", "Image was uploaded"));
 					$this->refresh();
-				}
-				
-				
-				
+				}				
 							
 			}
 			
