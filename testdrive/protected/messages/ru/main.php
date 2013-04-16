@@ -9,7 +9,7 @@ return array(
         'Login' => 'Вход',
         'Logout' => 'Выход',
         'Contact Us' =>'Обратная связь',
-        'Admin Control' => 'Админка',
+        'AdminControl' => 'Админка',
         'Operations' => 'Операции',
         'Password recovery' => 'Восстановление пароля',
         'If you have business inquiries or other questions, 
