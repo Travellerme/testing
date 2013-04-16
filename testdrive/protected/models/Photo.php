@@ -7,6 +7,7 @@ class Photo extends CFormModel
     public $name;
 	public $type;
 	public $dir;
+	public static $pathFile = array();
      
 	public static function gallery($listImg)
 	{
@@ -183,8 +184,30 @@ class Photo extends CFormModel
 		return true;
 		
 	}
+	public static function imgList($path)
+	{
+		$files = scandir($path);
+		if ($files)
+		{
+
+			if (($files == '.') || ($files == '..')) continue;
+
+			$result = array();
+			foreach ($files as $key=>$val)
+			{
+				$pathFile = $directoryName.'/'.$val;
+				if (!is_dir($pathFile))
+				{ 
+					$result[$val]= $val;
+				}
+			}
+			return $result;
+		}
+		return array(''=>Yii::t("main", "Directory is empty"));
+    
+	}
 	
-	public static function allImg($path,$item = array())
+	public static function allImgDir($path,$item = array())
 	{
 		$images = self::searchImg($path);
 		$result = $item;

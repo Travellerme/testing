@@ -2548,3 +2548,14 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/testdrive/assets/855ed86e/contents.css
 ---
+2013/04/16 22:03:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "delete".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('delete')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('delete')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo/del...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/photo/delete
+HTTP_REFERER=http://localhost/testdrive/admin/photo
+---

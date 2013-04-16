@@ -17,7 +17,7 @@ class PhotoController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index','DelPhoto'),
+				'actions'=>array('index','delete'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -54,25 +54,25 @@ class PhotoController extends Controller
 	
 	
 
-	public function actionDelPhoto($key=FALSE)
+	public function actionDelete()
 	{
-		if($key)
+		$model = new Photo();
+		$this->render('delete',array('model'=>$model));
+		/*$photos = Photo::model()->findAll("key_photo=:key",array(':key'=>$key));
+		foreach ($photos as $photo)
 		{
-			$photos = Photo::model()->findAll("key_photo=:key",array(':key'=>$key));
-			foreach ($photos as $photo)
-			{
-			   if(is_file(yii::app()->getBasePath()."/../images/".$photo->url.".jpg"))
-			   {
-				   unlink(yii::app()->getBasePath()."/../images/".$photo->url.".jpg");
-			   }
-			}
-
-			Photo::model()->deleteAll("key_photo=:key",array(':key'=>$key));
-
+		   if(is_file(yii::app()->getBasePath()."/../images/".$photo->url.".jpg"))
+		   {
+			   unlink(yii::app()->getBasePath()."/../images/".$photo->url.".jpg");
+		   }
 		}
 
+		Photo::model()->deleteAll("key_photo=:key",array(':key'=>$key));
 
-		$this->redirect(Yii::app()->user->returnUrl);
+		
+
+
+		$this->redirect(Yii::app()->user->returnUrl);*/
 
 	}
 }

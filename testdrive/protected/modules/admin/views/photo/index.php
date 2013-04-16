@@ -6,6 +6,10 @@ $this->breadcrumbs=array(
 	Yii::t("main", "Photo")=>array('index'),
 	Yii::t("main", "Manage"),
 );
+
+$this->menu=array(
+	array('label'=>Yii::t("main", "Delete image"), 'url'=>array('delete')),
+);
 ?>
 
 <h1><?php echo Yii::t("main", "Manage Photos"); ?></h1>
@@ -29,7 +33,7 @@ $this->breadcrumbs=array(
 	</div>
 	<div class="row">
 		<b><?php echo Yii::t("main", "Directory for saving image"); ?></b> <span class="required">*</span><br />
-		<?php echo CHtml::activeDropDownList($model,'dir',Photo::allImg('images')); ?>
+		<?php echo CHtml::activeDropDownList($model,'dir',Photo::allImgDir('images')); ?>
 		<?php echo CHtml::error($model,'dir'); ?>
 	</div>
 	<?php echo CHtml::submitButton(Yii::t("main", "Upload")); ?>

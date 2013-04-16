@@ -12,6 +12,7 @@ return array(
         'AdminControl' => 'Админка',
         'Operations' => 'Операции',
         'Password recovery' => 'Восстановление пароля',
+        'Delete image' => 'Удалить изображение',
         'If you have business inquiries or other questions, 
 		please fill out the following form to contact us. Thank you.' 
 			=> 'Если у вас есть бизнес-предложения 
@@ -120,6 +121,9 @@ or <b>=</b>) в начале полей поиска',
 		'Position' => 'Позиция',
 		'Search' => 'Поиск',
 		'Upload' => 'Загрузить',
+		'Upload image' => 'Загрузить изображение',
+		'Directory is empty' => 'Директория пуста',
+		'Directory' => 'Директория',
 		'Create comment' => 'Создать комментарий',
 		'Advanced Search' => 'Расширенный Поиск',
 		'Users' => 'Пользователи',
