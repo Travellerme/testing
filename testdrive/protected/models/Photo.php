@@ -189,13 +189,12 @@ class Photo extends CFormModel
 		$files = scandir($path);
 		if ($files)
 		{
-
 			if (($files == '.') || ($files == '..')) continue;
 
 			$result = array();
 			foreach ($files as $key=>$val)
 			{
-				$pathFile = $directoryName.'/'.$val;
+				$pathFile = $path.'/'.$val;
 				if (!is_dir($pathFile))
 				{ 
 					$result[$val]= $val;
@@ -203,7 +202,7 @@ class Photo extends CFormModel
 			}
 			return $result;
 		}
-		return array(''=>Yii::t("main", "Directory is empty"));
+		return false;
     
 	}
 	
@@ -213,7 +212,7 @@ class Photo extends CFormModel
 		$result = $item;
 		foreach ($images['hrefFull'] as $key)
 		{
-			$result[$key] = $key;
+			$result[] = $key;
 		}
 		return $result;
 	}

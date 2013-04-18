@@ -17,7 +17,7 @@ class PhotoController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index','delete'),
+				'actions'=>array('index','delete','FolderAjax'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -52,7 +52,10 @@ class PhotoController extends Controller
 		$this->render('index',array('model'=>$model));
 	}
 	
-	
+	public function actionFolderAjax()
+    {
+		echo json_encode(Photo::imgList('images/' . $_POST['folder']));
+    }
 
 	public function actionDelete()
 	{

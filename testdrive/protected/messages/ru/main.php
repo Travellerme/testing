@@ -47,6 +47,7 @@ return array(
         'User' => 'Пользователь',
         'Guest' => 'Гость',
         'Status' => 'Статус',
+        'Image name' => 'Имя изображения',
         'Verification Code' => 'Код подтверждения',
         'Incorrect username or password.' => 'Неверное имя или пароль',
         'Remember me next time' => 'Запомнить меня в следующий раз',
