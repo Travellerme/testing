@@ -122,18 +122,21 @@ class Comment extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		
 		$criteria->compare('id',$this->id);
-		$criteria->compare('status',$this->status,true);
-		$criteria->compare('content',$this->content,true);
+		$criteria->compare('status',$this->status);
 		$criteria->compare('event_id',$this->event_id);
 		$criteria->compare('created',$this->created);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('guest',$this->guest,true);
-
+		$criteria->compare('guest',$this->guest);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+				'pageSize'=>11,
+			)
 		));
+		
 	}
 	
 	public static function allComments($pageId)

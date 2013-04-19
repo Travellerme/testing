@@ -13,6 +13,8 @@ return array(
         'Operations' => 'Операции',
         'Password recovery' => 'Восстановление пароля',
         'Delete image' => 'Удалить изображение',
+        'Image was deleted' => 'Изображение было удалено',
+        'This image does not exist' => 'Данное изображение не существует',
         'If you have business inquiries or other questions, 
 		please fill out the following form to contact us. Thank you.' 
 			=> 'Если у вас есть бизнес-предложения 

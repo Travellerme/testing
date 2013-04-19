@@ -61,19 +61,27 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'value'=>'($data->status==0)?Yii::t("main", "visible"):Yii::t("main", "blocked")',
 			'filter'=>array(1=>Yii::t("main", "blocked"),0=>Yii::t("main", "visible")),
 		),
-		'content',
+		'content'=>array(
+			'name'=>'content',
+			'filter'=>false,
+			'headerHtmlOptions'=>array('width' => 250),
+		),
 		'event_id'=>array(
 			'name'=>'event_id',
 			'value'=>'$data->event->title',
 			'filter'=>Page::allEvents(),
 		),
-		'created',
+		'created'=>array(
+			'name'=>'created',
+			'filter'=>false,
+		),
 		'user_id'=>array(
 			'name'=>'user_id',
 			'value'=>'($data->user_id)?$data->user->username:""',
 			'filter'=>User::allUsers(),
 		),
 		'guest',
+		
 		array(
 			'class'=>'CButtonColumn',
 			'updateButtonOptions'=>array('style'=>'display:none'),

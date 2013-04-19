@@ -212,7 +212,7 @@ class Photo extends CFormModel
 		$result = $item;
 		foreach ($images['hrefFull'] as $key)
 		{
-			$result[] = $key;
+			$result[$key] = $key;
 		}
 		return $result;
 	}

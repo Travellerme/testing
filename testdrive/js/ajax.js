@@ -15,6 +15,14 @@ function is_object(mixedVar)
 	return mixedVar instanceof Object;
 }
 
+function extend(Child, Parent) {
+	var F = function() { }
+	F.prototype = Parent.prototype
+	Child.prototype = new F()
+	Child.prototype.constructor = Child
+	Child.superclass = Parent.prototype
+}
+
 function ajaxProperty(typeRequest = null, urlRequest = null, typeResponse = null) 
 {
     this.typeRequest = typeRequest;

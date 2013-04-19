@@ -113,7 +113,7 @@ class PageController extends Controller
 	public function actionIndex()
 	{
 		$model=new Page('search');
-		
+	
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Page']))
 			$model->attributes=$_GET['Page'];

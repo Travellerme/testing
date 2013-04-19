@@ -45,8 +45,6 @@ class PhotoController extends Controller
 			}
 			
 		}
-				
-
 		//YII::app()->user->setReturnUrl(YII::app()->request->getUrl());
 
 		$this->render('index',array('model'=>$model));
@@ -59,24 +57,23 @@ class PhotoController extends Controller
 
 	public function actionDelete()
 	{
-		$model = new Photo();
-		$this->render('delete',array('model'=>$model));
-		/*$photos = Photo::model()->findAll("key_photo=:key",array(':key'=>$key));
-		foreach ($photos as $photo)
+		$model = new Photo;
+		if(isset($_POST['fileList']))
 		{
-		   if(is_file(yii::app()->getBasePath()."/../images/".$photo->url.".jpg"))
-		   {
-			   unlink(yii::app()->getBasePath()."/../images/".$photo->url.".jpg");
-		   }
+			if(file_exists(yii::app()->getBasePath() . "/../images/" . $_POST['dir'] . '/' . $_POST['fileList']))
+		    {
+				$result = unlink(yii::app()->getBasePath() . "/../images/" . $_POST['dir'] . '/' . $_POST['fileList']);
+				if($result)
+				{
+					Yii::app()->user->setFlash('delete',Yii::t("main", "Image was deleted"));
+					$this->refresh();
+				}		
+		    }
+		    else
+				$model->addError('delete',Yii::t("main", "This image does not exist"));
+			
 		}
-
-		Photo::model()->deleteAll("key_photo=:key",array(':key'=>$key));
-
-		
-
-
-		$this->redirect(Yii::app()->user->returnUrl);*/
-
+		$this->render('delete',array('model'=>$model));
 	}
 }
 ?>
