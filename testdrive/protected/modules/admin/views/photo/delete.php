@@ -13,7 +13,7 @@ $this->menu=array(
 
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/jquery-1.9.1.min.js');
-$cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/ajax.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/ajaxWork.js');
 $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/moduleAdmin.js');
 
 ?>
@@ -35,10 +35,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'js/moduleAdmin.
 
 	<div class="row">
 		<b><?php echo Yii::t("main", "Directory"); ?></b> <span class="required">*</span><br />
-		<?php echo CHtml::dropDownList('dir',0,Photo::allImgDir('images'),array('onchange'=>'sendRequest()')); ?>
+		<?php echo CHtml::dropDownList('dir',0,Photo::allImgDir('images'),array('onchange'=>'moduleAdmin.start();')); ?>
 		<?php echo CHtml::error($model,'dir'); ?>
 	</div>
-	<iframe  width="0" height="0" onload='sendRequest();'></iframe>
+	<iframe  width="0" height="0" onload='moduleAdmin.start();'></iframe>
 	<div class="row">
 		<b><?php echo Yii::t("main", "Image name"); ?></b> <span class="required">*</span><br />
 		<select id="fileList" name="fileList"></select>

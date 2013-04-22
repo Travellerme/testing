@@ -1,12 +1,5 @@
-//function Request()
-function sendRequest()
-{
-	var request = new ajaxProperty('POST', 'folderAjax', 'json');
-	request.paramArray({'folder':$("#dir option:selected").text()});	
-	request.ajaxStart(optionBuilder);	
-}
-/*extend(Request,ajaxProperty);
-Request.prototype.optionBuilder = function (response)
+var moduleAdmin = Object.create(apiJs)
+moduleAdmin.callback = function (response)
 {
 	$('#fileList').html('');
 	$.each(response, function(key, value) 
@@ -18,25 +11,9 @@ Request.prototype.optionBuilder = function (response)
 		}));
 	});
 }
-Request.prototype.sendRequest = function ()
+moduleAdmin.start = function()
 {
-	this.superclass.paramArray.apply(this,{'folder':$("#dir option:selected").text()});
-	this.superclass.ajaxStart.apply(this,this.optionBuilder);
+	moduleAdmin.urlRequest = 'folderAjax';
+	moduleAdmin.paramArray({'folder':$("#dir option:selected").text()});
+	moduleAdmin.ajaxStart(this.callback);	
 }
-objRequest = new Request();
-console.log(objRequest);
-objRequest.sendRequest();*/
-function optionBuilder(response)
-{
-	$('#fileList').html('');
-	$.each(response, function(key, value) 
-	{
-		$('#fileList').append($("<option>", 
-		{
-			value: key,
-			text: value
-		}));
-	});
-}
-
-
