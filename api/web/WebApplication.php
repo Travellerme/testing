@@ -30,6 +30,14 @@ class WebApplication extends BaseApplication
 		$this->setComponents($components);
 	}
 	
+	protected function init()
+	{
+		parent::init();
+		// preload 'request' so that it has chance to respond to onBeginRequest event.
+		//$this->getRequest();
+		
+	}
+	
 	public function getAuthManager()
 	{
 		return $this->getComponent('authManager');

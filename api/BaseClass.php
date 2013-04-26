@@ -1,11 +1,14 @@
 <?php
 
 defined('API_PATH') or define('API_PATH',dirname(__FILE__));
+defined('API_ENABLE_EXCEPTION_HANDLER') or define('API_ENABLE_EXCEPTION_HANDLER',true);
+defined('API_ENABLE_ERROR_HANDLER') or define('API_ENABLE_ERROR_HANDLER',true);
 
 class BaseClass
 {
 	private static $_app;
-		
+	private static $_aliases=array('system'=>API_PATH);
+	
 	public static function createWebApp($config=null)
 	{
 		return self::createApp('WebApplication',$config);
@@ -19,6 +22,22 @@ class BaseClass
 	public static function app()
 	{
 		return self::$_app;
+	}
+	
+	public static function setPathOfAlias($alias,$path)
+	{
+		if(empty($path))
+			unset(self::$_aliases[$alias]);
+		else
+			self::$_aliases[$alias]=rtrim($path,'\\/');
+	}
+	
+	public static function setApp($app)
+	{
+		if(self::$_app===null || $app===null)
+			self::$_app=$app;
+		else
+			throw new CException(Api::'Api application can only be created once.');
 	}
 	
 	/**
