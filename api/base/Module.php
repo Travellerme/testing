@@ -31,4 +31,18 @@ abstract class Module extends Component
 		
 		}
 	}
+	
+	public function configure($config)
+	{
+		if(is_array($config))
+		{
+			foreach($config as $key=>$value)
+				$this->$key=$value;
+		}
+		
+	}
+	
+	protected function init()
+	{
+	}
 }

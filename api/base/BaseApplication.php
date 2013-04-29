@@ -1,5 +1,5 @@
 <?php
-abstract class Application extends Module
+abstract class BaseApplication extends Module
 {
 	public $charset='UTF-8';
 	
@@ -12,7 +12,7 @@ abstract class Application extends Module
 	
 	public function __construct($config=null)
 	{
-		Yii::setApp($this);
+		Api::setApp($this);
 
 		// set basePath at early as possible to avoid trouble
 		if(is_string($config))
@@ -35,6 +35,11 @@ abstract class Application extends Module
 		$this->init();
 	}
 	
+	public function run()
+	{
+		$this->processRequest();
+	}
+	
 	public function getRequest()
 	{
 		return $this->getComponent('request');
@@ -51,7 +56,7 @@ abstract class Application extends Module
 	public function setBasePath($path)
 	{
 		if(($this->_basePath=realpath($path))===false || !is_dir($this->_basePath))
-			throw new CException(Api::'Application base path' . '$path' . 'is not a valid directory.');
+			throw new CException('Application base path' . $path . 'is not a valid directory.');
 	}
 	
 	protected function registerCoreComponents()
@@ -74,6 +79,11 @@ abstract class Application extends Module
 		);
 
 		$this->setComponents($components);
+	}
+	
+	public function getBasePath()
+	{
+		return $this->_basePath;
 	}
 	
 	public static function createComponent($config)

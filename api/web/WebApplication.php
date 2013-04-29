@@ -6,9 +6,9 @@ class WebApplication extends BaseApplication
 	private $_controllerPath;
 	
 	public function processRequest()
-	{
-		$route=$this->getUrlManager()->parseUrl($this->getRequest());
-		$this->runController($route);
+	{print_r($this);
+		/*$route=$this->getUrlManager()->parseUrl($this->getRequest());
+		$this->runController($route);*/
 	}
 	
 	protected function installComponents()

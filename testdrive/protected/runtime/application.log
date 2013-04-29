@@ -3157,3 +3157,168 @@ REQUEST_URI=/testdrive/admin/photo/folderAjax
 in /var/www/testdrive/protected/models/Photo.php (189)
 in /var/www/testdrive/protected/modules/admin/controllers/PhotoController.php (55)
 in /var/www/testdrive/index.php (14)
+2013/04/23 20:17:15 [error] [php] Use of undefined constant this - assumed 'this' (/var/www/YiiRoot/framework/base/CModule.php:545)
+Stack trace:
+#0 /var/www/YiiRoot/framework/YiiBase.php(125): CWebApplication->__construct()
+#1 /var/www/YiiRoot/framework/YiiBase.php(98): createApplication()
+#2 /var/www/testdrive/index.php(14): createWebApplication()
+REQUEST_URI=/testdrive/admin/photo/delete
+in /var/www/testdrive/index.php (14)
+2013/04/23 20:17:21 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (/var/www/YiiRoot/framework/web/CHttpSession.php:185)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/auth/CWebUser.php(459): WebUser->changeIdentity()
+#1 /var/www/YiiRoot/framework/web/auth/CWebUser.php(195): WebUser->restoreFromCookie()
+#2 /var/www/YiiRoot/framework/base/CModule.php(387): WebUser->init()
+#3 /var/www/YiiRoot/framework/web/CWebApplication.php(209): CWebApplication->getComponent()
+#4 /var/www/YiiRoot/framework/web/auth/CAccessControlFilter.php(129): CWebApplication->getUser()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): PhotoController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): PhotoController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/photo/delete
+in /var/www/testdrive/index.php (14)
+2013/04/24 15:52:30 [error] [php] Undefined variable: key (/var/www/YiiRoot/framework/base/CModule.php:515)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModule.php(282): createComponent()
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(337): CWebApplication->getModule()
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(276): CWebApplication->createController()
+#3 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/photo/delete
+in /var/www/testdrive/index.php (14)
+2013/04/24 15:52:50 [error] [php] Undefined variable: key (/var/www/YiiRoot/framework/base/CModule.php:513)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModule.php(282): createComponent()
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(337): CWebApplication->getModule()
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(276): CWebApplication->createController()
+#3 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/photo/delete
+in /var/www/testdrive/index.php (14)
+2013/04/24 16:34:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "object(CHttpRequest)".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('object(CHttpReq...')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('object(CHttpReq...')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo/obj...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/photo/object(CHttpRequest)
+HTTP_REFERER=http://localhost/testdrive/admin/photo/delete
+---
+2013/04/24 16:34:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "CHttpRequest Object(    [enableCookieValidation] =>     [enableCsrfValidation] =>     [csrfTokenName] => YII_CSRF_TOKEN    [csrfCookie] =>     [_requestUri:CHttpRequest:private] => ".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('CHttpRequest Ob...')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('CHttpRequest Ob...')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo/CHt...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/photo/CHttpRequest%20Object(%20%20%20%20%5BenableCookieValidation%5D%20=%3E%20%20%20%20%20%5BenableCsrfValidation%5D%20=%3E%20%20%20%20%20%5BcsrfTokenName%5D%20=%3E%20YII_CSRF_TOKEN%20%20%20%20%5BcsrfCookie%5D%20=%3E%20%20%20%20%20%5B_requestUri:CHttpRequest:private%5D%20=%3E%20/testdrive/admin/photo/delete%20%20%20%20%5B_pathInfo:CHttpRequest:private%5D%20=%3E%20admin/photo/delete%20%20%20%20%5B_scriptFile:CHttpRequest:private%5D%20=%3E%20/var/www/testdrive/index.php%20%20%20%20%5B_scriptUrl:CHttpRequest:private%5D%20=%3E%20/testdrive/index.php%20%20%20%20%5B_hostInfo:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_baseUrl:CHttpRequest:private%5D%20=%3E%20/testdrive%20%20%20%20%5B_cookies:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_preferredLanguages:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_csrfToken:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_restParams:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_port:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_securePort:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5Bbehaviors%5D%20=%3E%20Array%20%20%20%20%20%20%20%20(%20%20%20%20%20%20%20%20)%20%20%20%20%5B_initialized:CApplicationComponent:private%5D%20=%3E%201%20%20%20%20%5B_e:CComponent:private%5D%20=%3E%20%20%20%20%20%5B_m:CComponent:private%5D%20=%3E%20)/testdrive/css/form.css
+HTTP_REFERER=http://localhost/testdrive/admin/photo/delete
+---
+2013/04/24 16:34:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "CHttpRequest Object(    [enableCookieValidation] =>     [enableCsrfValidation] =>     [csrfTokenName] => YII_CSRF_TOKEN    [csrfCookie] =>     [_requestUri:CHttpRequest:private] => ".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('CHttpRequest Ob...')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('CHttpRequest Ob...')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo/CHt...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/photo/CHttpRequest%20Object(%20%20%20%20%5BenableCookieValidation%5D%20=%3E%20%20%20%20%20%5BenableCsrfValidation%5D%20=%3E%20%20%20%20%20%5BcsrfTokenName%5D%20=%3E%20YII_CSRF_TOKEN%20%20%20%20%5BcsrfCookie%5D%20=%3E%20%20%20%20%20%5B_requestUri:CHttpRequest:private%5D%20=%3E%20/testdrive/admin/photo/delete%20%20%20%20%5B_pathInfo:CHttpRequest:private%5D%20=%3E%20admin/photo/delete%20%20%20%20%5B_scriptFile:CHttpRequest:private%5D%20=%3E%20/var/www/testdrive/index.php%20%20%20%20%5B_scriptUrl:CHttpRequest:private%5D%20=%3E%20/testdrive/index.php%20%20%20%20%5B_hostInfo:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_baseUrl:CHttpRequest:private%5D%20=%3E%20/testdrive%20%20%20%20%5B_cookies:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_preferredLanguages:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_csrfToken:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_restParams:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_port:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_securePort:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5Bbehaviors%5D%20=%3E%20Array%20%20%20%20%20%20%20%20(%20%20%20%20%20%20%20%20)%20%20%20%20%5B_initialized:CApplicationComponent:private%5D%20=%3E%201%20%20%20%20%5B_e:CComponent:private%5D%20=%3E%20%20%20%20%20%5B_m:CComponent:private%5D%20=%3E%20)/testdrive/css/main.css
+HTTP_REFERER=http://localhost/testdrive/admin/photo/delete
+---
+2013/04/24 16:34:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "CHttpRequest Object(    [enableCookieValidation] =>     [enableCsrfValidation] =>     [csrfTokenName] => YII_CSRF_TOKEN    [csrfCookie] =>     [_requestUri:CHttpRequest:private] => ".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('CHttpRequest Ob...')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('CHttpRequest Ob...')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo/CHt...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/photo/CHttpRequest%20Object(%20%20%20%20%5BenableCookieValidation%5D%20=%3E%20%20%20%20%20%5BenableCsrfValidation%5D%20=%3E%20%20%20%20%20%5BcsrfTokenName%5D%20=%3E%20YII_CSRF_TOKEN%20%20%20%20%5BcsrfCookie%5D%20=%3E%20%20%20%20%20%5B_requestUri:CHttpRequest:private%5D%20=%3E%20/testdrive/admin/photo/delete%20%20%20%20%5B_pathInfo:CHttpRequest:private%5D%20=%3E%20admin/photo/delete%20%20%20%20%5B_scriptFile:CHttpRequest:private%5D%20=%3E%20/var/www/testdrive/index.php%20%20%20%20%5B_scriptUrl:CHttpRequest:private%5D%20=%3E%20/testdrive/index.php%20%20%20%20%5B_hostInfo:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_baseUrl:CHttpRequest:private%5D%20=%3E%20/testdrive%20%20%20%20%5B_cookies:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_preferredLanguages:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_csrfToken:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_restParams:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_port:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_securePort:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5Bbehaviors%5D%20=%3E%20Array%20%20%20%20%20%20%20%20(%20%20%20%20%20%20%20%20)%20%20%20%20%5B_initialized:CApplicationComponent:private%5D%20=%3E%201%20%20%20%20%5B_e:CComponent:private%5D%20=%3E%20%20%20%20%20%5B_m:CComponent:private%5D%20=%3E%20)/testdrive/css/screen.css
+HTTP_REFERER=http://localhost/testdrive/admin/photo/delete
+---
+2013/04/24 16:34:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "CHttpRequest Object(    [enableCookieValidation] =>     [enableCsrfValidation] =>     [csrfTokenName] => YII_CSRF_TOKEN    [csrfCookie] =>     [_requestUri:CHttpRequest:private] => ".' in /var/www/YiiRoot/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(270): CController->missingAction('CHttpRequest Ob...')
+#1 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('CHttpRequest Ob...')
+#2 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo/CHt...')
+#3 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/admin/photo/CHttpRequest%20Object(%20%20%20%20%5BenableCookieValidation%5D%20=%3E%20%20%20%20%20%5BenableCsrfValidation%5D%20=%3E%20%20%20%20%20%5BcsrfTokenName%5D%20=%3E%20YII_CSRF_TOKEN%20%20%20%20%5BcsrfCookie%5D%20=%3E%20%20%20%20%20%5B_requestUri:CHttpRequest:private%5D%20=%3E%20/testdrive/admin/photo/delete%20%20%20%20%5B_pathInfo:CHttpRequest:private%5D%20=%3E%20admin/photo/delete%20%20%20%20%5B_scriptFile:CHttpRequest:private%5D%20=%3E%20/var/www/testdrive/index.php%20%20%20%20%5B_scriptUrl:CHttpRequest:private%5D%20=%3E%20/testdrive/index.php%20%20%20%20%5B_hostInfo:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_baseUrl:CHttpRequest:private%5D%20=%3E%20/testdrive%20%20%20%20%5B_cookies:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_preferredLanguages:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_csrfToken:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_restParams:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_port:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5B_securePort:CHttpRequest:private%5D%20=%3E%20%20%20%20%20%5Bbehaviors%5D%20=%3E%20Array%20%20%20%20%20%20%20%20(%20%20%20%20%20%20%20%20)%20%20%20%20%5B_initialized:CApplicationComponent:private%5D%20=%3E%201%20%20%20%20%5B_e:CComponent:private%5D%20=%3E%20%20%20%20%20%5B_m:CComponent:private%5D%20=%3E%20)/testdrive/css/print.css
+HTTP_REFERER=http://localhost/testdrive/admin/photo/delete
+---
+2013/04/24 17:41:48 [error] [php] Undefined variable: basePath (/var/www/YiiRoot/framework/web/CWebApplication.php:317)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#1 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/index.php (14)
+2013/04/24 17:43:03 [error] [php] Undefined variable: basePath (/var/www/YiiRoot/framework/web/CWebApplication.php:339)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#1 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/site/index
+in /var/www/testdrive/index.php (14)
+2013/04/25 15:44:50 [error] [php] Undefined variable: _REQUESTS (/var/www/testdrive/protected/modules/admin/controllers/CommentController.php:65)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/index
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (65)
+in /var/www/testdrive/index.php (14)
+2013/04/25 15:45:07 [error] [php] Array to string conversion (/var/www/testdrive/protected/modules/admin/controllers/CommentController.php:65)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CommentController->runAction()
+#2 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#9 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/index
+in /var/www/testdrive/protected/modules/admin/controllers/CommentController.php (65)
+in /var/www/testdrive/index.php (14)
+2013/04/26 19:27:12 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (/var/www/YiiRoot/framework/web/CHttpSession.php:185)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/auth/CWebUser.php(459): WebUser->changeIdentity()
+#1 /var/www/YiiRoot/framework/web/auth/CWebUser.php(195): WebUser->restoreFromCookie()
+#2 /var/www/YiiRoot/framework/base/CModule.php(387): WebUser->init()
+#3 /var/www/YiiRoot/framework/web/CWebApplication.php(209): CWebApplication->getComponent()
+#4 /var/www/YiiRoot/framework/web/auth/CAccessControlFilter.php(129): CWebApplication->getUser()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CommentController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CommentController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/testdrive/index.php(14): CWebApplication->run()
+REQUEST_URI=/testdrive/admin/comment/index
+in /var/www/testdrive/index.php (14)

@@ -8,6 +8,7 @@ class BaseClass
 {
 	private static $_app;
 	private static $_aliases=array('system'=>API_PATH);
+	public static $classMap=array();
 	
 	public static function createWebApp($config=null)
 	{
@@ -37,7 +38,7 @@ class BaseClass
 		if(self::$_app===null || $app===null)
 			self::$_app=$app;
 		else
-			throw new CException(Api::'Api application can only be created once.');
+			throw new CException('Api application can only be created once.');
 	}
 	
 	/**
@@ -54,7 +55,7 @@ class BaseClass
 		if(isset(self::$classMap[$className]))
 			include(self::$classMap[$className]);
 		elseif(isset(self::$_coreClasses[$className]))
-			include(YII_PATH.self::$_coreClasses[$className]);
+			include(API_PATH.self::$_coreClasses[$className]);
 		
 		return true;
 	}
