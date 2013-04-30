@@ -6,15 +6,14 @@ abstract class Module extends Component
 	private $_components=array();
 	private $_componentConfig=array();
 	
-	public function setComponents($components,$merge=true)
+	public function setComponents($components)
 	{
 		foreach($components as $id=>$component)
-			$this->setComponent($id,$component,$merge);
+			$this->setComponent($id,$component);
 	}
 	
 	public function setComponent($id,$component)
 	{
-		
 			$this->_componentConfig[$id]=$component;
 	}
 	
@@ -42,7 +41,4 @@ abstract class Module extends Component
 		
 	}
 	
-	protected function init()
-	{
-	}
 }

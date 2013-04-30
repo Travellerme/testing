@@ -32,7 +32,6 @@ abstract class BaseApplication extends Module
 	
 		$this->configure($config);
 		
-		$this->init();
 	}
 	
 	public function run()
@@ -45,6 +44,16 @@ abstract class BaseApplication extends Module
 		return $this->getComponent('request');
 	}
 	
+	/**
+	 * Returns the URL manager component.
+	 * @return UrlManager the URL manager component
+	 */
+	public function getUrlManager()
+	{
+		return $this->getComponent('urlManager');
+	}
+
+	
 	protected function initSystemHandlers()
 	{
 		if(YII_ENABLE_EXCEPTION_HANDLER)
@@ -56,7 +65,7 @@ abstract class BaseApplication extends Module
 	public function setBasePath($path)
 	{
 		if(($this->_basePath=realpath($path))===false || !is_dir($this->_basePath))
-			throw new CException('Application base path' . $path . 'is not a valid directory.');
+			throw new Exception('Application base path' . $path . 'is not a valid directory.');
 	}
 	
 	protected function registerCoreComponents()
@@ -86,45 +95,5 @@ abstract class BaseApplication extends Module
 		return $this->_basePath;
 	}
 	
-	public static function createComponent($config)
-	{
-		if(is_string($config))
-		{
-			$type=$config;
-			$config=array();
-		}
-		elseif(isset($config['class']))
-		{
-			$type=$config['class'];
-			unset($config['class']);
-		}
-		else
-			throw new CException('Object configuration must be an array containing a "class" element.');
-
-		if(!class_exists($type,false))
-			throw new CException('Class ' . $type . 'does not exist');
-			
-
-		if(($n=func_num_args())>1)
-		{
-			$args=func_get_args();
-			if($n===2)
-				$object=new $type($args[1]);
-			elseif($n===3)
-				$object=new $type($args[1],$args[2]);
-			elseif($n===4)
-				$object=new $type($args[1],$args[2],$args[3]);
-			else
-			{
-				throw new CException('Too much arguments for class ' . $type);
-			}
-		}
-		else
-			$object=new $type;
-
-		foreach($config as $key=>$value)
-			$object->$key=$value;
-
-		return $object;
-	}
+	
 }

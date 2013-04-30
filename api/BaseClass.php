@@ -38,7 +38,7 @@ class BaseClass
 		if(self::$_app===null || $app===null)
 			self::$_app=$app;
 		else
-			throw new CException('Api application can only be created once.');
+			throw new Exception('Api application can only be created once.');
 	}
 	
 	/**
@@ -60,9 +60,52 @@ class BaseClass
 		return true;
 	}
 	
+	public static function createComponent($config)
+	{
+		if(is_string($config))
+		{
+			$type=$config;
+			$config=array();
+		}
+		elseif(isset($config['class']))
+		{
+			$type=$config['class'];
+			unset($config['class']);
+		}
+		else
+			throw new Exception('Object configuration must be an array containing a "class" element.');
+
+		if(!class_exists($type))
+			throw new Exception('Class "' . $type . '" does not exist');
+			
+
+		if(($n=func_num_args())>1)
+		{
+			$args=func_get_args();
+			if($n===2)
+				$object=new $type($args[1]);
+			elseif($n===3)
+				$object=new $type($args[1],$args[2]);
+			elseif($n===4)
+				$object=new $type($args[1],$args[2],$args[3]);
+			else
+			{
+				throw new Exception('Too much arguments for class ' . $type);
+			}
+		}
+		else
+			$object=new $type;
+
+		foreach($config as $key=>$value)
+			$object->$key=$value;
+
+		return $object;
+	}
+	
 	private static $_coreClasses=array(
 		'BaseApplication' => '/base/BaseApplication.php',
 		'Component' => '/base/Component.php',
+		'AppComponent' => '/base/AppComponent.php',
 		'Model' => '/base/Model.php',
 		'Module' => '/base/Module.php',
 		'DbManager' => '/db/DbManager.php',

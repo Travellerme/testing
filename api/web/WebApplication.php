@@ -7,8 +7,8 @@ class WebApplication extends BaseApplication
 	
 	public function processRequest()
 	{print_r($this);
-		/*$route=$this->getUrlManager()->parseUrl($this->getRequest());
-		$this->runController($route);*/
+		$route=$this->getUrlManager()->parseUrl($this->getRequest());
+		$this->runController($route);
 	}
 	
 	protected function installComponents()
@@ -30,13 +30,6 @@ class WebApplication extends BaseApplication
 		$this->setComponents($components);
 	}
 	
-	protected function init()
-	{
-		parent::init();
-		// preload 'request' so that it has chance to respond to onBeginRequest event.
-		//$this->getRequest();
-		
-	}
 	
 	public function getAuthManager()
 	{
@@ -65,6 +58,6 @@ class WebApplication extends BaseApplication
 			$this->_controller=$oldController;
 		}
 		else
-			throw new CHttpException(404,'Unable to resolve the request' . $route);
+			throw new Exception(404,'Unable to resolve the request ' . $route);
 	}
 }

@@ -121,11 +121,13 @@
  * @package system.web
  * @since 1.0
  */
-class CUrlManager extends CApplicationComponent
+class UrlManager extends Component
 {
 	const CACHE_KEY='Yii.CUrlManager.rules';
 	const GET_FORMAT='get';
 	const PATH_FORMAT='path';
+	
+	private $_initialized=false;
 
 	/**
 	 * @var array the URL rules (pattern=>route).
@@ -202,7 +204,7 @@ class CUrlManager extends CApplicationComponent
 	 */
 	public function init()
 	{
-		parent::init();
+		$this->_initialized=true;
 		$this->processRules();
 	}
 
@@ -520,7 +522,7 @@ class CUrlManager extends CApplicationComponent
  * @package system.web
  * @since 1.1.8
  */
-abstract class CBaseUrlRule extends CComponent
+abstract class BaseUrlRule extends Component
 {
 	/**
 	 * @var boolean whether this rule will also parse the host info part. Defaults to false.
@@ -558,7 +560,7 @@ abstract class CBaseUrlRule extends CComponent
  * @package system.web
  * @since 1.0
  */
-class CUrlRule extends CBaseUrlRule
+class UrlRule extends BaseUrlRule
 {
 	/**
 	 * @var string the URL suffix used for this rule.

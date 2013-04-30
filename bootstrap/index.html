@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bootstrap 101 Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<div class='navbar navbar-static-top'>
+			<!--navbar-inverse - Черный цвет навигации; 
+			navbar-fixed-top - верхнее положение навигации;
+			 navbar-fixed-bottom - нижнее положение;
+			 navbar-static-top - статичное верхнее положение -->
+			<nav class='navbar-inner'>
+				<a class='brand'>Название</a><!--Название перед навигацией-->
+				<ul class='nav'>
+					<li class='divider-vertical'></li><!--Отступ от названия-->
+					<li>
+						<a href='#'>
+							<i class='icon-home'></i><!--Иконки-->
+							Page1
+						</a>
+					</li>
+					<li><a href='#'>Page2</a></li>
+					<li class='dropdown'>
+						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+							Page3 <b class='caret'></b><!--Стрелка показывающаяя что пункт выпадающий-->
+						</a>
+						<ul class='dropdown-menu'>
+							<li><a href='#'>Page3.1</a></li>
+							<li><a href='#'>Page3.2</a></li>
+							<li class='dropdown-submenu'>
+								<a href='#'>Page3.3</a>
+								<ul class='dropdown-menu'>
+									<li><a href='#'>Page3.3.1</a></li>
+									<li><a href='#'>Page3.3.2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href='#'>Page4</a></li>
+					<li><a href='#'>Page5</a></li>
+				</ul>
+				<form class='navbar-form pull-right'>
+					<input type='text' class='span2 search-query' placeholder='Введите запрос' />
+				</form>
+			</nav>
+		</div>
+		<div class='container'>
+			<header>
+				<h1>Hello, world!</h1>
+			</header>
+			
+			
+			<article class='row'>
+				<p class='span4'>Something<p>
+				<p class='span4'>Something</p>
+				<p class='span4'>Something</p>
+			</article>
+			<div class='carousel slide' id='idCarousel'>
+				<ol class='carousel-indicators'>
+					<li class='active' data-target="#idCarousel" data-slide-to=0></li>
+					<li data-target="#idCarousel" data-slide-to=1></li>
+					<li data-target="#idCarousel" data-slide-to=2></li>
+				</ol>
+				<div class='carousel-inner'>
+					<div class='item active'>
+						<img src='001.jpg' />
+						<div class='carousel-caption'>
+							<h4>Заголовок</h4>
+							<p>Параграф</p>
+						</div>
+					
+					
+					</div>
+					<div class='item'>	
+						<img src='002.jpg' />
+						<div class='carousel-caption'>
+							<h4>Заголовок</h4>
+							<p>Параграф</p>
+						</div>
+					</div>
+					<div class='item'>	
+						<img src='003.jpg' />
+						<div class='carousel-caption'>
+							<h4>Заголовок</h4>
+							<p>Параграф</p>
+						</div>
+					</div>
+				</div>
+				<a class='carousel-control left' data-slide='prev' href='#idCarousel'>&lsaquo;</a>
+				<a class='carousel-control right' data-slide='next'  href='#idCarousel'>&rsaquo;</a>
+			</div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

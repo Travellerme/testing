@@ -6,7 +6,14 @@ $config=dirname(__FILE__).'/application/config/main.php';
 
 
 define('API_DEBUG',true);
+try 
+{
+	require_once($api);
+	Api::createWebApp($config)->run();
 
+} 
+catch (Exception $e) 
+{
+	echo $e->getMessage(), "\n";
+}
 
-require_once($api);
-Api::createWebApp($config)->run();
