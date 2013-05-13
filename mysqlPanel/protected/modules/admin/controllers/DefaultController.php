@@ -32,6 +32,6 @@ class DefaultController extends Controller
 	
 	public function actionIndex()
 	{
-		$this->redirect('admin/site');
+		$this->render('index');
 	}
 }

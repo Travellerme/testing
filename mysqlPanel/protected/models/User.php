@@ -13,7 +13,7 @@ class User extends CActiveRecord
 {
 	const ROLE_ADMIN = 'admin';
     const ROLE_USER = 'user';
-    const ROLE_BANNED = 'banned';
+
     
 	public $salt;
 	public $new_password;
@@ -48,21 +48,19 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 		
-			array('username, email, new_password','required', 'on'=>'register'),
-			array('username, email, ban, role','required', 'on'=>'update'),
+			array('username, new_password','required', 'on'=>'register'),
+			array('username, role','required', 'on'=>'update'),
 			array('new_password, old_password', 'required', 'on'=>'changePass'),
-			array('email','required','on'=>'forgotPass'),
 			array('old_password', 'validateOldPass', 'on'=>'changePass'),
-			array('username', 'match', 'pattern'=>'#^[a-zA-Z0-9_\.-]+$#', 'message'=>Yii::t("main", "Incorrect login")),
-			array('email', 'email', 'message'=>Yii::t("main", "Incorrect e-mail")),
-			array('username, email', 'unique', 'caseSensitive'=>false, 'on'=>'register,update'),
+			array('username', 'match', 'pattern'=>'#^[a-zA-Z0-9_\.-]+$#', 'message'=>'Incorrect login'),
+			array('username', 'unique', 'caseSensitive'=>false, 'on'=>'register,update'),
 			array('new_password', 'length', 'min'=>5, 'allowEmpty'=>true),
 			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>Yii::t("main", "Passwords does not match")),
 			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'register'),
 			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, email, ban, role', 'safe', 'on'=>'search'),
+			array('id, username, role', 'safe', 'on'=>'search'),
 			
 		);
 	}
@@ -123,13 +121,11 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => Yii::t("main", "Username"),
-			'new_password' => Yii::t("main", "New password"),
-			'new_confirm' => Yii::t("main", "Confirm password"),
-			'email' => 'Email',
-			'ban' => Yii::t("main", "Ban"),
-			'role' => Yii::t("main", "Role"),
-			'verifyCode'=>Yii::t("main", "Verification Code"),
+			'username' => 'Username',
+			'new_password' => 'New password',
+			'new_confirm' => 'Confirm password',
+			'role' => 'Role',
+			'verifyCode'=>'Verification Code',
 		);
 	}
 	
@@ -140,10 +136,7 @@ class User extends CActiveRecord
 			$this->created = time();
 			$this->role = 0;
 		}
-		
-		if($this->email)
-			$this->email = trim($this->email);
-			
+					
 		if($this->username)
 			$this->username = trim($this->username);
 			
@@ -236,8 +229,6 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('ban',$this->ban);
 		$criteria->compare('role',$this->role);
 
 		return new CActiveDataProvider($this, array(

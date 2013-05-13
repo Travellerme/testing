@@ -24,12 +24,11 @@
 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-		<div id="forgotPass"><?php echo (Yii::app()->user->isGuest)?CHtml::link('Forgot password?',array('/user/forgotPass')):''; ?></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
 		<?php 	$this->widget('zii.widgets.CMenu',array(
-			'items'=>Category::menu('top'),
+			'items'=>Test::menu(),
 		));
 		
 		?>
@@ -45,9 +44,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		<?php echo CHtml::link(Yii::t("main", "Contacts"), array('/site/contact')); ?><br />
-		Copyright &copy; <?php echo date('Y'); ?> by Vyacheslav Shevchenko.<br/>
-		All Rights Reserved.<br/>
+		Hostopia inc. &copy; <?php echo date('Y'); ?> by Vyacheslav Shevchenko.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 

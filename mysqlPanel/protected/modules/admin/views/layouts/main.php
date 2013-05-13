@@ -30,16 +30,11 @@
 		<?php
 			$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>Yii::t("main", "Home"), 'url'=>array('/site/index')),
-					array('label'=>Yii::t("main", "Main page"), 'url'=>array('/admin/site/index')),
-					array('label'=>Yii::t("main", "Pages"), 'url'=>array('/admin/page')),
-					array('label'=>Yii::t("main", "Comments"), 'url'=>array('/admin/comment/index')),
-					array('label'=>Yii::t("main", "Photo"), 'url'=>array('/admin/photo')),
-					array('label'=>Yii::t("main", "Video"), 'url'=>array('/admin/video')),
-					array('label'=>Yii::t("main", "Category"), 'url'=>array('/admin/category/index')),
-					array('label'=>Yii::t("main", "Setting"), 'url'=>array('/admin/setting/index')),
-					array('label'=>Yii::t("main", "Users"), 'url'=>array('/admin/user/index')),
-					array('label'=>Yii::t("main", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),		
+					array('label'=>"User", 'url'=>array('/site/index')),
+					array('label'=>"Test", 'url'=>array('/admin/test/index')),
+					array('label'=>"Settings", 'url'=>array('/admin/setting/index')),
+					array('label'=>"Manage Users", 'url'=>array('/admin/user/index')),
+					array('label'=>"Logout (" . Yii::app()->user->name . ")", 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),		
 				),
 			));
 		

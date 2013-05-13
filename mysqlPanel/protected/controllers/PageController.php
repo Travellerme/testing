@@ -1,18 +1,8 @@
 <?php
 
-class PageController extends Controller
+class TestController extends Controller
 {
 
-	public function actions()
-	{
-		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
-			),
-		);
-	}
 	
 	/**
 	 * @return array action filters
@@ -34,7 +24,7 @@ class PageController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','captcha'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -45,31 +35,14 @@ class PageController extends Controller
 
 	
 	
-	/*public function titleImage($name, $class='imageEvent')
-	{
-			if (file_exists(Yii::getPathOfAlias('webroot') . '/images/' . $name) && (bool)$name)
-			{
-				return Chtml::image(Yii::app()->baseUrl . '/images/' . $name,$name,
-					array(
-						'class'=>$class,
-				));
-			}
-			else
-			{
-				return CHtml::image(Yii::app()->baseUrl . '/images/no_photo.gif','No photo',
-					array(
-						'class'=>'noImage'
-				));
-			}
-	}*/
-
-
 	/**
 	 * Lists all models.
 	 */
 	public function actionIndex($id)
 	{
-		$model = Page::model()->findAllByAttributes(array('category_id' => $id));
+		$connection=Yii::app()->db;
+		
+		//$model = Page::model()->findAllByAttributes(array('category_id' => $id));
 		$category = Category::model()->findByPk($id);
 		
 		

@@ -36,25 +36,12 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>Yii::t("main", "Remember me next time"),
-			'username'=> Yii::t("main", "Username"),
-			'password'=> Yii::t("main", "Password"),
+			'rememberMe'=>'Remember me next time',
+			'username'=>'Username',
+			'password'=>'Password',
 		);
 	}
-	public function checkBan()
-	{
-		if(!Yii::app()->user->isGuest)
-		{
-			$user=User::model()->find('id=?',array(trim(strtolower(Yii::app()->user->id))));
-			if($user->ban ==1)
-			{
-				$this->addError('ban',Yii::t("main", "Your account was banned. If you just registered, please wait, while your account will be approved"));
-				Yii::app()->user->logout();
-				return true;
-			}
-		}
-		return false;
-	}
+	
 	/**
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
@@ -67,8 +54,6 @@ class LoginForm extends CFormModel
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
 				$this->addError('password',Yii::t("main", "Incorrect username or password."));
-			if($user->ban==1)
-				$this->addError('ban',Yii::t("main", "Your account was banned. If you just registered, please wait, while your account will be approved"));
 		}
 	}
 

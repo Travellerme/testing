@@ -3373,3 +3373,192 @@ REQUEST_URI=/mysqlPanel/
 in /var/www/mysqlPanel/protected/views/site/index.php (24)
 in /var/www/mysqlPanel/protected/controllers/SiteController.php (33)
 in /var/www/mysqlPanel/index.php (14)
+2013/05/13 20:56:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'Traveller.tbl_test' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_test`.
+in /var/www/mysqlPanel/protected/models/Test.php (19)
+in /var/www/mysqlPanel/protected/models/Test.php (82)
+in /var/www/mysqlPanel/protected/views/layouts/main.php (31)
+2013/05/13 20:56:57 [error] [exception.CDbException] exception 'CDbException' with message 'The table "tbl_test" for active record class "Test" cannot be found in the database.' in /var/www/YiiRoot/framework/db/ar/CActiveRecord.php:2310
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Test))
+#1 /var/www/mysqlPanel/protected/models/Test.php(19): CActiveRecord::model('Test')
+#2 /var/www/mysqlPanel/protected/models/Test.php(82): Test::model()
+#3 /var/www/mysqlPanel/protected/views/layouts/main.php(31): Test::menu()
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#6 /var/www/YiiRoot/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#8 /var/www/YiiRoot/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(206): COutputProcessor->run()
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 /var/www/mysqlPanel/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#12 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#13 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#14 /var/www/YiiRoot/framework/web/CController.php(784): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#15 /var/www/mysqlPanel/protected/controllers/SiteController.php(31): CController->render('index')
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#22 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/mysqlPanel/
+---
+2013/05/13 21:09:09 [error] [exception.CException] exception 'CException' with message 'Property "User.ban" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('ban')
+#1 /var/www/mysqlPanel/protected/models/LoginForm.php(70): CActiveRecord->__get('ban')
+#2 /var/www/YiiRoot/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/YiiRoot/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/YiiRoot/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 /var/www/mysqlPanel/protected/controllers/SiteController.php(67): CModel->validate()
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/mysqlPanel/site/login
+HTTP_REFERER=http://localhost/mysqlPanel/site/login
+---
+2013/05/13 21:13:10 [error] [exception.CException] exception 'CException' with message 'Property "User.ban" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('ban')
+#1 /var/www/mysqlPanel/protected/models/LoginForm.php(70): CActiveRecord->__get('ban')
+#2 /var/www/YiiRoot/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/YiiRoot/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/YiiRoot/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 /var/www/mysqlPanel/protected/controllers/SiteController.php(67): CModel->validate()
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/mysqlPanel/site/login
+HTTP_REFERER=http://localhost/mysqlPanel/site/login
+---
+2013/05/13 21:58:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/site".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/mysqlPanel/admin/site
+HTTP_REFERER=http://localhost/mysqlPanel/
+---
+2013/05/13 22:00:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/site".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/mysqlPanel/admin/site
+HTTP_REFERER=http://localhost/mysqlPanel/
+---
+2013/05/13 22:01:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/site".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/mysqlPanel/admin/site
+HTTP_REFERER=http://localhost/mysqlPanel/
+---
+2013/05/13 22:01:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/site".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/site')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/mysqlPanel/admin/site
+HTTP_REFERER=http://localhost/mysqlPanel/
+---
+2013/05/13 22:01:53 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "admin/site".' in /var/www/YiiRoot/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('admin/site', NULL, true)
+#1 /var/www/mysqlPanel/protected/modules/admin/controllers/DefaultController.php(35): CController->render('admin/site')
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlPanel/admin
+---
+2013/05/13 22:02:15 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "admin/site/index".' in /var/www/YiiRoot/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('admin/site/inde...', NULL, true)
+#1 /var/www/mysqlPanel/protected/modules/admin/controllers/DefaultController.php(35): CController->render('admin/site/inde...')
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlPanel/admin
+---
+2013/05/13 22:02:50 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "site/index".' in /var/www/YiiRoot/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('site/index', NULL, true)
+#1 /var/www/mysqlPanel/protected/modules/admin/controllers/DefaultController.php(35): CController->render('site/index')
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlPanel/admin
+---
+2013/05/13 22:03:23 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "admin/index".' in /var/www/YiiRoot/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('admin/index', NULL, true)
+#1 /var/www/mysqlPanel/protected/modules/admin/controllers/DefaultController.php(35): CController->render('admin/index')
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlPanel/admin
+---
