@@ -22,25 +22,13 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'ban'); ?>
-		<?php echo $form->dropDownList($model,'ban',array(0=>'working',1=>'ban')); ?>
-		<?php echo $form->error($model,'ban'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'role'); ?>
 		<?php echo $form->dropDownList($model,'role',array(0=>'user',1=>'admin')); ?>
 		<?php echo $form->error($model,'role'); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>30,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t("main", "Create") : Yii::t("main", "Save")); ?>
+		<?php echo CHtml::submitButton("Save"); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

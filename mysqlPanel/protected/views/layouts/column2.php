@@ -6,7 +6,7 @@
 			'title'=>'',
 		));
 		$this->widget('zii.widgets.CMenu', array(
-			'items'=>Category::menu('left'),
+			'items'=>Test::menu(),
 			'htmlOptions'=>array('class'=>'operations'),
 		));
 		$this->endWidget();

@@ -44,8 +44,8 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Hostopia inc. &copy; <?php echo date('Y'); ?> by Vyacheslav Shevchenko.<br/>
-		<?php echo Yii::powered(); ?>
+		Hostopia inc. &copy; <?php echo date('Y'); ?><br>
+		by Vyacheslav Shevchenko.<br/>
 	</div><!-- footer -->
 
 </div><!-- page -->

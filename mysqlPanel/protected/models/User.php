@@ -7,7 +7,6 @@
  * @property integer $id
  * @property string $username
  * @property string $password
- * @property string $email
  */
 class User extends CActiveRecord
 {
@@ -19,8 +18,7 @@ class User extends CActiveRecord
 	public $new_password;
 	public $new_confirm;
 	public $old_password;
-	public $verifyCode;
-	
+		
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -56,7 +54,7 @@ class User extends CActiveRecord
 			array('username', 'unique', 'caseSensitive'=>false, 'on'=>'register,update'),
 			array('new_password', 'length', 'min'=>5, 'allowEmpty'=>true),
 			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>Yii::t("main", "Passwords does not match")),
-			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'register'),
+		
 			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -125,7 +123,6 @@ class User extends CActiveRecord
 			'new_password' => 'New password',
 			'new_confirm' => 'Confirm password',
 			'role' => 'Role',
-			'verifyCode'=>'Verification Code',
 		);
 	}
 	

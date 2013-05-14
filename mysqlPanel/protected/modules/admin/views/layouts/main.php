@@ -30,7 +30,7 @@
 		<?php
 			$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>"User", 'url'=>array('/site/index')),
+					array('label'=>"Home", 'url'=>array('/site/index')),
 					array('label'=>"Test", 'url'=>array('/admin/test/index')),
 					array('label'=>"Settings", 'url'=>array('/admin/setting/index')),
 					array('label'=>"Manage Users", 'url'=>array('/admin/user/index')),
@@ -51,10 +51,8 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		<?php echo CHtml::link(Yii::t("main", "Contacts"), array('/site/contact')); ?><br />
-		Copyright &copy; <?php echo date('Y'); ?> by Vyacheslav Shevchenko.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Hostopia inc. &copy; <?php echo date('Y'); ?><br>
+		by Vyacheslav Shevchenko.<br/>
 	</div><!-- footer -->
 
 </div><!-- page -->

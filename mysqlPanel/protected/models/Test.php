@@ -9,6 +9,10 @@
  */
 class Test extends CActiveRecord
 {
+	public $question;
+	public $answer;
+	public $rightAnswer;
+	public $test;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -35,7 +39,9 @@ class Test extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
+			array('question, test, answer, rightAnswer', 'required','on'=>'addQuestion'),
+			array('question, test, answer, rightAnswer', 'safe','on'=>'addQuestion'),
+			array('title', 'required', 'on'=> 'insert'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

@@ -22,22 +22,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>30,'maxlength'=>128)); ?>
-	</div>
-	
-	<div class="row">
 		<?php echo $form->label($model,'role'); ?>
-		<?php echo $form->dropDownList($model,'role',array(''=>'',0=>Yii::t("main", "User"),1=>Yii::t("main", "Admin"))); ?>
+		<?php echo $form->dropDownList($model,'role',array(''=>'',0=>"User",1=>"Admin")); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->label($model,'ban'); ?>
-		<?php echo $form->dropDownList($model,'ban',array(''=>'',0=>Yii::t("main", "Working"),1=>Yii::t("main", "Ban"))); ?>
-	</div>
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton(Yii::t("main", "Search")); ?>
+		<?php echo CHtml::submitButton("Search"); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
