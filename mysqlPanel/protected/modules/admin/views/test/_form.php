@@ -31,23 +31,15 @@
 		<?php echo $form->error($model,'test'); ?>
 	</div>
 	<?php if($setting->typeAnswer == 1): ?>
+		
 		<div class="row" id='answerList'>
-			<?php echo $form->textField($model,'answer[]',array(
-				'class'=>'input-xxlarge',
-				'placeholder'=>'please enter answer',
-				'onchange'=>'formBuilder.addField();',
-			)); ?>
+			<iframe  width="0" height="0" onload='formBuilder.addField();'></iframe>
 			<?php echo $form->error($model,'answer'); ?>
 		</div>
 		<div class="row">
 			<span class="help-block">Right answer is</span>
 		</div>
 		<div class="row" id='checkboxlist'>
-			<?php echo $form->checkbox($model,'rightAnswer',array(
-				'class'=>'checkbox',
-				'id'=>'inlineCheckbox',
-				'value'=>'0',
-			)); ?> Answer 1
 			<?php echo $form->error($model,'rightAnswer'); ?>
 		</div>
 	<?php endif; ?>

@@ -1,5 +1,5 @@
 var formBuilder = {
-	iterator: 1,
+	iterator: 0,
 }
 
 formBuilder.addField = function ()
@@ -7,10 +7,11 @@ formBuilder.addField = function ()
 	if (this.iterator > 4)
 		return false;
 	$('#answerList').append($("<br>"));
+	var num = this.iterator + 1;
 	$('#answerList').append($("<input>", 
 	{
 		type: 'text',
-		name: 'answer[]',
+		name: 'Test[answer][]',
 		onchange: 'formBuilder.addField();',
 		
 	}));
@@ -18,9 +19,10 @@ formBuilder.addField = function ()
 	$('#checkboxlist').append($("<input>", 
 	{
 		type: 'checkbox',
-		value: this.iterator,
+		value: num,
+		name: 'Test[rightAnswer][]',
 	}));
-	var num = 1 + this.iterator
-	$('#checkboxlist').append(" Answer "+num);
+
+	$('#checkboxlist').append(" Answer " + num);
 	this.iterator++;
 }

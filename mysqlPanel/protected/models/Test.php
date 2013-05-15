@@ -40,13 +40,34 @@ class Test extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('question, test, answer, rightAnswer', 'required','on'=>'addQuestion'),
-			array('question, test, answer, rightAnswer', 'safe','on'=>'addQuestion'),
 			array('title', 'required', 'on'=> 'insert'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title', 'safe', 'on'=>'search'),
 		);
+	}
+	public function validateAnswer($answer, $rightAnswer)
+	{
+		
+		foreach ($rightAnswer as $key)
+		{
+			if(!array_key_exists($rightAnswer[$key]-1, $answer))
+				$this->addError('rightAnswer','Text field ' . $rightAnswer[$key]-1 . ' is empty');
+		}
+		$cnt = count($answer);
+		for ($answer as $key)
+		{
+			if(!$answer[$key] && $answer[$key] != $cnt)
+				$this->addError('answer','Text field must be filled');
+			elseif(!$answer[$key] && $answer[$key] == $cnt)
+			{
+				unset $answer[$key];	
+				return true;
+			}
+		}
+		return false;	
+
 	}
 
 	/**

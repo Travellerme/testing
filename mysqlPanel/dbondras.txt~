@@ -1,6 +1,13 @@
 mysqltestpanel_traveller
 
 -- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
 -- Table 'tbl_test'
 -- 
 -- ---
@@ -23,7 +30,6 @@ DROP TABLE IF EXISTS `tbl_answer_checkbox`;
 CREATE TABLE `tbl_answer_checkbox` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `answer` MEDIUMTEXT NOT NULL,
-  `id_question` TINYINT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -37,7 +43,6 @@ DROP TABLE IF EXISTS `tbl_question`;
 CREATE TABLE `tbl_question` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `question` MEDIUMTEXT NOT NULL,
-  `id_test` TINYINT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -80,7 +85,9 @@ DROP TABLE IF EXISTS `tbl_answer_text`;
 		
 CREATE TABLE `tbl_answer_text` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `id_user_answer` TINYINT NULL DEFAULT NULL,
   `answer` MEDIUMTEXT NULL DEFAULT NULL,
+  `flagManageAnswer` TINYINT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -94,8 +101,67 @@ DROP TABLE IF EXISTS `tbl_user_answer`;
 CREATE TABLE `tbl_user_answer` (
   `id` TINYINT NULL AUTO_INCREMENT DEFAULT NULL,
   `id_question` TINYINT NULL DEFAULT NULL,
-  `id_user` TINYINT NULL DEFAULT NULL,
-  `id_answer` TINYINT NULL DEFAULT NULL,
   `typeAnswer` INT NULL DEFAULT NULL,
+  `id_try` TINYINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_question_test'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_question_test`;
+		
+CREATE TABLE `tbl_question_test` (
+  `id` TINYINT NULL AUTO_INCREMENT DEFAULT NULL,
+  `id_question` TINYINT NULL DEFAULT NULL,
+  `id_test` TINYINT NULL DEFAULT NULL,
+  `typeAnswer` TINYINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_question_answer'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_question_answer`;
+		
+CREATE TABLE `tbl_question_answer` (
+  `id` TINYINT NULL AUTO_INCREMENT DEFAULT NULL,
+  `id_question` TINYINT NULL DEFAULT NULL,
+  `id_answer` TINYINT NULL DEFAULT NULL,
+  `flagAnswer` TINYINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_user_multi_answer'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_user_multi_answer`;
+		
+CREATE TABLE `tbl_user_multi_answer` (
+  `id` TINYINT NULL AUTO_INCREMENT DEFAULT NULL,
+  `id_user_answer` TINYINT NULL DEFAULT NULL,
+  `id_answer` TINYINT NULL DEFAULT NULL,
+  `flagManageAnswer` TINYINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_user_test'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_user_test`;
+		
+CREATE TABLE `tbl_user_test` (
+  `id` TINYINT NULL AUTO_INCREMENT DEFAULT NULL,
+  `id_user` TINYINT NULL DEFAULT NULL,
+  `id_test` TINYINT NULL DEFAULT NULL,
+  `created` TINYINT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
