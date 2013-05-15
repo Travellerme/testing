@@ -18,7 +18,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl . '/js/formBuilder.js');
 ?>
 
 <h1>Add Tests</h1>
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array(
+	'model'=>$model,
+	'setting'=>$setting,
+)); ?>
 
 
 					

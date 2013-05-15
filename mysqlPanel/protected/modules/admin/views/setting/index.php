@@ -2,10 +2,10 @@
 /* @var $this SettingController */
 
 $this->breadcrumbs=array(
-	Yii::t("main", "Settings"),
+	"Settings",
 );
 ?>
-<h1> <?php echo Yii::t("main", "Settings"); ?> </h1>
+<h1>Settings</h1>
 
 
 <?php if(Yii::app()->user->hasFlash('setting')): ?>
@@ -28,19 +28,13 @@ $this->breadcrumbs=array(
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'defaultStatusComment'); ?>
-		<?php echo $form->checkBox($model,'defaultStatusComment'); ?>
-		<?php echo $form->error($model,'defaultStatusComment'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'defaultStatusUser'); ?>
-		<?php echo $form->checkBox($model,'defaultStatusUser'); ?>
-		<?php echo $form->error($model,'defaultStatusUser'); ?>
+		<?php echo $form->labelEx($model,'typeAnswer'); ?>
+		<?php echo $form->checkBox($model,'typeAnswer'); ?>
+		<?php echo $form->error($model,'typeAnswer'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton(Yii::t("main", "Save")); ?>
+		<?php echo CHtml::submitButton("Save"); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

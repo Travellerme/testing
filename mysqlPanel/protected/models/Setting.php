@@ -36,25 +36,15 @@ class Setting extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('defaultStatusComment, defaultStatusUser', 'required'),
-			array('defaultStatusComment, defaultStatusUser', 'numerical', 'integerOnly'=>true),
+			array('typeAnswer', 'required'),
+			array('typeAnswer', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, defaultStatusComment, defaultStatusUser', 'safe', 'on'=>'search'),
+			array('id, typeAnswer', 'safe', 'on'=>'search'),
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
-
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -62,8 +52,7 @@ class Setting extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'defaultStatusComment' => Yii::t("main", "Block comments by default"),
-			'defaultStatusUser' => Yii::t("main", "Members are banned by default"),
+			'typeAnswer' => 'Answers checkboxes',
 		);
 	}
 
@@ -79,8 +68,7 @@ class Setting extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('defaultStatusComment',$this->defaultStatusComment);
-		$criteria->compare('defaultStatusUser',$this->defaultStatusUser);
+		$criteria->compare('typeAnswer',$this->typeAnswer);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -34,12 +34,13 @@ class TestController extends Controller
 
 	public function actionAddQuestion()
 	{print_r($_POST);
+		$setting=Setting::model()->findByPk(1);
 		$model = new Test;
 		$model->scenario = 'addQuestion';
 		if(isset($_POST['Test']))
 		{
 			$model->attributes=$_POST['Test'];
-			if($model->validate())
+			if($model->validate() && $setting->typeAnswer == 1)
 			{
 				echo 555;
 			}
@@ -47,6 +48,7 @@ class TestController extends Controller
 		}
 		$this->render('addQuestion',array(
 			'model'=>$model,
+			'setting'=>$setting,
 		));
 	}
 	/**

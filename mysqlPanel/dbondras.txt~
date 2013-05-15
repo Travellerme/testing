@@ -1,1 +1,101 @@
 mysqltestpanel_traveller
+
+-- ---
+-- Table 'tbl_test'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_test`;
+		
+CREATE TABLE `tbl_test` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_answer_checkbox'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_answer_checkbox`;
+		
+CREATE TABLE `tbl_answer_checkbox` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `answer` MEDIUMTEXT NOT NULL,
+  `id_question` TINYINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_question'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_question`;
+		
+CREATE TABLE `tbl_question` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `question` MEDIUMTEXT NOT NULL,
+  `id_test` TINYINT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_user'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_user`;
+		
+CREATE TABLE `tbl_user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(128) NOT NULL,
+  `password` VARCHAR(128) NOT NULL,
+  `created` INT NOT NULL,
+  `salt` VARCHAR(128) NULL DEFAULT NULL,
+  `role` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_setting'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_setting`;
+		
+CREATE TABLE `tbl_setting` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `typeAnswer` INT NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_answer_text'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_answer_text`;
+		
+CREATE TABLE `tbl_answer_text` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `answer` MEDIUMTEXT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'tbl_user_answer'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tbl_user_answer`;
+		
+CREATE TABLE `tbl_user_answer` (
+  `id` TINYINT NULL AUTO_INCREMENT DEFAULT NULL,
+  `id_question` TINYINT NULL DEFAULT NULL,
+  `id_user` TINYINT NULL DEFAULT NULL,
+  `id_answer` TINYINT NULL DEFAULT NULL,
+  `typeAnswer` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
