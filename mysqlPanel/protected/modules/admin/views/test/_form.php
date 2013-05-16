@@ -32,14 +32,18 @@
 	</div>
 	<?php if($setting->typeAnswer == 1): ?>
 		
-		<div class="row" id='answerList'>
+		<div class="row">
 			<iframe  width="0" height="0" onload='formBuilder.addField();'></iframe>
+			<div id='answerList'>
+			</div>
 			<?php echo $form->error($model,'answer'); ?>
 		</div>
 		<div class="row">
 			<span class="help-block">Right answer is</span>
 		</div>
-		<div class="row" id='checkboxlist'>
+		<div class="row" >
+			<div id='checkboxlist'>
+			</div>
 			<?php echo $form->error($model,'rightAnswer'); ?>
 		</div>
 	<?php endif; ?>

@@ -27,12 +27,14 @@ $this->breadcrumbs=array(
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'typeAnswer'); ?>
-		<?php echo $form->checkBox($model,'typeAnswer'); ?>
+	<div class="compactRadioGroup"> <?php
+        
+		echo $form->radioButtonList($model,'typeAnswer',array(
+			'1'=>'Answers checkboxes',
+			'2'=>'Answers text fields'
+		)); ?>
 		<?php echo $form->error($model,'typeAnswer'); ?>
-	</div>
-
+    </div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("Save"); ?>
 	</div>

@@ -33,16 +33,22 @@ class TestController extends Controller
 	}
 
 	public function actionAddQuestion()
-	{print_r($_POST);
+	{
 		$setting=Setting::model()->findByPk(1);
 		$model = new Test;
-		$model->scenario = 'addQuestion';
 		if(isset($_POST['Test']))
 		{
+			$model->scenario = ($setting->typeAnswer == 1)?'addQuestionCheckbox':'addQuestionText';
 			$model->attributes=$_POST['Test'];
-			if($model->validate() && $setting->typeAnswer == 1)
+			
+			
+			if($model->validate())
 			{
-				echo 555;
+				if($model->insertQuestion($setting->typeAnswer))
+					echo 'ok';
+				
+				
+				
 			}
 				//$this->redirect(array('index','id'=>$model->id));
 		}
@@ -51,6 +57,7 @@ class TestController extends Controller
 			'setting'=>$setting,
 		));
 	}
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

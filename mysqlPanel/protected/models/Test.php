@@ -39,7 +39,9 @@ class Test extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, test, answer, rightAnswer', 'required','on'=>'addQuestion'),
+			array('question, rightAnswer, test', 'required','on'=>'addQuestionCheckbox'),
+			array('question, test', 'required','on'=>'addQuestionText'),
+			array('answer', 'validateAnswer', 'on'=> 'addQuestionCheckbox'),
 			array('title', 'required', 'on'=> 'insert'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -47,27 +49,33 @@ class Test extends CActiveRecord
 			array('id, title', 'safe', 'on'=>'search'),
 		);
 	}
-	public function validateAnswer($answer, $rightAnswer)
+	public function validateAnswer($attribute,$params)
 	{
-		
-		foreach ($rightAnswer as $key)
+		$this->answer = array_diff($this->answer, array(''));
+		$flag = false;
+		if(!(bool)$this->answer)
 		{
-			if(!array_key_exists($rightAnswer[$key]-1, $answer))
-				$this->addError('rightAnswer','Text field ' . $rightAnswer[$key]-1 . ' is empty');
+			$this->addError('answer','Text field is empty');
+			$flag = true;
 		}
-		$cnt = count($answer);
-		for ($answer as $key)
+		if(!(bool)$this->rightAnswer)
 		{
-			if(!$answer[$key] && $answer[$key] != $cnt)
-				$this->addError('answer','Text field must be filled');
-			elseif(!$answer[$key] && $answer[$key] == $cnt)
+			$flag = true;
+		}
+		if($flag)
+			return false;
+		foreach ($this->rightAnswer as $key => $val)
+		{
+			if(!array_key_exists($key, $this->answer))
 			{
-				unset $answer[$key];	
-				return true;
+				$this->addError('rightAnswer','Text field ' . $key . ' is empty');
+				return false;		
 			}
 		}
-		return false;	
-
+		return true;
+		
+		
+			
 	}
 
 	/**
@@ -92,6 +100,85 @@ class Test extends CActiveRecord
 			'title' => 'Title',
 		);
 	}
+	
+	public function insertQuestion($typeAnswer)
+	{
+		$connection = Yii::app()->db;
+		$tblQuestion = "INSERT INTO tbl_question(id, question) VALUES(null,:question)";
+		$command = $connection->createCommand($tblQuestion);
+		$command->bindParam(":question", $this->question, PDO::PARAM_STR);
+		if(!$command->execute())
+			return false;
+		$questionId = Yii::app()->db->getLastInsertId(); 
+		if($typeAnswer == 1)
+			if(!$this->insertAnswer($questionId))
+				return false;
+		
+		
+		$tblQuestionTest = "INSERT INTO tbl_question_test(
+			id, 
+			id_question,
+			id_test,
+			typeAnswer,
+			status
+		) VALUES(
+			null,
+			:questionId,
+			:testId,
+			:typeAnswer,
+			:status)";
+		$command = $connection->createCommand($tblQuestionTest);
+		$status = 'work';var_dump($questionId);
+		$command->bindParam(":questionId",$questionId,PDO::PARAM_INT);
+		$command->bindParam(":testId",$this->test,PDO::PARAM_INT);
+		$command->bindParam(":typeAnswer",$typeAnswer,PDO::PARAM_INT);
+		$command->bindParam(":status",$status,PDO::PARAM_INT);
+		
+		if(!$command->execute())
+			return false;
+			
+		return true;
+		
+	}
+	
+	private function insertAnswer($questionId)
+	{
+		
+		$connection = Yii::app()->db;
+		$tblAnswer = "INSERT INTO tbl_answer(id, answer) VALUES(null,:answer)";
+		$command = $connection->createCommand($tblAnswer);
+		$tblQuestionAnswer = "INSERT INTO tbl_question_answer(
+				id, 
+				id_question, 
+				id_answer, 
+				flagAnswer
+			) VALUES(
+				null,
+				:questionId,
+				:answerId,
+				:flagAnswer)";
+		$commandQuestionAnswer = $connection->createCommand($tblQuestionAnswer);
+		foreach ($this->answer as $key=>$val)
+		{
+			$command->bindParam(":answer",$val,PDO::PARAM_INT);
+			if(!$command->execute())
+				return false;
+			$answerId = Yii::app()->db->getLastInsertId(); 
+			
+			$flagAnswer = 0;
+			if(array_key_exists($key, $this->rightAnswer))
+				$flagAnswer = 1;
+			
+			$commandQuestionAnswer->bindParam(":questionId",$questionId,PDO::PARAM_INT);
+			$commandQuestionAnswer->bindParam(":answerId",$answerId,PDO::PARAM_INT);
+			$commandQuestionAnswer->bindParam(":flagAnswer",$flagAnswer,PDO::PARAM_INT);
+			
+			if(!$commandQuestionAnswer->execute())
+				return false;
+		}
+		return true;
+	}
+	
 	public function beforeSave()
 	{
 		if($this->title)

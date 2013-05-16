@@ -62,6 +62,7 @@ return array(
 		),
 		
 		'db'=>array(
+			'class'=>'CDbConnection',
 			'connectionString' => 'mysql:host=localhost;dbname=MysqlTest',
 			'emulatePrepare' => true,
 			'username' => 'root',

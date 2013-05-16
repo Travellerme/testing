@@ -61,8 +61,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'created',
 		'role'=>array(
 			'name'=>'role',
-			'value'=>'($data->role==0)?Yii::t("main", "User"):Yii::t("main", "Admin")',
-			'filter'=>array(0=>Yii::t("main", "User"),1=>Yii::t("main", "Admin")),
+			'value'=>'($data->role==0)?"User":"Admin"',
+			'filter'=>array(0=>"User",1=>"Admin"),
 		),
 		array(
 			'class'=>'CButtonColumn',
