@@ -18,10 +18,22 @@ $cs->registerScriptFile(Yii::app()->baseUrl . '/js/formBuilder.js');
 ?>
 
 <h1>Add Tests</h1>
+
+<?php if(Yii::app()->user->hasFlash('addRecord')): ?>
+
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('addRecord'); ?>
+</div>
+
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array(
 	'model'=>$model,
 	'setting'=>$setting,
 )); ?>
+
+
+
 
 
 					

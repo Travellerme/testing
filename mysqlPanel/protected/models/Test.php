@@ -10,6 +10,7 @@
 class Test extends CActiveRecord
 {
 	public $question;
+	public $status;
 	public $answer;
 	public $rightAnswer;
 	public $test;
@@ -59,9 +60,8 @@ class Test extends CActiveRecord
 			$flag = true;
 		}
 		if(!(bool)$this->rightAnswer)
-		{
 			$flag = true;
-		}
+		
 		if($flag)
 			return false;
 		foreach ($this->rightAnswer as $key => $val)
@@ -73,9 +73,6 @@ class Test extends CActiveRecord
 			}
 		}
 		return true;
-		
-		
-			
 	}
 
 	/**
@@ -97,7 +94,7 @@ class Test extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'title' => 'Test',
 		);
 	}
 	
@@ -219,16 +216,17 @@ class Test extends CActiveRecord
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->titleCategory,true);
 	
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+		$connection = Yii::app()->db;
+		$sql = "select q.id, t.title, q.question,  qt.status  from tbl_test t, tbl_question_test qt, tbl_question q where t.id=qt.id_test and qt.id_question=q.id";
+		$command = $connection->createCommand();
+
+        $config = array(
+            'pagination'=>array(
+                'pageSize'=>11
+            ),    
+        );
+        return new CSqlDataProvider($sql, $config);
+
 	}
 }

@@ -6,13 +6,13 @@ class TestController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
+	/*public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}
+	}*/
 
 	/**
 	 * Specifies the access control rules.
@@ -45,12 +45,12 @@ class TestController extends Controller
 			if($model->validate())
 			{
 				if($model->insertQuestion($setting->typeAnswer))
-					echo 'ok';
+					Yii::app()->user->setFlash('addRecord', 'Your record was saved');
 				
 				
 				
 			}
-				//$this->redirect(array('index','id'=>$model->id));
+				
 		}
 		$this->render('addQuestion',array(
 			'model'=>$model,
@@ -122,6 +122,7 @@ class TestController extends Controller
 
 	
 
+   
 	/**
 	 * Manages all models.
 	 */
@@ -130,6 +131,15 @@ class TestController extends Controller
 		$model=new Test;
 	
 		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['ajax']) && ($_GET['ajax'] == 'test-grid'))
+        {
+            $model = new Test('search'); 
+            $model->attributes = $_GET['Test'];
+            $this->render('index', array('model'=>$model));
+            Yii::app()->end();
+        }
+		
+		
 		if(isset($_GET['Test']))
 			$model->attributes=$_GET['Test'];
 		$this->render('index',array(

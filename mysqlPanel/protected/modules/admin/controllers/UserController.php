@@ -128,11 +128,7 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(isset($_POST['noban']) && isset($_POST['userId']))
-			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>0));
-		else if(isset($_POST['ban']) && isset($_POST['userId']))
-			$model = User::model()->updateByPk($_POST['userId'],array('ban'=>1),array('condition'=>'id<>'.Yii::app()->user->id));
-			
+					
 		if(isset($_POST['admin']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
 		else if(isset($_POST['user']) && isset($_POST['userId']))
@@ -158,7 +154,7 @@ class UserController extends Controller
 	{
 		$model=User::model()->findByPk($id);
 		if($model===null)
-			throw new CHttpException(404,Yii::t("main", "The requested page does not exist."));
+			throw new CHttpException(404,"The requested page does not exist.");
 		return $model;
 	}
 
