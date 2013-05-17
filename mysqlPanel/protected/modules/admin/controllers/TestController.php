@@ -6,13 +6,13 @@ class TestController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	/*public function filters()
+	public function filters()
 	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
-		);
-	}*/
+		 return array(
+            'accessControl', // perform access control for CRUD operations
+            'postOnly + delete', // we only allow deletion via POST request
+        );
+	}
 
 	/**
 	 * Specifies the access control rules.
@@ -23,7 +23,7 @@ class TestController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','delete','addQuestion','update'),
+				'actions'=>array('index','delete','addQuestion','update','addTest','testName'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -46,9 +46,6 @@ class TestController extends Controller
 			{
 				if($model->insertQuestion($setting->typeAnswer))
 					Yii::app()->user->setFlash('addRecord', 'Your record was saved');
-				
-				
-				
 			}
 				
 		}
@@ -58,25 +55,34 @@ class TestController extends Controller
 		));
 	}
 	
+	public function actionTestName()
+	{
+		$model=new Test('search');
+        $model->unsetAttributes();  
+        if(isset($_GET['Test']))
+            $model->attributes=$_GET['Test'];
+
+        $this->render('testName',array(
+            'model'=>$model,
+        ));
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionAddTest()
 	{
 		$model=new Test;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Test']))
 		{
+			$model->scenario = 'addTest';
 			$model->attributes=$_POST['Test'];
-			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
+			if($model->save()) 
+				Yii::app()->user->setFlash('addTest', 'New test was added');
 		}
 
-		$this->render('create',array(
+		$this->render('addTest',array(
 			'model'=>$model,
 		));
 	}
@@ -128,23 +134,16 @@ class TestController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Test;
-	
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['ajax']) && ($_GET['ajax'] == 'test-grid'))
-        {
-            $model = new Test('search'); 
-            $model->attributes = $_GET['Test'];
-            $this->render('index', array('model'=>$model));
-            Yii::app()->end();
-        }
 		
-		
-		if(isset($_GET['Test']))
-			$model->attributes=$_GET['Test'];
-		$this->render('index',array(
-			'model'=>$model,
-		));
+		$model=new Test('search');
+        $model->unsetAttributes(); 
+        if(isset($_GET['Test']))
+            $model->attributes=$_GET['Test'];
+
+        $this->render('index',array(
+            'model'=>$model,
+        ));
+
 	}
 
 	/**

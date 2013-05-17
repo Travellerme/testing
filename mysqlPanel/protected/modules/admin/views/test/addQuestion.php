@@ -8,7 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>"Manage Tests", 'url'=>array('index')),
+	array('label'=>'Manage Tests', 'url'=>array('index')),
+	array('label'=>'Add Test', 'url'=>array('addTest')),
+
 );
 
 $cs=Yii::app()->clientScript;

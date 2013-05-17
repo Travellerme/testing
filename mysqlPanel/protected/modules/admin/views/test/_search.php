@@ -21,18 +21,9 @@
 		<?php echo $form->textField($model,'title',array('size'=>30,'maxlength'=>255)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(''=>'',0=>Yii::t("main", "available"),1=>Yii::t("main", "hidden"))); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'category_id'); ?>
-		<?php echo $form->dropDownList($model,'category_id', Category::allCategories(), array('empty'=>'')); ?>
-	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton(Yii::t("main", "Search")); ?>
+		<?php echo CHtml::submitButton("Search"); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

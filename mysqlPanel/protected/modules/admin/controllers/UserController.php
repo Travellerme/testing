@@ -128,7 +128,7 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-					
+			
 		if(isset($_POST['admin']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
 		else if(isset($_POST['user']) && isset($_POST['userId']))

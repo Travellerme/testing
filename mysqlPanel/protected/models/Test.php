@@ -43,11 +43,13 @@ class Test extends CActiveRecord
 			array('question, rightAnswer, test', 'required','on'=>'addQuestionCheckbox'),
 			array('question, test', 'required','on'=>'addQuestionText'),
 			array('answer', 'validateAnswer', 'on'=> 'addQuestionCheckbox'),
-			array('title', 'required', 'on'=> 'insert'),
+			array('title', 'required', 'on'=> 'addTest'),
+			array('title', 'unique', 'on'=> 'addTest'),
+			array('title', 'safe', 'on'=> 'addTest'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, title, question, status', 'safe', 'on'=>'search'),
 		);
 	}
 	public function validateAnswer($attribute,$params)
@@ -86,7 +88,7 @@ class Test extends CActiveRecord
 			//'category'   => array(self::HAS_MANY,   'Page',    'category_id'),
 		);
 	}
-
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -125,7 +127,7 @@ class Test extends CActiveRecord
 			:typeAnswer,
 			:status)";
 		$command = $connection->createCommand($tblQuestionTest);
-		$status = 'work';var_dump($questionId);
+		$status = 'work';
 		$command->bindParam(":questionId",$questionId,PDO::PARAM_INT);
 		$command->bindParam(":testId",$this->test,PDO::PARAM_INT);
 		$command->bindParam(":typeAnswer",$typeAnswer,PDO::PARAM_INT);
@@ -176,11 +178,6 @@ class Test extends CActiveRecord
 		return true;
 	}
 	
-	public function beforeSave()
-	{
-		if($this->title)
-			$this->title = trim($this->title);
-	}
 	
 	public static function allTests()
 	{
@@ -212,21 +209,46 @@ class Test extends CActiveRecord
 	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 * @return CSqlDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function sqlDataProvider()
 	{
+		
+		$count=Yii::app()->db->createCommand('SELECT COUNT(*) from tbl_test t, tbl_question_test qt, tbl_question q 
+			where t.id=qt.id_test and qt.id_question=q.id')->queryScalar();
+		
+		$titleCondition = !empty($this->title) ? ' and t.title ="' . $this->title . '" ' : ' '; 
+		$sql = "select q.id, t.title, q.question,  qt.status  
+			from tbl_test t, tbl_question_test qt, tbl_question q 
+			where t.id=qt.id_test and qt.id_question=q.id" . $titleCondition;
 	
-		$connection = Yii::app()->db;
-		$sql = "select q.id, t.title, q.question,  qt.status  from tbl_test t, tbl_question_test qt, tbl_question q where t.id=qt.id_test and qt.id_question=q.id";
-		$command = $connection->createCommand();
-
         $config = array(
+			'totalItemCount'=>$count,
             'pagination'=>array(
-                'pageSize'=>11
+                'pageSize'=>11,
             ),    
         );
-        return new CSqlDataProvider($sql, $config);
-
+		return new CSqlDataProvider($sql, $config);
+       
+      
 	}
+	 /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+	public function search()
+    {
+
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('id',$this->id);
+        $criteria->compare('title',$this->title,true);
+
+        return new CActiveDataProvider($this, array(
+            'criteria'=>$criteria,
+            'pagination'=>array(
+                'pageSize'=>11,
+            ),    
+        ));
+    }
 }
