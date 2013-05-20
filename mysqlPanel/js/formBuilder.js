@@ -11,7 +11,7 @@ formBuilder.addField = function ()
 	$('#answerList').append($("<input>", 
 	{
 		type: 'text',
-		name: 'Test[answer][' + this.iterator + ']',
+		name: 'Question[answer][' + this.iterator + ']',
 		onchange: 'formBuilder.addField();',
 		
 	}));
@@ -20,7 +20,7 @@ formBuilder.addField = function ()
 	{
 		type: 'checkbox',
 		value: this.iterator,
-		name: 'Test[rightAnswer][' + this.iterator + ']',
+		name: 'Question[rightAnswer][' + this.iterator + ']',
 	}));
 
 	$('#checkboxlist').append(" Answer " + this.iterator);

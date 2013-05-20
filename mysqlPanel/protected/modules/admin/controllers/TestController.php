@@ -23,7 +23,7 @@ class TestController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','delete','addQuestion','update','addTest','testName'),
+				'actions'=>array('index','delete','update','addTest'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -32,37 +32,19 @@ class TestController extends Controller
 		);
 	}
 
-	public function actionAddQuestion()
-	{
-		$setting=Setting::model()->findByPk(1);
-		$model = new Test;
-		if(isset($_POST['Test']))
-		{
-			$model->scenario = ($setting->typeAnswer == 1)?'addQuestionCheckbox':'addQuestionText';
-			$model->attributes=$_POST['Test'];
-			
-			
-			if($model->validate())
-			{
-				if($model->insertQuestion($setting->typeAnswer))
-					Yii::app()->user->setFlash('addRecord', 'Your record was saved');
-			}
-				
-		}
-		$this->render('addQuestion',array(
-			'model'=>$model,
-			'setting'=>$setting,
-		));
-	}
 	
-	public function actionTestName()
+	
+	/**
+	 * Manages all models.
+	 */
+	public function actionIndex()
 	{
 		$model=new Test('search');
         $model->unsetAttributes();  
         if(isset($_GET['Test']))
             $model->attributes=$_GET['Test'];
 
-        $this->render('testName',array(
+        $this->render('index',array(
             'model'=>$model,
         ));
 	}
@@ -129,23 +111,7 @@ class TestController extends Controller
 	
 
    
-	/**
-	 * Manages all models.
-	 */
-	public function actionIndex()
-	{
-		
-		$model=new Test('search');
-        $model->unsetAttributes(); 
-        if(isset($_GET['Test']))
-            $model->attributes=$_GET['Test'];
-
-        $this->render('index',array(
-            'model'=>$model,
-        ));
-
-	}
-
+	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

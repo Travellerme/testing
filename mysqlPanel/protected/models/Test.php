@@ -9,11 +9,6 @@
  */
 class Test extends CActiveRecord
 {
-	public $question;
-	public $status;
-	public $answer;
-	public $rightAnswer;
-	public $test;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -40,42 +35,16 @@ class Test extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, rightAnswer, test', 'required','on'=>'addQuestionCheckbox'),
-			array('question, test', 'required','on'=>'addQuestionText'),
-			array('answer', 'validateAnswer', 'on'=> 'addQuestionCheckbox'),
 			array('title', 'required', 'on'=> 'addTest'),
 			array('title', 'unique', 'on'=> 'addTest'),
 			array('title', 'safe', 'on'=> 'addTest'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, question, status', 'safe', 'on'=>'search'),
+			array('id, title', 'safe', 'on'=>'search'),
 		);
 	}
-	public function validateAnswer($attribute,$params)
-	{
-		$this->answer = array_diff($this->answer, array(''));
-		$flag = false;
-		if(!(bool)$this->answer)
-		{
-			$this->addError('answer','Text field is empty');
-			$flag = true;
-		}
-		if(!(bool)$this->rightAnswer)
-			$flag = true;
-		
-		if($flag)
-			return false;
-		foreach ($this->rightAnswer as $key => $val)
-		{
-			if(!array_key_exists($key, $this->answer))
-			{
-				$this->addError('rightAnswer','Text field ' . $key . ' is empty');
-				return false;		
-			}
-		}
-		return true;
-	}
+	
 
 	/**
 	 * @return array relational rules.
@@ -100,84 +69,7 @@ class Test extends CActiveRecord
 		);
 	}
 	
-	public function insertQuestion($typeAnswer)
-	{
-		$connection = Yii::app()->db;
-		$tblQuestion = "INSERT INTO tbl_question(id, question) VALUES(null,:question)";
-		$command = $connection->createCommand($tblQuestion);
-		$command->bindParam(":question", $this->question, PDO::PARAM_STR);
-		if(!$command->execute())
-			return false;
-		$questionId = Yii::app()->db->getLastInsertId(); 
-		if($typeAnswer == 1)
-			if(!$this->insertAnswer($questionId))
-				return false;
 		
-		
-		$tblQuestionTest = "INSERT INTO tbl_question_test(
-			id, 
-			id_question,
-			id_test,
-			typeAnswer,
-			status
-		) VALUES(
-			null,
-			:questionId,
-			:testId,
-			:typeAnswer,
-			:status)";
-		$command = $connection->createCommand($tblQuestionTest);
-		$status = 'work';
-		$command->bindParam(":questionId",$questionId,PDO::PARAM_INT);
-		$command->bindParam(":testId",$this->test,PDO::PARAM_INT);
-		$command->bindParam(":typeAnswer",$typeAnswer,PDO::PARAM_INT);
-		$command->bindParam(":status",$status,PDO::PARAM_INT);
-		
-		if(!$command->execute())
-			return false;
-			
-		return true;
-		
-	}
-	
-	private function insertAnswer($questionId)
-	{
-		
-		$connection = Yii::app()->db;
-		$tblAnswer = "INSERT INTO tbl_answer(id, answer) VALUES(null,:answer)";
-		$command = $connection->createCommand($tblAnswer);
-		$tblQuestionAnswer = "INSERT INTO tbl_question_answer(
-				id, 
-				id_question, 
-				id_answer, 
-				flagAnswer
-			) VALUES(
-				null,
-				:questionId,
-				:answerId,
-				:flagAnswer)";
-		$commandQuestionAnswer = $connection->createCommand($tblQuestionAnswer);
-		foreach ($this->answer as $key=>$val)
-		{
-			$command->bindParam(":answer",$val,PDO::PARAM_INT);
-			if(!$command->execute())
-				return false;
-			$answerId = Yii::app()->db->getLastInsertId(); 
-			
-			$flagAnswer = 0;
-			if(array_key_exists($key, $this->rightAnswer))
-				$flagAnswer = 1;
-			
-			$commandQuestionAnswer->bindParam(":questionId",$questionId,PDO::PARAM_INT);
-			$commandQuestionAnswer->bindParam(":answerId",$answerId,PDO::PARAM_INT);
-			$commandQuestionAnswer->bindParam(":flagAnswer",$flagAnswer,PDO::PARAM_INT);
-			
-			if(!$commandQuestionAnswer->execute())
-				return false;
-		}
-		return true;
-	}
-	
 	
 	public static function allTests()
 	{
@@ -207,31 +99,7 @@ class Test extends CActiveRecord
 		return $result;
 	}
 	
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CSqlDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function sqlDataProvider()
-	{
-		
-		$count=Yii::app()->db->createCommand('SELECT COUNT(*) from tbl_test t, tbl_question_test qt, tbl_question q 
-			where t.id=qt.id_test and qt.id_question=q.id')->queryScalar();
-		
-		$titleCondition = !empty($this->title) ? ' and t.title ="' . $this->title . '" ' : ' '; 
-		$sql = "select q.id, t.title, q.question,  qt.status  
-			from tbl_test t, tbl_question_test qt, tbl_question q 
-			where t.id=qt.id_test and qt.id_question=q.id" . $titleCondition;
 	
-        $config = array(
-			'totalItemCount'=>$count,
-            'pagination'=>array(
-                'pageSize'=>11,
-            ),    
-        );
-		return new CSqlDataProvider($sql, $config);
-       
-      
-	}
 	 /**
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

@@ -3,14 +3,12 @@
 /* @var $model Test */
 
 $this->breadcrumbs=array(
-	'Tests'=>array('index'),
+	'Question'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
 	array('label'=>'Manage Test', 'url'=>array('index')),
-	array('label'=>'Add Question', 'url'=>array('addQuestion')),
-	array('label'=>'Manage Test Names', 'url'=>array('testName')),
 	
 );
 ?>
