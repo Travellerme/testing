@@ -176,6 +176,17 @@ class Question extends CActiveRecord
 		return true;
 	}
 	
+	public function updateStatus($questionId, $status)
+	{
+		$connection = Yii::app()->db;
+		$updateSql = "update tbl_question_test set status=:status where id_question=:id";
+		$command = $connection->createCommand($updateSql);
+		$command->bindParam(":status",$status,PDO::PARAM_STR);
+		$command->bindParam(":id",$questionId[0],PDO::PARAM_INT);
+		if(!$command->execute()) 
+			return false;
+		return true;
+	}
 	
 	
 	/**
@@ -203,8 +214,7 @@ class Question extends CActiveRecord
             ),    
         );
 		return new CSqlDataProvider($sql, $config);
-       
-      
+        
 	}
 	
 }

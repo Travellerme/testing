@@ -35,7 +35,7 @@
 					array('label'=>"Question", 'url'=>array('/admin/question/index')),
 					array('label'=>"Answer", 'url'=>array('/admin/answer/index')),
 					array('label'=>"Settings", 'url'=>array('/admin/setting/index')),
-					array('label'=>"Manage Users", 'url'=>array('/admin/user/index')),
+					array('label'=>"Users", 'url'=>array('/admin/user/index')),
 					array('label'=>"Logout (" . Yii::app()->user->name . ")", 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),		
 				),
 			));

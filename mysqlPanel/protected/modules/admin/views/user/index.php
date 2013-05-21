@@ -32,7 +32,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
-<?php echo CHtml::link("Advanced Search",'#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -40,8 +40,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 <?php
 	echo Chtml::form();
-	echo Chtml::submitButton(Yii::t("main", "Admin"), array('name'=>'admin'));
-	echo Chtml::submitButton(Yii::t("main", "User"), array('name'=>'user'));
+	echo Chtml::submitButton('Admin', array('name'=>'admin'));
+	echo Chtml::submitButton('User', array('name'=>'user'));
 ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
@@ -58,7 +58,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'headerHtmlOptions'=>array('width' => 20),
 		),
 		'username',
-		'created',
+		'created'=>array(
+			'name'=>'created',
+			'filter'=>false,
+		),
 		'role'=>array(
 			'name'=>'role',
 			'value'=>'($data->role==0)?"User":"Admin"',

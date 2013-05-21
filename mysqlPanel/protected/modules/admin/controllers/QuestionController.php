@@ -23,7 +23,7 @@ class QuestionController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','addQuestion','update'),
+				'actions'=>array('index','addQuestion'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -63,7 +63,10 @@ class QuestionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		
+		if(isset($_POST['work']) && isset($_POST['questionId']))
+			$model = Question::model()->updateStatus($_POST['questionId'],'work');
+		else if(isset($_POST['old']) && isset($_POST['questionId']))
+			$model = Question::model()->updateStatus($_POST['questionId'],'old');
 		$model=new Question('search');
         $model->unsetAttributes(); 
         if(isset($_GET['Question']))

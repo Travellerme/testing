@@ -38,19 +38,38 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
+<?php
+	echo Chtml::form();
+	echo Chtml::submitButton('Work', array('name'=>'work'));
+	echo Chtml::submitButton('Old', array('name'=>'old'));
+?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'test-grid',
+	'selectableRows'=>2,
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		array(
+			'class'=>'CCheckBoxColumn',
+			'id'=>'testId',
+		),
 		'id'=>array(
 			'name'=>'id',
 			'headerHtmlOptions'=>array('width' => 20),			
 		),
 		'title',
+		'status'=>array(
+			'name'=>'status',
+			'headerHtmlOptions'=>array('width' => 70),
+			'filter'=>array('work'=>"Work",'old'=>"Old"),
+		),
 		array(
 			'class'=>'CButtonColumn',
+			'deleteButtonOptions'=>array('style'=>'display:none'),
+			'updateButtonOptions'=>array('style'=>'display:none'),
 		),
 	),
 )); ?>
+<?php
+	echo Chtml::endForm();
+?>

@@ -48,12 +48,10 @@ class User extends CActiveRecord
 		
 			array('username, new_password','required', 'on'=>'register'),
 			array('username, role','required', 'on'=>'update'),
-			array('new_password, old_password', 'required', 'on'=>'changePass'),
-			array('old_password', 'validateOldPass', 'on'=>'changePass'),
 			array('username', 'match', 'pattern'=>'#^[a-zA-Z0-9_\.-]+$#', 'message'=>'Incorrect login'),
 			array('username', 'unique', 'caseSensitive'=>false, 'on'=>'register,update'),
 			array('new_password', 'length', 'min'=>5, 'allowEmpty'=>true),
-			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>Yii::t("main", "Passwords does not match")),
+			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>'Passwords does not match'),
 		
 			
 			// The following rule is used by search().
@@ -64,43 +62,7 @@ class User extends CActiveRecord
 	}
 	
 	
-	public function recoverPassword()
-	{
-		return $this->new_password = $this->generatePassword(11);		
-	}
-	
-	private  function generatePassword($number)
-	{
-		$arr = array('a','b','c','d','e','f',
-					 'g','h','i','j','k','l',
-					 'm','n','o','p','r','s',
-					 't','u','v','x','y','z',
-					 'A','B','C','D','E','F',
-					 'G','H','I','J','K','L',
-					 'M','N','O','P','R','S',
-					 'T','U','V','X','Y','Z',
-					 '1','2','3','4','5','6',
-					 '7','8','9','0','.',',',
-					 '(',')','[',']','!','?',
-					 '&','^','%','@','*','$',
-					 '<','>','/','|','+','-',
-					 '{','}','`','~');
-   
-		$pass = "";
-		for($i = 0; $i < $number; $i++)
-		{
-			$index = rand(0, count($arr) - 1);
-			$pass .= $arr[$index];
-		}
-		return $pass;
-    }
-  
-	public function validateOldPass($attributes, $params)
-	{
-		if(!$this->validatePassword($this->$attributes))
-			$this->addError('old_password',Yii::t("main", "Your wrote incorrect old password"));
-	}
-
+		
 	/**
 	 * @return array relational rules.
 	 */
@@ -133,10 +95,7 @@ class User extends CActiveRecord
 			$this->created = time();
 			$this->role = 0;
 		}
-					
-		if($this->username)
-			$this->username = trim($this->username);
-			
+	
 		if($this->new_password) 
 			$this->password = $this->hashPassword(trim($this->new_password));
 			

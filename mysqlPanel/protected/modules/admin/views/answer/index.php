@@ -46,7 +46,7 @@ $this->menu=array(
 		'verity'=>array(
 			'name'=>'verity',
 			'headerHtmlOptions'=>array('width' => 70),
-		'value'=>'($data["verity"]==1)?"True":"False"',
+			'value'=>'($data["verity"]==1)?"True":"False"',
 			'filter'=>array(1=>"True",2=>"False"),
 			
 		),

@@ -23,7 +23,7 @@ class TestController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','delete','update','addTest'),
+				'actions'=>array('index','view','addTest'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -33,12 +33,26 @@ class TestController extends Controller
 	}
 
 	
-	
+	/**
+     * Displays a particular model.
+     * @param integer $id the ID of the model to be displayed
+     */
+    public function actionView($id)
+    {
+		$test = Test::model()->renderDetail($id);
+		$this->render('view',array(
+			'test'=>$test,
+		));
+    }
 	/**
 	 * Manages all models.
 	 */
 	public function actionIndex()
 	{
+		if(isset($_POST['work']) && isset($_POST['testId']))
+			$model = Test::model()->updateByPk($_POST['testId'],array('status'=>'work'));
+		else if(isset($_POST['old']) && isset($_POST['testId']))
+			$model = Test::model()->updateByPk($_POST['testId'],array('status'=>'old'));
 		$model=new Test('search');
         $model->unsetAttributes();  
         if(isset($_GET['Test']))
@@ -58,7 +72,6 @@ class TestController extends Controller
 		
 		if(isset($_POST['Test']))
 		{
-			$model->scenario = 'addTest';
 			$model->attributes=$_POST['Test'];
 			if($model->save()) 
 				Yii::app()->user->setFlash('addTest', 'New test was added');
@@ -69,48 +82,8 @@ class TestController extends Controller
 		));
 	}
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Test']))
-		{
-			$model->attributes=$_POST['Test'];
-			
-			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
-	}
-
 	
-
-   
+	
 	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

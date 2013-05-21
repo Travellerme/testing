@@ -9,6 +9,10 @@
  */
 class Test extends CActiveRecord
 {
+	public $questionId;
+	public $verity;
+	public $answer;
+	public $questionAnswer;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -35,13 +39,13 @@ class Test extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required', 'on'=> 'addTest'),
-			array('title', 'unique', 'on'=> 'addTest'),
-			array('title', 'safe', 'on'=> 'addTest'),
+			array('title', 'required'),
+			array('title', 'unique'),
+			array('title', 'safe'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, title, status', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -69,7 +73,39 @@ class Test extends CActiveRecord
 		);
 	}
 	
+	public function renderDetail($id)
+	{
+		$connection = Yii::app()->db;
+		$sql = "select t.id, t.title as test, t.status as statusTest,
+			q.id as questionId, q.question,	a.answer, qa.flagAnswer as verity,
+			qt.status as statusQuestion from tbl_test t, tbl_answer a, 
+			tbl_question_answer qa,	tbl_question q, tbl_question_test qt 
+			where t.id=qt.id_test and qt.id_question=q.id and qa.id_question=q.id 
+			and qa.id_answer=a.id and t.id=:id";
+		$command = $connection->createCommand($sql);
+		$command->bindParam(":id", $id, PDO::PARAM_INT);
+	
+		return  $command->queryAll();
 		
+	}
+	
+	public function findTest($id)
+	{
+		$connection = Yii::app()->db;
+		$sql = "select t.id, t.title, 
+			q.id as questionId, q.question,	a.answer, a.id as answerId,
+			qa.flagAnswer as verity from tbl_test t, tbl_answer a, 
+			tbl_question_answer qa,	tbl_question q, tbl_question_test qt 
+			where t.id=qt.id_test and qt.id_question=q.id and qa.id_question=q.id 
+			and qa.id_answer=a.id and t.id=:id and t.status='work' and qt.status='work'";
+		$command = $connection->createCommand($sql);
+		$command->bindParam(":id", $id, PDO::PARAM_INT);
+	
+		return  $command->queryAll();
+		
+	}
+	
+	
 	
 	public static function allTests()
 	{
@@ -111,6 +147,7 @@ class Test extends CActiveRecord
 
         $criteria->compare('id',$this->id);
         $criteria->compare('title',$this->title,true);
+        $criteria->compare('status',$this->status,true);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
