@@ -44,22 +44,22 @@ class TestController extends Controller
 		$testTitle = Test::model()->findByPk($id);
 		//$model = Test::model()->findTest($id);
 		$model = new Test;
-		//$model->id = $id;
-		print_r($_POST);
+		$model->testId = $id;
 		$test = $model->findTest($id);
-	
+		$model->questionAll = $test;
 		if(isset($_POST['Test']))
 		{
 			$model->scenario = ($setting->typeAnswer == 1)?'answerCheckbox':'answerText';
 			$model->attributes=$_POST['Test'];
 			
+			echo 555;
 			
 			if($model->validate())
 			{
-				//if($model->insertQuestion($setting->typeAnswer))
-				//	Yii::app()->user->setFlash('test', 'Your answers were send');
+				if($model->saveAnswer($setting->typeAnswer))
+					Yii::app()->user->setFlash('test', 'Your answers were send');
 			}
-				
+			
 		}
 		//print_r($model);
 		

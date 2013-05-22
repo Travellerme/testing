@@ -72,6 +72,7 @@ class TestController extends Controller
 		
 		if(isset($_POST['Test']))
 		{
+			$model->scenario = 'addTest';
 			$model->attributes=$_POST['Test'];
 			if($model->save()) 
 				Yii::app()->user->setFlash('addTest', 'New test was added');

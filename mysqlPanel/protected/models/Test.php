@@ -9,8 +9,9 @@
  */
 class Test extends CActiveRecord
 {
-	public $questionId;
-	public $verity;
+	public $testId;
+	public $questionAll;
+	public $question;
 	public $answer;
 	public $questionAnswer;
 	/**
@@ -39,17 +40,31 @@ class Test extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
+			array('title', 'required', 'on' => 'addTest'),
+			array('questionAnswer', 'validateEmptyAnswer', 'on'=> 'answerCheckbox'),
 			array('title', 'unique'),
 			array('title', 'safe'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, status', 'safe', 'on'=>'search'),
+			array('id, title, status, questionAnswer', 'safe', 'on'=>'search'),
 		);
 	}
 	
-
+	public function validateEmptyAnswer($attribute,$params)
+	{
+		$flag = true;
+		foreach($this->questionAnswer as $key => $val)
+		{
+			if(!(bool)$this->questionAnswer[$key] = array_diff($val, array(0)))
+			{
+				$this->addError('errorAnswer','You must answer all questions');
+				$flag = false;
+			}
+		}
+		return $flag;
+	}
+		
 	/**
 	 * @return array relational rules.
 	 */
@@ -105,7 +120,79 @@ class Test extends CActiveRecord
 		
 	}
 	
+	private function calculateResult()
+	{
+		$questionAnswer = array();
+		
+		$count = count($this->questionAnswer);
+		$percentQuestion = 100 / $count;
+		$compareQuestion='';
+		$verity = 0;
+		foreach($this->questionAll as $key)
+		{
+			if($compareQuestion != $key['questionId'])
+			{
+				$compareQuestion = $key['questionId'];
+				$verity = 0;
+			}
+			if($key['verity']==1)
+				$verity++;
+			
+			$questionAnswer[$key['questionId']]['verity'] = $verity;
+			$questionAnswer[$key['questionId']][$key['answerId']]=$key['verity'];
+		}
+		
+		$priceAnswerGlobal = 0;
+		foreach($questionAnswer as $key => $val)
+		{
+			$priceAnswerLocal = 0;
+			$flagAnswer = true;
+			$percentAnswer = $percentQuestion / $val['verity'];
+			
+			foreach($this->questionAnswer[$key] as $subKey => $subVal)
+			{
+				if($val[$subVal] == 1) 
+					$priceAnswerLocal += $percentAnswer;
+				else
+					$flagAnswer = false;
+			}
+			if($flagAnswer)
+				$priceAnswerGlobal += $priceAnswerLocal;	
+		}
+		$priceAnswerGlobal = (int)$priceAnswerGlobal;
+		var_dump($priceAnswerGlobal);
+		
+		
+		
+		
+	}
 	
+	private function insertTextResult()
+	{
+		
+	}
+	public function saveAnswer($typeAnswer)
+	{print_r($this->questionAnswer);
+		($typeAnswer == 1)?$this->calculateResult():$this->insertTextResult();
+
+		
+		
+		
+		
+		
+		
+		foreach($this->questionAnswer as $key => $val)
+		{
+			$subArray = array_diff($val, array(0));
+			//print_r($subArray);
+			/*if(!(bool)array_diff($key, array(0)))
+			{
+				$this->addError('errorAnswer','You must answer all questions');
+				return false;
+			}
+			return true;*/
+		}
+	}
 	
 	public static function allTests()
 	{

@@ -17,6 +17,7 @@
 
 		<?php echo $form->errorSummary($model); ?>
 
+		
 		<?php $compareQuestion = '';?>
 
 		<?php foreach($test as $key): ?>
@@ -32,20 +33,33 @@
 						'rows'=>3,
 					)); ?>
 					<br /><br />
-					<?php echo $form->error($model,'question'); ?>
+					
 				</div>
 									
 				<?php $compareQuestion = $key['questionId']; ?>
-				<b>Please choose answer: </b><br />
+				<?php if($model->scenario == 'answerCheckbox'): ?>
+					<b>Please choose answer: </b><br />
+				<?php elseIf($model->scenario == 'answerText'): ?>
+					<b>Please write answer: </b><br />
+					<div class="row">
+					<?php echo $form->textArea($model,'answer',array(
+						'cols'=> 100,
+						'rows'=>3,
+					)); ?>
+					<?php echo $form->error($model,'answer'); ?>
+				</div>
+				<?php endif; ?>
 			<?php endif;?>
-			<div class="row">
-				<?php echo $form->checkBox($model,'questionAnswer[' . $key['questionId'] . '][]',array(
-					'value'=> $key['answerId'],
-				));
-					echo ' ' . CHtml::encode($key['answer']); 
-				?>
-				<?php echo $form->error($model,'answer'); ?>
-			</div>
+			<?php if($model->scenario == 'answerCheckbox'): ?>
+				<div class="row">
+					<?php echo $form->checkBox($model,'questionAnswer[' . $key['questionId'] . '][]',array(
+						'value'=> $key['answerId'],
+					));
+						echo ' ' . CHtml::encode($key['answer']); 
+					?>
+					<?php echo $form->error($model,'answer'); ?>
+				</div>
+			<?php endif; ?>
 			
 		<?php endforeach; ?>
 		
