@@ -42,17 +42,16 @@ class TestController extends Controller
 	{
 		$setting=Setting::model()->findByPk(1);
 		$testTitle = Test::model()->findByPk($id);
-		//$model = Test::model()->findTest($id);
 		$model = new Test;
 		$model->testId = $id;
 		$test = $model->findTest($id);
 		$model->questionAll = $test;
+		$model->scenario = ($setting->typeAnswer == 1)?'answerCheckbox':'answerText';
+		var_dump($_POST);
 		if(isset($_POST['Test']))
 		{
-			$model->scenario = ($setting->typeAnswer == 1)?'answerCheckbox':'answerText';
-			$model->attributes=$_POST['Test'];
 			
-			echo 555;
+			$model->attributes=$_POST['Test'];
 			
 			if($model->validate())
 			{

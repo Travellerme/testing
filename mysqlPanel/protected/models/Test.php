@@ -14,6 +14,8 @@ class Test extends CActiveRecord
 	public $question;
 	public $answer;
 	public $questionAnswer;
+	public $typeAnswer;
+	public $questionAnswerText;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -41,7 +43,8 @@ class Test extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title', 'required', 'on' => 'addTest'),
-			array('questionAnswer', 'validateEmptyAnswer', 'on'=> 'answerCheckbox'),
+			array('questionAnswer', 'validateEmptyAnswerCheckbox', 'on'=> 'answerCheckbox'),
+			array('questionAnswerText', 'validateEmptyAnswerText', 'on'=> 'answerText'),
 			array('title', 'unique'),
 			array('title', 'safe'),
 			array('title', 'length', 'max'=>255),
@@ -51,7 +54,20 @@ class Test extends CActiveRecord
 		);
 	}
 	
-	public function validateEmptyAnswer($attribute,$params)
+	public function validateEmptyAnswerText($attribute,$params)
+	{
+		foreach ($this->questionAnswerText as $key=>$val)
+		{
+			if(!$val)
+			{
+				$this->addError('errorAnswer','You must answer all questions');
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public function validateEmptyAnswerCheckbox($attribute,$params)
 	{
 		$flag = true;
 		foreach($this->questionAnswer as $key => $val)
@@ -63,8 +79,7 @@ class Test extends CActiveRecord
 			}
 		}
 		return $flag;
-	}
-		
+	}	
 	/**
 	 * @return array relational rules.
 	 */
@@ -160,38 +175,96 @@ class Test extends CActiveRecord
 				$priceAnswerGlobal += $priceAnswerLocal;	
 		}
 		$priceAnswerGlobal = (int)$priceAnswerGlobal;
-		var_dump($priceAnswerGlobal);
 		
-		
+		$this->insertResult($priceAnswerGlobal);
+	
 		
 		
 	}
 	
 	private function insertTextResult()
 	{
-		
+		if(!$tryId = $this->insertPartResult())
+			return false;
+		$connection = Yii::app()->db;
+		$tblUserAnswer =  "INSERT INTO tbl_user_answer(id, id_question, id_try) 
+			VALUES(null,:questionId,:tryId)";
+		$commandUserAnswer = $connection->createCommand($tblUserAnswer);
+		$tblAnswerText =  "INSERT INTO tbl_answer_text(id, id_user_answer, answer) 
+			VALUES(null,:userAnswerId,:answer)";
+		$commandAnswerText = $connection->createCommand($tblAnswerText);
+		foreach ($this->questionAnswerText as $questionId => $answer)
+		{
+			$commandUserAnswer->bindParam(":tryId", $tryId, PDO::PARAM_INT);
+			$commandUserAnswer->bindParam(":questionId", $questionId, PDO::PARAM_INT);
+			if(!$commandUserAnswer->execute())
+				return false;
+			
+			$userAnswerId = Yii::app()->db->getLastInsertId();
+			
+			$commandAnswerText->bindParam(":userAnswerId", $userAnswerId, PDO::PARAM_INT);
+			$commandAnswerText->bindParam(":answer", $answer, PDO::PARAM_STR);
+			
+			if(!$commandAnswerText->execute())
+				return false;	
+		}
+		return true;
 	}
 	public function saveAnswer($typeAnswer)
-	{print_r($this->questionAnswer);
-		($typeAnswer == 1)?$this->calculateResult():$this->insertTextResult();
+	{
+		$this->typeAnswer = $typeAnswer;
+		return ($typeAnswer == 1)?$this->calculateResult():$this->insertTextResult();
 
-		
-		
-		
-		
-		
-		
-		foreach($this->questionAnswer as $key => $val)
+	}
+	
+	private function insertPartResult($priceAnswer = null)
+	{
+		$connection = Yii::app()->db;
+		$tblUserTest = "INSERT INTO tbl_user_test(id, id_user, id_test, percentRight, created) 
+			VALUES(null,:userId,:testId,:percentRight,:creared)";
+		$created = time();
+		$userId = Yii::app()->user->id;
+		$command = $connection->createCommand($tblUserTest);
+		$command->bindParam(":userId", $userId, PDO::PARAM_INT);
+		$command->bindParam(":testId", $this->testId, PDO::PARAM_INT);
+		$command->bindParam(":percentRight", $priceAnswer, PDO::PARAM_INT);
+		$command->bindParam(":creared", $created, PDO::PARAM_INT);
+		if(!$command->execute())
+			return false;
+		return 	$tryId = Yii::app()->db->getLastInsertId();
+	}
+	
+	private function insertResult($priceAnswer)
+	{
+		if(!$tryId = $this->insertPartResult($priceAnswer))
+			return false;
+		$connection = Yii::app()->db;
+	
+		$tblUserAnswer =  "INSERT INTO tbl_user_answer(id, id_question, id_try) 
+			VALUES(null,:questionId,:tryId)";
+		$commandUserAnswer = $connection->createCommand($tblUserAnswer);
+		$tblUserMultiAnswer =  "INSERT INTO tbl_user_multi_answer(id, id_user_answer, id_answer) 
+			VALUES(null,:userAnswerId,:answerId)";
+		$commandUserMultiAnswer = $connection->createCommand($tblUserMultiAnswer);
+				
+		foreach ($this->questionAnswer as $question=>$answerArr)
 		{
-			$subArray = array_diff($val, array(0));
-			//print_r($subArray);
-			/*if(!(bool)array_diff($key, array(0)))
-			{
-				$this->addError('errorAnswer','You must answer all questions');
+			$commandUserAnswer->bindParam(":tryId", $tryId, PDO::PARAM_INT);
+			$commandUserAnswer->bindParam(":questionId", $question, PDO::PARAM_INT);
+			if(!$commandUserAnswer->execute())
 				return false;
+			
+			$userAnswerId = Yii::app()->db->getLastInsertId();
+			
+			foreach($answerArr as $key=>$answerId)
+			{
+				$commandUserMultiAnswer->bindParam(":userAnswerId", $userAnswerId, PDO::PARAM_INT);	
+				$commandUserMultiAnswer->bindParam(":answerId", $answerId, PDO::PARAM_INT);	
+				if(!$commandUserMultiAnswer->execute())
+					return false;
 			}
-			return true;*/
 		}
+		return true;
 	}
 	
 	public static function allTests()

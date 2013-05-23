@@ -42,7 +42,7 @@
 				<?php elseIf($model->scenario == 'answerText'): ?>
 					<b>Please write answer: </b><br />
 					<div class="row">
-					<?php echo $form->textArea($model,'answer',array(
+					<?php echo $form->textArea($model,'questionAnswerText[' . $key['questionId'] . ']',array(
 						'cols'=> 100,
 						'rows'=>3,
 					)); ?>

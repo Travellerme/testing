@@ -15,12 +15,14 @@ $this->breadcrumbs=array(
 	<?php echo Yii::app()->user->getFlash('test'); ?>
 </div>
 
-<?php endif; ?>
+<?php else: ?>
 
 <?php echo $this->renderPartial('_form', array(
 	'model'=>$model,
 	'test'=>$test,
 )); ?>
+
+<?php endif; ?>
 
 
 

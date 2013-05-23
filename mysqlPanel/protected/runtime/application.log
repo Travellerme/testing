@@ -11410,3 +11410,377 @@ in /var/www/mysqlPanel/index.php (14)
 2013/05/22 22:03:10 [warning] [application] Failed to set unsafe attribute "question" of "Test".
 in /var/www/mysqlPanel/protected/controllers/TestController.php (53)
 in /var/www/mysqlPanel/index.php (14)
+2013/05/23 15:58:53 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 16:56:08 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 16:56:08 [error] [php] Indirect modification of overloaded property WebUser::$id has no effect (/var/www/mysqlPanel/protected/models/Test.php:191)
+Stack trace:
+#0 /var/www/mysqlPanel/protected/models/Test.php(180): Test->calculateResult()
+#1 /var/www/mysqlPanel/protected/controllers/TestController.php(59): Test->saveAnswer()
+#2 unknown(0): TestController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#4 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#7 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#10 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#16 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/test/index/id/1
+in /var/www/mysqlPanel/protected/models/Test.php (191)
+in /var/www/mysqlPanel/protected/models/Test.php (202)
+in /var/www/mysqlPanel/protected/models/Test.php (165)
+2013/05/23 16:56:46 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 16:56:46 [error] [php] Undefined variable: tblUserTest (/var/www/mysqlPanel/protected/models/Test.php:209)
+Stack trace:
+#0 /var/www/mysqlPanel/protected/controllers/TestController.php(59): Test->saveAnswer()
+#1 unknown(0): TestController->actionIndex()
+#2 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/test/index/id/1
+in /var/www/mysqlPanel/protected/models/Test.php (209)
+in /var/www/mysqlPanel/protected/models/Test.php (165)
+in /var/www/mysqlPanel/protected/models/Test.php (180)
+2013/05/23 16:58:28 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 16:58:28 [error] [php] Undefined variable: commandUserTest (/var/www/mysqlPanel/protected/models/Test.php:218)
+Stack trace:
+#0 /var/www/mysqlPanel/protected/controllers/TestController.php(59): Test->saveAnswer()
+#1 unknown(0): TestController->actionIndex()
+#2 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/test/index/id/1
+in /var/www/mysqlPanel/protected/models/Test.php (218)
+in /var/www/mysqlPanel/protected/models/Test.php (165)
+in /var/www/mysqlPanel/protected/models/Test.php (180)
+2013/05/23 16:58:38 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 16:58:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_question' cannot be null. The SQL statement executed was: INSERT INTO tbl_user_answer(id, id_question, id_try) 
+			VALUES(null,:questionId,:tryId).
+in /var/www/mysqlPanel/protected/models/Test.php (218)
+in /var/www/mysqlPanel/protected/models/Test.php (165)
+in /var/www/mysqlPanel/protected/models/Test.php (180)
+2013/05/23 16:58:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_question' cannot be null. The SQL statement executed was: INSERT INTO tbl_user_answer(id, id_question, id_try) 
+			VALUES(null,:questionId,:tryId)' in /var/www/YiiRoot/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /var/www/mysqlPanel/protected/models/Test.php(218): CDbCommand->execute()
+#1 /var/www/mysqlPanel/protected/models/Test.php(165): Test->insertResult(30)
+#2 /var/www/mysqlPanel/protected/models/Test.php(180): Test->calculateResult()
+#3 /var/www/mysqlPanel/protected/controllers/TestController.php(59): Test->saveAnswer('1')
+#4 [internal function]: TestController->actionIndex('1')
+#5 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/mysqlPanel/test/index/id/1
+HTTP_REFERER=http://localhost/mysqlPanel/test/index/id/1
+---
+2013/05/23 17:00:07 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:01:12 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:01:12 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:01:43 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:01:43 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:02:21 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:02:21 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:02:59 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:02:59 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:28 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:28 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:33 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:33 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:36 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:36 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:44 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:44 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:51 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:03:51 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:04:13 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:04:13 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:06 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:06 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:06 [error] [exception.CException] exception 'CException' with message 'Property "Test.questionAnswerText" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('questionAnswerT...')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2244): CActiveRecord->__get('questionAnswerT...')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1417): CHtml::resolveValue(Object(Test), 'questionAnswerT...')
+#3 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(702): CHtml::activeTextArea(Object(Test), 'questionAnswerT...', Array)
+#4 /var/www/mysqlPanel/protected/views/test/_form.php(48): CActiveForm->textArea(Object(Test), 'questionAnswerT...', Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/mysqlPanel/protected/views/test/index.php(23): CController->renderPartial('_form', Array)
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#11 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#13 /var/www/mysqlPanel/protected/controllers/TestController.php(70): CController->render('index', Array)
+#14 [internal function]: TestController->actionIndex('1')
+#15 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#26 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#27 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#28 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/mysqlPanel/test/index/id/1
+HTTP_REFERER=http://localhost/mysqlPanel/test/index/id/1
+---
+2013/05/23 17:09:24 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:24 [warning] [application] Failed to set unsafe attribute "answer" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:33 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:33 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:59 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:09:59 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:10:03 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:10:03 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:12:45 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:12:45 [error] [php] Object of class Test could not be converted to string (/var/www/mysqlPanel/protected/models/Test.php:59)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(159): CInlineValidator->validate()
+#1 /var/www/mysqlPanel/protected/controllers/TestController.php(57): Test->validate()
+#2 unknown(0): TestController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#4 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#7 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#10 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#16 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/test/index/id/1
+in /var/www/mysqlPanel/protected/models/Test.php (59)
+in /var/www/mysqlPanel/protected/controllers/TestController.php (57)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:12:55 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:12:55 [error] [php] Object of class Test could not be converted to string (/var/www/mysqlPanel/protected/models/Test.php:59)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(159): CInlineValidator->validate()
+#1 /var/www/mysqlPanel/protected/controllers/TestController.php(57): Test->validate()
+#2 unknown(0): TestController->actionIndex()
+#3 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#4 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#7 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#10 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#16 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/test/index/id/1
+in /var/www/mysqlPanel/protected/models/Test.php (59)
+in /var/www/mysqlPanel/protected/controllers/TestController.php (57)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:13:04 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:14:44 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:14:53 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:14:59 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:16:12 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:16:21 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:24:38 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:24:38 [error] [php] Undefined variable: priceAnswer (/var/www/mysqlPanel/protected/models/Test.php:187)
+Stack trace:
+#0 unknown(0): TestController->actionIndex()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/test/index/id/1
+in /var/www/mysqlPanel/protected/models/Test.php (187)
+in /var/www/mysqlPanel/protected/models/Test.php (216)
+in /var/www/mysqlPanel/protected/controllers/TestController.php (58)
+2013/05/23 17:25:13 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:25:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'answer' in 'field list'. The SQL statement executed was: INSERT INTO tbl_user_multi_answer(id, id_user_answer, answer) 
+			VALUES(null,:userAnswerId,:answer).
+in /var/www/mysqlPanel/protected/models/Test.php (208)
+in /var/www/mysqlPanel/protected/models/Test.php (216)
+in /var/www/mysqlPanel/protected/controllers/TestController.php (58)
+2013/05/23 17:25:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'answer' in 'field list'. The SQL statement executed was: INSERT INTO tbl_user_multi_answer(id, id_user_answer, answer) 
+			VALUES(null,:userAnswerId,:answer)' in /var/www/YiiRoot/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /var/www/mysqlPanel/protected/models/Test.php(208): CDbCommand->execute()
+#1 /var/www/mysqlPanel/protected/models/Test.php(216): Test->insertTextResult()
+#2 /var/www/mysqlPanel/protected/controllers/TestController.php(58): Test->saveAnswer('2')
+#3 [internal function]: TestController->actionIndex('1')
+#4 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#16 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/mysqlPanel/test/index/id/1
+HTTP_REFERER=http://localhost/mysqlPanel/test/index/id/1
+---
+2013/05/23 17:25:54 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/23 17:27:55 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (54)
+in /var/www/mysqlPanel/index.php (14)
