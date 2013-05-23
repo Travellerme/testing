@@ -30,7 +30,6 @@ $cs->registerScriptFile(Yii::app()->baseUrl . '/js/formBuilder.js');
 
 <?php echo $this->renderPartial('_form', array(
 	'model'=>$model,
-	'setting'=>$setting,
 )); ?>
 
 

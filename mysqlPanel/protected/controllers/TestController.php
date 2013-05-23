@@ -44,10 +44,10 @@ class TestController extends Controller
 		$testTitle = Test::model()->findByPk($id);
 		$model = new Test;
 		$model->testId = $id;
-		$test = $model->findTest($id);
+		$model->findTest($id);
 		$model->questionAll = $test;
 		$model->scenario = ($setting->typeAnswer == 1)?'answerCheckbox':'answerText';
-		var_dump($_POST);
+		
 		if(isset($_POST['Test']))
 		{
 			
@@ -60,11 +60,10 @@ class TestController extends Controller
 			}
 			
 		}
-		//print_r($model);
+	
 		
 		$this->render('index',array(
 			'model' => $model,
-			'test' => $test,
 			'testTitle' => $testTitle,
 		));
 	}

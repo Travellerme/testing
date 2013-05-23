@@ -26,3 +26,10 @@ formBuilder.addField = function ()
 	$('#checkboxlist').append(" Answer " + this.iterator);
 	this.iterator++;
 }
+formBuilder.typeAnswer = function ()
+{
+	if($("#typeAnswer option:selected").val() == 1)
+		$('#checkboxList').css("display", "inline"); 
+	if($("#typeAnswer option:selected").val() == 2)
+		$('#checkboxList').css("display", "none"); 
+}

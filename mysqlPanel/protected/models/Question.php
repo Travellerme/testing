@@ -14,6 +14,7 @@ class Question extends CActiveRecord
 	public $answer;
 	public $rightAnswer;
 	public $test;
+	public $typeAnswer;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -40,7 +41,8 @@ class Question extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, rightAnswer, test', 'required','on'=>'addQuestionCheckbox'),
+			array('question, rightAnswer, test, typeAnswer', 'required','on'=>'addQuestionCheckbox'),
+			array('typeAnswer','numerical','integerOnly'=>true, 'min'=>1, 'max'=>2),
 			array('question, test', 'required','on'=>'addQuestionText'),
 			array('answer', 'validateAnswer', 'on'=> 'addQuestionCheckbox'),
 			// The following rule is used by search().
@@ -98,7 +100,7 @@ class Question extends CActiveRecord
 		);
 	}
 	
-	public function insertQuestion($typeAnswer)
+	public function insertQuestion()
 	{
 		$connection = Yii::app()->db;
 		$tblQuestion = "INSERT INTO tbl_question(id, question) VALUES(null,:question)";
@@ -107,7 +109,7 @@ class Question extends CActiveRecord
 		if(!$command->execute())
 			return false;
 		$questionId = Yii::app()->db->getLastInsertId(); 
-		if($typeAnswer == 1)
+		if($this->typeAnswer == 1)
 			if(!$this->insertAnswer($questionId))
 				return false;
 		
@@ -128,7 +130,7 @@ class Question extends CActiveRecord
 		$status = 'work';
 		$command->bindParam(":questionId",$questionId,PDO::PARAM_INT);
 		$command->bindParam(":testId",$this->test,PDO::PARAM_INT);
-		$command->bindParam(":typeAnswer",$typeAnswer,PDO::PARAM_INT);
+		$command->bindParam(":typeAnswer",$this->typeAnswer,PDO::PARAM_INT);
 		$command->bindParam(":status",$status,PDO::PARAM_INT);
 		
 		if(!$command->execute())

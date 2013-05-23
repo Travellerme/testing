@@ -34,25 +34,24 @@ class QuestionController extends Controller
 
 	public function actionAddQuestion()
 	{
-		$setting=Setting::model()->findByPk(1);
+	
 		$model = new Question;
 		
 		if(isset($_POST['Question']))
 		{
-			$model->scenario = ($setting->typeAnswer == 1)?'addQuestionCheckbox':'addQuestionText';
+			$model->scenario = ($_POST['Question']['typeAnswer'] == 1)?'addQuestionCheckbox':'addQuestionText';
 			$model->attributes=$_POST['Question'];
 			
 			
 			if($model->validate())
 			{
-				if($model->insertQuestion($setting->typeAnswer))
+				if($model->insertQuestion())
 					Yii::app()->user->setFlash('addRecord', 'Your record was saved');
 			}
 				
 		}
 		$this->render('addQuestion',array(
 			'model'=>$model,
-			'setting'=>$setting,
 		));
 	}
 	

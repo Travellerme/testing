@@ -6,7 +6,7 @@
 
 
 
-<?php if($test) : ?>
+<?php if($this->checkboxQuestion || $this->textQuestion) : ?>
 
 	<div class="form">
 

@@ -18,6 +18,13 @@
 	
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
+		<span class="help-block">select the type of answer</span><br>
+		<iframe  width="0" height="0" onload='formBuilder.typeAnswer();'></iframe>
+		<?php echo $form->dropDownList($model,'typeAnswer',array(1=>'Checkbox',2=>'Text'),
+			array('id'=>'typeAnswer','onchange'=>'formBuilder.typeAnswer();')); ?>
+		<?php echo $form->error($model,'typeAnswer'); ?>
+	</div>
+	<div class="row">
 		<label><strong>Add question</strong></label>
 		<?php echo $form->textArea($model,'question','',array(
 			'class'=>'input-xlarge',
@@ -30,7 +37,8 @@
 		<?php echo $form->dropDownList($model,'test',Test::allTests()); ?>
 		<?php echo $form->error($model,'test'); ?>
 	</div>
-	<?php if($setting->typeAnswer == 1): ?>
+	
+	<div id='checkboxList'>
 		
 		<div class="row">
 			<iframe  width="0" height="0" onload='formBuilder.addField();'></iframe>
@@ -46,7 +54,7 @@
 			</div>
 			<?php echo $form->error($model,'rightAnswer'); ?>
 		</div>
-	<?php endif; ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton("Save"); ?>

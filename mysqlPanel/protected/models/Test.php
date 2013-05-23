@@ -16,6 +16,8 @@ class Test extends CActiveRecord
 	public $questionAnswer;
 	public $typeAnswer;
 	public $questionAnswerText;
+	public $textQuestion;
+	public $checkboxQuestion;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -122,16 +124,37 @@ class Test extends CActiveRecord
 	public function findTest($id)
 	{
 		$connection = Yii::app()->db;
-		$sql = "select t.id, t.title, 
-			q.id as questionId, q.question,	a.answer, a.id as answerId,
-			qa.flagAnswer as verity from tbl_test t, tbl_answer a, 
-			tbl_question_answer qa,	tbl_question q, tbl_question_test qt 
-			where t.id=qt.id_test and qt.id_question=q.id and qa.id_question=q.id 
-			and qa.id_answer=a.id and t.id=:id and t.status='work' and qt.status='work'";
-		$command = $connection->createCommand($sql);
-		$command->bindParam(":id", $id, PDO::PARAM_INT);
-	
-		return  $command->queryAll();
+		$textAnswer = "select 
+				t.id, t.title, 
+				q.id as questionId, q.question
+			from 
+				tbl_test t,
+				tbl_question q, tbl_question_test qt 
+			where 
+				t.id=qt.id_test and qt.id_question=q.id
+				and t.id=':id' and t.status='work' and qt.status='work'
+				and qt.typeAnswer='2'";
+		$checkboxAnswer = "select 
+				t.id, t.title, 
+				q.id as questionId, q.question,	a.answer, a.id as answerId,
+				qa.flagAnswer as verity 
+			from 
+				tbl_test t, tbl_answer a, 
+				tbl_question_answer qa,	tbl_question q, tbl_question_test qt 
+			where 
+				t.id=qt.id_test and qt.id_question=q.id and qa.id_question=q.id 
+				and qa.id_answer=a.id and t.id=:id and t.status='work' and qt.status='work'
+				and qt.typeAnswer='1'";
+			
+		$commandText = $connection->createCommand($textAnswer);
+		$commandCheckbox = $connection->createCommand($checkBoxAnswer);
+		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
+		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
+		
+		if(!$this->textQuestion = $commandText->queryAll())
+			return false;
+		if(!$this->checkboxQuestion = $commandCheckbox->queryAll())
+			return false;
 		
 	}
 	
