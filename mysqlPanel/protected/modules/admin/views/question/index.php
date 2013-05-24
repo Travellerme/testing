@@ -33,7 +33,6 @@ $this->menu=array(
 		'id'=>array(
 			'name'=>'id',
 			'headerHtmlOptions'=>array('width' => 20),
-			
 		),
 		'question'=>array(
 			'name'=>'question',

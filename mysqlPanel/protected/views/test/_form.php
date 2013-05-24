@@ -4,9 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-
-
-<?php if($this->checkboxQuestion || $this->textQuestion) : ?>
+<?php if($model->checkboxQuestion || $model->textQuestion) : ?>
 
 	<div class="form">
 
@@ -17,11 +15,44 @@
 
 		<?php echo $form->errorSummary($model); ?>
 
-		
-		<?php $compareQuestion = '';?>
+		<?php if($model->checkboxQuestion): ?>
+			<?php $compareQuestion = '';?>
 
-		<?php foreach($test as $key): ?>
-			<?php if($compareQuestion != $key['questionId']) : ?>
+			<?php foreach($model->checkboxQuestion as $key): ?>
+				<?php if($compareQuestion != $key['questionId']) : ?>
+				
+					<hr />
+					<div class="row">
+						<b>Question: </b><br />
+						<?php echo $form->textArea($model,'question',array(
+							'value'=>CHtml::encode($key['question']),
+							'readonly'=>true,
+							'cols'=> 100,
+							'rows'=>3,
+						)); ?>
+						<br /><br />
+						
+					</div>
+										
+					<?php $compareQuestion = $key['questionId']; ?>
+					<b>Please choose answer: </b><br />
+				
+				<?php endif;?>
+				<div class="row">
+					<?php echo $form->checkBox($model,'questionAnswer[' . $key['questionId'] . '][]',array(
+						'value'=> $key['answerId'],
+					));
+						echo ' ' . CHtml::encode($key['answer']); 
+					?>
+					<?php echo $form->error($model,'answer'); ?>
+				</div>
+						
+			<?php endforeach; ?>
+		<?php endif;?>
+		
+		<?php if($model->textQuestion): ?>
+			<?php foreach($model->textQuestion as $key): ?>
+			
 			
 				<hr />
 				<div class="row">
@@ -35,33 +66,19 @@
 					<br /><br />
 					
 				</div>
-									
-				<?php $compareQuestion = $key['questionId']; ?>
-				<?php if($model->scenario == 'answerCheckbox'): ?>
-					<b>Please choose answer: </b><br />
-				<?php elseIf($model->scenario == 'answerText'): ?>
-					<b>Please write answer: </b><br />
-					<div class="row">
+				<b>Please write answer: </b><br />
+				<div class="row">
 					<?php echo $form->textArea($model,'questionAnswerText[' . $key['questionId'] . ']',array(
 						'cols'=> 100,
 						'rows'=>3,
 					)); ?>
 					<?php echo $form->error($model,'answer'); ?>
 				</div>
-				<?php endif; ?>
-			<?php endif;?>
-			<?php if($model->scenario == 'answerCheckbox'): ?>
-				<div class="row">
-					<?php echo $form->checkBox($model,'questionAnswer[' . $key['questionId'] . '][]',array(
-						'value'=> $key['answerId'],
-					));
-						echo ' ' . CHtml::encode($key['answer']); 
-					?>
-					<?php echo $form->error($model,'answer'); ?>
-				</div>
-			<?php endif; ?>
-			
-		<?php endforeach; ?>
+			<?php endforeach; ?>
+		<?php endif;?>
+		
+		
+		
 		
 		<div class="row buttons">
 			<?php echo CHtml::submitButton('Send'); ?>

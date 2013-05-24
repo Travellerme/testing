@@ -45,8 +45,8 @@ class Test extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title', 'required', 'on' => 'addTest'),
-			array('questionAnswer', 'validateEmptyAnswerCheckbox', 'on'=> 'answerCheckbox'),
-			array('questionAnswerText', 'validateEmptyAnswerText', 'on'=> 'answerText'),
+			array('questionAnswer', 'validateEmptyAnswerCheckbox', 'on'=> 'answerCheckbox, answerBoth','message'=>'You must answer all questions'),
+			array('questionAnswerText', 'validateEmptyAnswerText', 'on'=> 'answerText, answerBoth','message'=>'You must answer all questions'),
 			array('title', 'unique'),
 			array('title', 'safe'),
 			array('title', 'length', 'max'=>255),
@@ -62,7 +62,8 @@ class Test extends CActiveRecord
 		{
 			if(!$val)
 			{
-				$this->addError('errorAnswer','You must answer all questions');
+				if(!$this->getErrors('errorAnswer'))
+					$this->addError('errorAnswer','You must answer all questions');
 				return false;
 			}
 		}
@@ -76,7 +77,8 @@ class Test extends CActiveRecord
 		{
 			if(!(bool)$this->questionAnswer[$key] = array_diff($val, array(0)))
 			{
-				$this->addError('errorAnswer','You must answer all questions');
+				if(!$this->getErrors('errorAnswer'))
+					$this->addError('errorAnswer','You must answer all questions');
 				$flag = false;
 			}
 		}
@@ -132,7 +134,7 @@ class Test extends CActiveRecord
 				tbl_question q, tbl_question_test qt 
 			where 
 				t.id=qt.id_test and qt.id_question=q.id
-				and t.id=':id' and t.status='work' and qt.status='work'
+				and t.id=:id and t.status='work' and qt.status='work'
 				and qt.typeAnswer='2'";
 		$checkboxAnswer = "select 
 				t.id, t.title, 
@@ -147,14 +149,13 @@ class Test extends CActiveRecord
 				and qt.typeAnswer='1'";
 			
 		$commandText = $connection->createCommand($textAnswer);
-		$commandCheckbox = $connection->createCommand($checkBoxAnswer);
+		$commandCheckbox = $connection->createCommand($checkboxAnswer);
 		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
 		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
-		
-		if(!$this->textQuestion = $commandText->queryAll())
-			return false;
-		if(!$this->checkboxQuestion = $commandCheckbox->queryAll())
-			return false;
+			
+		$this->textQuestion = $commandText->queryAll();
+		$this->checkboxQuestion = $commandCheckbox->queryAll();
+		return true;
 		
 	}
 	
@@ -166,7 +167,7 @@ class Test extends CActiveRecord
 		$percentQuestion = 100 / $count;
 		$compareQuestion='';
 		$verity = 0;
-		foreach($this->questionAll as $key)
+		foreach($this->checkboxQuestion as $key)
 		{
 			if($compareQuestion != $key['questionId'])
 			{
@@ -197,18 +198,12 @@ class Test extends CActiveRecord
 			if($flagAnswer)
 				$priceAnswerGlobal += $priceAnswerLocal;	
 		}
-		$priceAnswerGlobal = (int)$priceAnswerGlobal;
-		
-		$this->insertResult($priceAnswerGlobal);
-	
-		
-		
+		return $priceAnswerGlobal = (int)$priceAnswerGlobal;
+
 	}
 	
-	private function insertTextResult()
+	private function insertTextResult($tryId)
 	{
-		if(!$tryId = $this->insertPartResult())
-			return false;
 		$connection = Yii::app()->db;
 		$tblUserAnswer =  "INSERT INTO tbl_user_answer(id, id_question, id_try) 
 			VALUES(null,:questionId,:tryId)";
@@ -233,10 +228,37 @@ class Test extends CActiveRecord
 		}
 		return true;
 	}
-	public function saveAnswer($typeAnswer)
+	
+	public function saveAnswer()
 	{
-		$this->typeAnswer = $typeAnswer;
-		return ($typeAnswer == 1)?$this->calculateResult():$this->insertTextResult();
+		if($this->checkboxQuestion && $this->textQuestion)
+		{
+			$priceAnswer = $this->calculateResult();
+			if($tryId = $this->insertPartResult($priceAnswer))
+			{
+				if($this->insertResult($tryId) && $this->insertTextResult($tryId)) 
+					return true;
+			}
+			
+		}
+		elseif($this->checkboxQuestion)
+		{
+			$priceAnswer = $this->calculateResult();
+			if($tryId = $this->insertPartResult($priceAnswer))
+			{
+				if($this->insertResult($tryId))
+					return true;
+			}
+		}
+		elseif($this->textQuestion)
+		{
+			if($tryId = $this->insertPartResult($tryId))
+			{
+				if($this->insertTextResult($tryId))
+					return true;
+			}
+		}
+		return false;
 
 	}
 	
@@ -257,10 +279,8 @@ class Test extends CActiveRecord
 		return 	$tryId = Yii::app()->db->getLastInsertId();
 	}
 	
-	private function insertResult($priceAnswer)
+	private function insertResult($tryId)
 	{
-		if(!$tryId = $this->insertPartResult($priceAnswer))
-			return false;
 		$connection = Yii::app()->db;
 	
 		$tblUserAnswer =  "INSERT INTO tbl_user_answer(id, id_question, id_try) 
@@ -296,24 +316,32 @@ class Test extends CActiveRecord
 	}
 	
 	
-	public static function menu()
+	public static function menu($position)
 	{
 		$models = self::model()->findAll();
 		$result = array();
-		$result[] = array('label' =>"Home", 'url' => array('/site/index'));
-		
-		foreach($models as $key)
+		if($position == 'top')
 		{
-			$result[] = array('label' => $key->title, 'url' => array('/test/index/id/'.$key->id));
+			$result[] = array('label' =>"Home", 'url' => array('/site/index'));
+			if(Yii::app()->user->checkAccess('1'))
+			{
+				$result[] = array('label' =>"AdminControl", 'url' => array('/admin'));
+			}
+			$result[] = array('label'=>"Login", 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
+			$result[] = array('label'=>"Logout (" . Yii::app()->user->name . ")", 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
 		}
 		
-		if(Yii::app()->user->checkAccess('1'))
+		if($position == 'right')
 		{
-			$result[] = array('label' =>"AdminControl", 'url' => array('/admin'));
+			foreach($models as $key)
+			{
+				$result[] = array('label' => $key->title, 'url' => array('/test/index/id/'.$key->id),'visible'=>!Yii::app()->user->isGuest);
+			}
 		}
 		
-		$result[] = array('label'=>"Login", 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
-		$result[] = array('label'=>"Logout (" . Yii::app()->user->name . ")", 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
+		
+		
+		
 		
 		return $result;
 	}
