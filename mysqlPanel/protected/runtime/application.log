@@ -502,3 +502,1123 @@ in /var/www/mysqlPanel/index.php (14)
 2013/05/24 21:03:43 [warning] [application] Failed to set unsafe attribute "question" of "Test".
 in /var/www/mysqlPanel/protected/controllers/TestController.php (55)
 in /var/www/mysqlPanel/index.php (14)
+2013/05/27 16:20:37 [error] [php] Trying to get property of non-object (/var/www/mysqlPanel/protected/modules/admin/views/result/update.php:7)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#2 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(64): ResultController->render()
+#3 unknown(0): ResultController->actionUpdate()
+#4 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#8 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/1
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (7)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 16:22:12 [error] [php] Trying to get property of non-object (/var/www/mysqlPanel/protected/modules/admin/views/result/update.php:16)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#2 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(64): ResultController->render()
+#3 unknown(0): ResultController->actionUpdate()
+#4 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#8 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/1
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (16)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 16:45:43 [error] [exception.CException] exception 'CException' with message 'ResultController contains improperly nested widget tags in its view "/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php". A CActiveForm widget does not have an endWidget() call.' in /var/www/YiiRoot/framework/web/CBaseController.php:101
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): CController->renderPartial('_form', Array)
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#4 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#5 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(66): CController->render('update', Array)
+#7 [internal function]: ResultController->actionUpdate('1')
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/1
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 16:49:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/setting/index".' in /var/www/YiiRoot/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/setting/i...')
+#1 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/mysqlPanel/admin/setting/index
+HTTP_REFERER=http://localhost/mysqlPanel/admin/setting/index
+---
+2013/05/27 16:50:43 [error] [exception.CException] exception 'CException' with message 'ResultController contains improperly nested widget tags in its view "/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php". A CActiveForm widget does not have an endWidget() call.' in /var/www/YiiRoot/framework/web/CBaseController.php:101
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): CController->renderPartial('_form', Array)
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#4 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#5 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): CController->render('update', Array)
+#7 [internal function]: ResultController->actionUpdate('1')
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/1
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 16:52:16 [error] [php] Trying to get property of non-object (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:10)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/1
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (10)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 16:52:49 [error] [php] Trying to get property of non-object (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:10)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(68): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/1
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (10)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (68)
+2013/05/27 16:53:58 [error] [php] Undefined index: question (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:70)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (70)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:13:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.answer
+		FROM tbl_user u, tbl_test t, tbl_user_test ut, tbl_user_answer ua, 
+		' at line 2. The SQL statement executed was: SELECT u.username, ut.id_test as testId, ut.created, 
+		ut.percentRight, q.id AS questionId, q.question at.answer
+		FROM tbl_user u, tbl_test t, tbl_user_test ut, tbl_user_answer ua, 
+		tbl_question q, tbl_answer_text at
+		WHERE u.id = ut.id_user
+		AND ut.id_test = t.id
+		AND ut.id = ua.id_try
+		AND ua.id_question = q.id
+		AND ua.id = at.id_user_answer
+		AND ut.id = :id
+		.
+in /var/www/mysqlPanel/protected/models/Result.php (148)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (53)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 17:13:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.answer
+		FROM tbl_user u, tbl_test t, tbl_user_test ut, tbl_user_answer ua, 
+		' at line 2. The SQL statement executed was: SELECT u.username, ut.id_test as testId, ut.created, 
+		ut.percentRight, q.id AS questionId, q.question at.answer
+		FROM tbl_user u, tbl_test t, tbl_user_test ut, tbl_user_answer ua, 
+		tbl_question q, tbl_answer_text at
+		WHERE u.id = ut.id_user
+		AND ut.id_test = t.id
+		AND ut.id = ua.id_try
+		AND ua.id_question = q.id
+		AND ua.id = at.id_user_answer
+		AND ut.id = :id
+		' in /var/www/YiiRoot/framework/db/CDbCommand.php:541
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/mysqlPanel/protected/models/Result.php(148): CDbCommand->queryAll()
+#2 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(53): Result->findResult('32')
+#3 [internal function]: ResultController->actionUpdate('32')
+#4 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#5 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#6 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#16 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 17:14:02 [error] [php] Undefined variable: key (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:86)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (86)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:18:52 [error] [php] Undefined offset: 0 (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:23)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (23)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:21:58 [error] [exception.CException] exception 'CException' with message 'Property "Result.questionAnswer" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('questionAnswer')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2244): CActiveRecord->__get('questionAnswer')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1506): CHtml::resolveValue(Object(Result), 'questionAnswer[...')
+#3 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(747): CHtml::activeCheckBox(Object(Result), 'questionAnswer[...', Array)
+#4 /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php(52): CActiveForm->checkBox(Object(Result), 'questionAnswer[...', Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): CController->renderPartial('_form', Array)
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#11 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#13 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): CController->render('update', Array)
+#14 [internal function]: ResultController->actionUpdate('32')
+#15 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#26 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#27 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#28 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 17:22:27 [error] [php] Undefined offset: 2 (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:45)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (45)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:24:25 [error] [php] Undefined offset: 2 (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:45)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (45)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:25:49 [error] [php] Object of class Result could not be converted to string (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:46)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (46)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:25:57 [error] [php] Undefined offset: 2 (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:46)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (46)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 17:26:17 [error] [php] Undefined offset: 2 (/var/www/mysqlPanel/protected/modules/admin/views/result/_form.php:46)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#1 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): ResultController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): ResultController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): ResultController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): ResultController->renderPartial()
+#6 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): ResultController->render()
+#7 unknown(0): ResultController->actionUpdate()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php (46)
+in /var/www/mysqlPanel/protected/modules/admin/views/result/update.php (17)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/27 18:45:51 [error] [exception.CException] exception 'CException' with message 'Property "Result." is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1506): CHtml::resolveValue(Object(Result), '')
+#3 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(747): CHtml::activeCheckBox(Object(Result), '', Array)
+#4 /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php(58): CActiveForm->checkBox(Object(Result), '', Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(17): CController->renderPartial('_form', Array)
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#11 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#13 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(67): CController->render('update', Array)
+#14 [internal function]: ResultController->actionUpdate('32')
+#15 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#26 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#27 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#28 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 18:47:09 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:09 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:09 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:30 [error] [php] Undefined index: Result (/var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php:57)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#3 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#6 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#9 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (57)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:37 [error] [php] Undefined index: Result (/var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php:57)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#3 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#6 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#9 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (57)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:49 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:49 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:47:49 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:48:49 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:48:49 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:48:49 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (60)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:01 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:01 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:01 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:11 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:11 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:11 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:25 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:25 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:50:25 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:03 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:03 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:03 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:36 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:36 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:36 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:49 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:49 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:51:49 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:52:31 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:52:31 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:52:31 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:53:25 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:53:25 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:53:25 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:26 [error] [php] Invalid argument supplied for foreach() (/var/www/YiiRoot/framework/base/CModel.php:283)
+Stack trace:
+#0 /var/www/YiiRoot/framework/base/CModel.php(467): Result->getSafeAttributeNames()
+#1 /var/www/YiiRoot/framework/base/CComponent.php(152): Result->setAttributes()
+#2 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(159): Result->__set()
+#3 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(61): Result->__set()
+#4 unknown(0): ResultController->actionUpdate()
+#5 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#6 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#9 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#11 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#13 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#15 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#16 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:37 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:37 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:37 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:37 [warning] [application] Failed to set unsafe attribute "percentRight" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:42 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:42 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:42 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:42 [warning] [application] Failed to set unsafe attribute "percentRight" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:45 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:45 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:45 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:54:45 [warning] [application] Failed to set unsafe attribute "percentRight" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:46 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:46 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:46 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:53 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:53 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:53 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:57 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:57 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 18:55:57 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:01:15 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:01:15 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:01:15 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:01:44 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:01:44 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:01:44 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:03:34 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:03:34 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:03:34 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:04:50 [error] [exception.CException] exception 'CException' with message 'Property "Result.0" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('0')
+#1 /var/www/YiiRoot/framework/base/CModel.php(595): CActiveRecord->__get('0')
+#2 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(15): CModel->offsetGet(0)
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#4 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#5 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#6 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#7 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(69): CController->render('update', Array)
+#8 [internal function]: ResultController->actionUpdate('32')
+#9 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#10 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#11 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#20 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#21 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/update/id/32
+---
+2013/05/27 19:11:07 [error] [php] Undefined index: title (/var/www/mysqlPanel/protected/models/Result.php:155)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/models/Result.php (155)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (53)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:12:14 [error] [php] Undefined index: userId (/var/www/mysqlPanel/protected/models/Result.php:156)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/32
+in /var/www/mysqlPanel/protected/models/Result.php (156)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (53)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:19:40 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:19:40 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:19:40 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:19:45 [warning] [application] Failed to set unsafe attribute "question" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:19:45 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:19:45 [warning] [application] Failed to set unsafe attribute "questionAnswerText" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:20:46 [warning] [application] Failed to set unsafe attribute "question" of "Test".
+in /var/www/mysqlPanel/protected/controllers/TestController.php (55)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:23:26 [error] [exception.CException] exception 'CException' with message 'Property "ResultController.userCheckboxAnswer" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(68): CComponent->__get('userCheckboxAns...')
+#1 [internal function]: ResultController->actionUpdate('34')
+#2 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#3 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#4 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#13 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#14 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/34
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 19:42:35 [error] [exception.CException] exception 'CException' with message 'Property "ResultController.userCheckboxAnswer" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php(51): CComponent->__get('userCheckboxAns...')
+#1 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#3 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#4 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(26): CController->renderPartial('_form', Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#9 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(72): CController->render('update', Array)
+#10 [internal function]: ResultController->actionUpdate('34')
+#11 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#12 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#13 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#22 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#23 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#24 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#25 {main}
+REQUEST_URI=/mysqlPanel/admin/result/update/id/34
+HTTP_REFERER=http://localhost/mysqlPanel/admin/result/index
+---
+2013/05/27 19:44:28 [error] [php] Undefined variable: sqlUserAnswerText (/var/www/mysqlPanel/protected/models/Result.php:148)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/34
+in /var/www/mysqlPanel/protected/models/Result.php (148)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (53)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 19:47:47 [error] [php] Undefined variable: commandText (/var/www/mysqlPanel/protected/models/Result.php:112)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/result/update/id/34
+in /var/www/mysqlPanel/protected/models/Result.php (112)
+in /var/www/mysqlPanel/protected/models/Result.php (121)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (53)
+2013/05/27 20:34:06 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:06 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:08 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:08 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:12 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:12 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:15 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:15 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:18 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:18 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:25 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:25 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:28 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:28 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:49 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:49 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:52 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:52 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:56 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:56 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:59 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:34:59 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:35:21 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:35:21 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:35:57 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:35:57 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:35:59 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:35:59 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:36:02 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:36:02 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:36:06 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:36:06 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:36:41 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:36:48 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:26 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:26 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:30 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:30 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:32 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:32 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:35 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:35 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:42 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:37:42 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:15 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:15 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:53 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:53 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:55 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:55 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:57 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:38:57 [warning] [application] Failed to set unsafe attribute "role" of "User".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (139)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/27 20:50:42 [error] [php] Undefined index: User (/var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php:141)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#1 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /var/www/YiiRoot/framework/web/CWebApplication.php(282): UserController->run()
+#8 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/admin/user/index
+in /var/www/mysqlPanel/protected/modules/admin/controllers/UserController.php (141)
+in /var/www/mysqlPanel/index.php (14)

@@ -128,13 +128,14 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-			
 		if(isset($_POST['admin']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
 		else if(isset($_POST['user']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>0),array('condition'=>'id<>'.Yii::app()->user->id));
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['User']))
+			$model->attributes=$_POST['User'];
 		if(isset($_GET['User']))
 			$model->attributes=$_GET['User'];
 

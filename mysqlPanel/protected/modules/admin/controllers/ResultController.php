@@ -47,16 +47,23 @@ class ResultController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$this->layout = '/layouts/column2';
+			
+		$model=new Result;
+		$model->findResult($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Result']))
-		{
+		{	
+			$model->scenario = 'checkResult';
 			$model->attributes=$_POST['Result'];
-			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
+			if($model->validate())
+			{
+				Result::model()->updateByPk($id, array('percentRight'=>$model->percentRight));
+					Yii::app()->user->setFlash('checkResult', 'Your solution saved');
+			}
 		}
 
 		$this->render('update',array(
@@ -89,7 +96,7 @@ class ResultController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Result::model()->findResult($id);
+		$model=Result::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

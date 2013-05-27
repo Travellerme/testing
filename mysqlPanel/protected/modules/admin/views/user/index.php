@@ -3,12 +3,12 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	Yii::t("main", "Users")=>array('index'),
-	Yii::t("main", "Manage"),
+	'Users'=>array('index'),
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>Yii::t("main", "Create User"), 'url'=>array('create')),
+	array('label'=>'Create User', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -64,6 +64,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'role'=>array(
 			'name'=>'role',
+			//'value'=>'print_r($data->role)',
 			'value'=>'($data->role==0)?"User":"Admin"',
 			'filter'=>array(0=>"User",1=>"Admin"),
 		),

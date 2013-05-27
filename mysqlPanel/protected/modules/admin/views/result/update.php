@@ -4,8 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Results'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Check'=>array($model->id),
 );
 
 $this->menu=array(
@@ -13,6 +12,16 @@ $this->menu=array(
 );
 ?>
 
-<h1>Check Result <?php echo $model->id; ?></h1>
+<h1>Check Result </h1><br />
+<?php if(Yii::app()->user->hasFlash('checkResult')): ?>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+	<div class="flash-success">
+		<?php echo Yii::app()->user->getFlash('checkResult'); ?>
+	</div>
+
+<?php else: ?>
+	<b>Username: </b><?php echo $model->username; ?><br />
+	<b>Test: </b><?php echo $model->test; ?><br />
+
+	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php endif; ?>

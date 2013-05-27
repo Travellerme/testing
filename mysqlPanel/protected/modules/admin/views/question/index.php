@@ -42,7 +42,6 @@ $this->menu=array(
 		'test'=>array(
 			'name'=>'test',
 			'headerHtmlOptions'=>array('width' => 70),
-			//'filter'=>'',
 		),
 		'status'=>array(
 			'name'=>'status',
