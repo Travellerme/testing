@@ -1,11 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_test".
+ * This is the model class for table "tbl_question".
  *
- * The followings are the available columns in table 'tbl_test':
- * @property integer $id
- * @property string $title
+ * The followings are the available columns in table 'tbl_question':
  */
 class Question extends CActiveRecord
 {

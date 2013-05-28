@@ -12,7 +12,7 @@ formBuilder.addField = function ()
 	{
 		type: 'text',
 		name: 'Question[answer][' + this.iterator + ']',
-		onchange: 'formBuilder.addField();',
+		onblur: 'formBuilder.addField();',
 		
 	}));
 	$('#checkboxlist').append($("<br>"));

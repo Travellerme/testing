@@ -139,7 +139,7 @@ class User extends CActiveRecord
 	protected function generateSalt($cost=10)
 	{
 		if(!is_numeric($cost)||$cost<4||$cost>31){
-			throw new CException(Yii::t('Cost parameter must be between 4 and 31.'));
+			throw new CException('Cost parameter must be between 4 and 31.');
 		}
 		// Get some pseudo-random data from mt_rand().
 		$rand='';

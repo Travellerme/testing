@@ -3,9 +3,9 @@
 /* @var $model User */
 
 $this->breadcrumbs=array(
-	Yii::t("main", "Users")=>array('index'),
+	"Users"=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	Yii::t("main", "Update"),
+	"Update",
 );
 
 $this->menu=array(

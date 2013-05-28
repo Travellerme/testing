@@ -19,11 +19,11 @@
 		<?php echo $form->errorSummary($model); ?>
 		
 		<?php if($model->userCheckboxAnswer): ?>
-			<?php $compareQuestion = ''; ?>
+			<?php $compareQuestion = ''; $contentRightAnswer ='';?>
 
 			<?php foreach($model->serverCheckboxAnswer as $keyServer): ?>
 				<?php if($compareQuestion != $keyServer['questionId']) : ?>
-			
+					<?php echo $contentRightAnswer; ?>
 					<hr />
 					<div class="row">
 						<b>Question: </b><br />
@@ -37,7 +37,7 @@
 						
 					</div>
 										
-					<?php $compareQuestion = $keyServer['questionId']; ?>
+					<?php $compareQuestion = $keyServer['questionId']; $flagAnswer = true; ?>
 					<b>User choose: </b><br />
 				
 				<?php endif;?>
@@ -58,10 +58,28 @@
 					<?php echo $form->checkBox($model,'questionAnswer[' . $keyServer['questionId'] . '][]',$htmlOptions);
 						echo ' ' . CHtml::encode($keyServer['answer']); 
 					?>
+					
+				
+						
+					
+					<?php 
+						if($flagAnswer)
+						{
+							$contentRightAnswer =  '<br><b>Right Answer:</b><br />';
+							$flagAnswer =false;
+						}
+						if($keyServer['verity']==1)
+						{
+							$contentRightAnswer .= $form->checkBox($model,'rightAnswer',array('value'=>$keyServer['answerId'],'disabled'=>true,'checked'=>true));
+							$contentRightAnswer .= ' ' . CHtml::encode($keyServer['answer']) . '<br />'; 
+							
+						}
+					?>
 					<?php echo $form->error($model,'answer'); ?>
 				</div>
 						
 			<?php endforeach; ?>
+			<?php echo $contentRightAnswer;?>
 		<?php endif;?>
 		
 		<?php if($model->userTextAnswer): ?>

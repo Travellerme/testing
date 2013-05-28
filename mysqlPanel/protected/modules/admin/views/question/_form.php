@@ -21,7 +21,7 @@
 		<span class="help-block">select the type of answer</span><br>
 		<iframe  width="0" height="0" onload='formBuilder.typeAnswer();'></iframe>
 		<?php echo $form->dropDownList($model,'typeAnswer',array(1=>'Checkbox',2=>'Text'),
-			array('id'=>'typeAnswer','onchange'=>'formBuilder.typeAnswer();')); ?>
+			array('id'=>'typeAnswer','onblur'=>'formBuilder.typeAnswer();')); ?>
 		<?php echo $form->error($model,'typeAnswer'); ?>
 	</div>
 	<div class="row">
