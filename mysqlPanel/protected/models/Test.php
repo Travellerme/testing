@@ -10,6 +10,8 @@
 class Test extends CActiveRecord
 {
 	public $testId;
+	public $test;
+	public $status;
 	public $questionAll;
 	public $question;
 	public $answer;
@@ -18,6 +20,7 @@ class Test extends CActiveRecord
 	public $questionAnswerText;
 	public $textQuestion;
 	public $checkboxQuestion;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -110,24 +113,20 @@ class Test extends CActiveRecord
 	public function renderDetail($id)
 	{
 		$connection = Yii::app()->db;
-		$sql = "select t.id, t.title as test, t.status as statusTest,
-			q.id as questionId, q.question,	a.answer, qa.flagAnswer as verity,
-			qt.status as statusQuestion from tbl_test t, tbl_answer a, 
-			tbl_question_answer qa,	tbl_question q, tbl_question_test qt 
-			where t.id=qt.id_test and qt.id_question=q.id and qa.id_question=q.id 
-			and qa.id_answer=a.id and t.id=:id";
-		$command = $connection->createCommand($sql);
-		$command->bindParam(":id", $id, PDO::PARAM_INT);
-	
-		return  $command->queryAll();
-		
+		$this->fintTextQuestion($id);
+		$this->findCheckboxQuestion($id);
+				
+		$this->testId = ($this->checkboxQuestion)?$this->checkboxQuestion[0]['id']:$this->textQuestion[0]['id'];
+		$this->test = ($this->checkboxQuestion)?$this->checkboxQuestion[0]['title']:$this->textQuestion[0]['title'];
+		$this->status = ($this->checkboxQuestion)?$this->checkboxQuestion[0]['statusTest']:$this->textQuestion[0]['statusTest'];
+		return true;
 	}
 	
-	public function findTest($id)
+	private function fintTextQuestion($id)
 	{
 		$connection = Yii::app()->db;
 		$textAnswer = "select 
-				t.id, t.title, 
+				t.id, t.title, t.status as statusTest,
 				q.id as questionId, q.question
 			from 
 				tbl_test t,
@@ -136,8 +135,17 @@ class Test extends CActiveRecord
 				t.id=qt.id_test and qt.id_question=q.id
 				and t.id=:id and t.status='work' and qt.status='work'
 				and qt.typeAnswer='2'";
+		$commandText = $connection->createCommand($textAnswer);
+		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
+		$this->textQuestion = $commandText->queryAll();
+		return true;
+	}
+	
+	private function findCheckboxQuestion($id)
+	{
+		$connection = Yii::app()->db;
 		$checkboxAnswer = "select 
-				t.id, t.title, 
+				t.id, t.title, t.status as statusTest,
 				q.id as questionId, q.question,	a.answer, a.id as answerId,
 				qa.flagAnswer as verity 
 			from 
@@ -148,15 +156,20 @@ class Test extends CActiveRecord
 				and qa.id_answer=a.id and t.id=:id and t.status='work' and qt.status='work'
 				and qt.typeAnswer='1'";
 			
-		$commandText = $connection->createCommand($textAnswer);
+	
 		$commandCheckbox = $connection->createCommand($checkboxAnswer);
-		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
+	
 		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
 			
-		$this->textQuestion = $commandText->queryAll();
 		$this->checkboxQuestion = $commandCheckbox->queryAll();
 		return true;
+	}
+	public function findTest($id)
+	{
+		$this->fintTextQuestion($id);
+		$this->findCheckboxQuestion($id);
 		
+		return true;
 	}
 	
 	private function calculateResult()

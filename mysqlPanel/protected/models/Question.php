@@ -13,6 +13,8 @@ class Question extends CActiveRecord
 	public $rightAnswer;
 	public $test;
 	public $typeAnswer;
+	public $checkboxAnswer;
+	public $textAnswer;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -85,6 +87,34 @@ class Question extends CActiveRecord
 		return array(
 			//'category'   => array(self::HAS_MANY,   'Page',    'category_id'),
 		);
+	}
+	
+	public function renderDetail($id)
+	{
+		$connection = Yii::app()->db;
+		$sqlCheckbox = "select a.id as answerId, a.answer, qa.flagAnswer as verity, q.question, q.id, t.title as test, 
+			qt.status from tbl_answer a, tbl_question_answer qa, 
+			tbl_question q, tbl_test t, tbl_question_test qt 
+			where a.id=qa.id_answer and qa.id_question=q.id 
+			and q.id=qt.id_question and qt.id_test=t.id and q.id=:id";
+			
+		$sqlText = "select q.question, q.id, t.title as test, qt.status 
+			from tbl_question q, tbl_test t, tbl_question_test qt 
+			where q.id=qt.id_question and qt.id_test=t.id and q.id=:id";
+			
+		$commandCheckbox = $connection->createCommand($sqlCheckbox);
+		$commandText = $connection->createCommand($sqlText);
+		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
+		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
+	
+		$this->checkboxAnswer = $commandCheckbox->queryAll();
+		$this->textAnswer = $commandText->queryAll();
+		
+		$this->question = ($this->checkboxAnswer)?$this->checkboxAnswer[0]['question']:$this->textAnswer[0]['question'];
+		$this->test = ($this->checkboxAnswer)?$this->checkboxAnswer[0]['test']:$this->textAnswer[0]['test'];
+		$this->status = ($this->checkboxAnswer)?$this->checkboxAnswer[0]['status']:$this->textAnswer[0]['status'];
+		return true;
+		
 	}
 	
 	/**

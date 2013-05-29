@@ -23,7 +23,7 @@ class QuestionController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','addQuestion'),
+				'actions'=>array('index','addQuestion','view'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -75,6 +75,21 @@ class QuestionController extends Controller
             'model'=>$model,
         ));
 
+	}
+	
+	
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$model = new Question;
+		$model->renderDetail($id);
+		
+		$this->render('view',array(
+			'model' => $model,
+		));
 	}
 
 	/**

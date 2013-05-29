@@ -39,9 +39,10 @@ class TestController extends Controller
      */
     public function actionView($id)
     {
-		$test = Test::model()->renderDetail($id);
+		$model=new Test;
+		$model->renderDetail($id);
 		$this->render('view',array(
-			'test'=>$test,
+			'model'=>$model,
 		));
     }
 	/**
