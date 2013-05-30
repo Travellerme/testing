@@ -12,7 +12,6 @@ $this->pageTitle=Yii::app()->name;
 
 <div class="flash-success">
 	<?php echo Yii::app()->user->getFlash('test'); ?>
-	<?php Yii::app()->user->logout(); ?>
 </div>
 
 <?php else: ?>

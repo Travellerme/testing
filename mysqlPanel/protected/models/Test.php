@@ -20,6 +20,7 @@ class Test extends CActiveRecord
 	public $questionAnswerText;
 	public $textQuestion;
 	public $checkboxQuestion;
+	public $adminVerity;
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -48,9 +49,10 @@ class Test extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title', 'required', 'on' => 'addTest'),
-			array('questionAnswer', 'validateEmptyAnswerCheckbox', 'on'=> 'answerCheckbox, answerBoth','message'=>'You must answer all questions'),
-			array('questionAnswerText', 'validateEmptyAnswerText', 'on'=> 'answerText, answerBoth','message'=>'You must answer all questions'),
+			array('questionAnswer', 'validateEmptyAnswerCheckbox', 'on'=> 'answerCheckbox, answerBoth'),
+			array('questionAnswerText', 'validateEmptyAnswerText', 'on'=> 'answerText, answerBoth'),
 			array('title', 'unique'),
+			array('adminVerity', 'safe'),
 			array('title', 'safe'),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -176,10 +178,16 @@ class Test extends CActiveRecord
 	{
 		$questionAnswer = array();
 		
-		$count = count($this->questionAnswer);
-		$percentQuestion = 100 / $count;
+		$countCheckboxAnswer = count($this->questionAnswer);
+		if($this->questionAnswerText)
+			$countTextAnswer = count($this->questionAnswerText);
+		if($this->adminVerity)
+			$countTextAnswer = count($this->adminVerity);
+		$sum = $countCheckboxAnswer + $countTextAnswer;
+		$percentQuestion = 100 / $sum;
 		$compareQuestion='';
 		$verity = 0;
+	
 		foreach($this->checkboxQuestion as $key)
 		{
 			if($compareQuestion != $key['questionId'])
@@ -211,8 +219,24 @@ class Test extends CActiveRecord
 			if($flagAnswer)
 				$priceAnswerGlobal += $priceAnswerLocal;	
 		}
+		
+		if($this->adminVerity)
+			$priceAnswerGlobal = $this->calculateTextResult($percentQuestion, $priceAnswerGlobal);
 		return $priceAnswerGlobal = (int)$priceAnswerGlobal;
 
+	}
+	
+	private function calculateTextResult($percentQuestion, $priceAnswerGlobal)
+	{
+		foreach ($this->adminVerity as $questionId=>$statusVerity)
+		{
+			if($statusVerity==1)
+				$priceAnswerGlobal += $percentQuestion;
+			if($statusVerity==2)
+				$priceAnswerGlobal += $percentQuestion/2;
+		}
+		
+		return $priceAnswerGlobal;
 	}
 	
 	private function insertTextResult($tryId)
@@ -240,6 +264,11 @@ class Test extends CActiveRecord
 				return false;	
 		}
 		return true;
+	}
+	
+	public function adminCalculate()
+	{
+		return $priceAnswer = $this->calculateResult();	
 	}
 	
 	public function saveAnswer()

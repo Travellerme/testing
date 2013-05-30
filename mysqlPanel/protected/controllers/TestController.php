@@ -58,7 +58,6 @@ class TestController extends Controller
 			{
 				if($model->saveAnswer())
 				{
-					
 					Yii::app()->user->setFlash('test','Your answers were send');
 					$this->redirect(Yii::app()->homeUrl);
 				}

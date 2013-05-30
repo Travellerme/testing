@@ -54,15 +54,24 @@ class ResultController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Result']))
 		{	
+			$testModel = new Test;
+			$testModel->findTest($model->testId);
 			$model->scenario = 'checkResult';
+			$testModel->scenario = 'answerCheckbox';
+			$testModel->attributes=$_POST['Result'];
+						
 			$model->attributes=$_POST['Result'];
-			if($model->validate())
+			if($model->validate() && $testModel->validate())
 			{
-				Result::model()->updateByPk($id, array('percentRight'=>$model->percentRight));
+				if($percentRight = $testModel->adminCalculate())
+				{
+					$model->updateByPk($id, array('percentRight'=>$percentRight));
 					Yii::app()->user->setFlash('checkResult', 'Your solution saved');
+					$this->refresh();
+				}
 			}
 		}
 

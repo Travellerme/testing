@@ -24,12 +24,7 @@
 					<hr />
 					<div class="row">
 						<b>Question: </b><br />
-						<?php echo $form->textArea($model,'question',array(
-							'value'=>CHtml::encode($key['question']),
-							'readonly'=>true,
-							'cols'=> 100,
-							'rows'=>3,
-						)); ?>
+						<?php echo CHtml::encode($key['question']); ?>
 						<br /><br />
 						
 					</div>
@@ -57,12 +52,7 @@
 				<hr />
 				<div class="row">
 					<b>Question: </b><br />
-					<?php echo $form->textArea($model,'question',array(
-						'value'=>CHtml::encode($key['question']),
-						'readonly'=>true,
-						'cols'=> 100,
-						'rows'=>3,
-					)); ?>
+					<?php echo CHtml::encode($key['question']); ?>
 					<br /><br />
 					
 				</div>

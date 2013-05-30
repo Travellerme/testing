@@ -14,11 +14,14 @@ class Result extends CActiveRecord
 {
 	public $username;
 	public $test;
+	public $testId;
 	public $userId;
 	public $userTextAnswer;
 	public $userCheckboxAnswer;
 	public $serverTextAnswer;
 	public $serverCheckboxAnswer;
+	public $adminVerity;
+	public $percentRight;
 	
 	public $questionAnswer;
 	/**
@@ -47,14 +50,29 @@ class Result extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('percentRight', 'required'),	
-			array('percentRight','numerical','integerOnly'=>true, 'min'=>0, 'max'=>100,'on'=>'checkResult'),
+			array('adminVerity', 'validateVerity'),
+			//array('percentRight', 'required'),	
+			//array('percentRight','numerical','integerOnly'=>true, 'min'=>0, 'max'=>100,'on'=>'checkResult'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, test', 'safe', 'on'=>'search'),
 		
 		);
 	}
+	public function validateVerity($attribute,$params)
+	{
+		foreach ($this->adminVerity as $key=>$val)
+		{
+			if(!$val)
+			{
+				if(!$this->getErrors('errorAnswer'))
+					$this->addError('errorAnswer','You must enter your solution');
+				return false;
+			}
+		}
+		return true;
+	}
+	
 
 	/**
 	 * @return array relational rules.
@@ -143,7 +161,35 @@ class Result extends CActiveRecord
 		$this->userCheckboxAnswer = $commandCheckbox->queryAll();
 		$this->username = ($this->userTextAnswer)?$this->userTextAnswer[0]['username']:$this->userCheckboxAnswer[0]['username'];
 		$this->test = ($this->userTextAnswer)?$this->userTextAnswer[0]['title']:$this->userCheckboxAnswer[0]['title'];
+		$this->testId = ($this->userTextAnswer)?$this->userTextAnswer[0]['testId']:$this->userCheckboxAnswer[0]['testId'];
+		$this->percentRight = ($this->userTextAnswer)?$this->userTextAnswer[0]['percentRight']:$this->userCheckboxAnswer[0]['percentRight'];
+		
 		return true;
+	}
+	
+	public function saveAnswer($id)
+	{
+		
+		$percentTextQuestion = 100 - $this->percentRight;
+		$percentOneQuestion = $percentTextQuestion/count($this->userTextAnswer);
+		
+		$percentSum = $this->percentRight;
+		foreach ($this->verity as $questionId=>$statusVerity)
+		{
+			if($statusVerity==1)
+				$percentSum += $percentOneQuestion;
+			if($statusVerity==2)
+				$percentSum += $percentOneQuestion/2;
+		}
+
+		$percentSum = (int)$percentSum;
+
+		if($percentSum == $this->percentRight)
+			return true;
+		if($this->updateByPk($id, array('percentRight'=>$percentSum)))
+			return true;
+		return false;
+
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

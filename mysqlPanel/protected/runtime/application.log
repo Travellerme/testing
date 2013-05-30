@@ -2243,3 +2243,1221 @@ REQUEST_URI=/mysqlPanel/index.php?r=admin/test/view&id=1
 in /var/www/mysqlPanel/protected/models/Test.php (121)
 in /var/www/mysqlPanel/protected/modules/admin/controllers/TestController.php (43)
 in /var/www/mysqlPanel/index.php (14)
+2013/05/30 12:43:02 [warning] [application] Failed to set unsafe attribute "answer" of "Question".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/QuestionController.php (43)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 12:59:03 [error] [exception.CException] exception 'CException' with message 'Property "Result.verity" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('verity')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('verity')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1716): CHtml::resolveValue(Object(Result), 'verity')
+#3 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(811): CHtml::activeRadioButtonList(Object(Result), 'verity', Array, Array)
+#4 /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php(102): CActiveForm->radioButtonList(Object(Result), 'verity', Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(26): CController->renderPartial('_form', Array)
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#11 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#13 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(71): CController->render('update', Array)
+#14 [internal function]: ResultController->actionUpdate('2')
+#15 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#26 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#27 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#28 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=2
+HTTP_REFERER=http://localhost/mysqlPanel/index.php?r=admin/result/index
+---
+2013/05/30 12:59:16 [error] [exception.CException] exception 'CException' with message 'Property "Result.verity" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('verity')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('verity')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1716): CHtml::resolveValue(Object(Result), 'verity')
+#3 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(811): CHtml::activeRadioButtonList(Object(Result), 'verity', Array, Array)
+#4 /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php(102): CActiveForm->radioButtonList(Object(Result), 'verity', Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(26): CController->renderPartial('_form', Array)
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#11 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#13 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(71): CController->render('update', Array)
+#14 [internal function]: ResultController->actionUpdate('2')
+#15 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#26 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#27 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#28 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=2
+HTTP_REFERER=http://localhost/mysqlPanel/index.php?r=admin/result/index
+---
+2013/05/30 13:09:33 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:09:33 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:09:33 [warning] [application] Failed to set unsafe attribute "verity" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:13:00 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:13:00 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:13:00 [warning] [application] Failed to set unsafe attribute "verity" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:13:23 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:13:23 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:13:23 [warning] [application] Failed to set unsafe attribute "verity" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:18:27 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:18:27 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:18:27 [warning] [application] Failed to set unsafe attribute "verity" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:18 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:18 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:18 [warning] [application] Failed to set unsafe attribute "verity" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:18 [error] [php] Invalid argument supplied for foreach() (/var/www/mysqlPanel/protected/models/Result.php:160)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=2
+in /var/www/mysqlPanel/protected/models/Result.php (160)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:34 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:34 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:34 [warning] [application] Failed to set unsafe attribute "verity" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:23:34 [error] [php] Invalid argument supplied for foreach() (/var/www/mysqlPanel/protected/models/Result.php:160)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=2
+in /var/www/mysqlPanel/protected/models/Result.php (160)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:26:47 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:26:47 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:27:21 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:27:21 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:27:58 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:27:58 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:29:26 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:29:26 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:29:47 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:29:47 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:30:40 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:30:40 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:30:48 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:30:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:32:22 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:32:22 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:39:20 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:39:20 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:39:24 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:39:24 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:39:37 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:39:37 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:40:24 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:40:24 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:40:46 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:40:46 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:41:48 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:41:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:41:54 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:41:54 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:43:59 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:43:59 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:45:31 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:45:31 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:47:14 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:47:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:47:35 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:47:35 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:47:48 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:47:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:49:50 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:49:50 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:49:57 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:49:57 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:51:14 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:51:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:52:49 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:52:49 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:55:44 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:55:44 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:56:04 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:56:04 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:57:58 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 13:57:58 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (61)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:15:11 [error] [exception.CException] exception 'CException' with message 'Property "Result.adminVerity" is not defined.' in /var/www/YiiRoot/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(143): CComponent->__get('adminVerity')
+#1 /var/www/YiiRoot/framework/web/helpers/CHtml.php(2244): CActiveRecord->__get('adminVerity')
+#2 /var/www/YiiRoot/framework/web/helpers/CHtml.php(1716): CHtml::resolveValue(Object(Result), 'adminVerity[3]')
+#3 /var/www/YiiRoot/framework/web/widgets/CActiveForm.php(811): CHtml::activeRadioButtonList(Object(Result), 'adminVerity[3]', Array, Array)
+#4 /var/www/mysqlPanel/protected/modules/admin/views/result/_form.php(112): CActiveForm->radioButtonList(Object(Result), 'adminVerity[3]', Array, Array)
+#5 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#6 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#7 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#8 /var/www/mysqlPanel/protected/modules/admin/views/result/update.php(26): CController->renderPartial('_form', Array)
+#9 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#11 /var/www/YiiRoot/framework/web/CController.php(869): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#13 /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php(76): CController->render('update', Array)
+#14 [internal function]: ResultController->actionUpdate('3')
+#15 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ResultController), Array)
+#16 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ResultController), Object(ReflectionMethod), Array)
+#17 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('update')
+#26 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/result/up...')
+#27 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#28 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+HTTP_REFERER=http://localhost/mysqlPanel/index.php?r=admin/result/index
+---
+2013/05/30 14:16:02 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:16:02 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:16:02 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:16:02 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:16:02 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:16:02 [error] [php] Division by zero (/var/www/mysqlPanel/protected/models/Test.php:183)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/models/Test.php (183)
+in /var/www/mysqlPanel/protected/models/Test.php (264)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+2013/05/30 14:19:06 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:19:06 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:19:06 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:19:06 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:19:06 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:13 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:13 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:13 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:13 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:13 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:58 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:58 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:58 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:58 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:21:58 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:22:04 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:22:04 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:22:04 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:22:04 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:22:04 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:39 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:39 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:39 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:39 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:39 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:59 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:59 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:59 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:59 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:23:59 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:16 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:16 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:16 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:16 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:16 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:23 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:23 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:23 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:23 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:24:23 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:35 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:35 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:35 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:35 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:35 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:44 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:44 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:44 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:44 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:28:44 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:32:38 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:32:38 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:32:38 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (62)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:32:38 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:32:38 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:22 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:22 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:22 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:22 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:27 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:27 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:27 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:36:27 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:05 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:05 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:05 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:05 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:05 [error] [php] Invalid argument supplied for foreach() (/var/www/mysqlPanel/protected/models/Test.php:186)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/models/Test.php (186)
+in /var/www/mysqlPanel/protected/models/Test.php (264)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/30 14:37:16 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:16 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:16 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:16 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:37:16 [error] [php] Invalid argument supplied for foreach() (/var/www/mysqlPanel/protected/models/Test.php:186)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/models/Test.php (186)
+in /var/www/mysqlPanel/protected/models/Test.php (264)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+2013/05/30 14:38:08 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:38:08 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:38:08 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:38:08 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:33 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:33 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:33 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:33 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:41 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:41 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (63)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:41 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:39:41 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:05 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:05 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:05 [error] [php] var_dump() expects at least 1 parameter, 0 given (/var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php:65)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#4 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#7 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#10 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (65)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:15 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:15 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:15 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:15 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:23 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:23 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:23 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:23 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:49 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:49 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:49 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:41:49 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:02 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:02 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:02 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:02 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:25 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:25 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:25 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:42:25 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:43:04 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:43:04 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:43:04 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:43:04 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:32 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:32 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:32 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:32 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:45 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:45 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:45 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:44:45 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:29 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:29 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:29 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:29 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:48 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:48 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:45:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:46:02 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:46:02 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:46:02 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:46:02 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:51:38 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:51:38 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:51:38 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:51:38 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:51:38 [error] [php] Undefined variable: countTextAnswer (/var/www/mysqlPanel/protected/models/Test.php:185)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/models/Test.php (185)
+in /var/www/mysqlPanel/protected/models/Test.php (266)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (70)
+2013/05/30 14:52:08 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:08 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:08 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:08 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:08 [error] [php] Undefined variable: countTextAnswer (/var/www/mysqlPanel/protected/models/Test.php:185)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/models/Test.php (185)
+in /var/www/mysqlPanel/protected/models/Test.php (266)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (70)
+2013/05/30 14:52:20 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:20 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:20 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:20 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:52:20 [error] [php] Undefined variable: countTextAnswer (/var/www/mysqlPanel/protected/models/Test.php:185)
+Stack trace:
+#0 unknown(0): ResultController->actionUpdate()
+#1 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#2 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): ResultController->runAction()
+#5 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): ResultController->filterAccessControl()
+#8 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/YiiRoot/framework/web/CController.php(265): ResultController->runActionWithFilters()
+#11 /var/www/YiiRoot/framework/web/CWebApplication.php(282): ResultController->run()
+#12 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=admin/result/update&id=3
+in /var/www/mysqlPanel/protected/models/Test.php (185)
+in /var/www/mysqlPanel/protected/models/Test.php (266)
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (70)
+2013/05/30 14:53:07 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:53:07 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:53:07 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:53:07 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:03 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:03 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:03 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:03 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:26 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:26 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:26 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:54:26 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:55:19 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:55:19 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:55:19 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (67)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:55:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:55:48 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:55:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:56:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:56:14 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:56:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:56:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:56:48 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:56:48 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:07 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:07 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:07 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:31 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:31 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:31 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:45 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:45 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:45 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:55 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:55 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:57:55 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:58:18 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:58:18 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:58:18 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:58:27 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:58:27 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:58:27 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:59:05 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:59:05 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:59:05 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:59:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:59:14 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 14:59:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:02:25 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:02:25 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:02:25 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:02:29 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:02:29 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:02:29 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:05:57 [error] [php] Undefined index: testId (/var/www/mysqlPanel/protected/views/test/_form.php:70)
+Stack trace:
+#0 /var/www/YiiRoot/framework/web/CController.php(869): TestController->renderFile()
+#1 /var/www/mysqlPanel/protected/views/test/index.php(22): TestController->renderPartial()
+#2 /var/www/YiiRoot/framework/web/CBaseController.php(126): require()
+#3 /var/www/YiiRoot/framework/web/CBaseController.php(95): TestController->renderInternal()
+#4 /var/www/YiiRoot/framework/web/CController.php(869): TestController->renderFile()
+#5 /var/www/YiiRoot/framework/web/CController.php(782): TestController->renderPartial()
+#6 /var/www/mysqlPanel/protected/controllers/TestController.php(73): TestController->render()
+#7 unknown(0): TestController->actionIndex()
+#8 /var/www/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(133): TestController->runAction()
+#12 /var/www/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/YiiRoot/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/YiiRoot/framework/web/filters/CInlineFilter.php(58): TestController->filterAccessControl()
+#15 /var/www/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/YiiRoot/framework/web/CController.php(265): TestController->runActionWithFilters()
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): TestController->run()
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CWebApplication->run()
+REQUEST_URI=/mysqlPanel/index.php?r=test/index/id/1
+in /var/www/mysqlPanel/protected/views/test/_form.php (70)
+in /var/www/mysqlPanel/protected/views/test/index.php (22)
+in /var/www/mysqlPanel/protected/controllers/TestController.php (73)
+2013/05/30 15:12:31 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:12:31 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:12:31 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:13:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:13:14 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:13:14 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:14:38 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:14:38 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:14:38 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:01 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:01 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:01 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:16 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:16 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:16 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:32 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:32 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:32 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:41 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:41 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:41 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:58 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:58 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:15:58 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:16:09 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Test".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (64)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:16:09 [warning] [application] Failed to set unsafe attribute "questionAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
+2013/05/30 15:16:09 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
+in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
+in /var/www/mysqlPanel/index.php (14)
