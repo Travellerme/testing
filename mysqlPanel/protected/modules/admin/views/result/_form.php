@@ -15,24 +15,19 @@
 			'id'=>'result-form',
 			'enableAjaxValidation'=>false,
 		)); ?>
-
+		<?php  $num = 1; ?>
 		<?php echo $form->errorSummary($model); ?>
 		
 		<?php if($model->userCheckboxAnswer): ?>
-			<?php $compareQuestion = ''; $contentRightAnswer ='';?>
+			<?php $compareQuestion = ''; $contentRightAnswer =''; ?>
 
 			<?php foreach($model->serverCheckboxAnswer as $keyServer): ?>
 				<?php if($compareQuestion != $keyServer['questionId']) : ?>
 					<?php echo $contentRightAnswer; ?>
 					<hr />
 					<div class="row">
-						<b>Question: </b><br />
-						<?php echo $form->textArea($model,'question',array(
-							'value'=>CHtml::encode($keyServer['question']),
-							'readonly'=>true,
-							'cols'=> 100,
-							'rows'=>3,
-						)); ?>
+						<b><?php echo $num; $num++; ?>. Question: </b><br />
+						<?php echo $keyServer['question']; ?>
 						<br /><br />
 						
 					</div>
@@ -45,7 +40,7 @@
 					<?php 
 						$htmlOptions = array(
 							'value'=> $keyServer['answerId'],
-							'disabled'=>true,
+							'onclick'=>'return false',
 												
 						); 
 						foreach($model->userCheckboxAnswer as $keyUser)
@@ -54,7 +49,7 @@
 								$htmlOptions['checked'] = true;
 						}	
 					?>
-				
+			
 					<?php echo $form->checkBox($model,'questionAnswer[' . $keyServer['questionId'] . '][]',$htmlOptions);
 						echo ' ' . CHtml::encode($keyServer['answer']); 
 					?>
@@ -89,13 +84,8 @@
 			
 				<hr />
 				<div class="row">
-					<b>Question: </b><br />
-					<?php echo $form->textArea($model,'question',array(
-						'value'=>CHtml::encode($keyUser['question']),
-						'readonly'=>true,
-						'cols'=> 100,
-						'rows'=>3,
-					)); ?>
+					<b><?php echo $num; $num++; ?>. Question: </b><br />
+					<?php echo $keyUser['question']; ?>
 					<br /><br />
 					
 				</div>
@@ -108,17 +98,24 @@
 						'value'=>$keyUser['answer'],
 						
 					);?>
-					<?php echo $form->textArea($model,'questionAnswerText[' . $keyUser['questionId'] . ']',$htmlOptions); ?>
-					<?php echo $form->error($model,'answer'); ?>
+					<?php echo $keyUser['answer']; ?>
+					
+					
 				</div>
+				<?php echo $form->radioButtonList($model,'adminVerity[' . $keyUser['questionId'] . ']',array(
+					'1'=>'right',
+					'2'=>'middle',
+					'3'=>'false'
+				),array( 
+					'separator'=>'<br>',
+					'labelOptions'=> array('style' => 'display: inline')
+				));?>
 			<?php endforeach; ?>
 		<?php endif;?>
 		
 		<div class="row">
-			<?php echo $form->textField($model,'percentRight',array(
-				'size'=>3,
-				'value'=>$model->userCheckboxAnswer[0]['percentRight']
-			)); ?>
+			<b>Percent Right:</b>
+			<?php echo $model->userCheckboxAnswer[0]['percentRight']; ?> %
 			<?php echo $form->error($model,'answer'); ?>
 		</div>
 

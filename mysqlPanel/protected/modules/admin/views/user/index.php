@@ -9,6 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create User', 'url'=>array('create')),
+	array('label'=>'Add attempt', 'url'=>array('/admin/result/addTry','userId'=>$model->id)),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -38,10 +39,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-<?php
+
+<?php 
 	echo Chtml::form();
 	echo Chtml::submitButton('Admin', array('name'=>'admin'));
 	echo Chtml::submitButton('User', array('name'=>'user'));
+		
 ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
@@ -64,12 +67,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 		'role'=>array(
 			'name'=>'role',
-			//'value'=>'print_r($data->role)',
 			'value'=>'($data->role==0)?"User":"Admin"',
 			'filter'=>array(0=>"User",1=>"Admin"),
 		),
 		array(
 			'class'=>'CButtonColumn',
+			'buttons'=>array(
+				'addTry'=>array(
+					'label'=>'Add attempt',
+					'url'=>'Yii::app()->createUrl("/admin/result/addTry", array("userId"=>$data->id))',
+					'imageUrl'=>Yii::app()->baseUrl . '/images/addTry.png',  
+					
+				),
+			),
+			'template'=>'{view} {update} {delete} {addTry}',
 		),
 	),
 )); ?>

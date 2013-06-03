@@ -13,12 +13,16 @@
 class Result extends CActiveRecord
 {
 	public $username;
-	public $test;
+	//public $test;
+	//public $title;
+	public $testId;
 	public $userId;
 	public $userTextAnswer;
 	public $userCheckboxAnswer;
 	public $serverTextAnswer;
 	public $serverCheckboxAnswer;
+	public $adminVerity;
+	public $percentRight;
 	
 	public $questionAnswer;
 	/**
@@ -47,23 +51,43 @@ class Result extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('percentRight', 'required'),	
-			array('percentRight','numerical','integerOnly'=>true, 'min'=>0, 'max'=>100,'on'=>'checkResult'),
+			array('adminVerity', 'validateVerity','on'=>'update'),
+			array('id_test, id_user', 'required','on' => 'addTry'),
+		//	array('test', 'safe','on' => 'addTry'),
+			array('id_test, id_user', 'numerical', 'integerOnly'=>true, 'on' => 'addTry'),
+			array('id_test, id_user', 'safe', 'on' => 'addTry'),
+			
+			//array('percentRight', 'required'),	
+			//array('percentRight','numerical','integerOnly'=>true, 'min'=>0, 'max'=>100,'on'=>'checkResult'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, test', 'safe', 'on'=>'search'),
+			array('id, username, test, statusAccess', 'safe', 'on'=>'search'),
 		
 		);
 	}
+	
+	public function validateVerity($attribute,$params)
+	{
+		foreach ($this->adminVerity as $key=>$val)
+		{
+			if(!$val)
+			{
+				if(!$this->getErrors('errorAnswer'))
+					$this->addError('errorAnswer','You must enter your solution');
+				return false;
+			}
+		}
+		return true;
+	}
+	
 
-	/**
-	 * @return array relational rules.
-	 */
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		   'user'=>array(self::BELONGS_TO, 'User', 'id_user'),
+		   'test'=>array(self::BELONGS_TO, 'Test', 'id_test'),
 		);
 	}
 
@@ -76,10 +100,42 @@ class Result extends CActiveRecord
 			'id' => 'ID',
 			'id_user' => 'Id User',
 			'id_test' => 'Id Test',
+			'test' => 'Test',
+			'statusAccess' => 'Status',
 			'percentRight' => 'Percent Right',
 			'created' => 'Created',
 		);
 	}
+	
+	public function beforeSave()
+	{
+		if($this->isNewRecord)
+		{
+			$this->statusAccess = 'allow';
+			$this->percentRight = 0;
+			$this->created = time();
+		}
+		return parent::beforeSave();
+	}
+	
+	public function deleteResult($id)
+	{
+		$connection = Yii::app()->db;
+		$sqlDeleteText = "delete ut, ua, at from tbl_user_test as ut, tbl_user_answer as ua, 
+		tbl_answer_text as at where ut.id=ua.id_try and ua.id=at.id_user_answer and ut.id=:id";
+		$sqlDeleteCheckbox = "delete ut, ua, uma from tbl_user_test as ut, tbl_user_answer as ua, 
+		tbl_user_multi_answer as uma where ut.id=ua.id_try and ua.id=uma.id_user_answer and ut.id=:id";
+		
+		$commandCheckbox = $connection->createCommand($sqlDeleteCheckbox);
+		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
+		$commandText = $connection->createCommand($sqlDeleteText);
+		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
+		$commandCheckbox->execute();
+		$commandText->execute();
+		
+		return true;
+	}
+	
 	private function findTest($tryId)
 	{
 		$connection = Yii::app()->db;
@@ -143,41 +199,62 @@ class Result extends CActiveRecord
 		$this->userCheckboxAnswer = $commandCheckbox->queryAll();
 		$this->username = ($this->userTextAnswer)?$this->userTextAnswer[0]['username']:$this->userCheckboxAnswer[0]['username'];
 		$this->test = ($this->userTextAnswer)?$this->userTextAnswer[0]['title']:$this->userCheckboxAnswer[0]['title'];
+		$this->testId = ($this->userTextAnswer)?$this->userTextAnswer[0]['testId']:$this->userCheckboxAnswer[0]['testId'];
+		$this->percentRight = ($this->userTextAnswer)?$this->userTextAnswer[0]['percentRight']:$this->userCheckboxAnswer[0]['percentRight'];
+		
 		return true;
 	}
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CSqlDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function sqlDataProvider()
+	
+	public function saveAnswer($id)
 	{
 		
-		$count=Yii::app()->db->createCommand('select 
-			count(*)
-		from 
-			tbl_user u, tbl_test t, tbl_user_test ut
-		where 
-			u.id=ut.id_user and  ut.id_test=t.id')->queryScalar();
+		$percentTextQuestion = 100 - $this->percentRight;
+		$percentOneQuestion = $percentTextQuestion/count($this->userTextAnswer);
 		
-		$condition = '';
-		$condition .= !empty($this->id) ? ' and ut.id ="' . $this->id . '" ' : ' '; 
-		$condition .= !empty($this->test) ? ' and t.title ="' . $this->test . '" ' : ' '; 
-		$condition .= !empty($this->username) ? ' and u.username ="' . $this->username . '" ' : ' '; 
-		$sql = "select 
-			ut.id, u.username, t.title as test, ut.created, ut.percentRight
-		from 
-			tbl_user u, tbl_test t, tbl_user_test ut
-		where 
-			u.id=ut.id_user and  ut.id_test=t.id  ". $condition;
+		$percentSum = $this->percentRight;
+		foreach ($this->verity as $questionId=>$statusVerity)
+		{
+			if($statusVerity==1)
+				$percentSum += $percentOneQuestion;
+			if($statusVerity==2)
+				$percentSum += $percentOneQuestion/2;
+		}
+
+		$percentSum = (int)$percentSum;
+
+		if($percentSum == $this->percentRight)
+			return true;
+		if($this->updateByPk($id, array('percentRight'=>$percentSum)))
+			return true;
+		return false;
+
+	}
+
 	
-        $config = array(
-			'totalItemCount'=>$count,
-            'pagination'=>array(
-                'pageSize'=>11,
-            ),    
-        );
-		return new CSqlDataProvider($sql, $config);
-        
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		//$criteria->compare('title',$this->test);
+		$criteria->compare('id_test',$this->id_test);
+		$criteria->compare('statusAccess',$this->statusAccess,true);
+		$criteria->compare('percentRight',$this->percentRight);
+		$criteria->compare('created',$this->created);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'pagination'=>array(
+				'pageSize'=>11,
+			)
+		));
 	}
 	
 }

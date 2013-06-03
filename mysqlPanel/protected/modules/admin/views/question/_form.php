@@ -25,13 +25,17 @@
 		<?php echo $form->error($model,'typeAnswer'); ?>
 	</div>
 	<div class="row">
-		<label><strong>Add question</strong></label>
-		<?php echo $form->textArea($model,'question','',array(
-			'class'=>'input-xlarge',
-			'rows'=>'3',
-		)); ?>
+		<?php echo $form->labelEx($model,'description'); ?>
+		<?php $this->widget('application.extensions.ckeditor.CKEditor', array(
+			'model'=>$model,
+		    'attribute'=>'question', 
+		    'language'=>'en', 
+		    'editorTemplate'=>'full', 
+			));
+		 ?>
 		<?php echo $form->error($model,'question'); ?>
 	</div>
+	
 	<div class="row">
 		<span class="help-block">select the test you want to add a question</span><br>
 		<?php echo $form->dropDownList($model,'test',Test::allTests()); ?>
@@ -57,7 +61,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton("Save"); ?>
+		<?php echo CHtml::submitButton('Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -40,9 +40,15 @@ class TestController extends Controller
 	 */
 	public function actionIndex($id)
 	{
-		$testTitle = Test::model()->findByPk($id);
+		
+		$statusAccess = Result::model()->findByAttributes(array('id_user' => Yii::app()->user->id,'id_test'=>$id,'statusAccess'=>'allow'));
+		if(!$statusAccess)
+			throw new CHttpException(401, 'You do not have permission for this test. Please contact with your administrator');
+		
 		$model = new Test;
 		$model->testId = $id;
+		$testTitle = Test::model()->findByPk($id);
+		
 		$model->findTest($id);
 		if(isset($_POST['Test']))
 		{
@@ -56,9 +62,9 @@ class TestController extends Controller
 			
 			if($model->validate())
 			{
+				
 				if($model->saveAnswer())
 				{
-					
 					Yii::app()->user->setFlash('test','Your answers were send');
 					$this->redirect(Yii::app()->homeUrl);
 				}

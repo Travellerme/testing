@@ -14,7 +14,7 @@
 		)); ?>
 
 		<?php echo $form->errorSummary($model); ?>
-
+		<?php $num=1; ?>
 		<?php if($model->checkboxQuestion): ?>
 			<?php $compareQuestion = '';?>
 
@@ -22,14 +22,9 @@
 				<?php if($compareQuestion != $key['questionId']) : ?>
 				
 					<hr />
-					<div class="row">
-						<b>Question: </b><br />
-						<?php echo $form->textArea($model,'question',array(
-							'value'=>CHtml::encode($key['question']),
-							'readonly'=>true,
-							'cols'=> 100,
-							'rows'=>3,
-						)); ?>
+					<div class="view">
+						<b><?php echo $num++; ?>. Question: </b><br />
+						<?php echo $key['question']; ?>
 						<br /><br />
 						
 					</div>
@@ -55,14 +50,9 @@
 			
 			
 				<hr />
-				<div class="row">
-					<b>Question: </b><br />
-					<?php echo $form->textArea($model,'question',array(
-						'value'=>CHtml::encode($key['question']),
-						'readonly'=>true,
-						'cols'=> 100,
-						'rows'=>3,
-					)); ?>
+				<div class="view">
+					<b><?php echo $num++; ?>. Question: </b><br />
+					<?php echo $key['question']; ?>
 					<br /><br />
 					
 				</div>

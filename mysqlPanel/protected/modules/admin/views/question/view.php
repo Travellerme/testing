@@ -22,7 +22,7 @@ $this->menu=array(
 <div class="row">
 	<b>Question:</b>
 	<br /><br />
-	<?php echo CHtml::encode($model->question); ?>
+	<?php echo $model->question; ?>
 	<br /><br />
 </div>
 

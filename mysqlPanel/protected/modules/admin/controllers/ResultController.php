@@ -28,7 +28,7 @@ class ResultController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','update'),
+				'actions'=>array('index','update','addTry','delete'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -37,7 +37,19 @@ class ResultController extends Controller
 		);
 	}
 
+	/**
+     * Deletes a particular model.
+     * If deletion is successful, the browser will be redirected to the 'admin' page.
+     * @param integer $id the ID of the model to be deleted
+     */
+    public function actionDelete($id)
+    {
+        $this->loadModel($id)->deleteResult($id);
 
+        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+        if(!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+    }
 	
 
 	/**
@@ -54,15 +66,26 @@ class ResultController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Result']))
 		{	
+			
+			$testModel = new Test;
+			$testModel->findTest($model->testId);
 			$model->scenario = 'checkResult';
+			$testModel->scenario = 'answerCheckbox';
+			$testModel->unsetAttributes();
+			$testModel->attributes=$_POST['Result'];
+			
 			$model->attributes=$_POST['Result'];
-			if($model->validate())
+			if($model->validate() && $testModel->validate())
 			{
-				Result::model()->updateByPk($id, array('percentRight'=>$model->percentRight));
+				if($percentRight = $testModel->adminCalculate())
+				{
+					$model->updateByPk($id, array('percentRight'=>$percentRight,'statusAccess'=>'reviewed'));
 					Yii::app()->user->setFlash('checkResult', 'Your solution saved');
+					$this->refresh();
+				}
 			}
 		}
 
@@ -77,16 +100,56 @@ class ResultController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if(isset($_POST['allow']) && isset($_POST['resultId']))
+			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'allow'));
+		else if(isset($_POST['reviewed']) && isset($_POST['resultId']))
+			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'reviewed'));
+		else if(isset($_POST['denied']) && isset($_POST['resultId']))
+			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'denied'));
 		$model=new Result('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Result']))
 			$model->attributes=$_GET['Result'];
+		if(isset($_POST['Result']))
+			$model->attributes=$_POST['Result'];
 
 		$this->render('index',array(
 			'model'=>$model,
 		));
 	}
 
+	public function actionAddTry($userId)
+	{
+		$model = new Result;
+		if(!$userModel = User::model()->findByPk($userId))
+			throw new CHttpException(401, 'This user does not exist');
+		
+		$model->id_user = $userId;
+		
+		$model->username = $userModel->username;
+
+		if(isset($_POST['Result']))
+		{
+			$model->id_test = $_POST['Result']['test'];
+			$model->scenario = 'addTry';
+			if($model->validate())
+			{
+				if(!$model->findByAttributes(array('id_user' => $model->id_user,'id_test'=>$model->id_test,'statusAccess'=>'allow')))
+				{
+					if($model->save(false))
+							Yii::app()->user->setFlash('addTry', 'Custom attempt has been added');
+				}
+				else
+					Yii::app()->user->setFlash('addTry', 'User already has the ability to pass this test');	
+				$this->refresh();
+			}
+		
+		}
+		
+		$this->render('addTry',array(
+			'model'=>$model,
+		));
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
