@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create User', 'url'=>array('create')),
-	array('label'=>'Add attempt', 'url'=>array('/admin/result/addTry','userId'=>$model->id)),
 );
 
 Yii::app()->clientScript->registerScript('search', "

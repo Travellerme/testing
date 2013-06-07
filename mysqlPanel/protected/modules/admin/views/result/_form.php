@@ -27,7 +27,7 @@
 					<hr />
 					<div class="row">
 						<b><?php echo $num; $num++; ?>. Question: </b><br />
-						<?php echo $keyServer['question']; ?>
+						<?php echo  Question::generateTags($keyServer['question']); ?>
 						<br /><br />
 						
 					</div>
@@ -85,7 +85,7 @@
 				<hr />
 				<div class="row">
 					<b><?php echo $num; $num++; ?>. Question: </b><br />
-					<?php echo $keyUser['question']; ?>
+					<?php echo  Question::generateTags($keyUser['question']); ?>
 					<br /><br />
 					
 				</div>
@@ -115,8 +115,7 @@
 		
 		<div class="row">
 			<b>Percent Right:</b>
-			<?php echo $model->userCheckboxAnswer[0]['percentRight']; ?> %
-			<?php echo $form->error($model,'answer'); ?>
+			<?php echo $model->percentRight; ?> %
 		</div>
 
 		
@@ -130,6 +129,7 @@
 <?php else: ?>
 	Results not found
 <?php endif; ?>
+	
 	
 	
 	

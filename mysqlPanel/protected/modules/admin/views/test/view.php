@@ -34,7 +34,7 @@ $this->menu=array(
 					<hr />
 					<div class="row">
 						<b>Question: </b><br />
-						<?php echo CHtml::encode($key['question']); ?>
+						<?php echo Question::generateTags($key['question']); ?>
 						<br /><br />
 						
 					</div>
@@ -64,30 +64,14 @@ $this->menu=array(
 				<hr />
 				<div class="row">
 					<b>Question: </b><br />
-					<?php echo CHtml::encode($key['question']); ?>
+					<?php echo  Question::generateTags($key['question']); ?>
 					<br /><br />
 					
 				</div>
 				
 			<?php endforeach; ?>
 		<?php endif;?>
-		<?php /*$compareQuestion = '';?>
-
-		<?php foreach($test as $key): ?>
-			
-			<?php if($compareQuestion != $key['questionId']) : ?>
-				</div><div class="view">
-					<b>Question: </b><?php echo CHtml::encode($key['question']); ?>
-					<br /><br />
-					<b>Status Question: </b> <?php echo CHtml::encode($key['statusQuestion']); ?>
-					<br /><br />
-					<?php $compareQuestion = $key['questionId']; ?>
-			  
-			<?php endif;?>
-			<b>Answer: </b><?php echo CHtml::encode($key['answer']); ?> <br /><br />
-			<b>Verity: </b><?php echo ($key['verity']==1)?'True':'False'; ?><br /><br />
-		<?php endforeach; ?>
-	</div> */?></div> 
+		</div> 
 <?php else: ?>
 	Results not found
 <?php endif; ?>

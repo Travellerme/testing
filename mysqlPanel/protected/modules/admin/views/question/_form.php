@@ -25,14 +25,11 @@
 		<?php echo $form->error($model,'typeAnswer'); ?>
 	</div>
 	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php $this->widget('application.extensions.ckeditor.CKEditor', array(
-			'model'=>$model,
-		    'attribute'=>'question', 
-		    'language'=>'en', 
-		    'editorTemplate'=>'full', 
-			));
-		 ?>
+		<?php echo $form->textArea($model, 'question', array(
+			'rows'=>6, 
+			'cols'=>50
+		)) ?>
+		
 		<?php echo $form->error($model,'question'); ?>
 	</div>
 	

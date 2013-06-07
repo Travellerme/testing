@@ -61,6 +61,11 @@ class Question extends CActiveRecord
 			$this->addError('answer','Text field is empty');
 			$flag = true;
 		}
+		if(count($this->answer) == 1)
+		{
+			$this->addError('answer','The minimum number of responses - 2');
+			return false;
+		}
 		if(!(bool)$this->rightAnswer)
 			$flag = true;
 		
@@ -111,10 +116,21 @@ class Question extends CActiveRecord
 		$this->textAnswer = $commandText->queryAll();
 		
 		$this->question = ($this->checkboxAnswer)?$this->checkboxAnswer[0]['question']:$this->textAnswer[0]['question'];
+				
+		$this->question = $this->generateTags($this->question);
+		
 		$this->test = ($this->checkboxAnswer)?$this->checkboxAnswer[0]['test']:$this->textAnswer[0]['test'];
 		$this->status = ($this->checkboxAnswer)?$this->checkboxAnswer[0]['status']:$this->textAnswer[0]['status'];
 		return true;
 		
+	}
+	
+	public function generateTags($content)
+	{
+		$content = htmlspecialchars($content);
+		$content = preg_replace("/\n/",'<br>',$content);
+		$content = preg_replace("/\s/",'&nbsp;',$content);
+		return $content;
 	}
 	
 	/**
@@ -237,8 +253,16 @@ class Question extends CActiveRecord
 			from tbl_test t, tbl_question_test qt, tbl_question q 
 			where t.id=qt.id_test and qt.id_question=q.id" . $condition;
 	
+		$sort = new CSort;
+		$sort->defaultOrder = 'id ASC';
+		$sort->attributes = array(
+			'id' => 'id',
+			'test' => 'test',
+			'status' => 'status',
+		);
         $config = array(
 			'totalItemCount'=>$count,
+			'sort'=>$sort,
             'pagination'=>array(
                 'pageSize'=>11,
             ),    

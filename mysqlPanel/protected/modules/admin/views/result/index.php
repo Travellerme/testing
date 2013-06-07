@@ -13,7 +13,6 @@ $this->breadcrumbs=array(
 
 <?php
 	echo CHtml::form();
-	echo CHtml::submitButton('Allow', array('name'=>'allow'));
 	echo CHtml::submitButton('Reviewed', array('name'=>'reviewed'));
 	echo CHtml::submitButton('Denied', array('name'=>'denied'));
 ?>
@@ -31,8 +30,8 @@ $this->breadcrumbs=array(
 			'name'=>'id',
 			'headerHtmlOptions'=>array('width' => 30),
 		),
-		'username'=>array(
-			'name'=>'username',
+		'userSearch'=>array(
+			'name'=>'userSearch',
 			'value'=>'$data->user->username',
 			'headerHtmlOptions'=>array('width' => 470),
 		),
@@ -41,8 +40,8 @@ $this->breadcrumbs=array(
 			'headerHtmlOptions'=>array('width' => 70),
 			'filter'=>array('denied'=>'Denied','allow'=>'Allow','inProcess'=>'In process','reviewed'=>'Reviewed'),
 		),
-		'test'=>array(
-			'name'=>'test',
+		'testSearch'=>array(
+			'name'=>'testSearch',
 			'value'=>'$data->test->title',
 			'headerHtmlOptions'=>array('width' => 70),
 		),
@@ -58,9 +57,14 @@ $this->breadcrumbs=array(
 			'filter'=>false,
 		),
 		array(
-			'class'=>'ext.grid.EButtonColumn',
-			'controllerPath'=>'admin/result',
-			'viewButtonOptions'=>array('style'=>'display:none'),
+			'class'=>'CButtonColumn',
+			'template'=>'{update}{delete}',
+			'buttons'=>array(
+				'update'=>array(
+					'url'=>'$this->grid->controller->createUrl("result/update", array("id"=>$data->id))',
+					'visible'=>'($data->statusAccess==="allow")?false:true;'
+				),
+			),
 		),		
 	),
 )); ?>

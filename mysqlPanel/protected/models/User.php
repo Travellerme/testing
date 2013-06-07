@@ -52,8 +52,7 @@ class User extends CActiveRecord
 			array('username', 'unique', 'caseSensitive'=>false, 'on'=>'register,update'),
 			array('new_password', 'length', 'min'=>5, 'allowEmpty'=>true),
 			array('new_confirm', 'compare', 'compareAttribute'=>'new_password', 'message'=>'Passwords does not match'),
-		
-			
+					
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, role', 'safe', 'on'=>'search'),
@@ -187,8 +186,21 @@ class User extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('role',$this->role);
 
+		$sort = new CSort;
+		$sort->defaultOrder = 'id ASC';
+		$sort->attributes = array(
+			'id' => 'id',
+			'username' => 'username',
+			'created' => 'created',
+			'role' => 'role',
+		);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>$sort,
+            'pagination'=>array(
+                'pageSize'=>11,
+            ),    
 		));
 	}
 }

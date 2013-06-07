@@ -71,17 +71,20 @@ class ResultController extends Controller
 		{	
 			
 			$testModel = new Test;
-			$testModel->findTest($model->testId);
+			$testModel->findTestResult($model->testId);
 			$model->scenario = 'checkResult';
-			$testModel->scenario = 'answerCheckbox';
-			$testModel->unsetAttributes();
+			if($model->userCheckboxAnswer)
+				$testModel->scenario = 'answerCheckbox';
+			
 			$testModel->attributes=$_POST['Result'];
 			
 			$model->attributes=$_POST['Result'];
 			if($model->validate() && $testModel->validate())
 			{
-				if($percentRight = $testModel->adminCalculate())
+				$percentRight = $testModel->adminCalculate();
+				if($percentRight || $percentRight===0 )
 				{
+					$model->updateTextResult($id);
 					$model->updateByPk($id, array('percentRight'=>$percentRight,'statusAccess'=>'reviewed'));
 					Yii::app()->user->setFlash('checkResult', 'Your solution saved');
 					$this->refresh();
@@ -100,12 +103,11 @@ class ResultController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(isset($_POST['allow']) && isset($_POST['resultId']))
-			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'allow'));
-		else if(isset($_POST['reviewed']) && isset($_POST['resultId']))
-			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'reviewed'));
+		
+		if(isset($_POST['reviewed']) && isset($_POST['resultId']))
+			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'reviewed'),array('condition'=>'statusAccess !="inProcess"'));
 		else if(isset($_POST['denied']) && isset($_POST['resultId']))
-			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'denied'));
+			$model = Result::model()->updateByPk($_POST['resultId'],array('statusAccess'=>'denied'),array('condition'=>'statusAccess !="reviewed"'));
 		$model=new Result('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Result']))

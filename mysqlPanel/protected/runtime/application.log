@@ -3461,6 +3461,7 @@ in /var/www/mysqlPanel/index.php (14)
 2013/05/30 15:16:09 [warning] [application] Failed to set unsafe attribute "rightAnswer" of "Result".
 in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (66)
 in /var/www/mysqlPanel/index.php (14)
+<<<<<<< HEAD
 2013/05/31 13:53:59 [warning] [application] Failed to set unsafe attribute "answer" of "Question".
 in /var/www/mysqlPanel/protected/modules/admin/controllers/QuestionController.php (43)
 in /var/www/mysqlPanel/index.php (14)
@@ -5742,3 +5743,584 @@ in /var/www/mysqlPanel/index.php (14)
 2013/06/03 19:58:57 [warning] [application] Failed to set unsafe attribute "adminVerity" of "Result".
 in /var/www/mysqlPanel/protected/modules/admin/controllers/ResultController.php (80)
 in /var/www/mysqlPanel/index.php (14)
+=======
+>>>>>>> b13577cbd7383b5d58ca8a5f146c81cb94b83cba
+2013/06/05 14:40:09 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 02:38:32 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 02:39:13 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php
+---
+2013/06/06 02:39:17 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 02:39:57 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 02:40:11 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 02:50:41 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 02:52:08 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 02:52:10 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/2
+---
+2013/06/06 02:56:54 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 02:57:14 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 02:57:16 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/2
+---
+2013/06/06 02:59:23 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 03:00:17 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php
+---
+2013/06/06 03:00:19 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 03:00:21 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 03:00:44 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php
+---
+2013/06/06 03:00:45 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 03:01:11 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 03:01:14 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/1
+---
+2013/06/06 03:01:25 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 03:01:27 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=test/index/id/2
+---
+2013/06/06 03:02:04 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 05:44:39 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('2')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/2')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/2
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php?r=site/index
+---
+2013/06/06 10:36:58 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'You do not have permission for this test. Please contact with your administrator' in /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/protected/controllers/TestController.php:46
+Stack trace:
+#0 [internal function]: TestController->actionIndex('1')
+#1 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TestController), Array)
+#2 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TestController), Object(ReflectionMethod), Array)
+#3 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(291): CFilterChain->run()
+#10 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('test/index/id/1')
+#13 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /services/webpages/7/5/754.devhostopia.com/public/mysqlpanel/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/mysqlpanel/index.php?r=test/index/id/1
+HTTP_REFERER=http://754.devhostopia.com/mysqlpanel/index.php
+---
+2013/06/06 14:51:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'Luntik'@'193.46.86.223' (using password: YES)' in /var/www/YiiRoot/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/YiiRoot/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/YiiRoot/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/YiiRoot/framework/base/CApplication.php(438): CModule->getComponent('db')
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(623): CApplication->getDb()
+#5 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Test))
+#7 /var/www/mysqlPanel/protected/models/Test.php(32): CActiveRecord::model('Test')
+#8 /var/www/mysqlPanel/protected/models/Test.php(414): Test::model()
+#9 /var/www/mysqlPanel/protected/views/layouts/column2.php(16): Test::menu('right')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#11 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(784): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#13 /var/www/mysqlPanel/protected/controllers/SiteController.php(31): CController->render('index')
+#14 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#15 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/mysqlPanel/
+---
+2013/06/06 14:52:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'MysqlPanel'' in /var/www/YiiRoot/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/YiiRoot/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/YiiRoot/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/YiiRoot/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/YiiRoot/framework/base/CApplication.php(438): CModule->getComponent('db')
+#4 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(623): CApplication->getDb()
+#5 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 /var/www/YiiRoot/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Test))
+#7 /var/www/mysqlPanel/protected/models/Test.php(32): CActiveRecord::model('Test')
+#8 /var/www/mysqlPanel/protected/models/Test.php(414): Test::model()
+#9 /var/www/mysqlPanel/protected/views/layouts/column2.php(16): Test::menu('right')
+#10 /var/www/YiiRoot/framework/web/CBaseController.php(126): require('/var/www/mysqlP...')
+#11 /var/www/YiiRoot/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/mysqlP...', Array, true)
+#12 /var/www/YiiRoot/framework/web/CController.php(784): CBaseController->renderFile('/var/www/mysqlP...', Array, true)
+#13 /var/www/mysqlPanel/protected/controllers/SiteController.php(31): CController->render('index')
+#14 /var/www/YiiRoot/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#15 /var/www/YiiRoot/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/YiiRoot/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /var/www/YiiRoot/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/YiiRoot/framework/web/CWebApplication.php(282): CController->run('')
+#19 /var/www/YiiRoot/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#20 /var/www/YiiRoot/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /var/www/mysqlPanel/index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/mysqlPanel/
+---

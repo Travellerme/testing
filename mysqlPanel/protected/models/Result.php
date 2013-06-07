@@ -13,8 +13,6 @@
 class Result extends CActiveRecord
 {
 	public $username;
-	//public $test;
-	//public $title;
 	public $testId;
 	public $userId;
 	public $userTextAnswer;
@@ -23,7 +21,8 @@ class Result extends CActiveRecord
 	public $serverCheckboxAnswer;
 	public $adminVerity;
 	public $percentRight;
-	
+	public $userSearch;
+	public $testSearch;
 	public $questionAnswer;
 	/**
 	 * Returns the static model of the specified AR class.
@@ -53,15 +52,15 @@ class Result extends CActiveRecord
 		return array(
 			array('adminVerity', 'validateVerity','on'=>'update'),
 			array('id_test, id_user', 'required','on' => 'addTry'),
-		//	array('test', 'safe','on' => 'addTry'),
 			array('id_test, id_user', 'numerical', 'integerOnly'=>true, 'on' => 'addTry'),
 			array('id_test, id_user', 'safe', 'on' => 'addTry'),
+			array('adminVerity','safe'),
 			
 			//array('percentRight', 'required'),	
 			//array('percentRight','numerical','integerOnly'=>true, 'min'=>0, 'max'=>100,'on'=>'checkResult'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, test, statusAccess', 'safe', 'on'=>'search'),
+			array('id, username, testSearch, statusAccess, userSearch', 'safe', 'on'=>'search'),
 		
 		);
 	}
@@ -100,7 +99,8 @@ class Result extends CActiveRecord
 			'id' => 'ID',
 			'id_user' => 'Id User',
 			'id_test' => 'Id Test',
-			'test' => 'Test',
+			'testSearch' => 'Test',
+			'userSearch' => 'Username',
 			'statusAccess' => 'Status',
 			'percentRight' => 'Percent Right',
 			'created' => 'Created',
@@ -118,6 +118,37 @@ class Result extends CActiveRecord
 		return parent::beforeSave();
 	}
 	
+	public function updateTextResult($id)
+	{
+		$connection = Yii::app()->db;
+		$tblUserAnswer = "select ua.id from tbl_user_answer ua,tbl_answer_text at, 
+		tbl_user_test ut where ua.id_try=ut.id and ua.id=at.id_user_answer and ut.id=:id";
+		$command = $connection->createCommand($tblUserAnswer);
+		$command->bindParam(":id", $id, PDO::PARAM_INT);
+		$userAnswerId = $command->queryAll();
+		if(!$userAnswerId)
+			return false;
+		$verityValues = array_values($this->adminVerity);
+		if(($count = count($userAnswerId)) != count($this->adminVerity))
+			return false;
+		
+		$sqlUpdateResult = "update tbl_answer_text set 
+		tbl_answer_text.verity=:verity	where id_user_answer = :id limit 1";
+		
+		$commandUpdate = $connection->createCommand($sqlUpdateResult);
+		for ($i=0; $i<$count; $i++)
+		{
+			
+			$commandUpdate->bindParam(":id", $userAnswerId[$i]['id'], PDO::PARAM_INT);
+			$commandUpdate->bindParam(":verity", $verityValues[$i], PDO::PARAM_INT);
+			$commandUpdate->execute();
+				
+		}
+		return true;
+	
+		
+	}
+	
 	public function deleteResult($id)
 	{
 		$connection = Yii::app()->db;
@@ -125,13 +156,18 @@ class Result extends CActiveRecord
 		tbl_answer_text as at where ut.id=ua.id_try and ua.id=at.id_user_answer and ut.id=:id";
 		$sqlDeleteCheckbox = "delete ut, ua, uma from tbl_user_test as ut, tbl_user_answer as ua, 
 		tbl_user_multi_answer as uma where ut.id=ua.id_try and ua.id=uma.id_user_answer and ut.id=:id";
+		$sqlDeleteEmptyResult = "delete ut from tbl_user_test as ut where ut.id=:id";
 		
 		$commandCheckbox = $connection->createCommand($sqlDeleteCheckbox);
 		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
 		$commandText = $connection->createCommand($sqlDeleteText);
 		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
+		$commantEmptyResult = $connection->createCommand($sqlDeleteEmptyResult);
+		$commantEmptyResult->bindParam(":id", $id, PDO::PARAM_INT);
+		
 		$commandCheckbox->execute();
 		$commandText->execute();
+		$commantEmptyResult->execute();
 		
 		return true;
 	}
@@ -179,7 +215,7 @@ class Result extends CActiveRecord
 		AND ut.id = :id
 		";
 		$sqlUserAnswerText = "SELECT u.username, ut.id_test as testId, ut.created, 
-		t.title, ut.percentRight, q.id AS questionId, q.question, at.answer
+		t.title, ut.percentRight, q.id AS questionId, q.question, at.answer, at.verity
 		FROM tbl_user u, tbl_test t, tbl_user_test ut, tbl_user_answer ua, 
 		tbl_question q, tbl_answer_text at
 		WHERE u.id = ut.id_user
@@ -202,9 +238,20 @@ class Result extends CActiveRecord
 		$this->testId = ($this->userTextAnswer)?$this->userTextAnswer[0]['testId']:$this->userCheckboxAnswer[0]['testId'];
 		$this->percentRight = ($this->userTextAnswer)?$this->userTextAnswer[0]['percentRight']:$this->userCheckboxAnswer[0]['percentRight'];
 		
+		if($this->userTextAnswer)
+			$this->defaultRadio();
+		
 		return true;
 	}
 	
+	private function defaultRadio()
+	{
+		foreach($this->userTextAnswer as $keyUser)
+		{
+			$this->adminVerity[$keyUser['questionId']]=$keyUser['verity'];
+		}
+		return true;
+	}
 	public function saveAnswer($id)
 	{
 		
@@ -242,19 +289,41 @@ class Result extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		//$criteria->compare('title',$this->test);
-		$criteria->compare('id_test',$this->id_test);
+		$criteria->with = array( 'user','test' );
+		$criteria->compare('user.username', $this->userSearch);
+		$criteria->compare('test.title', $this->testSearch, true );
+		$criteria->compare('t.id',$this->id);
+	
+		
 		$criteria->compare('statusAccess',$this->statusAccess,true);
 		$criteria->compare('percentRight',$this->percentRight);
 		$criteria->compare('created',$this->created);
-
+		/*$sort = new CSort;
+		$sort->defaultOrder = 'id ASC';
+		$sort->attributes = array(
+			'id' => 'id',
+			'statusAccess' => 'statusAccess',
+			'percentRight' => 'percentRight',
+			'created' => 'created',
+			//'title' => 'title',
+		);*/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'pagination'=>array(
-				'pageSize'=>11,
-			)
+			'sort'=>array(
+				'attributes'=>array(
+					'userSearch'=>array(
+						'asc'=>'user.username',
+						'desc'=>'user.username DESC',
+					),
+					'testSearch'=>array(
+						'asc'=>'test.title',
+						'desc'=>'test.title DESC',
+					),
+					'*',
+				),
+			),
 		));
-	}
 	
+	}
 }
+

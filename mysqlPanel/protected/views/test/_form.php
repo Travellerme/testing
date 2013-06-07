@@ -22,9 +22,11 @@
 				<?php if($compareQuestion != $key['questionId']) : ?>
 				
 					<hr />
+
 					<div class="view">
 						<b><?php echo $num++; ?>. Question: </b><br />
-						<?php echo $key['question']; ?>
+						<?php echo  Question::generateTags($key['question']); ?>
+
 						<br /><br />
 						
 					</div>
@@ -50,9 +52,11 @@
 			
 			
 				<hr />
+
 				<div class="view">
 					<b><?php echo $num++; ?>. Question: </b><br />
-					<?php echo $key['question']; ?>
+					<?php echo  Question::generateTags($key['question']); ?>
+
 					<br /><br />
 					
 				</div>

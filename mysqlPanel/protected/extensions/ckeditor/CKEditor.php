@@ -278,7 +278,8 @@ class CKEditor extends CInputWidget{
 
         $baseDir = dirname(__FILE__);
         $assets = Yii::app()->getAssetManager()->publish($baseDir.DIRECTORY_SEPARATOR.'assets');
-
+		//$assets = Yii::app()->baseUrl.'/protected/extensions/ckeditor/assets';
+	
         $options = $this->makeOptions();
 
         $cs = Yii::app()->getClientScript();
@@ -304,7 +305,7 @@ CKFinder.SetupCKEditor(null, '$assets/ckfinder/');
 CKEDITOR.replace('{$name}',{$options});
 EOP;
         $cs->registerScript('Yii.'.get_class($this).'#'.$id, $js, CClientScript::POS_LOAD);
-
+		
         if($this->hasModel()) {
             $html = CHtml::activeTextArea($this->model, $this->attribute, $this->htmlOptions);
         }

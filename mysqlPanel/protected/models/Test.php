@@ -115,7 +115,7 @@ class Test extends CActiveRecord
 	public function renderDetail($id)
 	{
 		$connection = Yii::app()->db;
-		$this->fintTextQuestion($id);
+		$this->findTextQuestion($id);
 		$this->findCheckboxQuestion($id);
 				
 		$this->testId = ($this->checkboxQuestion)?$this->checkboxQuestion[0]['id']:$this->textQuestion[0]['id'];
@@ -124,8 +124,12 @@ class Test extends CActiveRecord
 		return true;
 	}
 	
-	private function fintTextQuestion($id)
+	private function findTextQuestion($id, $condition='')
 	{
+		if($condition == 'manageResult')
+		{
+			$condition = "or t.status='old' or qt.status='old'";
+		}
 		$connection = Yii::app()->db;
 		$textAnswer = "select 
 				t.id, t.title, t.status as statusTest,
@@ -136,13 +140,36 @@ class Test extends CActiveRecord
 			where 
 				t.id=qt.id_test and qt.id_question=q.id
 				and t.id=:id and t.status='work' and qt.status='work'
-				and qt.typeAnswer='2'";
+				and qt.typeAnswer='2'" . $condition;
 		$commandText = $connection->createCommand($textAnswer);
 		$commandText->bindParam(":id", $id, PDO::PARAM_INT);
 		$this->textQuestion = $commandText->queryAll();
+		
 		return true;
 	}
 	
+	private function findCheckboxQuestionResult($id)
+	{
+		$connection = Yii::app()->db;
+		$checkboxAnswer = "select 
+				t.id, t.title, t.status as statusTest,
+				q.id as questionId, q.question,	a.answer, a.id as answerId,
+				qa.flagAnswer as verity 
+			from 
+				tbl_test t, tbl_answer a, 
+				tbl_question_answer qa,	tbl_question q, tbl_question_test qt 
+			where 
+				t.id=qt.id_test and qt.id_question=q.id and qa.id_question=q.id 
+				and qa.id_answer=a.id and t.id=:id
+				and qt.typeAnswer='1'";
+
+		$commandCheckbox = $connection->createCommand($checkboxAnswer);
+	
+		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
+			
+		$this->checkboxQuestion = $commandCheckbox->queryAll();
+		return true;
+	}
 	private function findCheckboxQuestion($id)
 	{
 		$connection = Yii::app()->db;
@@ -158,7 +185,6 @@ class Test extends CActiveRecord
 				and qa.id_answer=a.id and t.id=:id and t.status='work' and qt.status='work'
 				and qt.typeAnswer='1'";
 			
-	
 		$commandCheckbox = $connection->createCommand($checkboxAnswer);
 	
 		$commandCheckbox->bindParam(":id", $id, PDO::PARAM_INT);
@@ -168,8 +194,16 @@ class Test extends CActiveRecord
 	}
 	public function findTest($id)
 	{
-		$this->fintTextQuestion($id);
+		$this->findTextQuestion($id);
 		$this->findCheckboxQuestion($id);
+		
+		return true;
+	}
+
+	public function findTestResult($id)
+	{
+		$this->findTextQuestion($id,'manageResult');
+		$this->findCheckboxQuestionResult($id);
 		
 		return true;
 	}
@@ -178,16 +212,26 @@ class Test extends CActiveRecord
 	{
 		$questionAnswer = array();
 		
-		$countCheckboxAnswer = count($this->questionAnswer);
+		$sum = 0;
+		if($this->questionAnswer)
+		{
+			$countCheckboxAnswer = count($this->questionAnswer);
+			$sum += $countCheckboxAnswer;
+		}
+
 		if($this->questionAnswerText)
+		{
 			$countTextAnswer = count($this->questionAnswerText);
-		if($this->adminVerity)
+			$sum += $countTextAnswer;
+		}
+		elseif($this->adminVerity)
+		{
 			$countTextAnswer = count($this->adminVerity);
-		$sum = $countCheckboxAnswer + $countTextAnswer;
+			$sum += $countTextAnswer;
+		}
 		$percentQuestion = 100 / $sum;
 		$compareQuestion='';
 		$verity = 0;
-	
 		foreach($this->checkboxQuestion as $key)
 		{
 			if($compareQuestion != $key['questionId'])
@@ -245,8 +289,8 @@ class Test extends CActiveRecord
 		$tblUserAnswer =  "INSERT INTO tbl_user_answer(id, id_question, id_try) 
 			VALUES(null,:questionId,:tryId)";
 		$commandUserAnswer = $connection->createCommand($tblUserAnswer);
-		$tblAnswerText =  "INSERT INTO tbl_answer_text(id, id_user_answer, answer) 
-			VALUES(null,:userAnswerId,:answer)";
+		$tblAnswerText =  "INSERT INTO tbl_answer_text(id, id_user_answer, answer, verity) 
+			VALUES(null,:userAnswerId,:answer,null)";
 		$commandAnswerText = $connection->createCommand($tblAnswerText);
 		foreach ($this->questionAnswerText as $questionId => $answer)
 		{
@@ -294,7 +338,7 @@ class Test extends CActiveRecord
 		}
 		elseif($this->textQuestion)
 		{
-			if($tryId = $this->insertPartResult($tryId))
+			if($tryId = $this->insertPartResult())
 			{
 				if($this->insertTextResult($tryId))
 					return true;
@@ -304,7 +348,7 @@ class Test extends CActiveRecord
 
 	}
 	
-	private function insertPartResult($priceAnswer = null)
+	private function insertPartResult($priceAnswer = 0)
 	{
 		$connection = Yii::app()->db;
 		$tblUserTest = "update tbl_user_test set percentRight=:percentRight, 
@@ -408,9 +452,16 @@ class Test extends CActiveRecord
         $criteria->compare('id',$this->id);
         $criteria->compare('title',$this->title,true);
         $criteria->compare('status',$this->status,true);
-
+		$sort = new CSort;
+		$sort->defaultOrder = 'status ASC';
+		$sort->attributes = array(
+			'id' => 'id',
+			'title' => 'title',
+			'status' => 'status',
+		);
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+            'sort'=>$sort,
             'pagination'=>array(
                 'pageSize'=>11,
             ),    

@@ -100,8 +100,12 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes = $_POST['User'];
+			
 			if($model->save())
+			{
+				Yii::app()->user->setFlash('updatePass','User password was change');
 				$this->redirect(array('password','id'=>$model->id));
+			}
 		}
 		$this->render('password',array(
 			'model'=>$model,
@@ -132,9 +136,7 @@ class UserController extends Controller
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>1));
 		else if(isset($_POST['user']) && isset($_POST['userId']))
 			$model = User::model()->updateByPk($_POST['userId'],array('role'=>0),array('condition'=>'id<>'.Yii::app()->user->id));
-		
-	
-		
+				
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_POST['User']))

@@ -38,6 +38,7 @@ $this->menu=array(
 			'name'=>'question',
 			'headerHtmlOptions'=>array('width' => 300),
 			'filter'=>false,
+			
 		),
 		'test'=>array(
 			'name'=>'test',
